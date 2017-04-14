@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://tingyunsay.github.io/2017/04/11/what-s-this/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文主要介绍Sphinx，并进行安装和简单使用">
-<meta property="og:updated_time" content="2017-04-13T09:34:13.941Z">
+<meta property="og:updated_time" content="2017-04-14T02:01:53.428Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sphinx wiki 学习">
 <meta name="twitter:description" content="本文主要介绍Sphinx，并进行安装和简单使用">
@@ -379,7 +379,7 @@
 <h3 id="Sphinx简介"><a href="#Sphinx简介" class="headerlink" title="Sphinx简介"></a>Sphinx简介</h3><p>Sphinx是一个基于SQL的全文检索引擎，可以结合MySQL，postgreSQL做全文搜索。能提供比数据库本身更专业的搜索功能，使得应用程序更容易实现专业化的全文检索。</p>
 <p>Sphinx特别为一些脚本语言设计搜索API接口，如PHP, <font color="black"><strong>Python</strong></font>, Perl, Ruby….同时也为MySQL设计了一个存储引擎插件</p>
 <h3 id="Sphinx特性"><a href="#Sphinx特性" class="headerlink" title="Sphinx特性"></a>Sphinx特性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">高速索引	10MB/s</div><div class="line">高速搜索	2~4G的文件中平均查询速度不到0.1s</div><div class="line">高可用性	单CPU上最大可支持100GB的文本，100M的文档</div><div class="line"></div><div class="line">提供良好的相关性排名</div><div class="line">支持分布式搜索</div><div class="line">提供文档摘要生成</div><div class="line">提供从MySQL内部的插件式存储引擎上搜索</div><div class="line">支持布尔，短语，和近义词查询</div><div class="line">支持每个文档多个全文搜索域（默认最大32个）</div><div class="line">支持每个文档多属性</div><div class="line">支持断词</div><div class="line">支持单字节编码与utf-8编码</div><div class="line"></div><div class="line">注:</div><div class="line">支持MySQL（MyISAM和InnoDB表都支持）</div><div class="line">支持PostgreSQL</div></pre></td></tr></table></figure>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>参考sphinx wiki,deb文件安装即可. <a href="&quot;http://sphinxsearch.com/downloads/&quot;"><font color="red"><strong>点此下载</strong></font></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dpkg -i sphinxsearch_2.2.11-release-1-xenial_amd64.deb</div></pre></td></tr></table></figure></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>参考sphinx wiki,deb文件安装即可. <a href="http://sphinxsearch.com/downloads/" target="_blank" rel="external"><font color="red"><strong>点此下载</strong></font></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dpkg -i sphinxsearch_2.2.11-release-1-xenial_amd64.deb</div></pre></td></tr></table></figure></p>
 <p>到这里sphinx安装完成，我们需要使用<font color="black"><strong>sphinx-quickstart</strong></font>来完成我们的初始化配置。<br>其中会要求你回答很多的问题，比如根目录的位置，采用什么文本格式….但大部分都选择默认即可，不需要的扩展功能先选择N即可.<br>这个我后来发现并不是我们需要的东西，这个sphinx-quickstart是基于sphinx的一个文档管理生成工具，之后再去了解。</p>
 <h3 id="配置Sphinx"><a href="#配置Sphinx" class="headerlink" title="配置Sphinx"></a>配置Sphinx</h3><p>找到<strong>/etc/sphinxsearch/sphinx.conf</strong>这个文件，直接对其进行编辑即可</p>
 <p>使用vi进入文件，总体配置大致能看到如下这个结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">source 源名称1&#123;</div><div class="line">	 …</div><div class="line">	&#125;</div><div class="line">index 索引名称1&#123;</div><div class="line">	 source=源名称1</div><div class="line">	 …</div><div class="line">	&#125;</div><div class="line"></div><div class="line">source 源名称2&#123;</div><div class="line">	 …</div><div class="line">	&#125;</div><div class="line">index 索引名称2&#123;</div><div class="line">	 source = 源名称2</div><div class="line">	 …</div><div class="line">	&#125;</div><div class="line"></div><div class="line">indexer&#123;</div><div class="line">	 …</div><div class="line">	&#125;</div><div class="line">searchd&#123;</div><div class="line">	 …</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
@@ -431,7 +431,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/13/hello-world/" rel="next" title="Not Just Hello World">
+              <a href="/2017/04/14/hello-world/" rel="next" title="Not Just Hello World">
                 <i class="fa fa-chevron-left"></i> Not Just Hello World
               </a>
             
