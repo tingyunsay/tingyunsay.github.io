@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="proxy,scrapy," />
 
 
 
@@ -87,15 +87,17 @@
 
 
 
-<meta name="description" content="I used to want to make a good coder , but later found that I could only do a nicer coder.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="听云">
-<meta property="og:url" content="http://tingyunsay.github.io/index.html">
+<meta name="description" content="本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务">
+<meta name="keywords" content="proxy,scrapy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IPProxyPool开源代理项目的正确使用姿势">
+<meta property="og:url" content="http://tingyunsay.github.io/2017/04/23/IPProxyPool开源代理项目的正确使用姿势/index.html">
 <meta property="og:site_name" content="听云">
-<meta property="og:description" content="I used to want to make a good coder , but later found that I could only do a nicer coder.">
+<meta property="og:description" content="本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务">
+<meta property="og:updated_time" content="2017-04-23T06:24:26.831Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="听云">
-<meta name="twitter:description" content="I used to want to make a good coder , but later found that I could only do a nicer coder.">
+<meta name="twitter:title" content="IPProxyPool开源代理项目的正确使用姿势">
+<meta name="twitter:description" content="本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/"/>
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/04/23/IPProxyPool开源代理项目的正确使用姿势/"/>
 
 
 
 
 
-  <title> 听云 </title>
+  <title> IPProxyPool开源代理项目的正确使用姿势 | 听云 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,9 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,9 +269,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -301,10 +301,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/04/23/IPProxyPool开源代理项目的正确使用姿势/" itemprop="url">
-                  IPProxyPool开源代理项目的正确使用姿势
-                </a>
+                IPProxyPool开源代理项目的正确使用姿势
               
             
           </h1>
@@ -377,491 +374,81 @@
       
 
       
+        <h2 id="本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务"><a href="#本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务" class="headerlink" title="本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务"></a>本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务</h2><a id="more"></a>
+<h3 id="添加代理中间件"><a href="#添加代理中间件" class="headerlink" title="添加代理中间件"></a>添加代理中间件</h3><p>首先必须先对scrapy的中间件有过了解,这里主要是添加一个中间件,动态获取IPProxyPool提供的代理,指定访问次数阈值后切换新的代理,使得代理池保持最新的状态</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProxyMiddleware</span><span class="params">(object)</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">		self.url = <span class="string">"http://127.0.0.1:8000/?types=0&amp;count=10&amp;country=%E5%9B%BD%E5%86%85"</span></div><div class="line">		self.proxy = eval(requests.get(self.url).content)</div><div class="line">		self.counts = <span class="number">0</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(self,request,spider)</span>:</span></div><div class="line">		<span class="comment">#这里作一个计数器,在访问次数超过1000次之后就切换一批(10个)高匿代理,使得代理一直保持最新的状态</span></div><div class="line">		<span class="keyword">if</span> self.counts &lt; <span class="number">1000</span>:</div><div class="line">			pre_proxy = random.choice(self.proxy)</div><div class="line">			request.meta[<span class="string">'proxy'</span>] = <span class="string">'http://&#123;&#125;'</span>.format(str(pre_proxy[<span class="number">0</span>])+<span class="string">":"</span>+str(pre_proxy[<span class="number">1</span>]))</div><div class="line">			self.counts += <span class="number">1</span></div><div class="line">		<span class="keyword">else</span>:</div><div class="line">			<span class="comment">#进入到这里的这一次就不设定代理了,直接使用本机ip访问</span></div><div class="line">			self.counts = <span class="number">0</span></div><div class="line">			self.proxy = eval(requests.get(self.url).content)</div></pre></td></tr></table></figure>
+<h3 id="在settings-py中设定"><a href="#在settings-py中设定" class="headerlink" title="在settings.py中设定"></a>在settings.py中设定</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">DOWNLOADER_MIDDLEWARES = &#123;</div><div class="line">	<span class="string">'TingyunSpider.middlewares.RandomUserAgent'</span>: <span class="number">5</span>,</div><div class="line">	<span class="comment">#开启动态代理</span></div><div class="line">	<span class="string">'TingyunSpider.middlewares.ProxyMiddleware'</span>: <span class="number">30</span>,</div><div class="line">	<span class="string">'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware'</span>: <span class="number">200</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="开启IPProxyPool项目后台运行"><a href="#开启IPProxyPool项目后台运行" class="headerlink" title="开启IPProxyPool项目后台运行"></a>开启IPProxyPool项目后台运行</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#clone项目到本地</span></div><div class="line">git clone https://github.com/qiyeboy/IPProxyPool</div><div class="line"></div><div class="line"><span class="comment">#安装依赖</span></div><div class="line">pip install requests chardet web.py sqlalchemy gevent psutil lxml</div><div class="line"></div><div class="line"><span class="comment">#cd到项目根目录,并后台执行它</span></div><div class="line">nohup python IPProxy.py &amp;</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>经过实际使用,所获得的代理在可用性上还是存在问题,会出现很多的4xx错误,后续还会再考虑其他代理方式.</p>
+
+      
+    </div>
+
+    <div>
+      
         
-          <h2 id="本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务"><a href="#本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务" class="headerlink" title="本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务"></a>本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/23/IPProxyPool开源代理项目的正确使用姿势/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tingyun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="听云">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/15/qq-copyright-crawler/" itemprop="url">
-                  qq_copyright crawler
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T09:53:45+08:00">
-                2017-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/scrapy/" itemprop="url" rel="index">
-                    <span itemprop="name">scrapy</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/proxy/" rel="tag"># proxy</a>
           
-
+            <a href="/tags/scrapy/" rel="tag"># scrapy</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
         
-          <h2 id="本文介绍qq音乐版权信息抓取流程"><a href="#本文介绍qq音乐版权信息抓取流程" class="headerlink" title="本文介绍qq音乐版权信息抓取流程"></a>本文介绍qq音乐版权信息抓取流程</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/15/qq-copyright-crawler/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/04/14/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tingyun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="听云">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/04/15/qq-copyright-crawler/" rel="prev" title="qq_copyright crawler">
+                qq_copyright crawler <i class="fa fa-chevron-right"></i>
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/04/14/hello-world/" itemprop="url">
-                  Not Just Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-14T10:00:21+08:00">
-                2017-04-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/github/" itemprop="url" rel="index">
-                    <span itemprop="name">github</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="this-is-my-new-blog-welcome-to-tingyun-and-listen-to-me"><a href="#this-is-my-new-blog-welcome-to-tingyun-and-listen-to-me" class="headerlink" title="this is my new blog , welcome to tingyun and listen to me."></a>this is my new blog , welcome to tingyun and listen to me.</h1>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/14/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/04/11/what-s-this/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tingyun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/me.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="听云">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/11/what-s-this/" itemprop="url">
-                  sphinx初识
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T20:17:23+08:00">
-                2017-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/sphinx/" itemprop="url" rel="index">
-                    <span itemprop="name">sphinx</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="本文主要介绍Sphinx，并进行安装和简单使用"><a href="#本文主要介绍Sphinx，并进行安装和简单使用" class="headerlink" title="本文主要介绍Sphinx，并进行安装和简单使用"></a>本文主要介绍Sphinx，并进行安装和简单使用</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/04/11/what-s-this/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -869,6 +456,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -888,8 +479,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/me.jpg"
@@ -971,6 +571,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务"><span class="nav-number">1.</span> <span class="nav-text">本文主要介绍如何在scrapy项目中接入IPProxyPool项目的代理服务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加代理中间件"><span class="nav-number">1.1.</span> <span class="nav-text">添加代理中间件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在settings-py中设定"><span class="nav-number">1.2.</span> <span class="nav-text">在settings.py中设定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启IPProxyPool项目后台运行"><span class="nav-number">1.3.</span> <span class="nav-text">开启IPProxyPool项目后台运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1086,6 +702,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
