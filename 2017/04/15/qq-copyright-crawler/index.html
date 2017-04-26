@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍qq音乐版权信息抓取流程">
-<meta property="og:updated_time" content="2017-04-16T02:33:00.651Z">
+<meta property="og:updated_time" content="2017-04-26T10:57:38.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="qq_copyright crawler">
 <meta name="twitter:description" content="本文介绍qq音乐版权信息抓取流程">
@@ -391,6 +391,9 @@
 <p><font color="blue">根据singerid获取全部歌曲信息api,这里我设定成2000,没有谁的歌曲数比这个多,返回全部数据</font><br><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=</a><font color="blue">{singermid}</font>&amp;begin=0&amp;num=2000</p>
 <p>这个接口返回了所有的歌曲信息,每每首歌的信息里带了一个专辑id,我们提取出这个albumid,然后在这一层做一个过滤 ( <font color="red"><strong>可以使用blloomfilter文件过滤,只会多出来一个bloom文件,其他的不用关心</strong></font> ) , 使得只有不重复的albumid进入到后续的抓取</p>
 <p>这样一来,对于那些主页没有专辑信息的歌手,也能拿到所有albumid.因为我们是直接通过的api请求.</p>
+<h2 id="更新-2017-04-26"><a href="#更新-2017-04-26" class="headerlink" title="更新 2017-04-26"></a>更新 2017-04-26</h2><p>以上的方法还有一处存在问题,就是阈值不能设定2000这么大,加入设定这么大,会返回单页的数据也就是默认的20个元素, 这里我们设定为900首</p>
+<p>实现代码基于TingyunSpider模板,很多地方还存在不足,但还会继续改进</p>
+<p><a href="https://github.com/tingyunsay/TingyunSpider" target="_blank" rel="external"><font color="red"><strong>代码地址</strong></font></a></p>
 
       
     </div>
@@ -596,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍qq音乐版权信息抓取流程"><span class="nav-number">1.</span> <span class="nav-text">本文介绍qq音乐版权信息抓取流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面分析"><span class="nav-number">1.1.</span> <span class="nav-text">页面分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么不直接抓全部歌曲信息"><span class="nav-number">1.2.</span> <span class="nav-text">为什么不直接抓全部歌曲信息?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抓取流程"><span class="nav-number">1.3.</span> <span class="nav-text">抓取流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-种子页面-构造同级页-并找所有歌手id"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.种子页面,构造同级页,并找所有歌手id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-找所有专辑id"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.找所有专辑id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-解析详细信息"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.解析详细信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新-2017-04-15"><span class="nav-number">2.</span> <span class="nav-text">更新 2017-04-15</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍qq音乐版权信息抓取流程"><span class="nav-number">1.</span> <span class="nav-text">本文介绍qq音乐版权信息抓取流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面分析"><span class="nav-number">1.1.</span> <span class="nav-text">页面分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么不直接抓全部歌曲信息"><span class="nav-number">1.2.</span> <span class="nav-text">为什么不直接抓全部歌曲信息?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抓取流程"><span class="nav-number">1.3.</span> <span class="nav-text">抓取流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-种子页面-构造同级页-并找所有歌手id"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.种子页面,构造同级页,并找所有歌手id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-找所有专辑id"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.找所有专辑id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-解析详细信息"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.解析详细信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新-2017-04-15"><span class="nav-number">2.</span> <span class="nav-text">更新 2017-04-15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新-2017-04-26"><span class="nav-number">3.</span> <span class="nav-text">更新 2017-04-26</span></a></li></ol></div>
             
 
           </div>
