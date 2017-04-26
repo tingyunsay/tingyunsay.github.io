@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍qq音乐版权信息抓取流程">
-<meta property="og:updated_time" content="2017-04-26T10:57:38.255Z">
+<meta property="og:updated_time" content="2017-04-26T11:10:34.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="qq_copyright crawler">
 <meta name="twitter:description" content="本文介绍qq音乐版权信息抓取流程">
@@ -391,7 +391,7 @@
 <p><font color="blue">根据singerid获取全部歌曲信息api,这里我设定成2000,没有谁的歌曲数比这个多,返回全部数据</font><br><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=</a><font color="blue">{singermid}</font>&amp;begin=0&amp;num=2000</p>
 <p>这个接口返回了所有的歌曲信息,每每首歌的信息里带了一个专辑id,我们提取出这个albumid,然后在这一层做一个过滤 ( <font color="red"><strong>可以使用blloomfilter文件过滤,只会多出来一个bloom文件,其他的不用关心</strong></font> ) , 使得只有不重复的albumid进入到后续的抓取</p>
 <p>这样一来,对于那些主页没有专辑信息的歌手,也能拿到所有albumid.因为我们是直接通过的api请求.</p>
-<h2 id="更新-2017-04-26"><a href="#更新-2017-04-26" class="headerlink" title="更新 2017-04-26"></a>更新 2017-04-26</h2><p>以上的方法还有一处存在问题,就是阈值不能设定2000这么大,加入设定这么大,会返回单页的数据也就是默认的20个元素, 这里我们设定为900首</p>
+<h2 id="更新-2017-04-26"><a href="#更新-2017-04-26" class="headerlink" title="更新 2017-04-26"></a>更新 2017-04-26</h2><p>以上的方法还有一处存在问题,就是阈值不能设定2000这么大,加入设定这么大,会返回单页的数据也就是默认的20个元素, 这里我们设定为900首<br><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=</a><font color="blue">{singermid}</font>&amp;begin=0&amp;num=900</p>
 <p>实现代码基于TingyunSpider模板,很多地方还存在不足,但还会继续改进</p>
 <p><a href="https://github.com/tingyunsay/TingyunSpider" target="_blank" rel="external"><font color="red"><strong>代码地址</strong></font></a></p>
 
