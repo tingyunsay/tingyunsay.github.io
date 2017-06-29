@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="scrapy,qq_music," />
+  <meta name="keywords" content="portia,可视化爬虫," />
 
 
 
@@ -87,17 +87,22 @@
 
 
 
-<meta name="description" content="本文介绍qq音乐版权信息抓取流程">
-<meta name="keywords" content="scrapy,qq_music">
+<meta name="description" content="本文介绍Portia的学习使用">
+<meta name="keywords" content="portia,可视化爬虫">
 <meta property="og:type" content="article">
-<meta property="og:title" content="qq_copyright crawler">
-<meta property="og:url" content="http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/index.html">
+<meta property="og:title" content="Portia---一款开源可视化爬虫工具">
+<meta property="og:url" content="http://tingyunsay.github.io/2017/06/29/Portia-一款开源可视化爬虫工具/index.html">
 <meta property="og:site_name" content="听云">
-<meta property="og:description" content="本文介绍qq音乐版权信息抓取流程">
-<meta property="og:updated_time" content="2017-04-26T11:10:34.516Z">
+<meta property="og:description" content="本文介绍Portia的学习使用">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/06/29/Portia-一款开源可视化爬虫工具/1.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/06/29/Portia-一款开源可视化爬虫工具/2.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/06/29/Portia-一款开源可视化爬虫工具/3.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/06/29/Portia-一款开源可视化爬虫工具/4.jpg">
+<meta property="og:updated_time" content="2017-06-29T15:08:42.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="qq_copyright crawler">
-<meta name="twitter:description" content="本文介绍qq音乐版权信息抓取流程">
+<meta name="twitter:title" content="Portia---一款开源可视化爬虫工具">
+<meta name="twitter:description" content="本文介绍Portia的学习使用">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2017/06/29/Portia-一款开源可视化爬虫工具/1.jpg">
 
 
 
@@ -125,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/"/>
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/06/29/Portia-一款开源可视化爬虫工具/"/>
 
 
 
 
 
-  <title> qq_copyright crawler | 听云 </title>
+  <title> Portia---一款开源可视化爬虫工具 | 听云 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +285,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/06/29/Portia-一款开源可视化爬虫工具/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
@@ -301,7 +306,7 @@
             
             
               
-                qq_copyright crawler
+                Portia---一款开源可视化爬虫工具
               
             
           </h1>
@@ -316,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T09:53:45+08:00">
-                2017-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-29T12:09:07+08:00">
+                2017-06-29
               </time>
             
 
@@ -339,8 +344,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/scrapy/" itemprop="url" rel="index">
-                    <span itemprop="name">scrapy</span>
+                  <a href="/categories/spider/" itemprop="url" rel="index">
+                    <span itemprop="name">spider</span>
                   </a>
                 </span>
 
@@ -374,26 +379,29 @@
       
 
       
-        <h2 id="本文介绍qq音乐版权信息抓取流程"><a href="#本文介绍qq音乐版权信息抓取流程" class="headerlink" title="本文介绍qq音乐版权信息抓取流程"></a>本文介绍qq音乐版权信息抓取流程</h2><a id="more"></a>
-<h3 id="页面分析"><a href="#页面分析" class="headerlink" title="页面分析"></a>页面分析</h3><p>由于qq音乐歌曲信息过于多,这里不采取和之前一样抓取页面的过程,假设正常要抓取页面,那将造成数千万次的页面访问(<font color="red"><strong>更麻烦其中大部分页面需要渲染</strong></font>,效率是大问题,负载也是问题),这不是一个良好的爬虫做的事情,所以这里采用<font color="blue">找接口</font>的方式,而且<font color="blue">qq音乐的绝大部分有效数据都是通过json传递的</font>,所以也不是很麻烦,f12分析一下就好了</p>
-<p>这里的版权信息是基于album信息中的歌单抓取,通过抓取一个歌手所有album的歌单信息,其中有我们需要的大部分信息</p>
-<h3 id="为什么不直接抓全部歌曲信息"><a href="#为什么不直接抓全部歌曲信息" class="headerlink" title="为什么不直接抓全部歌曲信息?"></a>为什么不直接抓全部歌曲信息?</h3><p>答:歌曲信息我试过了,但信息量较少,只能是说除了歌曲名字和歌手名字,其他都是无效数据,而通过album抓则可能会漏掉部分歌曲(<font color="blue">有的歌手没有album,只有一些单曲;还有的歌手有些歌曲并没有放到album中,抓完所有的album会发现缺少了一些歌</font>),但能保证抓取的信息都是带有版权信息的大部分信息(公司,时间,专辑名等….)</p>
-<h3 id="抓取流程"><a href="#抓取流程" class="headerlink" title="抓取流程"></a>抓取流程</h3><h4 id="1-种子页面-构造同级页-并找所有歌手id"><a href="#1-种子页面-构造同级页-并找所有歌手id" class="headerlink" title="1.种子页面,构造同级页,并找所有歌手id"></a>1.种子页面,构造同级页,并找所有歌手id</h4><p><a href="https://c.y.qq.com/v8/fcg-bin/v8.fcg?channel=singer&amp;page=list&amp;key=all_all_all&amp;pagesize=100&amp;format=jsonp&amp;pagenum=1" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/v8.fcg?channel=singer&amp;page=list&amp;key=all_all_all&amp;pagesize=100&amp;format=jsonp&amp;pagenum=1</a></p>
-<font color="red"><strong>todo</strong></font>:找到最大page,生成同级page,循环遍历,接下来从这些页面中找歌手的<font color="blue">singerid</font>
-
-<h4 id="2-找所有专辑id"><a href="#2-找所有专辑id" class="headerlink" title="2.找所有专辑id"></a>2.找所有专辑id</h4><p><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_album.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_album.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=</a><font color="blue">{singerid}</font>&amp;order=time&amp;begin=0&amp;num=150</p>
-<p>#这里我们设定成150个专辑了,没有歌手有这么多的专辑数,所以都是返回所有</p>
-<p><font color="red"><strong>todo</strong></font>:找到其中的<font color="blue">albumid</font>,构造成如下页面</p>
-<h4 id="3-解析详细信息"><a href="#3-解析详细信息" class="headerlink" title="3.解析详细信息"></a>3.解析详细信息</h4><p><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_album_info_cp.fcg?albummid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_album_info_cp.fcg?albummid=</a><font color="blue">{albumid}</font>&amp;g_tk=5381&amp;format=jsonp</p>
-<p><font color="red"><strong>todo</strong></font>:从其中提取所有需要的信息</p>
-<p>如果后续能发现还有什么更好的接口,保持更新</p>
-<h2 id="更新-2017-04-15"><a href="#更新-2017-04-15" class="headerlink" title="更新 2017-04-15"></a>更新 2017-04-15</h2><p>以上这种方法在实践过程中出现了问题:qq音乐歌手很多都没有专辑专门的显示页面,也就是说第二步无法根据singerid获得所有albumid,也就没法进行下一步的抓取.<br>换种策略</p>
-<p><font color="blue">根据singerid获取全部歌曲信息api,这里我设定成2000,没有谁的歌曲数比这个多,返回全部数据</font><br><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=</a><font color="blue">{singermid}</font>&amp;begin=0&amp;num=2000</p>
-<p>这个接口返回了所有的歌曲信息,每每首歌的信息里带了一个专辑id,我们提取出这个albumid,然后在这一层做一个过滤 ( <font color="red"><strong>可以使用blloomfilter文件过滤,只会多出来一个bloom文件,其他的不用关心</strong></font> ) , 使得只有不重复的albumid进入到后续的抓取</p>
-<p>这样一来,对于那些主页没有专辑信息的歌手,也能拿到所有albumid.因为我们是直接通过的api请求.</p>
-<h2 id="更新-2017-04-26"><a href="#更新-2017-04-26" class="headerlink" title="更新 2017-04-26"></a>更新 2017-04-26</h2><p>以上的方法还有一处存在问题,就是阈值不能设定2000这么大,加入设定这么大,会返回单页的数据也就是默认的20个元素, 这里我们设定为900首<br><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=</a><font color="blue">{singermid}</font>&amp;begin=0&amp;num=900</p>
-<p>实现代码基于TingyunSpider模板,很多地方还存在不足,但还会继续改进</p>
-<p><a href="https://github.com/tingyunsay/TingyunSpider" target="_blank" rel="external"><font color="red"><strong>代码地址</strong></font></a></p>
+        <h2 id="本文介绍Portia的学习使用"><a href="#本文介绍Portia的学习使用" class="headerlink" title="本文介绍Portia的学习使用"></a>本文介绍Portia的学习使用</h2><a id="more"></a>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>由于最近在写一个可供配置的爬虫模板，方便快速扩展新的抓取业务，并且最后目标是将其做成一个可视化的配置服务。还正在进行中，并且有点没有头绪，所以想参考网上现有的轮子，看看能不能找到点新的思路。</p>
+<p>而我之前的方法是将整个网站的抓取流程写成一个同样的模式，即一层一层抓，每一层进来都做同样的几步判断（如：是否需要分页，是否需要渲染，是否是json页面，是否要进入到下一层…..）再将相同的规则代码提取出来写到一个json文件中，之后通过配置一个json文件能达到新建爬虫任务的需求。</p>
+<p>但事实是遇到的页面情况太多太杂，所以还远远不能达到通用的效果。由此，开始看轮子之路。</p>
+<h3 id="安装portia"><a href="#安装portia" class="headerlink" title="安装portia"></a>安装portia</h3><h4 id="方法一-Docker"><a href="#方法一-Docker" class="headerlink" title="方法一:Docker"></a>方法一:Docker</h4><p>此处参考<a href="http://portia.readthedocs.io/en/latest/installation.html" target="_blank" rel="external"><font color="red"><strong>官方文档</strong></font></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># &lt; ..FOLDER&gt; 路径自定义即可 ， 可在后面加上portia的版本</div><div class="line">docker run -i -t --rm -v &lt;PROJECTS_FOLDER&gt;:/app/data/projects:rw -p 9001:9001 scrapinghub/portia</div><div class="line"></div><div class="line"># git上是如下语句</div><div class="line">docker run -v ~/portia_projects:/app/data/projects:rw -p 9001:9001 scrapinghub/portia</div></pre></td></tr></table></figure></p>
+<p>等待拉取完之后即可在9001端口看到portia的服务页面。但是拉取的过程实在是太慢，但是由于docker需要拉取的镜像实在太大，直接从国外网站下拉根本拉不到，所以这里我们需要使用到阿里云的docker加速器。</p>
+<p>具体方法参见<strong>[阿里云docker加速器]</strong>(<a href="https://cr.console.aliyun.com/#/accelerator" target="_blank" rel="external">https://cr.console.aliyun.com/#/accelerator</a>)</p>
+<h4 id="方法二-在Virtualenv虚拟环境中安装"><a href="#方法二-在Virtualenv虚拟环境中安装" class="headerlink" title="方法二:在Virtualenv虚拟环境中安装"></a>方法二:在Virtualenv虚拟环境中安装</h4><p><a href="http://www.codeweblog.com/%E3%80%8E%E7%9B%97%E6%A2%A6%E7%A9%BA%E9%97%B4%E3%80%8F%E7%A5%9E%E5%99%A8-portia%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E7%AE%80%E8%BF%B0/" target="_blank" rel="external"><font color="red">参考网站</font></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">pip install virtualenv</div><div class="line"></div><div class="line">virtualenv tingyun</div><div class="line"></div><div class="line">source tingyun/bin/activate</div><div class="line"></div><div class="line">cd tingyun</div><div class="line"></div><div class="line">git clone https://github.com/scrapinghub/portia</div><div class="line"></div><div class="line">cd portia/</div><div class="line"></div><div class="line"><span class="comment">#安装必要的包</span></div><div class="line">sudo ./provision.sh install_deps install_splash install_python_deps</div><div class="line"></div><div class="line"><span class="comment">#启动环境</span></div><div class="line">export PYTHONPATH=<span class="string">'/你的路径/portia_server:/你的路径/slyd:/你的路径/slybot'</span></div><div class="line">slyd/bin/slyd -p <span class="number">9002</span> -r portiaui/dist &amp;</div><div class="line">portia_server/manage.py runserver</div></pre></td></tr></table></figure></p>
+<p>安装完成后通过进入 <a><a href="http://localhost:9001/static/main.html" target="_blank" rel="external">http://localhost:9001/static/main.html</a></a></p>
+<p>注：这里安装报错，在Ubuntu16.04，python2.7.13下。提示PyQt未安装。最后博主并没有用这种办法安装成功，需要踩的坑太多了，选择了放弃。（具体遇到的错误，可以查看这篇博文:<a href="https://www.biaodianfu.com/centos-7-install-portia-log.html" target="_blank" rel="external">centos7安装Portia记录</a>）</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="新建project"><a href="#新建project" class="headerlink" title="新建project"></a>新建project</h4><p>点击　New spider 创建一个新的spider<br>右边侧栏会提示你输入一个url，Portia会将网页的url作为一个start page。<br>这个start page一般被用来当做seek（种子），用来获得更多的链接。</p>
+<p><font color="blue"><strong>图1</strong></font><br><img src="/2017/06/29/Portia-一款开源可视化爬虫工具/1.jpg" alt="示例图1"></p>
+<p>Portia支持创建 page sample（页面样本），当你创建了一个页面样本，就可以调度后面的任务按照你设定的模板抓取元素。（所以我们需要先创建这样的模板）</p>
+<h4 id="page-sample"><a href="#page-sample" class="headerlink" title="page sample"></a>page sample</h4><p>创建了sample之后，我们可以开始注释页面。注释会将页面中的一条数据链接到项目字段。这些即是我们想要提取的数据</p>
+<p><font color="blue"><strong>图2</strong></font><br><img src="/2017/06/29/Portia-一款开源可视化爬虫工具/2.jpg" alt="示例图2"></p>
+<p><font color="blue"><strong>图3</strong></font><br><img src="/2017/06/29/Portia-一款开源可视化爬虫工具/3.jpg" alt="示例图3"></p>
+<p>如图中所示：<br>    第一步：1.我们鼠标移到页面中，会出现类似图中的+（加号），选中想要的数据并点击它<br>    第二步：2中出现一个新的字段field1，field2….(如图三)，可以自己更改字段的名字，重复第二步标识所有需要的字段<br>    第三部：再选中3中的按钮，页面会自动将同类的字段自动标识出来，并在页面上以相同颜色显示</p>
+<p>可以在最右侧看到我们选中的项目，将所有需要提取的items注释完之后，关闭样本。继续配置，方便后续的抓取。</p>
+<p>最后，我们可以在右边看到我们需要的数据，json如下格式</p>
+<p><font color="blue"><strong>图4</strong></font><br><img src="/2017/06/29/Portia-一款开源可视化爬虫工具/4.jpg" alt="示例图4"></p>
+<h4 id="配置抓取"><a href="#配置抓取" class="headerlink" title="配置抓取"></a>配置抓取</h4><p>为了抓取某个站点，Portia需要一个或多个urls作为种子页面，才能去访问更多的links。我们需要在START PAGES中定义这些种子urls。点击添加，输入即可。</p>
+<p>默认情况下，Portia遵循所有域内URL。在许多情况下，我们需要限制Portia将访问的页面（否则会无边无际去抓取…）<br>这里，我们通过设定<font color="blue"><strong>跟随(follow)白名单</strong></font>和<font color="blue"><strong>排除黑名单</strong></font>的模式。可以通过更改<font color="blue"><strong>配置URL模式</strong></font>来配置这些。<br>for example: Amazon产品的URL包含/gp/，因此可以将其设定为follow（跟随）模式，Portia将会只知道这样的URL</p>
+<h4 id="启动程序"><a href="#启动程序" class="headerlink" title="启动程序"></a>启动程序</h4><p>未完待续….</p>
 
       
     </div>
@@ -423,9 +431,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/scrapy/" rel="tag"># scrapy</a>
+            <a href="/tags/portia/" rel="tag"># portia</a>
           
-            <a href="/tags/qq-music/" rel="tag"># qq_music</a>
+            <a href="/tags/可视化爬虫/" rel="tag"># 可视化爬虫</a>
           
         </div>
       
@@ -438,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/23/IPProxyPool开源代理项目的正确使用姿势/" rel="next" title="IPProxyPool开源代理项目的正确使用姿势">
-                <i class="fa fa-chevron-left"></i> IPProxyPool开源代理项目的正确使用姿势
+              <a href="/2017/06/29/hello-world/" rel="next" title="Not Just Hello World">
+                <i class="fa fa-chevron-left"></i> Not Just Hello World
               </a>
             
           </div>
@@ -448,8 +456,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/11/what-s-this/" rel="prev" title="sphinx初识">
-                sphinx初识 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/28/scrapyjs-splash服务无法访问解决/" rel="prev" title="scrapyjs-splash服务无法访问解决">
+                scrapyjs-splash服务无法访问解决 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -599,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍qq音乐版权信息抓取流程"><span class="nav-number">1.</span> <span class="nav-text">本文介绍qq音乐版权信息抓取流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面分析"><span class="nav-number">1.1.</span> <span class="nav-text">页面分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么不直接抓全部歌曲信息"><span class="nav-number">1.2.</span> <span class="nav-text">为什么不直接抓全部歌曲信息?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抓取流程"><span class="nav-number">1.3.</span> <span class="nav-text">抓取流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-种子页面-构造同级页-并找所有歌手id"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.种子页面,构造同级页,并找所有歌手id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-找所有专辑id"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.找所有专辑id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-解析详细信息"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.解析详细信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新-2017-04-15"><span class="nav-number">2.</span> <span class="nav-text">更新 2017-04-15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新-2017-04-26"><span class="nav-number">3.</span> <span class="nav-text">更新 2017-04-26</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍Portia的学习使用"><span class="nav-number">1.</span> <span class="nav-text">本文介绍Portia的学习使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装portia"><span class="nav-number">1.2.</span> <span class="nav-text">安装portia</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一-Docker"><span class="nav-number">1.2.1.</span> <span class="nav-text">方法一:Docker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二-在Virtualenv虚拟环境中安装"><span class="nav-number">1.2.2.</span> <span class="nav-text">方法二:在Virtualenv虚拟环境中安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">1.3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建project"><span class="nav-number">1.3.1.</span> <span class="nav-text">新建project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#page-sample"><span class="nav-number">1.3.2.</span> <span class="nav-text">page sample</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置抓取"><span class="nav-number">1.3.3.</span> <span class="nav-text">配置抓取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动程序"><span class="nav-number">1.3.4.</span> <span class="nav-text">启动程序</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
