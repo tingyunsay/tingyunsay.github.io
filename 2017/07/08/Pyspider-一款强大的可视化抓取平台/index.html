@@ -1,0 +1,791 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="可视化爬虫,pysipder," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本文介绍Pyspider的使用">
+<meta name="keywords" content="可视化爬虫,pysipder">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pyspider---一款强大的可视化抓取平台">
+<meta property="og:url" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/index.html">
+<meta property="og:site_name" content="听云">
+<meta property="og:description" content="本文介绍Pyspider的使用">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/1.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/2.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/3.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/4.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/5.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/6.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/7.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/8.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/9.jpg">
+<meta property="og:updated_time" content="2017-07-08T19:13:24.218Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pyspider---一款强大的可视化抓取平台">
+<meta name="twitter:description" content="本文介绍Pyspider的使用">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/"/>
+
+
+
+
+
+  <title> Pyspider---一款强大的可视化抓取平台 | 听云 </title>
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43aefd5fb3f7828b2058c874664c6486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">听云</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">听云的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/07/08/Pyspider-一款强大的可视化抓取平台/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tingyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听云">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Pyspider---一款强大的可视化抓取平台
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-08T19:30:31+08:00">
+                2017-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="本文介绍Pyspider的使用"><a href="#本文介绍Pyspider的使用" class="headerlink" title="本文介绍Pyspider的使用"></a>本文介绍Pyspider的使用</h2><a id="more"></a>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>续上一篇，Pyspider也是网上比较出名的开源可视化爬虫框架，所以在尝试过Portia之后就开始使用它。对于它两的可视化其实都差不多，都是通过点击css选择器自动生成抓取规则。pysipder写了一个可视化的控制页面，让你能看见你的抓取任务的状况（速度/工作情况/抓取结果….），并且能通过配置下载速度和并发数控制抓取的快慢。且有追踪的log日志，记录了抓取过的每一条url链的情况</p>
+<p>通过一个星期的使用，决定将之前的抓取任务都迁移到pyspider上，并考虑在后续为其添加字段检验的功能</p>
+<h3 id="安装Pyspider"><a href="#安装Pyspider" class="headerlink" title="安装Pyspider"></a>安装Pyspider</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install pyspider</div></pre></td></tr></table></figure>
+<p><font size="4" color="red">Focus</font>    Centos安装正常，Ubuntu安装过程中出现错误，模块pycurl安装失败，解决方法<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get install python-pycurl</div><div class="line"></div><div class="line">pip install pyspider</div></pre></td></tr></table></figure></p>
+<p>默认启动直接输入 pyspider即可，输入<a href="localhost:5000" target="_blank" rel="external"><font colot="red">localhost:5000</font></a>进入到我们的控制台</p>
+<p>可以指定config.json文件启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> &quot;webui&quot;: &#123;</div><div class="line"> 	&quot;port&quot;: 33333,</div><div class="line">     	&quot;username&quot;: &quot;tingyun&quot;,</div><div class="line">	&quot;password&quot;: &quot;helloworld&quot;,</div><div class="line">	&quot;need-auth&quot;: true</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>更多配置参考<a href="http://www.pyspider.cn/book//Deployment-6.html" target="_blank" rel="external"><font color="red">pyspider中文网</font></a></p>
+<h3 id="Demo—抓取腾讯视频的电影信息"><a href="#Demo—抓取腾讯视频的电影信息" class="headerlink" title="Demo—抓取腾讯视频的电影信息"></a>Demo—抓取腾讯视频的电影信息</h3><p>这里我们来实际抓取一个网站，入门pyspider的使用</p>
+<h4 id="Create-Project"><a href="#Create-Project" class="headerlink" title="Create Project"></a>Create Project</h4><p>点击控制面板中的Create，输入如下信息<br><img src="/2017/07/08/Pyspider-一款强大的可视化抓取平台/1.jpg" alt="示例图1"><br>project的名字不可更改，但你注意我这里的Start Url是随便填的，因为在项目中是可以随便改变的</p>
+<h4 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h4><p>Sample Code<br><img src="/2017/07/08/Pyspider-一款强大的可视化抓取平台/2.jpg" alt="示例图2"><br>代码的基本含义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">crawl_config	全局设定，遇到反爬的情况需要在其中配置对应的措施(如代理,UA,Cookies,渲染  </div><div class="line">....)，当然你也可以在下面的crawl函数中局部设定</div><div class="line"></div><div class="line">on_start	项目的入口，self.crawl(&quot;Start Url&quot;,callback=self.index_page)，  </div><div class="line">这里传递进来了你在创建项目的初始url.只能存在一个</div><div class="line"></div><div class="line">self.crawl	项目的核心函数，支持多个参数，默认是待爬url和callback函数.将抓取url的  </div><div class="line">response返回给callback函数</div><div class="line"></div><div class="line">index_page	回调函数，名字不重要，只需要你在callback的时候写好对应的函数名，可以  </div><div class="line">有多个</div><div class="line"></div><div class="line">detail_page	处理详情页，将处理结果以json格式的result返回给结果处理函数on_result</div><div class="line"></div><div class="line">on_result	默认是存储到data目录下的result.db中，可以显示申明重写这个函数，其参数为  </div><div class="line">(self , result)</div></pre></td></tr></table></figure></p>
+<h5 id="Write-Code"><a href="#Write-Code" class="headerlink" title="Write Code"></a>Write Code</h5><p>首先更改我们找到的入口页面，腾讯视频下的电影类别分类<a href="http://v.qq.com/x/list/movie?subtype=-1&amp;offset=0" target="_blank" rel="external">http://v.qq.com/x/list/movie?subtype=-1&amp;offset=0</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@every(minutes=24 * 60)</div><div class="line">    def on_start(self):</div><div class="line">        self.crawl(&apos;http://v.qq.com/x/list/movie?subtype=-1&amp;offset=0#0&apos;, callback=self.index_page)</div></pre></td></tr></table></figure></p>
+<p>点击左边调试栏中的run按钮，底下会出现一个follow，表示这个页面中符合你当前（index_page）crawl函数中的规则的url，默认的规则是全部能提取到的url，但我们只关心我们想要的页面，这个规则我们怎么写呢？<br>点击follow左边的web按钮，我们进到如下的页面，这是pyspider为你加载好的静态页面<br><img src="/2017/07/08/Pyspider-一款强大的可视化抓取平台/3.jpg" alt="示例图3"></p>
+<p><font color="blue">体现我们的可视化的时刻到了</font>，点击最左边的enable css selector helper，当你的鼠标再移到页面中，会发现鼠标移到的地方变成了黄色，这即使和Portia一样的地方。我们点击下图红色框中的copy按钮，粘贴到index_page中第一个self.crawl()中去<br><img src="/2017/07/08/Pyspider-一款强大的可视化抓取平台/4.jpg" alt="示例图4"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@config(age=10 * 24 * 60 * 60)</div><div class="line">def index_page(self, response):</div><div class="line">    for each in response.doc(&apos;.figure_title &gt; a&apos;).items():</div><div class="line">	self.crawl(each.attr.href, callback=self.detail_page)</div></pre></td></tr></table></figure></p>
+<p>因为这些页面是我们的final_page，所以直接回调给detail_page<br>继续往下拉，我们能看到很多的分页，我们让项目按照下一页的方式进行抓取，同理用enable css selector helper选出下一页的css规则再写一个crawl函数。下一页的解析规则和这一页是一样的，都是将这一页的final_page回调给detail_page，同时继续分析下一页</p>
+<p><font color="blue">合起来的代码即是</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@config(age=10 * 24 * 60 * 60)</div><div class="line">    def index_page(self, response):</div><div class="line">        for each in response.doc(&apos;.figure_title &gt; a&apos;).items():</div><div class="line">            self.crawl(each.attr.href, callback=self.detail_page)</div><div class="line">        self.crawl([x.attr.href for x in response.doc(&apos;[class=&quot;page_next&quot;]&apos;).items()],callback=self.index_page)</div></pre></td></tr></table></figure></p>
+<h5 id="Detail-Page"><a href="#Detail-Page" class="headerlink" title="Detail Page"></a>Detail Page</h5><p>这里就是类似上一步的过程重复了，pyspider内置了一个pyquery解析response，并将得到的结果填充到对应的字段中</p>
+<p><font color="blue"><strong>常用的有</strong></font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">response.doc(&apos;css rules&apos;).text()  /  resposne.content  /  response.json[&apos;key1&apos;][&apos;key2&apos;]....</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">@config(priority=2)</div><div class="line">    def detail_page(self, response):</div><div class="line">        return &#123;</div><div class="line">            &quot;url&quot;: response.url,</div><div class="line">            &quot;site_name&quot;:&quot;tencent_movie&quot;,</div><div class="line">            &quot;movie_name&quot;:response.doc(&apos;._base_title&apos;).text(),</div><div class="line">            &quot;publish_time&quot;:re.search(&quot;(?&lt;=uploadDate\&quot; content=).*(?=/)&quot;,response.content).group(),</div><div class="line">            &quot;primary_stars&quot;:response.doc(&apos;.video_info_cell_2 &gt; div:contains(&quot;导演&quot;)&apos;).text().split(&apos; &apos;)[3:],</div><div class="line">            &quot;director&quot;:response.doc(&apos;.video_info_cell_2 &gt; div:contains(&quot;导演&quot;)&apos;).text().split(&apos; &apos;)[1],</div><div class="line">            &quot;area&quot;:re.search(&quot;(?&lt;=contentLocation\&quot; content=).*(?=/)&quot;,response.content).group(),</div><div class="line">            &quot;style_classify&quot;:response.doc(&apos;.video_info_cell_1 a&apos;).text(),</div><div class="line">            &quot;language&quot;:re.search(&quot;(?&lt;=inLanguage\&quot; content=).*(?=/)&quot;,response.content).group(),</div><div class="line">            &quot;comment_counts&quot;:response.doc(&apos;[id=&quot;commentTotleNum&quot;] &gt; a&apos;).text(),</div><div class="line">            &quot;introduce&quot;:re.search(&quot;(?&lt;=description\&quot; content=).*?(?=&gt;)&quot;,response.content,re.S).group(),</div><div class="line">            &quot;fav_counts&quot;:None,</div><div class="line">            &quot;step_counts&quot;:None,</div><div class="line">            &quot;score_level&quot;:response.doc(&apos;.video_score&apos;).text(),</div><div class="line">            &quot;score_counts&quot;:None,</div><div class="line">            &quot;fans_counts&quot;:None,</div><div class="line">            &quot;index&quot;:response.doc(&apos;.douban_score &gt; .num&apos;).text(),</div><div class="line">            &quot;evaluation_counts&quot;:None,</div><div class="line">            &quot;vote_counts&quot;:None,</div><div class="line">            &quot;play_counts&quot;:response.doc(&apos;.icon_text &gt; em&apos;).text(),</div><div class="line">            &quot;duration&quot;:float(re.search(r&quot;(?&lt;=duration\&quot;:\&quot;)\d+?(?=\&quot;)&quot;,requests.get(&quot;https://union.video.qq.com/fcgi-bin/data?otype=json&amp;tid=682&amp;appid=20001238&amp;appkey=6c03bbe9658448a4&amp;idlist=&#123;list_id&#125;&quot;.format(list_id=[x.attr.id for x in response.doc(&apos;[class=&quot;player_figure&quot;]&apos;).items()][0])).content).group())/3600,</div><div class="line"></div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<p>python的可操作性是很高的，只要你引入包就什么都能做，像我在如上的代码中，因为有些数据并不能从静态网页上得到，我通过了抓包的方式找到了获取这个参数的接口，经由requests向其发送请求获取我需要的数据，最后填充到duration字段中</p>
+<p>duration—电影的时长，为秒数，将其转换成float并除以3600s，得到时长</p>
+<h5 id="Result-Test"><a href="#Result-Test" class="headerlink" title="Result Test"></a>Result Test</h5><p>再写完如上代码，继续点击run，检查我们的字段是不是都提取正确，像之前那种网页无法获取我们就需要使用其他方法(比如渲染，接口)<br><img src="/2017/07/08/Pyspider-一款强大的可视化抓取平台/5.jpg" alt="示例图5"><br>具体的json数据如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&#123;&apos;area&apos;: &apos;&quot;美国&quot; &apos;,</div><div class="line"> &apos;comment_counts&apos;: &apos;&apos;,</div><div class="line"> &apos;director&apos;: u&apos;莱塞·霍尔斯道姆&apos;,</div><div class="line"> &apos;duration&apos;: 1.6683333333333332,</div><div class="line"> &apos;evaluation_counts&apos;: None,</div><div class="line"> &apos;fans_counts&apos;: None,</div><div class="line"> &apos;fav_counts&apos;: None,</div><div class="line"> &apos;index&apos;: &apos;7.7&apos;,</div><div class="line"> &apos;introduce&apos;: &apos;&quot;影片以汪星人的视角展现狗狗和人类的微妙情感，一只狗狗陪伴小主人长大成人，甚至为他追到了女朋友，后来它年迈死去又转世投胎变成其他性别和类型的汪，第二次轮回狗狗变成了警犬威风凛凛，再次转轮回，又成了陪伴一位单身女青年的小柯基犬。在经历了多次轮回之后，最终回到最初的主人身边。&quot;&apos;,</div><div class="line"> &apos;language&apos;: &apos;&quot;英语&quot; &apos;,</div><div class="line"> &apos;movie_name&apos;: u&apos;一条狗的使命(英语版)&apos;,</div><div class="line"> &apos;play_counts&apos;: u&apos;1.3亿&apos;,</div><div class="line"> &apos;primary_stars&apos;: [u&apos;乔什·加德&apos;,</div><div class="line">                   u&apos;布丽特·罗伯森&apos;,</div><div class="line">                   u&apos;丹尼斯·奎德&apos;],</div><div class="line"> &apos;publish_time&apos;: &apos;&quot;2017-03-03&quot; &apos;,</div><div class="line"> &apos;score_counts&apos;: None,</div><div class="line"> &apos;score_level&apos;: &apos;8.8&apos;,</div><div class="line"> &apos;site_name&apos;: &apos;tencent_movie&apos;,</div><div class="line"> &apos;step_counts&apos;: None,</div><div class="line"> &apos;style_classify&apos;: u&apos;美国 剧情 喜剧&apos;,</div><div class="line"> &apos;url&apos;: &apos;https://v.qq.com/x/cover/950h5k5p7h7m2qn.html&apos;,</div><div class="line"> &apos;vote_counts&apos;: None&#125;</div></pre></td></tr></table></figure></p>
+<p>敲完代码，或者将如上三段代码粘贴到你的项目中，点击右上角的saved，再用run测试下我们的代码，没有出现错误即可回到我们的控制台</p>
+<h4 id="运行Demo"><a href="#运行Demo" class="headerlink" title="运行Demo"></a>运行Demo</h4><p>当我们修改完代码，默认项目的status会变成亮黄色的CHECKING。点击它，将其设定成RUNNING，确定.<br><img src="/2017/07/08/Pyspider-一款强大的可视化抓取平台/6.jpg" alt="示例图6"><br>最后点击这一行最右侧的Run按钮，点击完如果你的任务执行得快的话，能看见run左边的任务状态栏的颜色由灰色变成了蓝色，表示任务开始</p>
+<p><font color="red"><strong>查看当前的任务状态，点击Run旁边的Active Tasks，能看到最近抓取记录，在其中你能追踪任务的状态以及查看任务失败的原因</strong></font><br><img src="/2017/07/08/Pyspider-一款强大的可视化抓取平台/7.jpg" alt="示例图7"><br>如图所示表面这条链接已经被放在tasks队列中，其原因有两种:1.任务被暂停    2.失败重试，该链被放到tasks队列的尾部等待重试</p>
+<p>上图中的这条链接是失败重试的链，具体错误信息也能在下拉的页面中找到，如下图<br><img src="/2017/07/08/Pyspider-一款强大的可视化抓取平台/8.jpg" alt="示例图8"><br>显示任务已经运行到了detail_page处，错误原因是list index out of range</p>
+<p><font color="red"><strong>这样以来定位错的原因也变得很方便了，我此处的有两种：</strong></font><br>1.是由于传递给接口的参数并没有找到，导致返回数据失败，错误<br>2.有些电影没有导演(<a href="https://v.qq.com/x/cover/q3u3zmztifdspe5.html?new=1" target="_blank" rel="external">如这部</a>)，导致解析失败，无法return</p>
+<p>所以后续考虑做在抓取时候也作字段容错，单个字段出错给空置，起码保证正常的数据返回</p>
+<h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><p><img src="/2017/07/08/Pyspider-一款强大的可视化抓取平台/9.jpg" alt="示例图9"></p>
+<p><font color="red"><strong>关于图中的一些字段意思如下</strong></font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">1.队列统计：方便查看爬虫状态，优化爬虫爬取速度新增的状态统计。</div><div class="line"> 每个组件之间的数字就是对应不同队列的排队数量，通常就是0或个位数，如果达到了几十甚至一百说明下游组件出现了瓶颈或错误，需要分析处理</div><div class="line"></div><div class="line">2.组名：新建project后一般是不能修改project名字，如果需要特殊标记，可以通过更改group名字。</div><div class="line">  注：组名改为delete后如果状态是stop状态，24小时后会被系统自动删除</div><div class="line"></div><div class="line">3.运行状态：五个</div><div class="line">     TODO ： 新建项目后的默认状态</div><div class="line">     STOP ：　停止</div><div class="line">     CHECKING ：只要修改了代码，自动变成检查状态</div><div class="line">     DEBUG ：在这个模式下运行，遇到错误信息会停止继续运行</div><div class="line">     RUNNING :  这里运行时遇到错误会尝试，如果还是错误会跳过这个任务继续运行</div><div class="line"></div><div class="line">4.速度控制：rate是每秒爬取页面数 ， burst是并发数 ，如1/3是三个并发，每秒爬取一个页面。</div><div class="line"></div><div class="line">5.简单统计：5m是五分钟内任务执行的情况 ， 1h是一小时内任务统计 ， 1d是一天内运行任务统计 ， all是所有任务统计</div><div class="line"></div><div class="line">6.任务列表：显示最新任务列表，方便查看状态，查看错误等</div><div class="line"></div><div class="line">7.结果查看：查看项目爬取的结果（默认是保存到sqlite3 db中，支持以json和csv格式下载）</div></pre></td></tr></table></figure></p>
+<p>更详细的解释可以查看<a href="http://www.pyspider.cn/jiaocheng/pyspider-webui-12.html" target="_blank" rel="external"><font color="red">官方解释</font></a></p>
+<p>点击Result可以查看到抓取到的数据，点击下载或者使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://127.0.0.1:5000/results/dump/tencent_movie.json</div></pre></td></tr></table></figure></p>
+<p>获取结果到当前路径</p>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>下章会对使用pyspider的使用过程中遇到的各种情况作一个总结，踩坑模式开启<br>未完待续…..</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/可视化爬虫/" rel="tag"># 可视化爬虫</a>
+          
+            <a href="/tags/pysipder/" rel="tag"># pysipder</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/29/Portia-一款开源可视化爬虫工具/" rel="prev" title="Portia---一款开源可视化爬虫工具">
+                Portia---一款开源可视化爬虫工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
+          <p class="site-author-name" itemprop="name">tingyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">I used to want to make a good coder , but later found that I could only do a nicer coder.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tingyunsay" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/helloa-bao" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍Pyspider的使用"><span class="nav-number">1.</span> <span class="nav-text">本文介绍Pyspider的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Pyspider"><span class="nav-number">1.2.</span> <span class="nav-text">安装Pyspider</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo—抓取腾讯视频的电影信息"><span class="nav-number">1.3.</span> <span class="nav-text">Demo—抓取腾讯视频的电影信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-Project"><span class="nav-number">1.3.1.</span> <span class="nav-text">Create Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写代码"><span class="nav-number">1.3.2.</span> <span class="nav-text">编写代码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Write-Code"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">Write Code</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Detail-Page"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">Detail Page</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Result-Test"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">Result Test</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行Demo"><span class="nav-number">1.3.3.</span> <span class="nav-text">运行Demo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结果"><span class="nav-number">1.3.4.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.4.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tingyun</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<span id="busuanzi_container_site_pv" class="times">
+	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
