@@ -1,0 +1,783 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="pyspider," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本文介绍使用pyspider遇到的一些问题">
+<meta name="keywords" content="pyspider">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pyspider所需要知道的">
+<meta property="og:url" content="http://tingyunsay.github.io/2017/07/15/Pyspider你所要知道的一些/index.html">
+<meta property="og:site_name" content="听云">
+<meta property="og:description" content="本文介绍使用pyspider遇到的一些问题">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/07/15/Pyspider你所要知道的一些/1.jpg">
+<meta property="og:updated_time" content="2017-07-14T17:32:04.304Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pyspider所需要知道的">
+<meta name="twitter:description" content="本文介绍使用pyspider遇到的一些问题">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2017/07/15/Pyspider你所要知道的一些/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/07/15/Pyspider你所要知道的一些/"/>
+
+
+
+
+
+  <title> Pyspider所需要知道的 | 听云 </title>
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43aefd5fb3f7828b2058c874664c6486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">听云</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">听云的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/07/15/Pyspider你所要知道的一些/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tingyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听云">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Pyspider所需要知道的
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-15T00:16:12+08:00">
+                2017-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spider/" itemprop="url" rel="index">
+                    <span itemprop="name">spider</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="本文介绍使用pyspider遇到的一些问题"><a href="#本文介绍使用pyspider遇到的一些问题" class="headerlink" title="本文介绍使用pyspider遇到的一些问题"></a>本文介绍使用pyspider遇到的一些问题</h2><a id="more"></a>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>使用Pyspider两个星期左右的时间，已经将以前的老代码大半都迁移过来了，对其使用也有一定的了解，本文详细记录了使用pyspider可能会遇到的一些问题和解决方法</p>
+<p>在调研pyspider的会上提到了关于用户权限控制，和对以后会存在大量任务情况下的管理措施。这是后续我们需要解决的</p>
+<h3 id="Problem-List"><a href="#Problem-List" class="headerlink" title="Problem List"></a>Problem List</h3><h4 id="pyspider的去重机制"><a href="#pyspider的去重机制" class="headerlink" title="pyspider的去重机制"></a>pyspider的去重机制</h4><h5 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h5><p>抓取大麦网演出（接口），分析json文件，总共约有287场演唱会，但当我的代码如下时，运行到on_finished()也只有217条数据，且任务中也没有丢出任何error<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Handler(BaseHandler):</div><div class="line">    crawl_config = &#123;</div><div class="line">        &apos;itag&apos;:&apos;v98&apos;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @every(minutes=24 * 60)</div><div class="line">    def on_start(self):</div><div class="line">        self.crawl(&apos;https://search.damai.cn/searchajax.html?ctl=%E6%BC%94%E5%94%B1%E4%BC%9A&amp;order=1&amp;currPage=1&apos;, callback=self.index_page)</div><div class="line">    </div><div class="line">    </div><div class="line">    @config(age=10 * 24 * 60 * 60)</div><div class="line">    def index_page(self, response):</div><div class="line">        for each in enumerate(range(1,response.json[&apos;pageData&apos;][&apos;totalPage&apos;]+1):</div><div class="line">            self.crawl(&quot;https://search.damai.cn/searchajax.html?ctl=%E6%BC%94%E5%94%B1%E4%BC%9A&amp;order=1&amp;currPage=&#123;page&#125;&quot;.format(page=each), callback=self.detail_page)</div><div class="line">    </div><div class="line">    @config(priority=2)</div><div class="line">    def detail_page(self, response):</div><div class="line">	......</div></pre></td></tr></table></figure></p>
+<p>然后发现目标和结果之间刚好差了60条数据，且大麦网一页为满的话是60条。我试着去grep第一页中的演出数据，全都不存在，也就是说丢了第一页的数据。但调试代码过程没有出现问题，猜测是去重原因<br>原因如下：<br>我使用第一页的url作为种子url，在on_star()中已经抓取过了一次，接下来我在index_page()中重新生成种子url（以及它的同级页），这时本次抓取将会对这个种子url作为忽略</p>
+<p><font color="red"><strong>pyspider会对同一个任务(即同一个itag)中出现的重复url作去重，不会进行二次抓取</strong></font></p>
+<h5 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h5><p>因为一般只会影响种子url，在种子url末尾加上 <font color="red">#xxx</font>，pyspider是对url的md5值作校验，我们只需使得其与原始url不同，不改变网页内容即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class Handler(BaseHandler):</div><div class="line">    crawl_config = &#123;</div><div class="line">        &apos;itag&apos;:&apos;v98&apos;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @every(minutes=24 * 60)</div><div class="line">    def on_start(self):</div><div class="line">        self.crawl(&apos;https://search.damai.cn/searchajax.html?ctl=%E6%BC%94%E5%94%B1%E4%BC%9A&amp;order=1&amp;currPage=1#0&apos;, callback=self.index_page)</div><div class="line">    </div><div class="line">    </div><div class="line">    @config(age=10 * 24 * 60 * 60)</div><div class="line">    def index_page(self, response):</div><div class="line">        for each in enumerate(range(1,response.json[&apos;pageData&apos;][&apos;totalPage&apos;]+1):</div><div class="line">            self.crawl(&quot;https://search.damai.cn/searchajax.html?ctl=%E6%BC%94%E5%94%B1%E4%BC%9A&amp;order=1&amp;currPage=&#123;page&#125;&quot;.format(page=each), callback=self.detail_page)</div><div class="line">    </div><div class="line">    @config(priority=2)</div><div class="line">    def detail_page(self, response):</div><div class="line">	......</div></pre></td></tr></table></figure></p>
+<p>注：关于重复运行同一个任务，pyspider默认将数据存放到result.db中，当你改变itag的值(与上次不同)，那么这个任务将会重新开始，（在没改变过其他代码的前提下）意味着以前抓取过的内容会重复抓取到result.db中去</p>
+<h4 id="pyspider进程多开"><a href="#pyspider进程多开" class="headerlink" title="pyspider进程多开"></a>pyspider进程多开</h4><p>在需要提高抓取效率的时候，必然会想到分布式，在部署pyspider的时候当然也必有这一步，这里我们只测试了单机的伪造分布式，但可以作为参考<br>pyspider的架构图如下<br><img src="/2017/07/15/Pyspider你所要知道的一些/1.jpg" alt="示例图1"><br>根据作者的介绍，一个调度器(scheduler)，一个或多个抓取进程(fetcher)，一个或多个处理页面进程(processor)，output是可以重写的on_result函数，默认是有一个result_worker在工作(插入数据库)，监控(monitor)和UI页面(weibui)</p>
+<p>默认，我们的启动pyspider都是每个相关任务只启动一个，但当我们的任务数变得更多了，添加对应的处理进程会提高抓取效率和减少阻塞的情况发生<br>我们的多启动必须通过config文件来启动，其为一个json格式文件。其中指定了读取和插入任务的数据库，以及用作缓冲的消息队列类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">#这里我的pyspider项目是放在/root/下的</div><div class="line">#用redis作为一个缓存消息队列</div><div class="line">&#123;</div><div class="line">  &quot;taskdb&quot;: &quot;sqlite+taskdb:////root/data/task.db&quot;,</div><div class="line">  &quot;projectdb&quot;: &quot;sqlite+projectdb:////root/data/project.db&quot;,</div><div class="line">  &quot;resultdb&quot;: &quot;sqlite+resultdb:////root/data/result.db&quot;,</div><div class="line">  &quot;message_queue&quot;: &quot;redis://127.0.0.1:6379/db&quot;,</div><div class="line">  &quot;webui&quot;: &#123;</div><div class="line">    &quot;username&quot;: &quot;tingyun&quot;,</div><div class="line">    &quot;password&quot;: &quot;tingyun&quot;,</div><div class="line">    &quot;need-auth&quot;: true</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们以这个配置文件后台启动pyspider，并以相同的配置启动多个processor和fetcher。processor一般在cpu的核数上 + (1 or 2)，fetcher可以多启动，它负责返回response给processor，作者说过fetcher一个大抵足够了，具体看其实现原理<a href="http://tornado-zh.readthedocs.io/zh/latest/httpclient.html" target="_blank" rel="external"><font color="red"><strong>tornado.httpclient</strong></font></a><br>并将错误输出重定向到指定文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">nohup pyspider -c config.json &gt; Pyspider.log 2&gt;&amp;1 &amp;</div><div class="line"></div><div class="line">nohup pyspider -c config.json processor &gt; processor.log 2&gt;&amp;1 &amp;</div><div class="line"></div><div class="line">nohup pyspider -c config.json fetcher &gt; fetcher.log 2&gt;&amp;1 &amp;</div></pre></td></tr></table></figure></p>
+<p>多台机器的分布式下周会在公司环境上测试，大致过程类似，只需要在配置文件中添加多一些信息如ip,port等</p>
+<p>当然你也可以通过docker部署，只需要编写一个docker-compose文件即可，如<a href="https://binux.blog/2016/05/deployment-of-demopyspiderorg/" target="_blank" rel="external"><font color="red"><strong>demo.pyspider.org 部署经验</strong></font></a></p>
+<p>明天继续更新，有点晚，睡觉了….</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/pyspider/" rel="tag"># pyspider</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/08/Pyspider-一款强大的可视化抓取平台/" rel="prev" title="Pyspider---一款强大的可视化抓取平台">
+                Pyspider---一款强大的可视化抓取平台 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
+          <p class="site-author-name" itemprop="name">tingyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">I used to want to make a good coder , but later found that I could only do a nicer coder.</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tingyunsay" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/helloa-bao" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍使用pyspider遇到的一些问题"><span class="nav-number">1.</span> <span class="nav-text">本文介绍使用pyspider遇到的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-List"><span class="nav-number">1.2.</span> <span class="nav-text">Problem List</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#pyspider的去重机制"><span class="nav-number">1.2.1.</span> <span class="nav-text">pyspider的去重机制</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#问题"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决方法"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">解决方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pyspider进程多开"><span class="nav-number">1.2.2.</span> <span class="nav-text">pyspider进程多开</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tingyun</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<span id="busuanzi_container_site_pv" class="times">
+	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
