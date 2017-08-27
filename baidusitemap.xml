@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://tingyunsay.github.io/2017/08/27/%E4%BA%91%E6%B7%B1%E5%A4%84/</loc>
+    <lastmod>2017-08-27T14:33:34.916Z</lastmod>
+    <data>
+        <display>
+        <title>云深处</title>
+        <pubTime>2017-08-27T14:20:49.000Z</pubTime>
+        
+        <tag>dream</tag>
+         
+        <tag>article</tag>
+         
+         
+           
+             
+              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tingyunsay.github.io/2017/08/21/ajax%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E5%A4%9Aid%E5%90%8C%E4%B8%80%E4%BA%8B%E4%BB%B6/</loc>
     <lastmod>2017-08-21T15:40:35.551Z</lastmod>
     <data>
@@ -57,9 +79,9 @@
         <title>苍白之年</title>
         <pubTime>2017-08-04T18:30:19.000Z</pubTime>
         
-        <tag>article</tag>
-         
         <tag>dream</tag>
+         
+        <tag>article</tag>
          
          
            
@@ -188,9 +210,9 @@
         <title>IPProxyPool开源代理项目的正确使用姿势</title>
         <pubTime>2017-04-23T03:05:37.000Z</pubTime>
         
-        <tag>scrapy</tag>
-         
         <tag>proxy</tag>
+         
+        <tag>scrapy</tag>
          
          
            
