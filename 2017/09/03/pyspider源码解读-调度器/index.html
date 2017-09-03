@@ -73,7 +73,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="scrapy,splash," />
+  <meta name="keywords" content="pyspider,scheduler," />
 
 
 
@@ -89,17 +89,19 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-<meta name="description" content="本文主要介绍splash服务拒绝访问的解决方法">
-<meta name="keywords" content="scrapy,splash">
+<meta name="description" content="本文介绍pyspider的调度流程">
+<meta name="keywords" content="pyspider,scheduler">
 <meta property="og:type" content="article">
-<meta property="og:title" content="scrapyjs-splash服务无法访问解决">
-<meta property="og:url" content="http://tingyunsay.github.io/2017/06/28/scrapyjs-splash服务无法访问解决/index.html">
+<meta property="og:title" content="pyspider源码解读--调度器">
+<meta property="og:url" content="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/index.html">
 <meta property="og:site_name" content="听云">
-<meta property="og:description" content="本文主要介绍splash服务拒绝访问的解决方法">
-<meta property="og:updated_time" content="2017-06-28T07:55:33.688Z">
+<meta property="og:description" content="本文介绍pyspider的调度流程">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/1.png">
+<meta property="og:updated_time" content="2017-09-03T15:37:34.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="scrapyjs-splash服务无法访问解决">
-<meta name="twitter:description" content="本文主要介绍splash服务拒绝访问的解决方法">
+<meta name="twitter:title" content="pyspider源码解读--调度器">
+<meta name="twitter:description" content="本文介绍pyspider的调度流程">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/1.png">
 
 
 
@@ -127,13 +129,13 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/06/28/scrapyjs-splash服务无法访问解决/"/>
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/"/>
 
 
 
 
 
-  <title> scrapyjs-splash服务无法访问解决 | 听云 </title>
+  <title> pyspider源码解读--调度器 | 听云 </title>
 </head>
 
 
@@ -293,7 +295,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/06/28/scrapyjs-splash服务无法访问解决/">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
@@ -314,7 +316,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
             
             
               
-                scrapyjs-splash服务无法访问解决
+                pyspider源码解读--调度器
               
             
           </h1>
@@ -329,8 +331,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-28T15:35:32+08:00">
-                2017-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-03T18:22:33+08:00">
+                2017-09-03
               </time>
             
 
@@ -352,8 +354,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/scrapy/" itemprop="url" rel="index">
-                    <span itemprop="name">scrapy</span>
+                  <a href="/categories/spider/" itemprop="url" rel="index">
+                    <span itemprop="name">spider</span>
                   </a>
                 </span>
 
@@ -370,9 +372,9 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/28/scrapyjs-splash服务无法访问解决/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/03/pyspider源码解读-调度器/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/06/28/scrapyjs-splash服务无法访问解决/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/03/pyspider源码解读-调度器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -380,7 +382,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
           
           
-             <span id="/2017/06/28/scrapyjs-splash服务无法访问解决/" class="leancloud_visitors" data-flag-title="scrapyjs-splash服务无法访问解决">
+             <span id="/2017/09/03/pyspider源码解读-调度器/" class="leancloud_visitors" data-flag-title="pyspider源码解读--调度器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -409,14 +411,34 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
       
 
       
-        <h2 id="本文主要介绍splash服务拒绝访问的解决方法"><a href="#本文主要介绍splash服务拒绝访问的解决方法" class="headerlink" title="本文主要介绍splash服务拒绝访问的解决方法"></a>本文主要介绍splash服务拒绝访问的解决方法</h2><a id="more"></a>
-<h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>由于隔了一段时间没回公司，三个月之前的爬虫代码已经有部分失效，其中有的是网站整改，有的则是由<font color="red">于渲染服务的崩溃</font>。这里我们要提的是splash渲染服务失败的解决方案。</p>
-<h3 id="访问报错"><a href="#访问报错" class="headerlink" title="访问报错"></a>访问报错</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[scrapy.downloadermiddlewares.retry] DEBUG: Retrying &lt;POST http://192.168.217.41:8050/render.html&gt; (failed 1 times): Connection was refused by other side: 111: Connection refused.</div></pre></td></tr></table></figure>
-<p>我开始以为只是简单的服务崩溃问题，就上服务器看了下是不是splash docker进程被关了，但是服务器上显示正常运行，试着重启服务，发现如下报错:</p>
-<h3 id="重启报错"><a href="#重启报错" class="headerlink" title="重启报错"></a>重启报错</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WARNING: IPv4 forwarding is disabled. Networking will not work.</div></pre></td></tr></table></figure>
-<p>应该是谁把通过ipv4访问资源的服务给关闭了，我们需要重启它</p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sudo vi /etc/sysctl.conf</div><div class="line"></div><div class="line">添加代码：net.ipv4.ip_forward=1</div><div class="line"></div><div class="line">重启network服务：sudo systemctl restart network</div><div class="line"></div><div class="line">输入：sysctl net.ipv4.ip_forward</div><div class="line"></div><div class="line">如果显示：net.ipv4.ip_forward = 1  则表示成功</div></pre></td></tr></table></figure>
-<p>最后在浏览器输入：yourserver_ip:8050 ， 即可正常访问splash服务</p>
+        <h2 id="本文介绍pyspider的调度流程"><a href="#本文介绍pyspider的调度流程" class="headerlink" title="本文介绍pyspider的调度流程"></a>本文介绍pyspider的调度流程</h2><a id="more"></a>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>从此篇开始后续会逐步写一些关于pyspider的源码分析的代码，因为之前一段时间都在看其代码，最一开始是从webui中的py文件开始看起的，之后又看完了mysql中的一些封装，自己加上了两个原生的 mysql 库，用来做其他管理，但是其中设计最多的，大抵值scheduler.py这一部分，所以我首先将这一部分描述清楚，作备忘录</p>
+<p>在阅读本文之前最好需要对pyspider的基本使用有简单了解，比如项目的几种状态切换…etc</p>
+<h3 id="scheduler-py"><a href="#scheduler-py" class="headerlink" title="scheduler.py"></a>scheduler.py</h3><p>首先，我们从pyspider的根目录下找到<font color="red">/pyspider/scheduler/scheduler.py</font><br>其中定义了四个类：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Project(object)</div><div class="line"></div><div class="line">class Scheduler(object)</div><div class="line"></div><div class="line">class OneScheduler(Scheduler)</div><div class="line"></div><div class="line">class ThreadBaseScheduler(Scheduler)</div></pre></td></tr></table></figure></p>
+<p>这四个类的作用分别如下</p>
+<h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><p>单个项目的Paused状态切换即是由这个类实例化的对象来完成，其中的方法有—paused()，update(project_info)</p>
+<h4 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h4><p>整体的调度过程，包括从入库，读库，对task的操作（主要是各个队列之间的get和put，以及task执行包的封装），状态的切换</p>
+<h4 id="OneScheduler"><a href="#OneScheduler" class="headerlink" title="OneScheduler"></a>OneScheduler</h4><p>debug中用到的类，其继承自Scheduler，不同的是，它不会将需要抓取的task丢入到一个消费者队列中，而是会直接调用一个process立刻去执行fetch（其实现在send_task这一函数）</p>
+<h4 id="ThreadBaseScheduler"><a href="#ThreadBaseScheduler" class="headerlink" title="ThreadBaseScheduler"></a>ThreadBaseScheduler</h4><p>这个类用到的地方很少，在pyspider/libs/bench.py中用到过，作压力测试</p>
+<p><strong><font color="red">这里我们主要看Scheduler类</font></strong></p>
+<h3 id="Scheduler-object"><a href="#Scheduler-object" class="headerlink" title="Scheduler(object)"></a>Scheduler(object)</h3><p>关于从哪儿开始看起，其实这个类中一大堆的方法以及很多的变量，我首先一步是跳过这些，先看所有函数的名字以及其中的注释看一边，首先看到的是run以及run_once<br>对了，关于变量，在具体看某一个函数的时候，可以再去查询这个变量第一次出现的位置，结合函数的作用就能大致明白这个变量的功用了</p>
+<p><font color="red"><strong>注：这里我不再赘述如何去看代码，只是将看懂的东西作一个整理</strong></font><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_once</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="string">'''comsume queues and feed tasks to fetcher, once'''</span></div><div class="line"></div><div class="line">        self._update_projects()</div><div class="line">	self._check_task_done()</div><div class="line">        self._check_request()</div><div class="line">        <span class="keyword">while</span> self._check_cronjob():</div><div class="line">            <span class="keyword">pass</span></div><div class="line">        self._check_select()</div><div class="line">        self._check_delete()</div><div class="line">        self._try_dump_cnt()</div></pre></td></tr></table></figure></p>
+<h4 id="self-update-projects"><a href="#self-update-projects" class="headerlink" title="self._update_projects()"></a>self._update_projects()</h4><p>更新project的状态，并且回显到webui上 （这个操作经由几步调用，其会去读所有项目的库，并且load到各自的task_queue中）</p>
+<h4 id="self-check-task-done"><a href="#self-check-task-done" class="headerlink" title="self._check_task_done()"></a>self._check_task_done()</h4><p>去不断取出scheduler的status_queue优先级最高的任务，并检测其状态</p>
+<h4 id="self-check-request"><a href="#self-check-request" class="headerlink" title="self._check_request()"></a>self._check_request()</h4><p>其会优先去取_postpone_request中的延迟task，因为这些极有可能是上次版本运行改变遗留下的一些认为有（比如某个任务正在跑，我们手动stop了它，然后修改了脚本，再重新启动它），将其发送给on_request</p>
+<p>然后去获取newtask_queue中的任务，并且不断将这些任务交给on_request, on_request会作一些判断，然后将其put到各自project的task_queue中</p>
+<h4 id="总结如上三个方法"><a href="#总结如上三个方法" class="headerlink" title="总结如上三个方法"></a>总结如上三个方法</h4><p><strong><font color="red">上面的操作无非都是向各个项目的 task_queue中填充内容，从数据库读取 / 从新产生 的任务中生成</font></strong></p>
+<h4 id="self-check-select"><a href="#self-check-select" class="headerlink" title="self._check_select()"></a>self._check_select()</h4><p>这个函数会优先从缓冲队列中读取任务（当任务太多的时候，会将多余任务放到缓冲队列中），然后正常遍历所有的project，并且将其中的task_queue取出（<strong><font color="red">在此之前，每个project首先会更新各自的task_queue的优先级队列：两个，一个time，一个process</font></strong>），并且使用自定义方法get()取得优先级最高的task（这个获取是从proicess优先级队列中取出的）</p>
+<p>time优先级 和 process优先级 队列 的关系是：process是真正被取出去执行的任务，time是生成process的一个条件，也就是从time中取时间优先级最高的不断添加到process中</p>
+<p>更新完了之后，将获取到的taskid按顺序保存，传递给_load_put_task()函数，经由其从数据库中(根据taskid)读信息，再传递给on_select_task()方法</p>
+<p><strong><font color="red">on_select_task()这个函数是给每个taskid填充完整的信息，最后添加到所在project的active队列中，表明其正在被调度</font></strong></p>
+<p>最后的最后，再由send_task()方法传递到 out_queue队列中（如果out_queue满了，会放到缓冲deque中）</p>
+<h4 id="其余两个方法"><a href="#其余两个方法" class="headerlink" title="其余两个方法"></a>其余两个方法</h4><p>self._check_delete()<br>self._try_dump_cnt()<br>前者是检测是否有到达约定时间需要删除的项目，后者是定时回显webui页面上的任务数目状态(60s一次)</p>
+<h4 id="run-once"><a href="#run-once" class="headerlink" title="run_once"></a>run_once</h4><p><strong><font color="red">这个函数的功能就是将需要被调度的taskid，经过一系列中间转换，带上了一些优先级，最后全部丢入到调度器类本身的一个out_queue队列中，这个队列作为一个生产者，供给fetch消费</font></strong></p>
+<h3 id="详细流程-队列间传递消息"><a href="#详细流程-队列间传递消息" class="headerlink" title="详细流程,队列间传递消息"></a>详细流程,队列间传递消息</h3><p><strong><font color="blue">图1</font></strong><br><img src="/2017/09/03/pyspider源码解读-调度器/1.png" alt="示例图1"></p>
+<p>大致的调度情况如上，其中的queue指的是作者在其中自己封装实现的一些优先级队列（其实现在<strong><font color="red">/pyspider/scheduler/task_queue.py</font></strong>），deque一般都是被用作缓冲队列</p>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>这一篇说是读源码，可实际上并没有多少源码，并不是作者不想贴出代码一行行解释，但是篇幅有点太多，这一篇首先把大致的脉络理清楚，具体的代码实现，我会放到后续的篇幅中分成多部分解释</p>
+<p>如果有存在错误的地方，还希望大家指出，可能有理解错误的地方，见谅</p>
 
       
     </div>
@@ -446,9 +468,9 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
       
         <div class="post-tags">
           
-            <a href="/tags/scrapy/" rel="tag"># scrapy</a>
+            <a href="/tags/pyspider/" rel="tag"># pyspider</a>
           
-            <a href="/tags/splash/" rel="tag"># splash</a>
+            <a href="/tags/scheduler/" rel="tag"># scheduler</a>
           
         </div>
       
@@ -461,18 +483,14 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/29/Portia-一款开源可视化爬虫工具/" rel="next" title="Portia---一款开源可视化爬虫工具">
-                <i class="fa fa-chevron-left"></i> Portia---一款开源可视化爬虫工具
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/23/IPProxyPool开源代理项目的正确使用姿势/" rel="prev" title="IPProxyPool开源代理项目的正确使用姿势">
-                IPProxyPool开源代理项目的正确使用姿势 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/03/灵谷/" rel="prev" title="灵谷">
+                灵谷 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -629,7 +647,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文主要介绍splash服务拒绝访问的解决方法"><span class="nav-number">1.</span> <span class="nav-text">本文主要介绍splash服务拒绝访问的解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#场景"><span class="nav-number">1.1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问报错"><span class="nav-number">1.2.</span> <span class="nav-text">访问报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启报错"><span class="nav-number">1.3.</span> <span class="nav-text">重启报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-number">1.4.</span> <span class="nav-text">解决方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍pyspider的调度流程"><span class="nav-number">1.</span> <span class="nav-text">本文介绍pyspider的调度流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scheduler-py"><span class="nav-number">1.2.</span> <span class="nav-text">scheduler.py</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-number">1.2.1.</span> <span class="nav-text">Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scheduler"><span class="nav-number">1.2.2.</span> <span class="nav-text">Scheduler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OneScheduler"><span class="nav-number">1.2.3.</span> <span class="nav-text">OneScheduler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ThreadBaseScheduler"><span class="nav-number">1.2.4.</span> <span class="nav-text">ThreadBaseScheduler</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheduler-object"><span class="nav-number">1.3.</span> <span class="nav-text">Scheduler(object)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#self-update-projects"><span class="nav-number">1.3.1.</span> <span class="nav-text">self._update_projects()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#self-check-task-done"><span class="nav-number">1.3.2.</span> <span class="nav-text">self._check_task_done()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#self-check-request"><span class="nav-number">1.3.3.</span> <span class="nav-text">self._check_request()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结如上三个方法"><span class="nav-number">1.3.4.</span> <span class="nav-text">总结如上三个方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#self-check-select"><span class="nav-number">1.3.5.</span> <span class="nav-text">self._check_select()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其余两个方法"><span class="nav-number">1.3.6.</span> <span class="nav-text">其余两个方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#run-once"><span class="nav-number">1.3.7.</span> <span class="nav-text">run_once</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细流程-队列间传递消息"><span class="nav-number">1.4.</span> <span class="nav-text">详细流程,队列间传递消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.5.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -820,9 +838,9 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2017/06/28/scrapyjs-splash服务无法访问解决/';
-          this.page.identifier = '2017/06/28/scrapyjs-splash服务无法访问解决/';
-          this.page.title = 'scrapyjs-splash服务无法访问解决';
+          this.page.url = 'http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/';
+          this.page.identifier = '2017/09/03/pyspider源码解读-调度器/';
+          this.page.title = 'pyspider源码解读--调度器';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://tingyun-site.disqus.com/embed.js';

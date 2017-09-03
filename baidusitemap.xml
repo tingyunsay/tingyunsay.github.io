@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://tingyunsay.github.io/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8/</loc>
+    <lastmod>2017-09-03T15:37:34.999Z</lastmod>
+    <data>
+        <display>
+        <title>pyspider源码解读--调度器</title>
+        <pubTime>2017-09-03T10:22:33.000Z</pubTime>
+        
+        <tag>pyspider</tag>
+         
+        <tag>scheduler</tag>
+         
+         
+           
+             
+              <breadCrumb title="spider" url="http://tingyunsay.github.io/categories/spider/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tingyunsay.github.io/2017/09/03/%E7%81%B5%E8%B0%B7/</loc>
     <lastmod>2017-09-03T09:41:01.446Z</lastmod>
     <data>
