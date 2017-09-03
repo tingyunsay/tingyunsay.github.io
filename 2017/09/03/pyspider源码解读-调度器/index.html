@@ -97,7 +97,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍pyspider的调度流程">
 <meta property="og:image" content="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/1.png">
-<meta property="og:updated_time" content="2017-09-03T15:37:34.999Z">
+<meta property="og:updated_time" content="2017-09-03T15:41:18.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pyspider源码解读--调度器">
 <meta name="twitter:description" content="本文介绍pyspider的调度流程">
@@ -412,7 +412,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
       
         <h2 id="本文介绍pyspider的调度流程"><a href="#本文介绍pyspider的调度流程" class="headerlink" title="本文介绍pyspider的调度流程"></a>本文介绍pyspider的调度流程</h2><a id="more"></a>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>从此篇开始后续会逐步写一些关于pyspider的源码分析的代码，因为之前一段时间都在看其代码，最一开始是从webui中的py文件开始看起的，之后又看完了mysql中的一些封装，自己加上了两个原生的 mysql 库，用来做其他管理，但是其中设计最多的，大抵值scheduler.py这一部分，所以我首先将这一部分描述清楚，作备忘录</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>从此篇开始后续会逐步写一些关于pyspider的源码分析的代码，因为之前一段时间都在看其代码，最一开始是从webui中的py文件开始看起的，之后又看完了mysql中的一些封装，自己加上了两个原生的 mysql 库，用来做其他管理，但是其中最核心的部分，大抵是scheduler.py这一部分，所以我首先将这一部分描述清楚，作备忘录</p>
 <p>在阅读本文之前最好需要对pyspider的基本使用有简单了解，比如项目的几种状态切换…etc</p>
 <h3 id="scheduler-py"><a href="#scheduler-py" class="headerlink" title="scheduler.py"></a>scheduler.py</h3><p>首先，我们从pyspider的根目录下找到<font color="red">/pyspider/scheduler/scheduler.py</font><br>其中定义了四个类：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Project(object)</div><div class="line"></div><div class="line">class Scheduler(object)</div><div class="line"></div><div class="line">class OneScheduler(Scheduler)</div><div class="line"></div><div class="line">class ThreadBaseScheduler(Scheduler)</div></pre></td></tr></table></figure></p>
 <p>这四个类的作用分别如下</p>
