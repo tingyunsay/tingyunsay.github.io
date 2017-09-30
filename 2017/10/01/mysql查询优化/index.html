@@ -73,7 +73,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="scrapy,qq_music," />
+  <meta name="keywords" content="mysql," />
 
 
 
@@ -89,17 +89,17 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-<meta name="description" content="本文介绍qq音乐版权信息抓取流程">
-<meta name="keywords" content="scrapy,qq_music">
+<meta name="description" content="本文介绍mysql基础的一些优化措施">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="qq_copyright crawler">
-<meta property="og:url" content="http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/index.html">
+<meta property="og:title" content="mysql查询优化">
+<meta property="og:url" content="http://tingyunsay.github.io/2017/10/01/mysql查询优化/index.html">
 <meta property="og:site_name" content="听云">
-<meta property="og:description" content="本文介绍qq音乐版权信息抓取流程">
-<meta property="og:updated_time" content="2017-04-26T11:10:34.516Z">
+<meta property="og:description" content="本文介绍mysql基础的一些优化措施">
+<meta property="og:updated_time" content="2017-09-30T19:40:43.630Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="qq_copyright crawler">
-<meta name="twitter:description" content="本文介绍qq音乐版权信息抓取流程">
+<meta name="twitter:title" content="mysql查询优化">
+<meta name="twitter:description" content="本文介绍mysql基础的一些优化措施">
 
 
 
@@ -127,13 +127,13 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/"/>
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/10/01/mysql查询优化/"/>
 
 
 
 
 
-  <title> qq_copyright crawler | 听云 </title>
+  <title> mysql查询优化 | 听云 </title>
 </head>
 
 
@@ -293,7 +293,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/10/01/mysql查询优化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
@@ -314,7 +314,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
             
             
               
-                qq_copyright crawler
+                mysql查询优化
               
             
           </h1>
@@ -329,8 +329,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-15T09:53:45+08:00">
-                2017-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-01T01:23:24+08:00">
+                2017-10-01
               </time>
             
 
@@ -352,8 +352,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/scrapy/" itemprop="url" rel="index">
-                    <span itemprop="name">scrapy</span>
+                  <a href="/categories/database/" itemprop="url" rel="index">
+                    <span itemprop="name">database</span>
                   </a>
                 </span>
 
@@ -370,9 +370,9 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/15/qq-copyright-crawler/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/01/mysql查询优化/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/04/15/qq-copyright-crawler/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/01/mysql查询优化/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -380,7 +380,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
           
           
-             <span id="/2017/04/15/qq-copyright-crawler/" class="leancloud_visitors" data-flag-title="qq_copyright crawler">
+             <span id="/2017/10/01/mysql查询优化/" class="leancloud_visitors" data-flag-title="mysql查询优化">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -409,26 +409,37 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
       
 
       
-        <h2 id="本文介绍qq音乐版权信息抓取流程"><a href="#本文介绍qq音乐版权信息抓取流程" class="headerlink" title="本文介绍qq音乐版权信息抓取流程"></a>本文介绍qq音乐版权信息抓取流程</h2><a id="more"></a>
-<h3 id="页面分析"><a href="#页面分析" class="headerlink" title="页面分析"></a>页面分析</h3><p>由于qq音乐歌曲信息过于多,这里不采取和之前一样抓取页面的过程,假设正常要抓取页面,那将造成数千万次的页面访问(<font color="red"><strong>更麻烦其中大部分页面需要渲染</strong></font>,效率是大问题,负载也是问题),这不是一个良好的爬虫做的事情,所以这里采用<font color="blue">找接口</font>的方式,而且<font color="blue">qq音乐的绝大部分有效数据都是通过json传递的</font>,所以也不是很麻烦,f12分析一下就好了</p>
-<p>这里的版权信息是基于album信息中的歌单抓取,通过抓取一个歌手所有album的歌单信息,其中有我们需要的大部分信息</p>
-<h3 id="为什么不直接抓全部歌曲信息"><a href="#为什么不直接抓全部歌曲信息" class="headerlink" title="为什么不直接抓全部歌曲信息?"></a>为什么不直接抓全部歌曲信息?</h3><p>答:歌曲信息我试过了,但信息量较少,只能是说除了歌曲名字和歌手名字,其他都是无效数据,而通过album抓则可能会漏掉部分歌曲(<font color="blue">有的歌手没有album,只有一些单曲;还有的歌手有些歌曲并没有放到album中,抓完所有的album会发现缺少了一些歌</font>),但能保证抓取的信息都是带有版权信息的大部分信息(公司,时间,专辑名等….)</p>
-<h3 id="抓取流程"><a href="#抓取流程" class="headerlink" title="抓取流程"></a>抓取流程</h3><h4 id="1-种子页面-构造同级页-并找所有歌手id"><a href="#1-种子页面-构造同级页-并找所有歌手id" class="headerlink" title="1.种子页面,构造同级页,并找所有歌手id"></a>1.种子页面,构造同级页,并找所有歌手id</h4><p><a href="https://c.y.qq.com/v8/fcg-bin/v8.fcg?channel=singer&amp;page=list&amp;key=all_all_all&amp;pagesize=100&amp;format=jsonp&amp;pagenum=1" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/v8.fcg?channel=singer&amp;page=list&amp;key=all_all_all&amp;pagesize=100&amp;format=jsonp&amp;pagenum=1</a></p>
-<font color="red"><strong>todo</strong></font>:找到最大page,生成同级page,循环遍历,接下来从这些页面中找歌手的<font color="blue">singerid</font>
-
-<h4 id="2-找所有专辑id"><a href="#2-找所有专辑id" class="headerlink" title="2.找所有专辑id"></a>2.找所有专辑id</h4><p><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_album.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_album.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=</a><font color="blue">{singerid}</font>&amp;order=time&amp;begin=0&amp;num=150</p>
-<p>#这里我们设定成150个专辑了,没有歌手有这么多的专辑数,所以都是返回所有</p>
-<p><font color="red"><strong>todo</strong></font>:找到其中的<font color="blue">albumid</font>,构造成如下页面</p>
-<h4 id="3-解析详细信息"><a href="#3-解析详细信息" class="headerlink" title="3.解析详细信息"></a>3.解析详细信息</h4><p><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_album_info_cp.fcg?albummid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_album_info_cp.fcg?albummid=</a><font color="blue">{albumid}</font>&amp;g_tk=5381&amp;format=jsonp</p>
-<p><font color="red"><strong>todo</strong></font>:从其中提取所有需要的信息</p>
-<p>如果后续能发现还有什么更好的接口,保持更新</p>
-<h2 id="更新-2017-04-15"><a href="#更新-2017-04-15" class="headerlink" title="更新 2017-04-15"></a>更新 2017-04-15</h2><p>以上这种方法在实践过程中出现了问题:qq音乐歌手很多都没有专辑专门的显示页面,也就是说第二步无法根据singerid获得所有albumid,也就没法进行下一步的抓取.<br>换种策略</p>
-<p><font color="blue">根据singerid获取全部歌曲信息api,这里我设定成2000,没有谁的歌曲数比这个多,返回全部数据</font><br><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=</a><font color="blue">{singermid}</font>&amp;begin=0&amp;num=2000</p>
-<p>这个接口返回了所有的歌曲信息,每每首歌的信息里带了一个专辑id,我们提取出这个albumid,然后在这一层做一个过滤 ( <font color="red"><strong>可以使用blloomfilter文件过滤,只会多出来一个bloom文件,其他的不用关心</strong></font> ) , 使得只有不重复的albumid进入到后续的抓取</p>
-<p>这样一来,对于那些主页没有专辑信息的歌手,也能拿到所有albumid.因为我们是直接通过的api请求.</p>
-<h2 id="更新-2017-04-26"><a href="#更新-2017-04-26" class="headerlink" title="更新 2017-04-26"></a>更新 2017-04-26</h2><p>以上的方法还有一处存在问题,就是阈值不能设定2000这么大,加入设定这么大,会返回单页的数据也就是默认的20个元素, 这里我们设定为900首<br><a href="https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=" target="_blank" rel="external">https://c.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;singermid=</a><font color="blue">{singermid}</font>&amp;begin=0&amp;num=900</p>
-<p>实现代码基于TingyunSpider模板,很多地方还存在不足,但还会继续改进</p>
-<p><a href="https://github.com/tingyunsay/TingyunSpider" target="_blank" rel="external"><font color="red"><strong>代码地址</strong></font></a></p>
+        <h2 id="本文介绍mysql基础的一些优化措施"><a href="#本文介绍mysql基础的一些优化措施" class="headerlink" title="本文介绍mysql基础的一些优化措施"></a>本文介绍mysql基础的一些优化措施</h2><a id="more"></a>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>mysql  量约100w<br>本文是在mysql库量不断增加的情况下，某一次在前端页面查询发现慢的不能忍了（花了5分钟+，还总是导致网页504 ╥﹏╥…）,开始的解决方法为主键建立索引，在select count操作能在1s内完成</p>
+<p>但这种事情最好根治，不能说等某个库到达一个量级再去刷库，这不是正常的解决方法，应该在开始的时候就建立好相关的索引文件，以及需要的查询优化。所以后续在网上查阅了相关资料和博客，记录在此</p>
+<h3 id="建表时优化"><a href="#建表时优化" class="headerlink" title="建表时优化"></a>建表时优化</h3><h4 id="创建普通索引"><a href="#创建普通索引" class="headerlink" title="创建普通索引"></a>创建普通索引</h4><p>以下例子为 普通字段 id 创建了索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">create table tingyun(</div><div class="line">     id int,</div><div class="line">     name varchar(100),</div><div class="line">     index(id)</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>在使用 show create table <code>table_name</code> 的时候，能看到KEY <code>id</code> (<code>id</code>)  表明这个字段已经有了索引</p>
+<p>并且在使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">explain select * from table_name where id = 1;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">MariaDB [resultdb2]&gt; explain select * from music_qq_copyright where id = 1;</div><div class="line">+------+-------------+--------------------+-------+---------------+------+---------+-------+------+-------+</div><div class="line">| id | select_type |   table   |  type  | possible_keys | key | key_len | ref | rows | Extra |</div><div class="line">+------+-------------+--------------------+-------+---------------+------+---------+-------+------+-------+</div><div class="line">| 1 | SIMPLE | music_qq_copyright | const |     id     |  id  |    4    | const | 1 | |</div><div class="line">+------+-------------+--------------------+-------+---------------+------+---------+-------+------+-------+</div></pre></td></tr></table></figure>
+<p>其中 possible_keys 和 key的值都为id（索引字段的名字），则id索引已经存在并且查询中已经使用了索引</p>
+<h4 id="创建唯一性索引"><a href="#创建唯一性索引" class="headerlink" title="创建唯一性索引"></a>创建唯一性索引</h4><p>你也可以为你创建的索引起一个其他的名字：index_name<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">create table tingyun(</div><div class="line">     id int,</div><div class="line">     name varchar(100),</div><div class="line">     unique index index_name(id)</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<h4 id="创建多列索引"><a href="#创建多列索引" class="headerlink" title="创建多列索引"></a>创建多列索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">create table tingyun(</div><div class="line">     id int,</div><div class="line">     name varchar(100),</div><div class="line">     sex char(10),</div><div class="line">     index index_name(id,name)</div><div class="line">);</div></pre></td></tr></table></figure>
+<p>和创建单列索引类似，在( )中添加多个字段名即可<br>注：<font color="red"><strong>以上中我略去了 全文索引 以及 空间索引 的创建，那又是另外的应用了，这里我不作说明</strong></font></p>
+<h3 id="为已经存在的表建立索引"><a href="#为已经存在的表建立索引" class="headerlink" title="为已经存在的表建立索引"></a>为已经存在的表建立索引</h3><p>这种情况是你在建表的时候并没有建立索引或者说你后期的查询需要建立组合索引来加速，这时候必须更改表结构，以及每条记录的结构，也就是每次更改得刷一遍库</p>
+<h4 id="添加主键索引"><a href="#添加主键索引" class="headerlink" title="添加主键索引"></a>添加主键索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter table `table_name` add primary key (`字段名`)</div></pre></td></tr></table></figure>
+<h4 id="添加唯一索引"><a href="#添加唯一索引" class="headerlink" title="添加唯一索引"></a>添加唯一索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter table `table_name` add unique (`字段名`)</div></pre></td></tr></table></figure>
+<h4 id="添加普通索引"><a href="#添加普通索引" class="headerlink" title="添加普通索引"></a>添加普通索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter table `table_name` add index index_name(`字段名`)</div></pre></td></tr></table></figure>
+<h4 id="添加全文索引"><a href="#添加全文索引" class="headerlink" title="添加全文索引"></a>添加全文索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter table `table_name` add fulltext index_name(`字段名`)</div></pre></td></tr></table></figure>
+<h4 id="添加多列索引-组合索引"><a href="#添加多列索引-组合索引" class="headerlink" title="添加多列索引(组合索引)"></a>添加多列索引(组合索引)</h4><p>在你需要多种查询条件的时候如where and / order by，可以通过建立这种索引的方式提高查询速度，将可能用到的字段添加到组合索引中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alter table `table_name` add index index_name(`字段名1`,`字段名2`,`字段名3`)</div></pre></td></tr></table></figure></p>
+<p>注：<font color="purple"><strong>以上3,4,5中的index_name 默认可以不写，可以自己取名索引为某个index_name</strong></font></p>
+<h3 id="速度对比"><a href="#速度对比" class="headerlink" title="速度对比"></a>速度对比</h3><p>本文记录的是pyspider的result页面的打开速度，由于一开始也是在pyspider的页面上遇到这个问题，所以这里我们会更改pyspider一点源代码来解决这个问题</p>
+<h4 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h4><p>一：xiami_mv  ,  8万条数据 ， 查询翻页的时候，order by updatetime的时间<br>给updatetime加上索引后的效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">未加之前:</div><div class="line">628ms / 459ms  /  1.43s / 389ms /  652ms  /  594ms  /  639ms  / 805ms /  1.01s</div><div class="line"></div><div class="line">加完后：</div><div class="line">573ms /  302ms /  270ms /  254ms /  244ms  / 283ms  /  278ms  /  620ms  /  362ms</div></pre></td></tr></table></figure></p>
+<p>查询完全一样的数据，能看到有明显的变化，速度快了一倍左右</p>
+<p>二：wangyiyun_music , 60万数据，进行同样查询翻页的操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#未加索引</div><div class="line">4.06s  /  4.11s / 4.11s  /  5.31s /  4.85s  / 5.37s  /  5.29s  /  4.39s /  4.99s</div><div class="line"></div><div class="line">#加完后</div><div class="line">486ms  /  875ms  /  597ms  /  1.23s  /  960ms  /  862ms  /  828ms  /  1.02s  /  725ms</div></pre></td></tr></table></figure></p>
+<p>这个效果更加明显了</p>
+<h4 id="直接查库"><a href="#直接查库" class="headerlink" title="直接查库"></a>直接查库</h4><p>这里我开始并没有为主键建立索引，而是为整个表添加了一个唯一自增id值，mysql内置有个查询优化器，在select count(<em>)的时候会去找所有字段中长度最短的那个键，我之前的主键是一个16位的md5值，其他值都是更大的文本，其必然会找到这个新建立的id值进行查询<br><em>*查库消耗时间 qq_mv 87w</em></em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select count(*) from qq_mv;</div><div class="line"></div><div class="line">     5 min 5.95 sec</div></pre></td></tr></table></figure></p>
+<p><strong>刷表消耗时间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">alter table qq_mv add `id` bigint(20) not null auto_increment unique key;</div><div class="line"></div><div class="line">Query OK, 871861 rows affected (1 min 44.64 sec)</div><div class="line">Records: 871861 Duplicates: 0 Warnings: 0</div></pre></td></tr></table></figure></p>
+<p><strong>添加unique 自增键后</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select count(*) from qq_mv;</div><div class="line"></div><div class="line">     1 row in set (0.71 sec)</div></pre></td></tr></table></figure></p>
+<h4 id="修改pyspider的建表语句"><a href="#修改pyspider的建表语句" class="headerlink" title="修改pyspider的建表语句"></a>修改pyspider的建表语句</h4><p>在 <font color="red"><strong>pyspider/database/mysql/resultdb.py</strong></font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">def _create_project(self, project):</div><div class="line">    assert re.match(r&apos;^\w+$&apos;, project) is not None</div><div class="line">    tablename = self._tablename(project)</div><div class="line">    if tablename in [x[0] for x in self._execute(&apos;show tables&apos;)]:</div><div class="line">        return</div><div class="line">    self._execute(&apos;&apos;&apos;CREATE TABLE %s (</div><div class="line">        `taskid` varchar(64) PRIMARY KEY,</div><div class="line">        `url` varchar(1024),</div><div class="line">        `result` MEDIUMBLOB,</div><div class="line">        `updatetime` double(16, 4),</div><div class="line">        INDEX(taskid),</div><div class="line">        INDEX(updatetime) </div><div class="line">        ) ENGINE=InnoDB CHARSET=utf8&apos;&apos;&apos; % self.escape(tablename))</div></pre></td></tr></table></figure></p>
+<p>注意到：我为其中的taskid和updatetime字段均建立了索引，前者是在<font color="purple"><strong>count操作时加速</strong></font>，后者是在<font color="purple"><strong>分页查询时加速</strong></font><br>注：<br>针对其不同用处添加对应的索引，如果需要添加组合查询，如按url和result模糊查询<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select ... from ... where url like &quot;%xxx%&quot; and result like &quot;%xxx%&quot;</div></pre></td></tr></table></figure></p>
+<p>则建立 INDEX(url,result)</p>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>正准备去看《高性能mysql》这本书，会将做的笔记整理放上来</p>
+<hr>
 
       
     </div>
@@ -458,9 +469,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
       
         <div class="post-tags">
           
-            <a href="/tags/scrapy/" rel="tag"># scrapy</a>
-          
-            <a href="/tags/qq-music/" rel="tag"># qq_music</a>
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
           
         </div>
       
@@ -473,18 +482,14 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/23/IPProxyPool开源代理项目的正确使用姿势/" rel="next" title="IPProxyPool开源代理项目的正确使用姿势">
-                <i class="fa fa-chevron-left"></i> IPProxyPool开源代理项目的正确使用姿势
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/11/what-s-this/" rel="prev" title="sphinx初识">
-                sphinx初识 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/24/听云记/" rel="prev" title="听云记">
+                听云记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -641,7 +646,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍qq音乐版权信息抓取流程"><span class="nav-number">1.</span> <span class="nav-text">本文介绍qq音乐版权信息抓取流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面分析"><span class="nav-number">1.1.</span> <span class="nav-text">页面分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么不直接抓全部歌曲信息"><span class="nav-number">1.2.</span> <span class="nav-text">为什么不直接抓全部歌曲信息?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抓取流程"><span class="nav-number">1.3.</span> <span class="nav-text">抓取流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-种子页面-构造同级页-并找所有歌手id"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.种子页面,构造同级页,并找所有歌手id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-找所有专辑id"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.找所有专辑id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-解析详细信息"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.解析详细信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新-2017-04-15"><span class="nav-number">2.</span> <span class="nav-text">更新 2017-04-15</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新-2017-04-26"><span class="nav-number">3.</span> <span class="nav-text">更新 2017-04-26</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍mysql基础的一些优化措施"><span class="nav-number">1.</span> <span class="nav-text">本文介绍mysql基础的一些优化措施</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建表时优化"><span class="nav-number">1.2.</span> <span class="nav-text">建表时优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建普通索引"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建普通索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建唯一性索引"><span class="nav-number">1.2.2.</span> <span class="nav-text">创建唯一性索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建多列索引"><span class="nav-number">1.2.3.</span> <span class="nav-text">创建多列索引</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为已经存在的表建立索引"><span class="nav-number">1.3.</span> <span class="nav-text">为已经存在的表建立索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加主键索引"><span class="nav-number">1.3.1.</span> <span class="nav-text">添加主键索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加唯一索引"><span class="nav-number">1.3.2.</span> <span class="nav-text">添加唯一索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加普通索引"><span class="nav-number">1.3.3.</span> <span class="nav-text">添加普通索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加全文索引"><span class="nav-number">1.3.4.</span> <span class="nav-text">添加全文索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加多列索引-组合索引"><span class="nav-number">1.3.5.</span> <span class="nav-text">添加多列索引(组合索引)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#速度对比"><span class="nav-number">1.4.</span> <span class="nav-text">速度对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分页查询"><span class="nav-number">1.4.1.</span> <span class="nav-text">分页查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#直接查库"><span class="nav-number">1.4.2.</span> <span class="nav-text">直接查库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改pyspider的建表语句"><span class="nav-number">1.4.3.</span> <span class="nav-text">修改pyspider的建表语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.5.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -832,9 +837,9 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/';
-          this.page.identifier = '2017/04/15/qq-copyright-crawler/';
-          this.page.title = 'qq_copyright crawler';
+          this.page.url = 'http://tingyunsay.github.io/2017/10/01/mysql查询优化/';
+          this.page.identifier = '2017/10/01/mysql查询优化/';
+          this.page.title = 'mysql查询优化';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://tingyun-site.disqus.com/embed.js';
