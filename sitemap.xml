@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tingyunsay.github.io/2017/10/20/pyspider%E6%93%8D%E4%BD%9C%E5%8D%83%E4%B8%87%E7%BA%A7%E5%BA%93/</loc>
+    
+    <lastmod>2017-10-20T18:01:40.259Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/</loc>
     
     <lastmod>2017-10-20T15:52:36.398Z</lastmod>
@@ -68,13 +75,6 @@
     <loc>http://tingyunsay.github.io/2017/09/09/python2-6-6%E6%9B%B4%E6%8D%A22-7/</loc>
     
     <lastmod>2017-10-20T15:49:35.688Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tingyunsay.github.io/2017/10/20/pyspider%E6%93%8D%E4%BD%9C%E5%8D%83%E4%B8%87%E7%BA%A7%E5%BA%93/</loc>
-    
-    <lastmod>2017-10-20T15:49:20.403Z</lastmod>
     
   </url>
   

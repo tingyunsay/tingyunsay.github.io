@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://tingyunsay.github.io/2017/10/20/pyspider%E6%93%8D%E4%BD%9C%E5%8D%83%E4%B8%87%E7%BA%A7%E5%BA%93/</loc>
+    <lastmod>2017-10-20T18:01:40.259Z</lastmod>
+    <data>
+        <display>
+        <title>pyspider操作千万级库</title>
+        <pubTime>2017-10-20T15:47:30.000Z</pubTime>
+        
+        <tag>pyspider</tag>
+         
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/</loc>
     <lastmod>2017-10-20T15:52:36.398Z</lastmod>
     <data>
@@ -212,28 +234,6 @@
         <tag>系统</tag>
          
         <tag>python</tag>
-         
-         
-           
-             
-              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/10/20/pyspider%E6%93%8D%E4%BD%9C%E5%8D%83%E4%B8%87%E7%BA%A7%E5%BA%93/</loc>
-    <lastmod>2017-10-20T15:49:20.403Z</lastmod>
-    <data>
-        <display>
-        <title>pyspider操作千万级库</title>
-        <pubTime>2017-10-20T15:47:30.000Z</pubTime>
-        
-        <tag>pyspider</tag>
-         
-        <tag>mysql</tag>
          
          
            
