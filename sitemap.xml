@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://tingyunsay.github.io/2017/09/08/pyspider%E5%88%86%E5%B8%83%E5%BC%8F%E9%83%A8%E7%BD%B2/</loc>
+    
+    <lastmod>2017-12-02T13:25:35.374Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102/</loc>
     
     <lastmod>2017-11-15T18:40:26.062Z</lastmod>
@@ -75,13 +82,6 @@
     <loc>http://tingyunsay.github.io/2017/07/15/Pyspider%E4%BD%A0%E6%89%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E4%BA%9B/</loc>
     
     <lastmod>2017-10-20T15:50:49.061Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://tingyunsay.github.io/2017/09/08/pyspider%E5%88%86%E5%B8%83%E5%BC%8F%E9%83%A8%E7%BD%B2/</loc>
-    
-    <lastmod>2017-10-20T15:50:44.201Z</lastmod>
     
   </url>
   
