@@ -1,0 +1,1010 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="爱奇艺vf算法,spider," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本文介绍如何获取纳豆app中视频的播放源链">
+<meta name="keywords" content="爱奇艺vf算法,spider">
+<meta property="og:type" content="article">
+<meta property="og:title" content="纳豆app视频播放链解析">
+<meta property="og:url" content="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/index.html">
+<meta property="og:site_name" content="听云">
+<meta property="og:description" content="本文介绍如何获取纳豆app中视频的播放源链">
+<meta property="og:image" content="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/1.png">
+<meta property="og:updated_time" content="2018-03-18T16:04:41.114Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="纳豆app视频播放链解析">
+<meta name="twitter:description" content="本文介绍如何获取纳豆app中视频的播放源链">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/"/>
+
+
+
+
+
+  <title> 纳豆app视频播放链解析 | 听云 </title>
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43aefd5fb3f7828b2058c874664c6486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">听云</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">听云的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-dream">
+          <a href="/article" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            Dream
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tingyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听云">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                纳豆app视频播放链解析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-18T18:26:08+08:00">
+                2018-03-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spider/" itemprop="url" rel="index">
+                    <span itemprop="name">spider</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/18/纳豆app视频播放链解析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/18/纳豆app视频播放链解析/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/03/18/纳豆app视频播放链解析/" class="leancloud_visitors" data-flag-title="纳豆app视频播放链解析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="本文介绍如何获取纳豆app中视频的播放源链"><a href="#本文介绍如何获取纳豆app中视频的播放源链" class="headerlink" title="本文介绍如何获取纳豆app中视频的播放源链"></a>本文介绍如何获取纳豆app中视频的播放源链</h2><a id="more"></a>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>相信看到这篇文章的很多同学都是在写爬虫的过程中遇到了问题，既然是爬虫，那么你的操作可能也会使得其他人或者自己的工作量变得大，这么说的原因有二：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.提供服务的那一方可能会因为一些不友好的爬虫，不断地修改策略</div><div class="line">2.服务端一旦修改反扒策略，所有涉及这个抓取源的开发者都需要更新</div></pre></td></tr></table></figure></p>
+<p>由于博主很长一段时间（一年半多）至今都是从事抓取相关的工作，也是由开始的”不友好的爬虫”慢慢意识到自己的很多的”爬虫工作”都更像是在攻击，而不是正正经经的”爬虫”。所以特别想在本文开始之前说一些关于爬虫应该稍微注意的点，不仅仅是为了个人的工作，更是觉得所有为大家贡献代码和思路的探路者都很不容易，总结一下就是：破解不易，且用且珍惜<br>以下几点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">访问频率/访问量，可以根据你对这个网站的数据量评估和自己的数据量需求，控制在一个合理的值，除非特殊情况，不要想着一天能百万千万</div><div class="line"></div><div class="line">能找到接口的网站尽量使用接口，这样能减少对服务器资源请求的压力</div><div class="line"></div><div class="line">好的代理确实不好找（除非花高价，x万/年），如果有可用的代理，使用像squid/nginx之类的代理服务，并且在使用之前动态校验，留下高可用的</div><div class="line"></div><div class="line">大部分设计接口的站点，其接口中应该含有绝大部分数据，能从一个接口里获取到的信息，尽量不要再增加多余的请求</div></pre></td></tr></table></figure></p>
+<p>注意到以上几点，最起码对方不会把你当成一个恶意程序，像一个正常访问的请求，不会对服务器造成什么不好的影响，何乐而不为</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在收集一款app叫做”爱奇艺头条”（现已更名为：纳豆）上的短视频时，找寻其播放源链</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><h4 id="前期抓包"><a href="#前期抓包" class="headerlink" title="前期抓包"></a>前期抓包</h4><p><strong>请求网站：<a href="http://m.toutiao.iqiyi.com/top_126hd0mujy.html" target="_blank" rel="external">http://m.toutiao.iqiyi.com/top_126hd0mujy.html</a></strong></p>
+<p>在app端抓包，两次的不同的请求：<br><a href="http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521166692860&amp;src=02020031010000000000&amp;vf=0b53f9287e1b0a970ed1343392af05c2&amp;callback=tmtsCallback" target="_blank" rel="external">http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521166692860&amp;src=02020031010000000000&amp;vf=0b53f9287e1b0a970ed1343392af05c2&amp;callback=tmtsCallback</a></p>
+<p><a href="http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521105711069&amp;src=02020031010000000000&amp;vf=1461673fa3ce9cc1cdef6308c9691171&amp;callback=tmtsCallback" target="_blank" rel="external">http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521105711069&amp;src=02020031010000000000&amp;vf=1461673fa3ce9cc1cdef6308c9691171&amp;callback=tmtsCallback</a></p>
+<p>观察其中的参数，只有t和vf不同，这个t很明显能看出来是一个时间戳（13位的），而这个vf就得继续研究了</p>
+<h4 id="找寻加密方法"><a href="#找寻加密方法" class="headerlink" title="找寻加密方法"></a>找寻加密方法</h4><p><strong>猜想是不是由某个js文件加密生成的</strong><br>于是我按下f12，刷新了下页面，发现在这个播放链出来之前加载了如下几个js文件<br><img src="/2018/03/18/纳豆app视频播放链解析/1.png" alt="图一"><br>注：最下面的那个请求是获取详细播放链的url<br>在图中的js文件中，很轻易便能看到有一个特别显眼的js文件：<font color="red">app_detail_video.18f1b586.js</font><br><strong><a href="http://static.qiyi.com/assets/js/page/detail/app_detail_video.18f1b586.js" target="_blank" rel="external">http://static.qiyi.com/assets/js/page/detail/app_detail_video.18f1b586.js</a></strong><br>我们进入到以上的js文件中，检索 vf= 这个关键词，找到相关的代码如下<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function(e, t, a) &#123;</div><div class="line">    var i = window.cmd5xtmts ? window.cmd5xtmts() : &#123;&#125;;</div><div class="line">    $.extend(a || &#123;&#125;, i, &#123;</div><div class="line">        src: "02020031010000000000"</div><div class="line">    &#125;);</div><div class="line">    var n = "/jp/tmts/" + e + "/" + t + "/?" + $.param(a) + "&amp;callback=tmtsCallback";</div><div class="line">    return a.vf = window.cmd5x ? window.cmd5x(n) : "", a</div><div class="line">&#125;(e, t, a));</div></pre></td></tr></table></figure></p>
+<p>这里的 <font color="red">a.vf = window.cmd5x ? window.cmd5x(n) : “”, a</font><br>意思是：<font color="red"><strong>若window这个对象有cmd5x这个方法（属性），就返回window.cmd5x(n)；否则返回””空字符串, 后面的a是第二个返回值</strong></font><br>到这里就出现两个问题：<br>1.cmd5x这个函数在哪儿?<br>2.这个n是怎么得到的？</p>
+<h4 id="找寻cmd5x这个加密函数"><a href="#找寻cmd5x这个加密函数" class="headerlink" title="找寻cmd5x这个加密函数"></a><strong>找寻cmd5x这个加密函数</strong></h4><p>在所有加载的js文件中都找了一遍，但是还没有明确地看到cmd5x这个function，但是在网上查到的一份有关爱奇艺的vf算法js文件看到如下一段代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">o.exports = &#123;</div><div class="line">    request: function(e, t, i) &#123;</div><div class="line">        var o = navigator.userAgent.match(/miuivideo\//i) || n.os.android &amp;&amp; parseInt(n.os.version) &gt; 4 &amp;&amp; navigator.userAgent.match(/MiuiBrowser/i);</div><div class="line">        u.sendVrsRequestPingback(),</div><div class="line">        r.jsonp(&#123;</div><div class="line">            url: c.h5tmtsUrl + e.tvid + "/" + e.vid + "/",</div><div class="line">            params: function() &#123;</div><div class="line">                var t = &#123;</div><div class="line">                    platForm: "h5",</div><div class="line">                    uid: d.getUid(),</div><div class="line">                    dfp: s.get(),</div><div class="line">                    cupid: e.cupid,</div><div class="line">                    src: p.getSrc(),</div><div class="line">                    codeflag: 1,</div><div class="line">                    type: n.os.mac &amp;&amp; n.browser.SAFARI || n.browser.iPad || n.browser.iPhone || n.os.android &amp;&amp; parseFloat(n.os.version) &gt; 4 || o ? "m3u8": "mp4"</div><div class="line">                &#125;;</div><div class="line">                f.isBoss() &amp;&amp; (t.nolimit = 1);</div><div class="line">                try &#123;</div><div class="line">                    l(t, p.cmd5xtmts())</div><div class="line">                &#125; catch(e) &#123;&#125;</div><div class="line">                return t</div><div class="line">            &#125; (),</div><div class="line">            beforeSend: function(e) &#123;</div><div class="line">                var t = a.parse(e.url).host;</div><div class="line">                try &#123;</div><div class="line">                    p.cmd5x &amp;&amp; (e.url += "&amp;vf=" + p.cmd5x(e.url.replace(new RegExp("^https?://" + t, "ig"), "")))</div><div class="line">                &#125; catch(e) &#123;&#125;</div><div class="line">                return e</div><div class="line">            &#125;,</div><div class="line">            success: function(e) &#123;</div><div class="line">                u.sendVrsReadyPingback(),</div><div class="line">                e &amp;&amp; e.hasOwnProperty("code") ? "A00000" === e.code ? t(e) : i(e) : i(&#123;</div><div class="line">                    code: "P00001"</div><div class="line">                &#125;)</div><div class="line">            &#125;,</div><div class="line">            failure: function() &#123;</div><div class="line">                i(&#123;</div><div class="line">                    code: "P00001"</div><div class="line">                &#125;)</div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>能看出来以上是部分关于发送验证请求的代码，主要看beforeSend这一部分，大概能够知道<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">url: c.h5tmtsUrl + e.tvid + <span class="string">"/"</span> + e.vid + <span class="string">"/"</span>,</div><div class="line"></div><div class="line">var t = a.parse(e.url).host;</div><div class="line"></div><div class="line">e.url += <span class="string">"&amp;vf="</span> + p.cmd5x(e.url.replace(new RegExp(<span class="string">"^https?://"</span> + t, <span class="string">"ig"</span>), <span class="string">""</span>))</div></pre></td></tr></table></figure></p>
+<p>以上，我们还找到h5tmtsUrl这个未知的变量，又找到如下的代码<br>注：e.url.replace(new RegExp(“^https?://“ + t, “ig”), “”)<br>这是将”<a href="https://&quot;+e.url的域名" target="_blank" rel="external">https://&quot;+e.url的域名</a> , “ig”表示不区分大小写，统统替换成成空字符串，结合下面提到的来说，也就是将”<a href="https://cache.m.iqiyi.com/jp/tmts/" target="_blank" rel="external">https://cache.m.iqiyi.com/jp/tmts/</a>“ 这一段字符替换成空字符串<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function(e, t, i) &#123;</div><div class="line">    var o;</div><div class="line">    void <span class="number">0</span> !== (o = function(e, t, i) &#123;</div><div class="line">        var o = window.location.protocol;</div><div class="line">        i.exports = &#123;</div><div class="line">            vipauthUrl: <span class="string">"https://api.vip.iqiyi.com/services/cknsp.action"</span>,</div><div class="line">            h5tmtsUrl: o + <span class="string">"//cache.m.iqiyi.com/jp/tmts/"</span>,</div><div class="line">            vmsUrl: o + <span class="string">"//cache.video.iqiyi.com/jp/vms"</span>,</div><div class="line">            vmsIPUrl1: <span class="string">"http://115.182.125.142/jp/vms"</span>,</div><div class="line">            vmsIPUrl2: <span class="string">"http://124.250.53.164/jp/vms"</span>,</div><div class="line">            pingbackUrl: <span class="string">"http://msg.71.am/core"</span>,</div><div class="line">            isfanUrl: o + <span class="string">"//sns-api.iqiyi.com/apis/friend/follow.action"</span></div><div class="line">        &#125;</div><div class="line">    &#125;.call(t, i, t, e)) &amp;&amp; (e.exports = o)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>可以知道<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var o = window.location.protocol;</div><div class="line"></div><div class="line">h5tmtsUrl: o + <span class="string">"//cache.m.iqiyi.com/jp/tmts/"</span></div></pre></td></tr></table></figure></p>
+<p>h5tmtsUrl其实就是一个通信协议+指定字符串：”https” + “//cache.m.iqiyi.com/jp/tmts/“<br>所以，到这里我们需要解决的是什么呢？cmd5x这个函数我们依然不知道，且我们只能大概知道作为其参数的e.url是一个被替换掉了”<a href="https://cache.m.iqiyi.com/jp/tmts/" target="_blank" rel="external">https://cache.m.iqiyi.com/jp/tmts/</a>“ 的正常url字符串，其可能的参数有如下<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">url = c.h5tmtsUrl + e.tvid + "/" + e.vid + "/"</div><div class="line"></div><div class="line">#以下这些拼接成字符串</div><div class="line">&#123;</div><div class="line">    platForm: "h5",</div><div class="line">    uid: d.getUid(),</div><div class="line">    dfp: s.get(),</div><div class="line">    cupid: e.cupid,</div><div class="line">    src: p.getSrc(),</div><div class="line">    codeflag: 1,</div><div class="line">    type: n.os.mac &amp;&amp; n.browser.SAFARI || n.browser.iPad || n.browser.iPhone || n.os.android &amp;&amp; parseFloat(n.os.version) &gt; 4 || o ? "m3u8": "mp4"</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>由于其js文件实在太混乱，所有参数都不知道怎么来的，没法推算出我们应该给这个cmd5x传一个什么样的值，更重要的是js中的cmd5x在哪儿，我该怎么用py去调用都不知道。最后还是在万能的google上扎到了答案，感谢贡献代码的大佬，一路带我前行</p>
+<h4 id="来自大佬的微笑"><a href="#来自大佬的微笑" class="headerlink" title="来自大佬的微笑"></a>来自大佬的微笑</h4><p>参考了几篇博客，自己也尝试着构造请求，也成功了，大概有以下这些参数是必要的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">head = <span class="string">"/jp/tmts/tvid/vid/?"</span></div><div class="line">param = &#123;</div><div class="line">        <span class="string">"uid"</span>:<span class="string">""</span>,</div><div class="line">        <span class="string">"cupid"</span>:<span class="string">""</span>,</div><div class="line">        <span class="string">"platForm"</span>:<span class="string">"h5"</span>,</div><div class="line">        <span class="string">"qyid"</span>:<span class="string">""</span>,</div><div class="line">        <span class="string">"agenttype"</span>:<span class="string">"13"</span>,</div><div class="line">        <span class="string">"type"</span>:<span class="string">"mp4"</span>,</div><div class="line">        <span class="string">"nolimit"</span>:<span class="string">""</span>,</div><div class="line">        <span class="string">"k_ft1"</span>:<span class="string">"8"</span>,</div><div class="line">        <span class="string">"rate"</span>:<span class="string">"2"</span>,</div><div class="line">        <span class="string">"sgti"</span>:<span class="string">""</span>,</div><div class="line">        <span class="string">"qdv"</span>:<span class="string">"1"</span>,</div><div class="line">        <span class="string">"qdx"</span>:<span class="string">"n"</span>,</div><div class="line">        <span class="string">"qdy"</span>:<span class="string">"x"</span>,</div><div class="line">        <span class="string">"qds"</span>:<span class="string">"0"</span>,</div><div class="line">        <span class="string">"__jsT"</span>:<span class="string">"sgve"</span>,</div><div class="line">        <span class="string">"t"</span>:t,</div><div class="line">        <span class="string">"src"</span>:<span class="string">"02020031010000000000"</span>,</div><div class="line">        <span class="string">"callback"</span>:<span class="string">"tmtsCallback"</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>将param构造成一个字符串，再在头部拼接上head即是一个正常的cmd5x需要的参数，一个正常的出参数值为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/jp/tmts/12476488409/12476488409/?src=02020031010000000000&amp;callback=tmtsCallback&amp;uid=&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;agenttype=13&amp;cupid=&amp;t=1521388096000&amp;qdv=1&amp;platForm=h5&amp;rate=2&amp;__jsT=sgve&amp;k_ft1=8&amp;qds=0&amp;nolimit=&amp;qdy=x&amp;type=mp4&amp;qdx=n&amp;qyid=&amp;&amp;vf=39f7f4c1b39089dbfe887ad15f1ffb7a</div></pre></td></tr></table></figure></p>
+<p>加上对应的头部文件：<br>“<a href="http://cache.m.iqiyi.com" target="_blank" rel="external">http://cache.m.iqiyi.com</a>“</p>
+<p>最后即是我们请求视频链接的地址<br><a href="http://cache.m.iqiyi.com/jp/tmts/12476488409/12476488409/?src=02020031010000000000&amp;callback=tmtsCallback&amp;uid=&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;agenttype=13&amp;cupid=&amp;t=1521388096000&amp;qdv=1&amp;platForm=h5&amp;rate=2&amp;__jsT=sgve&amp;k_ft1=8&amp;qds=0&amp;nolimit=&amp;qdy=x&amp;type=mp4&amp;qdx=n&amp;qyid=&amp;&amp;vf=39f7f4c1b39089dbfe887ad15f1ffb7a" target="_blank" rel="external">http://cache.m.iqiyi.com/jp/tmts/12476488409/12476488409/?src=02020031010000000000&amp;callback=tmtsCallback&amp;uid=&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;agenttype=13&amp;cupid=&amp;t=1521388096000&amp;qdv=1&amp;platForm=h5&amp;rate=2&amp;__jsT=sgve&amp;k_ft1=8&amp;qds=0&amp;nolimit=&amp;qdy=x&amp;type=mp4&amp;qdx=n&amp;qyid=&amp;&amp;vf=39f7f4c1b39089dbfe887ad15f1ffb7a</a></p>
+<p>其返回的数据格式化后如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">　　<span class="string">"timestamp"</span>:<span class="string">"20180318234822"</span>,</div><div class="line">　　<span class="string">"ctl"</span>:&#123;</div><div class="line">　　　　<span class="string">"area"</span>:<span class="number">1</span></div><div class="line">　　&#125;,</div><div class="line">　　<span class="string">"code"</span>:<span class="string">"A00000"</span>,</div><div class="line">　　<span class="string">"data"</span>:&#123;</div><div class="line">　　　　<span class="string">"vipTypes"</span>:[</div><div class="line"></div><div class="line">　　　　],</div><div class="line">　　　　<span class="string">"screenSize"</span>:<span class="string">"854x480"</span>,</div><div class="line">　　　　<span class="string">"vidl"</span>:[</div><div class="line">　　　　　　&#123;</div><div class="line">　　　　　　　　<span class="string">"vd"</span>:<span class="number">1</span>,</div><div class="line">　　　　　　　　<span class="string">"screenSize"</span>:<span class="string">"854x480"</span>,</div><div class="line">　　　　　　　　<span class="string">"vid"</span>:<span class="string">"e7eb1b37eeb029f6529bde6dc66a4815"</span></div><div class="line">　　　　　　&#125;</div><div class="line">　　　　],</div><div class="line">　　　　<span class="string">"aid"</span>:<span class="string">""</span>,</div><div class="line">　　　　<span class="string">"pano"</span>:&#123;</div><div class="line">　　　　　　<span class="string">"rType"</span>:<span class="number">0</span>,</div><div class="line">　　　　　　<span class="string">"type"</span>:<span class="number">1</span></div><div class="line">　　　　&#125;,</div><div class="line">　　　　<span class="string">"adDuration"</span>:<span class="number">0</span>,</div><div class="line">　　　　<span class="string">"messageId"</span>:<span class="string">""</span>,</div><div class="line">　　　　<span class="string">"head"</span>:<span class="number">0</span>,</div><div class="line">　　　　<span class="string">"previewType"</span>:<span class="string">""</span>,</div><div class="line">　　　　<span class="string">"ugc"</span>:<span class="number">1</span>,</div><div class="line">　　　　<span class="string">"clientIp"</span>:<span class="string">"114.248.64.91"</span>,</div><div class="line">　　　　<span class="string">"prv"</span>:<span class="string">""</span>,</div><div class="line">　　　　<span class="string">"vd"</span>:<span class="number">1</span>,</div><div class="line">　　　　<span class="string">"vid"</span>:<span class="string">"12476488409"</span>,</div><div class="line">　　　　<span class="string">"rTime"</span>:<span class="string">""</span>,</div><div class="line">　　　　<span class="string">"ds"</span>:<span class="string">"A00012"</span>,</div><div class="line">　　　　<span class="string">"lgh"</span>:[</div><div class="line"></div><div class="line">　　　　],</div><div class="line">　　　　<span class="string">"duration"</span>:<span class="number">272</span>,</div><div class="line">　　　　<span class="string">"wmarkPos"</span>:<span class="number">0</span>,</div><div class="line">　　　　<span class="string">"bossStatus"</span>:<span class="number">0</span>,</div><div class="line">　　　　<span class="string">"cacheTime"</span>:<span class="number">1521388047491</span>,</div><div class="line">　　　　<span class="string">"tail"</span>:<span class="number">0</span>,</div><div class="line">　　　　<span class="string">"isProduced"</span>:<span class="number">0</span>,</div><div class="line">　　　　<span class="string">"cid"</span>:<span class="number">5</span>,</div><div class="line">　　　　<span class="string">"tipType"</span>:<span class="string">""</span>,</div><div class="line">　　　　<span class="string">"m3u"</span>:<span class="string">"http://222.134.2.36/videos/v1/20180210/59/d2/82ae8f5cf70d7093c1b4dbcfbe667e6b.mp4?key=09bf99dfe8d1239f4fd1deb1192c91f75&amp;dis_k=244569a7f99feb6f8fde7414223cfb756&amp;dis_t=1521388102&amp;dis_dz=CNC-BeiJing&amp;dis_st=40&amp;src=iqiyi.com&amp;uuid=a6e5338-5aae8a46-e&amp;m=v&amp;qd_k=39f7f4c1b39089dbfe887ad15f1ffb7a&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;qd_ip=72f8405b&amp;qd_p=72f8405b&amp;dfp=&amp;qd_src=02020031010000000000&amp;ssl=&amp;ip=114.248.64.91&amp;qd_vip=0&amp;dis_src=vrs&amp;qd_uid=0&amp;qdv=1&amp;qd_tm=1521388102146"</span>,</div><div class="line">　　　　<span class="string">"ad"</span>:<span class="number">1</span>,</div><div class="line">　　　　<span class="string">"exclusive"</span>:<span class="number">0</span>,</div><div class="line">　　　　<span class="string">"tvid"</span>:<span class="number">12476488409</span>,</div><div class="line">　　　　<span class="string">"previewTime"</span>:<span class="string">""</span>,</div><div class="line">　　　　<span class="string">"m3utx"</span>:<span class="string">"http://222.134.2.36/videos/v1/20180210/59/d2/82ae8f5cf70d7093c1b4dbcfbe667e6b.mp4?key=09bf99dfe8d1239f4fd1deb1192c91f75&amp;dis_k=244569a7f99feb6f8fde7414223cfb756&amp;dis_t=1521388102&amp;dis_dz=CNC-BeiJing&amp;dis_st=40&amp;src=iqiyi.com&amp;uuid=a6e5338-5aae8a46-e&amp;m=v&amp;qd_k=39f7f4c1b39089dbfe887ad15f1ffb7a&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;qd_ip=72f8405b&amp;qd_p=72f8405b&amp;dfp=&amp;qd_src=02020031010000000000&amp;ssl=&amp;ip=114.248.64.91&amp;qd_vip=0&amp;dis_src=vrs&amp;qd_uid=0&amp;qdv=1&amp;qd_tm=1521388102146"</span></div><div class="line">　　&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中的m3u就是视频真正的播放地址了</p>
+<p>cmd5x也有破解好的对应几个版本，其实也叫做vf的算法，针对不同类型<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> hashlib</div><div class="line"></div><div class="line"><span class="comment">#app端的vf算法</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cmd5x</span><span class="params">(str)</span>:</span></div><div class="line">    vf = hashlib.new(<span class="string">'md5'</span>, str + <span class="string">'3sj8xof48xof4tk9f4tk9ypgk9ypg5ul'</span>).hexdigest()</div><div class="line">    <span class="keyword">return</span> vf</div><div class="line"></div><div class="line"><span class="comment">#pc端的vf算法，针对爱奇艺的网页播放</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getPcVf</span><span class="params">(str)</span>:</span></div><div class="line">    vf = hashlib.new(<span class="string">'md5'</span>, str + <span class="string">'u6fnp3eok0dpftcq9qbr4n9svk8tqh7u'</span>).hexdigest()</div><div class="line">    <span class="keyword">return</span> vf</div><div class="line"></div><div class="line"><span class="comment">#针对vip用户的vf算法</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">getPcIbt</span><span class="params">(str)</span>:</span></div><div class="line">    vf = hashlib.new(<span class="string">'md5'</span>, str + <span class="string">'t6hrq6k0n6n6k6qdh6tje6wpb62v7654'</span>).hexdigest()</div><div class="line">    <span class="keyword">return</span> vf</div></pre></td></tr></table></figure></p>
+<p>这里我们使用第一个即可</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>代码放在<a href="&quot;https://github.com/tingyunsay/nadou_vf&quot;"><font color="purple"><strong>github</strong></font></a>了，有需要的可以看看</p>
+<hr>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>在找参数的过程中用到了一个动态调试js的方法，由于本篇篇幅太长，放在下一篇里面单独讲讲这种方法</p>
+<p>参考网址：<br><a href="http://zhuhaidong.win/TP/index.php/Home/Index/article/id/32.html" target="_blank" rel="external">http://zhuhaidong.win/TP/index.php/Home/Index/article/id/32.html</a><br><a href="https://blog.icehoney.me/posts/2016-12-19-Reverse-JavaScript" target="_blank" rel="external">https://blog.icehoney.me/posts/2016-12-19-Reverse-JavaScript</a><br><a href="https://github.com/zhangn1985/ykdl/issues/19" target="_blank" rel="external">https://github.com/zhangn1985/ykdl/issues/19</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/爱奇艺vf算法/" rel="tag"># 爱奇艺vf算法</a>
+          
+            <a href="/tags/spider/" rel="tag"># spider</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/04/python读取excel合并单元格/" rel="prev" title="python读取excel合并单元格">
+                python读取excel合并单元格 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
+          <p class="site-author-name" itemprop="name">tingyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">努力写作的程序员</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tingyunsay" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/helloa-bao" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍如何获取纳豆app中视频的播放源链"><span class="nav-number">1.</span> <span class="nav-text">本文介绍如何获取纳豆app中视频的播放源链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">1.3.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前期抓包"><span class="nav-number">1.3.1.</span> <span class="nav-text">前期抓包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找寻加密方法"><span class="nav-number">1.3.2.</span> <span class="nav-text">找寻加密方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找寻cmd5x这个加密函数"><span class="nav-number">1.3.3.</span> <span class="nav-text">找寻cmd5x这个加密函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来自大佬的微笑"><span class="nav-number">1.3.4.</span> <span class="nav-text">来自大佬的微笑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码"><span class="nav-number">1.3.5.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.4.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tingyun</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<span id="busuanzi_container_site_pv" class="times">
+	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = '<%- config.leancloud_visitors.app_id %>';
+    var APP_KEY = '<%- config.leancloud_visitors.app_key %>';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count 
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+   // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://tingyun-site.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/';
+          this.page.identifier = '2018/03/18/纳豆app视频播放链解析/';
+          this.page.title = '纳豆app视频播放链解析';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://tingyun-site.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("W6jC6pbDoOxG8g1AMLm4SPIi-gzGzoHsz", "JXpCmEdRB7KbMVjQl91Itbk8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+</body>
+</html>
