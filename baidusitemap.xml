@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://tingyunsay.github.io/2018/06/22/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8104/</loc>
+    <lastmod>2018-06-21T17:43:56.609Z</lastmod>
+    <data>
+        <display>
+        <title>细说python字符编码(四)</title>
+        <pubTime>2018-06-21T16:30:02.000Z</pubTime>
+        
+        <tag>编码</tag>
+         
+        <tag>自定义编码</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://tingyunsay.github.io/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tingyunsay.github.io/2018/06/07/%E5%90%AC%E4%BA%91%E8%AE%B007/</loc>
     <lastmod>2018-06-06T23:16:32.904Z</lastmod>
     <data>
@@ -435,9 +457,9 @@
         <title>Portia---一款开源可视化爬虫工具</title>
         <pubTime>2017-06-29T04:09:07.000Z</pubTime>
         
-        <tag>可视化爬虫</tag>
-         
         <tag>portia</tag>
+         
+        <tag>可视化爬虫</tag>
          
          
            
@@ -457,9 +479,9 @@
         <title>Pyspider---一款强大的可视化抓取平台</title>
         <pubTime>2017-07-08T11:30:31.000Z</pubTime>
         
-        <tag>pyspider</tag>
-         
         <tag>可视化爬虫</tag>
+         
+        <tag>pyspider</tag>
          
          
            
