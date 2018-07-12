@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://tingyunsay.github.io/2018/03/18/%E7%BA%B3%E8%B1%86app%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E9%93%BE%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2018-07-12T03:37:46.486Z</lastmod>
+    <data>
+        <display>
+        <title>纳豆app视频播放链解析</title>
+        <pubTime>2018-03-18T10:26:08.000Z</pubTime>
+        
+        <tag>爱奇艺vf算法</tag>
+         
+        <tag>spider</tag>
+         
+         
+           
+             
+              <breadCrumb title="spider" url="http://tingyunsay.github.io/categories/spider/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tingyunsay.github.io/2018/06/22/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8104/</loc>
     <lastmod>2018-06-21T17:43:56.609Z</lastmod>
     <data>
@@ -87,28 +109,6 @@
            
              
               <breadCrumb title="逆向工程" url="http://tingyunsay.github.io/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2018/03/18/%E7%BA%B3%E8%B1%86app%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E9%93%BE%E8%A7%A3%E6%9E%90/</loc>
-    <lastmod>2018-04-18T08:33:20.792Z</lastmod>
-    <data>
-        <display>
-        <title>纳豆app视频播放链解析</title>
-        <pubTime>2018-03-18T10:26:08.000Z</pubTime>
-        
-        <tag>爱奇艺vf算法</tag>
-         
-        <tag>spider</tag>
-         
-         
-           
-             
-              <breadCrumb title="spider" url="http://tingyunsay.github.io/categories/spider/"/>
           
         </display>
     </data>
@@ -457,9 +457,9 @@
         <title>Portia---一款开源可视化爬虫工具</title>
         <pubTime>2017-06-29T04:09:07.000Z</pubTime>
         
-        <tag>portia</tag>
-         
         <tag>可视化爬虫</tag>
+         
+        <tag>portia</tag>
          
          
            
@@ -479,9 +479,9 @@
         <title>Pyspider---一款强大的可视化抓取平台</title>
         <pubTime>2017-07-08T11:30:31.000Z</pubTime>
         
-        <tag>可视化爬虫</tag>
-         
         <tag>pyspider</tag>
+         
+        <tag>可视化爬虫</tag>
          
          
            
