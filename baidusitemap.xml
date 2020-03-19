@@ -4,21 +4,21 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2018/02/07/pyspider%E6%8D%A2%E7%94%A8%E5%9B%BD%E5%86%85cdn%E4%BB%A5%E5%8F%8A%E6%9C%AC%E5%9C%B0cdn/</loc>
-    <lastmod>2018-07-20T03:07:52.171Z</lastmod>
+    <loc>http://tingyunsay.github.io/2018/08/10/%E5%A4%9Agit%E8%B4%A6%E5%8F%B7%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
+    <lastmod>2020-03-19T18:23:45.469Z</lastmod>
     <data>
         <display>
-        <title>pyspider换用国内cdn/本地cdn</title>
-        <pubTime>2018-02-06T16:51:54.000Z</pubTime>
+        <title>多git账号配置问题解决</title>
+        <pubTime>2018-08-10T11:08:56.000Z</pubTime>
         
-        <tag>pyspider</tag>
+        <tag>git</tag>
          
-        <tag>cdn</tag>
+        <tag>代码控制</tag>
          
          
            
              
-              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
+              <breadCrumb title="git" url="http://tingyunsay.github.io/categories/git/"/>
           
         </display>
     </data>
@@ -26,16 +26,18 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2018/03/18/%E7%BA%B3%E8%B1%86app%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E9%93%BE%E8%A7%A3%E6%9E%90/</loc>
-    <lastmod>2018-07-12T03:37:46.486Z</lastmod>
+    <loc>http://tingyunsay.github.io/2019/01/14/%E5%AE%89%E5%85%A8%E6%90%AD%E5%BB%BAsquid%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4/</loc>
+    <lastmod>2020-03-19T18:14:32.092Z</lastmod>
     <data>
         <display>
-        <title>纳豆app视频播放链解析</title>
-        <pubTime>2018-03-18T10:26:08.000Z</pubTime>
+        <title>安全搭建squid代理集群</title>
+        <pubTime>2019-01-14T11:58:17.000Z</pubTime>
         
-        <tag>爱奇艺vf算法</tag>
+        <tag>squid代理</tag>
          
-        <tag>spider</tag>
+        <tag>代理集群</tag>
+         
+        <tag>安全</tag>
          
          
            
@@ -48,8 +50,124 @@
 
     
   <url>
+    <loc>http://tingyunsay.github.io/2019/05/31/%E5%90%AC%E4%BA%91%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%86/</loc>
+    <lastmod>2020-03-19T18:10:06.924Z</lastmod>
+    <data>
+        <display>
+        <title>听云基础乐理知识</title>
+        <pubTime>2019-05-31T09:02:57.000Z</pubTime>
+        
+        <tag>吉他</tag>
+         
+        <tag>乐理</tag>
+         
+         
+           
+             
+              <breadCrumb title="音乐" url="http://tingyunsay.github.io/categories/%E9%9F%B3%E4%B9%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2019/05/20/%E5%90%AC%E4%BA%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E8%B4%B0/</loc>
+    <lastmod>2020-03-19T17:21:27.982Z</lastmod>
+    <data>
+        <display>
+        <title>听云推荐系统贰</title>
+        <pubTime>2019-05-20T07:52:29.000Z</pubTime>
+        
+        <tag>推荐系统</tag>
+         
+        <tag>离线层</tag>
+         
+         
+           
+             
+              <breadCrumb title="推荐系统" url="http://tingyunsay.github.io/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2019/01/31/%E5%90%AC%E4%BA%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2020-03-19T17:20:10.809Z</lastmod>
+    <data>
+        <display>
+        <title>听云推荐系统</title>
+        <pubTime>2019-01-31T09:57:47.000Z</pubTime>
+        
+        <tag>推荐系统</tag>
+         
+        <tag>架构</tag>
+         
+         
+           
+             
+              <breadCrumb title="推荐系统" url="http://tingyunsay.github.io/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</loc>
+    <lastmod>2020-03-19T16:25:15.348Z</lastmod>
+    <data>
+        <display>
+        <title>内网穿透</title>
+        <pubTime>2018-08-13T02:42:56.000Z</pubTime>
+        
+        <tag>frp</tag>
+         
+        <tag>花生壳</tag>
+         
+        <tag>内网穿透</tag>
+         
+         
+           
+             
+              <breadCrumb title="内网穿透" url="http://tingyunsay.github.io/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2018/06/07/%E5%90%AC%E4%BA%91%E8%AE%B007/</loc>
+    <lastmod>2020-03-19T15:19:05.664Z</lastmod>
+    <data>
+        <display>
+        <title>听云记 柒</title>
+        <pubTime>2018-06-06T22:42:32.000Z</pubTime>
+        
+        <tag>life</tag>
+         
+        <tag>imageine</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+  <url>
     <loc>http://tingyunsay.github.io/2018/06/22/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8104/</loc>
-    <lastmod>2018-06-21T17:43:56.609Z</lastmod>
+    <lastmod>2020-03-19T13:54:50.780Z</lastmod>
     <data>
         <display>
         <title>细说python字符编码(四)</title>
@@ -70,184 +188,8 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2018/06/07/%E5%90%AC%E4%BA%91%E8%AE%B007/</loc>
-    <lastmod>2018-06-06T23:16:32.904Z</lastmod>
-    <data>
-        <display>
-        <title>听云记 柒</title>
-        <pubTime>2018-06-06T22:42:32.000Z</pubTime>
-        
-        <tag>life</tag>
-         
-        <tag>imageine</tag>
-         
-         
-           
-             
-              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/</loc>
-    <lastmod>2018-04-26T17:02:24.526Z</lastmod>
-    <data>
-        <display>
-        <title>约瑟夫环问题详解</title>
-        <pubTime>2018-04-26T03:37:42.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-        <tag>出队</tag>
-         
-        <tag>约瑟夫环</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="http://tingyunsay.github.io/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2018/04/20/360%E6%89%8B%E6%9C%BA%E5%88%B7xposed%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2018-04-21T05:30:35.376Z</lastmod>
-    <data>
-        <display>
-        <title>360手机刷xposed教程</title>
-        <pubTime>2018-04-20T15:39:05.000Z</pubTime>
-        
-        <tag>360n4</tag>
-         
-        <tag>xposed</tag>
-         
-         
-           
-             
-              <breadCrumb title="逆向工程" url="http://tingyunsay.github.io/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2018/03/25/%E7%81%B5%E7%9F%B3/</loc>
-    <lastmod>2018-04-09T18:19:14.339Z</lastmod>
-    <data>
-        <display>
-        <title>石 灵</title>
-        <pubTime>2018-03-25T15:37:51.000Z</pubTime>
-        
-        <tag>dream</tag>
-         
-        <tag>article</tag>
-         
-         
-           
-             
-              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2018/03/19/%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95%E6%9C%AC%E5%9C%B0js%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2018-03-19T16:30:56.862Z</lastmod>
-    <data>
-        <display>
-        <title>动态调试本地js文件</title>
-        <pubTime>2018-03-19T15:12:56.000Z</pubTime>
-        
-        <tag>本地js调试</tag>
-         
-         
-           
-             
-              <breadCrumb title="spider" url="http://tingyunsay.github.io/categories/spider/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2018/02/22/%E5%90%AC%E4%BA%91%E8%AE%B004/</loc>
-    <lastmod>2018-03-19T13:25:43.375Z</lastmod>
-    <data>
-        <display>
-        <title>听云记 肆</title>
-        <pubTime>2018-02-22T09:13:03.000Z</pubTime>
-        
-        <tag>life</tag>
-         
-        <tag>imageine</tag>
-         
-         
-           
-             
-              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2018/03/04/python%E8%AF%BB%E5%8F%96excel%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC/</loc>
-    <lastmod>2018-03-04T17:04:04.025Z</lastmod>
-    <data>
-        <display>
-        <title>python读取excel合并单元格</title>
-        <pubTime>2018-03-04T15:54:53.000Z</pubTime>
-        
-        <tag>openpyxl</tag>
-         
-        <tag>excel</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://tingyunsay.github.io/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2018/01/22/%E5%90%AC%E4%BA%91%E8%AE%B003/</loc>
-    <lastmod>2018-01-21T18:01:32.747Z</lastmod>
-    <data>
-        <display>
-        <title>听云记 叁</title>
-        <pubTime>2018-01-21T17:29:51.000Z</pubTime>
-        
-        <tag>life</tag>
-         
-        <tag>imageine</tag>
-         
-         
-           
-             
-              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://tingyunsay.github.io/2017/09/08/pyspider%E5%88%86%E5%B8%83%E5%BC%8F%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2017-12-02T13:25:35.374Z</lastmod>
+    <lastmod>2020-03-19T13:54:50.779Z</lastmod>
     <data>
         <display>
         <title>pyspider分布式部署</title>
@@ -268,276 +210,8 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102/</loc>
-    <lastmod>2017-11-15T18:40:26.062Z</lastmod>
-    <data>
-        <display>
-        <title>细说python字符编码(二)</title>
-        <pubTime>2017-10-15T04:12:54.000Z</pubTime>
-        
-        <tag>编码</tag>
-         
-        <tag>unicode</tag>
-         
-        <tag>utf8</tag>
-         
-        <tag>ascii</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://tingyunsay.github.io/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/11/12/%E5%90%AC%E4%BA%91%E8%AE%B002/</loc>
-    <lastmod>2017-11-12T17:16:22.760Z</lastmod>
-    <data>
-        <display>
-        <title>听云记 贰</title>
-        <pubTime>2017-11-12T14:39:23.000Z</pubTime>
-        
-        <tag>life</tag>
-         
-        <tag>imageine</tag>
-         
-         
-           
-             
-              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/09/24/%E5%90%AC%E4%BA%91%E8%AE%B0/</loc>
-    <lastmod>2017-11-12T14:40:50.404Z</lastmod>
-    <data>
-        <display>
-        <title>听云记</title>
-        <pubTime>2017-09-23T19:47:18.000Z</pubTime>
-        
-        <tag>life</tag>
-         
-        <tag>imageine</tag>
-         
-         
-           
-             
-              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/10/20/pyspider%E6%93%8D%E4%BD%9C%E5%8D%83%E4%B8%87%E7%BA%A7%E5%BA%93/</loc>
-    <lastmod>2017-11-12T14:33:53.670Z</lastmod>
-    <data>
-        <display>
-        <title>pyspider操作千万级库</title>
-        <pubTime>2017-10-20T15:47:30.000Z</pubTime>
-        
-        <tag>pyspider</tag>
-         
-        <tag>mysql</tag>
-         
-         
-           
-             
-              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/</loc>
-    <lastmod>2017-10-20T15:52:36.398Z</lastmod>
-    <data>
-        <display>
-        <title>qq_copyright crawler</title>
-        <pubTime>2017-04-15T01:53:45.000Z</pubTime>
-        
-        <tag>scrapy</tag>
-         
-        <tag>qq音乐</tag>
-         
-         
-           
-             
-              <breadCrumb title="scrapy" url="http://tingyunsay.github.io/categories/scrapy/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/06/28/scrapyjs-splash%E6%9C%8D%E5%8A%A1%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3/</loc>
-    <lastmod>2017-10-20T15:52:21.202Z</lastmod>
-    <data>
-        <display>
-        <title>scrapyjs-splash服务无法访问解决</title>
-        <pubTime>2017-06-28T07:35:32.000Z</pubTime>
-        
-        <tag>scrapy</tag>
-         
-        <tag>splash</tag>
-         
-         
-           
-             
-              <breadCrumb title="scrapy" url="http://tingyunsay.github.io/categories/scrapy/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/08/21/ajax%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E5%A4%9Aid%E5%90%8C%E4%B8%80%E4%BA%8B%E4%BB%B6/</loc>
-    <lastmod>2017-10-20T15:52:06.565Z</lastmod>
-    <data>
-        <display>
-        <title>ajax事件绑定--多id同一事件</title>
-        <pubTime>2017-08-21T14:48:23.000Z</pubTime>
-        
-        <tag>flask</tag>
-         
-        <tag>ajax</tag>
-         
-        <tag>前端</tag>
-         
-         
-           
-             
-              <breadCrumb title="flask" url="http://tingyunsay.github.io/categories/flask/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/04/23/IPProxyPool%E5%BC%80%E6%BA%90%E4%BB%A3%E7%90%86%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E5%A7%BF%E5%8A%BF/</loc>
-    <lastmod>2017-10-20T15:51:55.076Z</lastmod>
-    <data>
-        <display>
-        <title>IPProxyPool开源代理项目的正确使用姿势</title>
-        <pubTime>2017-04-23T03:05:37.000Z</pubTime>
-        
-        <tag>proxy</tag>
-         
-        <tag>scrapy</tag>
-         
-         
-           
-             
-              <breadCrumb title="scrapy" url="http://tingyunsay.github.io/categories/scrapy/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/06/29/Portia-%E4%B8%80%E6%AC%BE%E5%BC%80%E6%BA%90%E5%8F%AF%E8%A7%86%E5%8C%96%E7%88%AC%E8%99%AB%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2017-10-20T15:51:17.611Z</lastmod>
-    <data>
-        <display>
-        <title>Portia---一款开源可视化爬虫工具</title>
-        <pubTime>2017-06-29T04:09:07.000Z</pubTime>
-        
-        <tag>portia</tag>
-         
-        <tag>可视化爬虫</tag>
-         
-         
-           
-             
-              <breadCrumb title="portia" url="http://tingyunsay.github.io/categories/portia/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/07/08/Pyspider-%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%93%E5%8F%96%E5%B9%B3%E5%8F%B0/</loc>
-    <lastmod>2017-10-20T15:50:53.121Z</lastmod>
-    <data>
-        <display>
-        <title>Pyspider---一款强大的可视化抓取平台</title>
-        <pubTime>2017-07-08T11:30:31.000Z</pubTime>
-        
-        <tag>可视化爬虫</tag>
-         
-        <tag>pyspider</tag>
-         
-         
-           
-             
-              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/07/15/Pyspider%E4%BD%A0%E6%89%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E4%BA%9B/</loc>
-    <lastmod>2017-10-20T15:50:49.061Z</lastmod>
-    <data>
-        <display>
-        <title>Pyspider所要知道的</title>
-        <pubTime>2017-07-14T16:16:12.000Z</pubTime>
-        
-        <tag>pyspider</tag>
-         
-         
-           
-             
-              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8/</loc>
-    <lastmod>2017-10-20T15:50:33.636Z</lastmod>
-    <data>
-        <display>
-        <title>pyspider源码解读--调度器</title>
-        <pubTime>2017-09-03T10:22:33.000Z</pubTime>
-        
-        <tag>pyspider</tag>
-         
-        <tag>scheduler</tag>
-         
-         
-           
-             
-              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://tingyunsay.github.io/2017/09/09/python2-6-6%E6%9B%B4%E6%8D%A22-7/</loc>
-    <lastmod>2017-10-20T15:49:35.688Z</lastmod>
+    <lastmod>2020-03-19T13:54:50.774Z</lastmod>
     <data>
         <display>
         <title>python2.6.6更换2.7</title>
@@ -558,30 +232,8 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8103/</loc>
-    <lastmod>2017-10-16T11:37:43.368Z</lastmod>
-    <data>
-        <display>
-        <title>细说python字符编码(三)</title>
-        <pubTime>2017-10-15T04:12:54.000Z</pubTime>
-        
-        <tag>编码</tag>
-         
-        <tag>html实体</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://tingyunsay.github.io/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</loc>
-    <lastmod>2017-10-14T20:26:18.399Z</lastmod>
+    <lastmod>2020-03-19T13:54:50.773Z</lastmod>
     <data>
         <display>
         <title>细说python字符编码(一)</title>
@@ -606,8 +258,500 @@
 
     
   <url>
+    <loc>http://tingyunsay.github.io/2017/08/27/%E4%BA%91%E6%B7%B1%E5%A4%84/</loc>
+    <lastmod>2020-03-19T13:54:50.773Z</lastmod>
+    <data>
+        <display>
+        <title>云深处</title>
+        <pubTime>2017-08-27T14:20:49.000Z</pubTime>
+        
+        <tag>dream</tag>
+         
+        <tag>article</tag>
+         
+         
+           
+             
+              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2018/03/04/python%E8%AF%BB%E5%8F%96excel%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC/</loc>
+    <lastmod>2020-03-19T13:54:50.772Z</lastmod>
+    <data>
+        <display>
+        <title>python读取excel合并单元格</title>
+        <pubTime>2018-03-04T15:54:53.000Z</pubTime>
+        
+        <tag>openpyxl</tag>
+         
+        <tag>excel</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://tingyunsay.github.io/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8/</loc>
+    <lastmod>2020-03-19T13:54:50.771Z</lastmod>
+    <data>
+        <display>
+        <title>pyspider源码解读--调度器</title>
+        <pubTime>2017-09-03T10:22:33.000Z</pubTime>
+        
+        <tag>pyspider</tag>
+         
+        <tag>scheduler</tag>
+         
+         
+           
+             
+              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/10/20/pyspider%E6%93%8D%E4%BD%9C%E5%8D%83%E4%B8%87%E7%BA%A7%E5%BA%93/</loc>
+    <lastmod>2020-03-19T13:54:50.771Z</lastmod>
+    <data>
+        <display>
+        <title>pyspider操作千万级库</title>
+        <pubTime>2017-10-20T15:47:30.000Z</pubTime>
+        
+        <tag>pyspider</tag>
+         
+        <tag>mysql</tag>
+         
+         
+           
+             
+              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/11/12/%E5%90%AC%E4%BA%91%E8%AE%B002/</loc>
+    <lastmod>2020-03-19T13:54:50.770Z</lastmod>
+    <data>
+        <display>
+        <title>听云记 贰</title>
+        <pubTime>2017-11-12T14:39:23.000Z</pubTime>
+        
+        <tag>life</tag>
+         
+        <tag>imageine</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2018/02/07/pyspider%E6%8D%A2%E7%94%A8%E5%9B%BD%E5%86%85cdn%E4%BB%A5%E5%8F%8A%E6%9C%AC%E5%9C%B0cdn/</loc>
+    <lastmod>2020-03-19T13:54:50.769Z</lastmod>
+    <data>
+        <display>
+        <title>pyspider换用国内cdn/本地cdn</title>
+        <pubTime>2018-02-06T16:51:54.000Z</pubTime>
+        
+        <tag>pyspider</tag>
+         
+        <tag>cdn</tag>
+         
+         
+           
+             
+              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/06/29/Portia-%E4%B8%80%E6%AC%BE%E5%BC%80%E6%BA%90%E5%8F%AF%E8%A7%86%E5%8C%96%E7%88%AC%E8%99%AB%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2020-03-19T13:54:50.769Z</lastmod>
+    <data>
+        <display>
+        <title>Portia---一款开源可视化爬虫工具</title>
+        <pubTime>2017-06-29T04:09:07.000Z</pubTime>
+        
+        <tag>portia</tag>
+         
+        <tag>可视化爬虫</tag>
+         
+         
+           
+             
+              <breadCrumb title="portia" url="http://tingyunsay.github.io/categories/portia/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2018/01/22/%E5%90%AC%E4%BA%91%E8%AE%B003/</loc>
+    <lastmod>2020-03-19T13:54:50.768Z</lastmod>
+    <data>
+        <display>
+        <title>听云记 叁</title>
+        <pubTime>2018-01-21T17:29:51.000Z</pubTime>
+        
+        <tag>life</tag>
+         
+        <tag>imageine</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/</loc>
+    <lastmod>2020-03-19T13:54:50.768Z</lastmod>
+    <data>
+        <display>
+        <title>qq_copyright crawler</title>
+        <pubTime>2017-04-15T01:53:45.000Z</pubTime>
+        
+        <tag>scrapy</tag>
+         
+        <tag>qq音乐</tag>
+         
+         
+           
+             
+              <breadCrumb title="scrapy" url="http://tingyunsay.github.io/categories/scrapy/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2018/02/22/%E5%90%AC%E4%BA%91%E8%AE%B004/</loc>
+    <lastmod>2020-03-19T13:54:50.767Z</lastmod>
+    <data>
+        <display>
+        <title>听云记 肆</title>
+        <pubTime>2018-02-22T09:13:03.000Z</pubTime>
+        
+        <tag>life</tag>
+         
+        <tag>imageine</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2018/03/25/%E7%81%B5%E7%9F%B3/</loc>
+    <lastmod>2020-03-19T13:54:50.766Z</lastmod>
+    <data>
+        <display>
+        <title>石 灵</title>
+        <pubTime>2018-03-25T15:37:51.000Z</pubTime>
+        
+        <tag>dream</tag>
+         
+        <tag>article</tag>
+         
+         
+           
+             
+              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/08/05/%E8%8B%8D%E7%99%BD%E4%B9%8B%E5%B9%B4/</loc>
+    <lastmod>2020-03-19T13:54:50.766Z</lastmod>
+    <data>
+        <display>
+        <title>苍白之年</title>
+        <pubTime>2017-08-04T18:30:19.000Z</pubTime>
+        
+        <tag>dream</tag>
+         
+        <tag>article</tag>
+         
+         
+           
+             
+              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/09/24/%E5%90%AC%E4%BA%91%E8%AE%B0/</loc>
+    <lastmod>2020-03-19T13:54:50.766Z</lastmod>
+    <data>
+        <display>
+        <title>听云记</title>
+        <pubTime>2017-09-23T19:47:18.000Z</pubTime>
+        
+        <tag>life</tag>
+         
+        <tag>imageine</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2018/03/18/%E7%BA%B3%E8%B1%86app%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E9%93%BE%E8%A7%A3%E6%9E%90/</loc>
+    <lastmod>2020-03-19T13:54:50.765Z</lastmod>
+    <data>
+        <display>
+        <title>纳豆app视频播放链解析</title>
+        <pubTime>2018-03-18T10:26:08.000Z</pubTime>
+        
+        <tag>爱奇艺vf算法</tag>
+         
+        <tag>spider</tag>
+         
+         
+           
+             
+              <breadCrumb title="spider" url="http://tingyunsay.github.io/categories/spider/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/09/03/%E7%81%B5%E8%B0%B7/</loc>
+    <lastmod>2020-03-19T13:54:50.765Z</lastmod>
+    <data>
+        <display>
+        <title>灵谷</title>
+        <pubTime>2017-09-03T09:26:52.000Z</pubTime>
+        
+        <tag>dream</tag>
+         
+        <tag>article</tag>
+         
+         
+           
+             
+              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/10/02/%E6%A2%A6/</loc>
+    <lastmod>2020-03-19T13:54:50.764Z</lastmod>
+    <data>
+        <display>
+        <title>梦</title>
+        <pubTime>2017-10-02T06:30:00.000Z</pubTime>
+        
+        <tag>dream</tag>
+         
+        <tag>article</tag>
+         
+         
+           
+             
+              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2018/04/20/360%E6%89%8B%E6%9C%BA%E5%88%B7xposed%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2020-03-19T13:54:50.764Z</lastmod>
+    <data>
+        <display>
+        <title>360手机刷xposed教程</title>
+        <pubTime>2018-04-20T15:39:05.000Z</pubTime>
+        
+        <tag>360n4</tag>
+         
+        <tag>xposed</tag>
+         
+         
+           
+             
+              <breadCrumb title="逆向工程" url="http://tingyunsay.github.io/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/08/12/%E7%AB%8B%E8%8A%B1%E9%9B%B7%E8%97%8F-%E9%87%91%E5%85%89%E5%90%8C%E4%BA%BA%E6%96%87/</loc>
+    <lastmod>2020-03-19T13:54:50.763Z</lastmod>
+    <data>
+        <display>
+        <title>立花雷藏--金光同人文</title>
+        <pubTime>2017-08-11T17:36:27.000Z</pubTime>
+        
+        <tag>article</tag>
+         
+        <tag>金光</tag>
+         
+         
+           
+             
+              <breadCrumb title="article" url="http://tingyunsay.github.io/categories/article/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/04/11/what-s-this/</loc>
+    <lastmod>2020-03-19T13:54:50.762Z</lastmod>
+    <data>
+        <display>
+        <title>sphinx初识</title>
+        <pubTime>2017-04-11T12:17:23.000Z</pubTime>
+        
+        <tag>sphinx</tag>
+         
+        <tag>搜索引擎</tag>
+         
+         
+           
+             
+              <breadCrumb title="sphinx" url="http://tingyunsay.github.io/categories/sphinx/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102/</loc>
+    <lastmod>2020-03-19T13:54:50.759Z</lastmod>
+    <data>
+        <display>
+        <title>细说python字符编码(二)</title>
+        <pubTime>2017-10-15T04:12:54.000Z</pubTime>
+        
+        <tag>编码</tag>
+         
+        <tag>unicode</tag>
+         
+        <tag>utf8</tag>
+         
+        <tag>ascii</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://tingyunsay.github.io/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/08/21/ajax%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A-%E5%A4%9Aid%E5%90%8C%E4%B8%80%E4%BA%8B%E4%BB%B6/</loc>
+    <lastmod>2020-03-19T13:54:50.759Z</lastmod>
+    <data>
+        <display>
+        <title>ajax事件绑定--多id同一事件</title>
+        <pubTime>2017-08-21T14:48:23.000Z</pubTime>
+        
+        <tag>flask</tag>
+         
+        <tag>ajax</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+             
+              <breadCrumb title="flask" url="http://tingyunsay.github.io/categories/flask/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/</loc>
+    <lastmod>2020-03-19T13:54:50.756Z</lastmod>
+    <data>
+        <display>
+        <title>约瑟夫环问题详解</title>
+        <pubTime>2018-04-26T03:37:42.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>出队</tag>
+         
+        <tag>约瑟夫环</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://tingyunsay.github.io/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tingyunsay.github.io/2017/10/05/ubuntu%E6%89%A9%E5%AE%B9-gparted/</loc>
-    <lastmod>2017-10-06T01:25:43.518Z</lastmod>
+    <lastmod>2020-03-19T13:54:50.756Z</lastmod>
     <data>
         <display>
         <title>ubuntu扩容--gparted</title>
@@ -629,7 +773,7 @@
     
   <url>
     <loc>http://tingyunsay.github.io/2017/10/04/%E9%86%92/</loc>
-    <lastmod>2017-10-03T20:01:17.575Z</lastmod>
+    <lastmod>2020-03-19T13:54:50.755Z</lastmod>
     <data>
         <display>
         <title>醒</title>
@@ -648,30 +792,8 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/10/02/%E6%A2%A6/</loc>
-    <lastmod>2017-10-02T07:13:16.400Z</lastmod>
-    <data>
-        <display>
-        <title>梦</title>
-        <pubTime>2017-10-02T06:30:00.000Z</pubTime>
-        
-        <tag>dream</tag>
-         
-        <tag>article</tag>
-         
-         
-           
-             
-              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://tingyunsay.github.io/2017/10/01/mysql%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2017-09-30T19:40:43.630Z</lastmod>
+    <lastmod>2020-03-19T13:54:50.754Z</lastmod>
     <data>
         <display>
         <title>mysql查询优化</title>
@@ -690,21 +812,21 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/09/03/%E7%81%B5%E8%B0%B7/</loc>
-    <lastmod>2017-09-03T09:41:01.446Z</lastmod>
+    <loc>http://tingyunsay.github.io/2017/04/23/IPProxyPool%E5%BC%80%E6%BA%90%E4%BB%A3%E7%90%86%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E5%A7%BF%E5%8A%BF/</loc>
+    <lastmod>2020-03-19T13:54:50.753Z</lastmod>
     <data>
         <display>
-        <title>灵谷</title>
-        <pubTime>2017-09-03T09:26:52.000Z</pubTime>
+        <title>IPProxyPool开源代理项目的正确使用姿势</title>
+        <pubTime>2017-04-23T03:05:37.000Z</pubTime>
         
-        <tag>dream</tag>
+        <tag>proxy</tag>
          
-        <tag>article</tag>
+        <tag>scrapy</tag>
          
          
            
              
-              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
+              <breadCrumb title="scrapy" url="http://tingyunsay.github.io/categories/scrapy/"/>
           
         </display>
     </data>
@@ -712,21 +834,19 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/08/27/%E4%BA%91%E6%B7%B1%E5%A4%84/</loc>
-    <lastmod>2017-08-27T14:33:34.916Z</lastmod>
+    <loc>http://tingyunsay.github.io/2018/03/19/%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95%E6%9C%AC%E5%9C%B0js%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2020-03-19T13:54:50.753Z</lastmod>
     <data>
         <display>
-        <title>云深处</title>
-        <pubTime>2017-08-27T14:20:49.000Z</pubTime>
+        <title>动态调试本地js文件</title>
+        <pubTime>2018-03-19T15:12:56.000Z</pubTime>
         
-        <tag>dream</tag>
-         
-        <tag>article</tag>
+        <tag>本地js调试</tag>
          
          
            
              
-              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
+              <breadCrumb title="spider" url="http://tingyunsay.github.io/categories/spider/"/>
           
         </display>
     </data>
@@ -734,21 +854,21 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/08/12/%E7%AB%8B%E8%8A%B1%E9%9B%B7%E8%97%8F-%E9%87%91%E5%85%89%E5%90%8C%E4%BA%BA%E6%96%87/</loc>
-    <lastmod>2017-08-12T04:25:51.359Z</lastmod>
+    <loc>http://tingyunsay.github.io/2017/06/28/scrapyjs-splash%E6%9C%8D%E5%8A%A1%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3/</loc>
+    <lastmod>2020-03-19T13:54:50.752Z</lastmod>
     <data>
         <display>
-        <title>立花雷藏--金光同人文</title>
-        <pubTime>2017-08-11T17:36:27.000Z</pubTime>
+        <title>scrapyjs-splash服务无法访问解决</title>
+        <pubTime>2017-06-28T07:35:32.000Z</pubTime>
         
-        <tag>article</tag>
+        <tag>scrapy</tag>
          
-        <tag>金光</tag>
+        <tag>splash</tag>
          
          
            
              
-              <breadCrumb title="article" url="http://tingyunsay.github.io/categories/article/"/>
+              <breadCrumb title="scrapy" url="http://tingyunsay.github.io/categories/scrapy/"/>
           
         </display>
     </data>
@@ -756,50 +876,66 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/08/05/%E8%8B%8D%E7%99%BD%E4%B9%8B%E5%B9%B4/</loc>
-    <lastmod>2017-08-04T19:07:52.507Z</lastmod>
+    <loc>http://tingyunsay.github.io/2017/07/15/Pyspider%E4%BD%A0%E6%89%80%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E4%B8%80%E4%BA%9B/</loc>
+    <lastmod>2020-03-19T13:54:50.752Z</lastmod>
     <data>
         <display>
-        <title>苍白之年</title>
-        <pubTime>2017-08-04T18:30:19.000Z</pubTime>
+        <title>Pyspider所要知道的</title>
+        <pubTime>2017-07-14T16:16:12.000Z</pubTime>
         
-        <tag>dream</tag>
-         
-        <tag>article</tag>
+        <tag>pyspider</tag>
          
          
            
              
-              <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
+              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
           
         </display>
     </data>
     </url>
 
-    
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/04/11/what-s-this/</loc>
-    <lastmod>2017-04-15T13:35:40.190Z</lastmod>
+    <loc>http://tingyunsay.github.io/2017/07/08/Pyspider-%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%93%E5%8F%96%E5%B9%B3%E5%8F%B0/</loc>
+    <lastmod>2020-03-19T13:54:50.752Z</lastmod>
     <data>
         <display>
-        <title>sphinx初识</title>
-        <pubTime>2017-04-11T12:17:23.000Z</pubTime>
+        <title>Pyspider---一款强大的可视化抓取平台</title>
+        <pubTime>2017-07-08T11:30:31.000Z</pubTime>
         
-        <tag>sphinx</tag>
+        <tag>可视化爬虫</tag>
          
-        <tag>搜索引擎</tag>
+        <tag>pyspider</tag>
          
          
            
              
-              <breadCrumb title="sphinx" url="http://tingyunsay.github.io/categories/sphinx/"/>
+              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
           
         </display>
     </data>
     </url>
 
     
-    
-    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8103/</loc>
+    <lastmod>2020-03-19T13:54:50.752Z</lastmod>
+    <data>
+        <display>
+        <title>细说python字符编码(三)</title>
+        <pubTime>2017-10-15T04:12:54.000Z</pubTime>
+        
+        <tag>编码</tag>
+         
+        <tag>html实体</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://tingyunsay.github.io/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
 </urlset>

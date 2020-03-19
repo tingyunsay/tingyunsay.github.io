@@ -1,0 +1,1006 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="推荐系统,离线层,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="本文延续上一篇博文，继续介绍推荐离线层的一些策略设计">
+<meta name="keywords" content="推荐系统,离线层">
+<meta property="og:type" content="article">
+<meta property="og:title" content="听云推荐系统贰">
+<meta property="og:url" content="http://tingyunsay.github.io/2019/05/20/听云推荐系统贰/index.html">
+<meta property="og:site_name" content="听云">
+<meta property="og:description" content="本文延续上一篇博文，继续介绍推荐离线层的一些策略设计">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://tingyunsay.github.io/2019/05/20/听云推荐系统贰/1.png">
+<meta property="og:updated_time" content="2020-03-19T17:21:27.982Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="听云推荐系统贰">
+<meta name="twitter:description" content="本文延续上一篇博文，继续介绍推荐离线层的一些策略设计">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2019/05/20/听云推荐系统贰/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tingyunsay.github.io/2019/05/20/听云推荐系统贰/">
+
+
+
+
+
+  <title> 听云推荐系统贰 | 听云 </title>
+</head>
+
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43aefd5fb3f7828b2058c874664c6486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">听云</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">听云的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-dream">
+          <a href="/article" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            Dream
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2019/05/20/听云推荐系统贰/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tingyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听云">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                听云推荐系统贰
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-20T15:52:29+08:00">
+                2019-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
+                    <span itemprop="name">推荐系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/20/听云推荐系统贰/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/20/听云推荐系统贰/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/05/20/听云推荐系统贰/" class="leancloud_visitors" data-flag-title="听云推荐系统贰">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="本文延续上一篇博文，继续介绍推荐离线层的一些策略设计"><a href="#本文延续上一篇博文，继续介绍推荐离线层的一些策略设计" class="headerlink" title="本文延续上一篇博文，继续介绍推荐离线层的一些策略设计"></a>本文延续上一篇博文，继续介绍推荐离线层的一些策略设计</h2><a id="more"></a>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>　　本文主要介绍关于推荐推荐策略的设计 ， 以及简单介绍推荐中常用的ABtest分流验证策略（好坏）的方法<br>　　<br>　　本项目的实现代码在: <a href="https://github.com/tingyunsay/abtest_offline" target="_blank" rel="noopener"><font color="purple"><strong>Recommend Offline</strong></font></a></p>
+<h3 id="离线层策略设计"><a href="#离线层策略设计" class="headerlink" title="离线层策略设计"></a>离线层策略设计</h3><p>　　上一篇文章中简要提到了，我们的设计从大到小，按照如下几个等级称呼<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">产品线 --&gt; 策略 --&gt; 模型（算法）</span><br></pre></td></tr></table></figure></p>
+<p>　　解释如下：一个产品线下可以配置多个策略，一个策略可以是单个模型（算法）计算得到的结果，也可以是混合得到　<br>　　ABtest 在其中的位置：对某个产品线中的多个策略，进行流量划分<br>　　反馈：根据日志采集的结果指标，可视化之后对比各个策略的表现，调整 ABtest 中的流量划分，使得推荐效果最大化，单个策略则需要调整各个模型的占比</p>
+<p><strong>大体逻辑如下图</strong></p>
+<p> <img src="/2019/05/20/听云推荐系统贰/1.png" alt="图片1"></p>
+<h3 id="设计实现"><a href="#设计实现" class="headerlink" title="设计实现"></a>设计实现</h3><p>　　那有了以上说的内容，我们将其逐步实现，以下我们均使用音乐推荐相关的维度来进行说明</p>
+<h4 id="model-算法"><a href="#model-算法" class="headerlink" title="model(算法)"></a>model(算法)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">all_model=[</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"id"</span>:<span class="number">18</span>,			<span class="comment">#手动配置id，新增算法往后+1</span></span><br><span class="line">	<span class="string">"name"</span>:<span class="string">"cf_new"</span>,		<span class="comment">#算法名，用作解释</span></span><br><span class="line">	<span class="string">"version"</span>:<span class="string">"1.0.0"</span>,		<span class="comment">#版本号，暂未使用</span></span><br><span class="line">	<span class="string">"source"</span>:<span class="string">"1"</span>,			<span class="comment">#单一算法的策略值，不能与混合策略重复</span></span><br><span class="line">	<span class="string">"struct"</span>:<span class="string">"zset"</span>,		<span class="comment">#redis中存储数据类型，一般zset</span></span><br><span class="line">	<span class="string">"key"</span>:<span class="string">"cf_songnw_songid"</span>	<span class="comment">#redis中存储的key格式，一般取得其前缀，拼接对应类型的基础数据(songid,albumid,singerid)</span></span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"id"</span>:<span class="number">19</span>,</span><br><span class="line"> 	<span class="string">"name"</span>:<span class="string">"lrc_simiSong"</span>,</span><br><span class="line"> 	<span class="string">"version"</span>:<span class="string">"1.0.0"</span>,</span><br><span class="line"> 	<span class="string">"source"</span>:<span class="string">"1"</span>,</span><br><span class="line">	<span class="string">"struct"</span>:<span class="string">"zset"</span>,</span><br><span class="line">	<span class="string">"key"</span>:<span class="string">"lrc_simiSong_songid"</span></span><br><span class="line">&#125;,</span><br><span class="line">&#123;	....	&#125;,		<span class="comment">#新增model</span></span><br><span class="line">&#123;	....	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>　　以上定义的一个 model 需要定义的部分内容，由于我们只需要使用它，生成它的算法不作讨论，所以这部分内容写在配置文件中即可，按照代码中说明添加即可</p>
+<h4 id="strategy-策略"><a href="#strategy-策略" class="headerlink" title="strategy(策略)"></a>strategy(策略)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">product_strategy = &#123;</span><br><span class="line">    <span class="string">"linear_similar_song"</span>:&#123;</span><br><span class="line">        <span class="string">"name"</span>:<span class="string">"linear_similar_song"</span>,</span><br><span class="line">        <span class="string">"class"</span>:<span class="string">"song"</span>,                     <span class="comment">#使用哪种类型的rdd(song，album，singer)，基础数据</span></span><br><span class="line">        <span class="string">"key"</span>:<span class="string">"abtest_simSong_songid"</span>,      <span class="comment">#合并策略灌入redis 的结果key</span></span><br><span class="line">        <span class="string">"source"</span>:<span class="number">23</span>,</span><br><span class="line">        <span class="string">"rerankid"</span>:<span class="number">2</span>,</span><br><span class="line">        <span class="string">"strategy"</span>:[                        <span class="comment">#策略  混合多种model</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"modelid"</span>:<span class="number">18</span>,</span><br><span class="line">                <span class="string">"weight"</span>:<span class="number">2</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"modelid"</span>:<span class="number">19</span>,</span><br><span class="line">                <span class="string">"weight"</span>:<span class="number">2</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">	<span class="string">"xxxxxx"</span>:&#123;&#125;,			<span class="comment">#新增策略</span></span><br><span class="line">	<span class="string">"xxxxxx"</span>:&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>　　由于本项目在混合离线数据的时候，使用到了 spark 去获取并合并需要的算法结果，所以我们需要指定 class – 表明加载哪种类型的基础数据 (生成 spark 使用的 rdd)，去获取对应结果的 redis 数据整合<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">比如我需要取得是相似歌曲，即  -- 歌曲关联歌曲</span><br><span class="line"></span><br><span class="line">那对应的rdd <span class="class"><span class="keyword">class</span>是:</span> song ， 因为是: song -- song</span><br><span class="line"></span><br><span class="line">此时对应的strategy中配置的基础model应该也都是: song -- song 的算法，这个是我们主动配置的，比如</span><br><span class="line">上面代码中的: cf_new -- cf_songnw_songid , 这个redis key中存放的是某首歌曲根据cf_new这个算</span><br><span class="line">法得到的相似歌曲</span><br></pre></td></tr></table></figure></p>
+<p>　　一般某个算法得到的离线结果都是 list 类型的，在 redis 中存储的格式为 zset，我们可以使用 zrange 方法取到</p>
+<p>　　<font color="red"><strong>spark 在这里相当于是一个加速的效果，使得混合大量离线数据结果的效率变快</strong></font>.</p>
+<h4 id="实际数据说明"><a href="#实际数据说明" class="headerlink" title="实际数据说明"></a>实际数据说明</h4><p>　　假设我需要知道一首歌: 《星月神话》的相似歌曲, 这首歌的 songid 是<font color="red"><strong> 545076619</strong></font>, 存储在本地的 song_dict_path=”song.id.dat” 文件中</p>
+<p>　　这时候我们需要使用 spark 读取 class == song 类型的基础数据, 将其 load 成 rdd（需了解 spark 中 rdd 的概念，简单来说就是 spark 的一种数据定义，使用其能方便地利用内存集群去快速操作数据）, 我们的操作是查询每个歌曲关联的算法的 redis 结果，取出数据然后按照权重配置来合并并重新排序</p>
+<p>　　我们可以看到 linear_similar_song（相似歌曲）的策略中有两个算法：</p>
+<p>　　<font color="red"><strong>18 / 19</strong> </font>, 比重均是 2, 继续去看 all_model 中 modelid 18 和 19 的算法, 是：<font color="red"><strong>cf_new 和 lrc_simiSong </strong></font>，那么对应的 redis 的结果数据应该可按照如下方法查询到<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zrange cf_songnw_545076619 <span class="number">0</span> <span class="number">-1</span> withscores</span><br><span class="line"><span class="number">1</span>) <span class="string">"545076365"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"0.6"</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zrange lrc_simiSong_545076619 <span class="number">0</span> <span class="number">-1</span> withscores</span><br><span class="line"><span class="number">1</span>) <span class="string">"545076365"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"0.8"</span></span><br></pre></td></tr></table></figure></p>
+<p>　　为了方便我只列举了同一首歌曲的 score 值，这里计算的过程如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">model name			songid    : score</span><br><span class="line"></span><br><span class="line">cf_songnw_545076619		<span class="number">545076365</span> : <span class="number">0.6</span></span><br><span class="line"></span><br><span class="line">lrc_simiSong_545076619		<span class="number">545076365</span> : <span class="number">0.8</span></span><br><span class="line"></span><br><span class="line">合并相同值的权重(weight = <span class="number">2</span>)，和歌曲<span class="number">545076365</span> 的关联最终score值</span><br><span class="line"></span><br><span class="line">(<span class="number">0.6</span> * <span class="number">2</span> + <span class="number">0.8</span> * <span class="number">2</span>) / (<span class="number">2</span> + <span class="number">2</span>) = <span class="number">0.7</span></span><br></pre></td></tr></table></figure></p>
+<p>　　得到了最终的结果，我们就可以将其灌入 redis，指定一个新的 key 值，查询结果如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zrange abtest_simSong_545076619 <span class="number">0</span> <span class="number">-1</span> withscores</span><br><span class="line"><span class="number">1</span>) <span class="string">"545076365"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"0.7"</span></span><br></pre></td></tr></table></figure></p>
+<p>　　可以看到对应的：545076619 – 545076365 的 final score 值是 0.7</p>
+<h4 id="ABtest"><a href="#ABtest" class="headerlink" title="ABtest"></a>ABtest</h4><h5 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h5><p>　　一种网站优化的方法，通过科学的：实验设计，采样样本代表性，流量分割，小流量测试等方式 ， 来获取具有代表性的实验结论，并确信改结论推广到全部流量可信。</p>
+<p>　　　　简单来说：为同一个目标制定两套方案 （比如同一个网页），让一部分的用户使用 A ， 另外一部分使用 B ， 记录下使用（反馈）的情况，比如点击率，停留时长等等指标，看哪个更符合设计</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>　　关于 ABtest 这部分，就暂时不在这篇文章中再细聊，因为这部分一般都是在在线逻辑层去完成的，要想将其放到离线中，须新的设计，不仅仅是离线层能做的事情，还需要调整在线层使用数据的逻辑</p>
+<p>　　　　以上关于<font color="purple"><strong>算法混合的部分均已经自动化，只需要按照配置在 base_conf.py 中添加，并且主动将依赖的 redis 数据灌入，再运行脚本即可</strong></font>得到结果</p>
+<p>　　但这部分数据仅仅只是按照配置将不同算法的数据结合的结果，要想得到更符合用户喜欢的结果，在线层还可以做的一些事：<font color="red"><strong>基于用户画像（喜好）二次排序 ，手动配置优质内容 </strong></font>…. 这些都是可选择的方法</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/推荐系统/" rel="tag"># 推荐系统</a>
+          
+            <a href="/tags/离线层/" rel="tag"># 离线层</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/31/听云推荐系统/" rel="next" title="听云推荐系统">
+                <i class="fa fa-chevron-left"></i> 听云推荐系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/31/听云基础乐理知识/" rel="prev" title="听云基础乐理知识">
+                听云基础乐理知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+          <p class="site-author-name" itemprop="name">tingyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tingyunsay" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/helloa-bao" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文延续上一篇博文，继续介绍推荐离线层的一些策略设计"><span class="nav-number">1.</span> <span class="nav-text">本文延续上一篇博文，继续介绍推荐离线层的一些策略设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离线层策略设计"><span class="nav-number">1.2.</span> <span class="nav-text">离线层策略设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计实现"><span class="nav-number">1.3.</span> <span class="nav-text">设计实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#model-算法"><span class="nav-number">1.3.1.</span> <span class="nav-text">model(算法)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strategy-策略"><span class="nav-number">1.3.2.</span> <span class="nav-text">strategy(策略)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实际数据说明"><span class="nav-number">1.3.3.</span> <span class="nav-text">实际数据说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ABtest"><span class="nav-number">1.3.4.</span> <span class="nav-text">ABtest</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概念"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">概念</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tingyun</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<span id="busuanzi_container_site_pv" class="times">
+	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = '<%- config.leancloud_visitors.app_id %>';
+    var APP_KEY = '<%- config.leancloud_visitors.app_key %>';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count 
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+   // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://tingyun-site.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://tingyunsay.github.io/2019/05/20/听云推荐系统贰/';
+          this.page.identifier = '2019/05/20/听云推荐系统贰/';
+          this.page.title = '听云推荐系统贰';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://tingyun-site.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("W6jC6pbDoOxG8g1AMLm4SPIi-gzGzoHsz", "JXpCmEdRB7KbMVjQl91Itbk8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>

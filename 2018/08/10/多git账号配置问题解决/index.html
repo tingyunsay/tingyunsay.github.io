@@ -1,0 +1,994 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="git,代码控制,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="本文介绍在单台电脑上使用多个git账号">
+<meta name="keywords" content="git,代码控制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多git账号配置问题解决">
+<meta property="og:url" content="http://tingyunsay.github.io/2018/08/10/多git账号配置问题解决/index.html">
+<meta property="og:site_name" content="听云">
+<meta property="og:description" content="本文介绍在单台电脑上使用多个git账号">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-19T18:23:45.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="多git账号配置问题解决">
+<meta name="twitter:description" content="本文介绍在单台电脑上使用多个git账号">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tingyunsay.github.io/2018/08/10/多git账号配置问题解决/">
+
+
+
+
+
+  <title> 多git账号配置问题解决 | 听云 </title>
+</head>
+
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43aefd5fb3f7828b2058c874664c6486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">听云</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">听云的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-dream">
+          <a href="/article" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            Dream
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/08/10/多git账号配置问题解决/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tingyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听云">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                多git账号配置问题解决
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T19:08:56+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/10/多git账号配置问题解决/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/10/多git账号配置问题解决/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/08/10/多git账号配置问题解决/" class="leancloud_visitors" data-flag-title="多git账号配置问题解决">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="本文介绍在单台电脑上使用多个git账号"><a href="#本文介绍在单台电脑上使用多个git账号" class="headerlink" title="本文介绍在单台电脑上使用多个git账号"></a>本文介绍在单台电脑上使用多个git账号</h2><a id="more"></a> 
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>　　需求原因：由于在公司有一个gitlab账号，本身自己又有一个github账号，两个账号的邮箱不同<br>　　目标：每次提交代码，不需要手动输入账号密码，一键push，自动识别是哪个账号对应的项目</p>
+<p>　　这本是半年前就已经解决了的问题，但由于最近换了台本子，所以重新部署了下开发环境和代码相关，期间又遇到了一些小问题，故在此做一次总结，方便以后类似的操作</p>
+<h3 id="正常操作过程"><a href="#正常操作过程" class="headerlink" title="正常操作过程"></a>正常操作过程</h3><h4 id="生成ssh-key公钥-秘钥"><a href="#生成ssh-key公钥-秘钥" class="headerlink" title="生成ssh-key公钥/秘钥"></a>生成ssh-key公钥/秘钥</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh/</span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C &quot;your mail&quot;</span><br><span class="line"></span><br><span class="line">#这时候提示你输入秘钥的名字：id_rsa_tingyun</span><br><span class="line">#设定秘钥的密码：xxxxxx</span><br><span class="line"></span><br><span class="line">#接着add到环境中</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">#如果add失败，执行如下命令：</span><br><span class="line">ssh-agent bash</span><br><span class="line"></span><br><span class="line">#之后再执行add操作</span><br><span class="line">ssh-add ~/.ssh/id_rsa |</span><br></pre></td></tr></table></figure>
+<p>　　按照你的需求，可以重复以上过程，生成不同的 ssh-key 公钥-私钥对，比如：id_rsa_tingyun / id_rsa_work / …..<br>　　之后，记录下公钥和私钥的内容即可，公钥是需要add到github/gitlab的网页的个人设定中去的，相当于一个账号本（有请求过来，先查下这个账号本里面的账号，再检查请求中的密码是不是正确的），私钥则在本地保存，相当于一个密码。</p>
+<h4 id="配置多个账号自动识别"><a href="#配置多个账号自动识别" class="headerlink" title="配置多个账号自动识别"></a>配置多个账号自动识别</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ssh/config</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加如下内容</span></span><br><span class="line">Host github.com</span><br><span class="line"> HostName github.com</span><br><span class="line"> User git</span><br><span class="line"> IdentityFile ~/.ssh/id_rsa_tingyun</span><br><span class="line"></span><br><span class="line">Host gitlab.xxxx.com</span><br><span class="line"> HostName gitlab.xxxxx.com</span><br><span class="line"> User git</span><br><span class="line"> IdentityFile ~/.ssh/id_rsa_work |</span><br></pre></td></tr></table></figure>
+<p>　　Host的名字随便取，方便你记忆<br>　　HostName：取服务器的地址<br>　　User：一般在github下的，取名为git，我试过了gitlab取名为git也没什么影响<br>　　<font color="red"><strong>完成以上配置的话，一般我们的repo就能一键push了，但是，根据实际情况不同，还可能会遇到如下的问题，我们来一一解决</strong></font></p>
+<h3 id="存在问题解决"><a href="#存在问题解决" class="headerlink" title="存在问题解决"></a>存在问题解决</h3><h4 id="关于ssh-keys"><a href="#关于ssh-keys" class="headerlink" title="关于ssh keys"></a>关于ssh keys</h4><p>　　ssh-keys 分成公钥和私钥，公钥是放在你的github / gitlab 的网页的settings中的，供我们这些客户端连接的时候认证</p>
+<p><strong>公钥</strong><br>　　<font color="red">当我们已经有生成好了的ssh-keys，且已经在正常使用的话—即你已经在github/gitlab的主页配置好了公钥，那么只需要关心私钥的配置了。如果没有，那么按照后续的教程配置</font><br><strong>私钥</strong><br>　　ssh-keys的公钥则一般是在github/gitlab上配置好了，每次配置新机器我们只需要记得：<font color="red"><strong>找到公钥对应的私钥就行了</strong></font>， 然后把私钥拷贝到当前的机器上，按照以下操作执行即可开心push</p>
+<h4 id="在新机器上配置"><a href="#在新机器上配置" class="headerlink" title="在新机器上配置"></a>在新机器上配置</h4><p>　　id_rsa_xxx 这个就是私钥文件，在你原先的电脑上拷贝其内容过来即可<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">touch ~/.ssh/id_rsa_tingyun</span><br><span class="line"><span class="comment">#将拷贝过来的内容粘贴到id_rsa_tingyun中</span></span><br><span class="line"></span><br><span class="line">chmod <span class="number">600</span> ~/.ssh/id_rsa_tingyun</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加认证</span></span><br><span class="line">ssh-add ~/.ssh/id_rsa_tingyun |</span><br></pre></td></tr></table></figure></p>
+<p>　　github的话也是类似，ssh-key保留着就一直用就行了</p>
+<h4 id="关于github设定好了ssh-key依旧提示输入账号密码"><a href="#关于github设定好了ssh-key依旧提示输入账号密码" class="headerlink" title="关于github设定好了ssh-key依旧提示输入账号密码"></a>关于github设定好了ssh-key依旧提示输入账号密码</h4><p>　　原因：你拷贝项目的时候git clone 的是 https的项目，你应该拷贝git@github..开头的那种url，否则依旧需要密码<br>　　注意：https的项目就是需要输入账号密码，和其认证方式有关系，https的认证没有使用ssh-key去自动认证</p>
+<h4 id="github提交历史记录没有变绿问题"><a href="#github提交历史记录没有变绿问题" class="headerlink" title="github提交历史记录没有变绿问题"></a>github提交历史记录没有变绿问题</h4><p>　　以上的步骤完成了，那么我们正常提交代码就是一键自动push了，但你会发现你的github上的历史记录的小格子没有变绿，这是什么问题呢？<br>　　原因：<font color="red"><strong>当你在没有设定好user.name 和user.email的时候，你提交的任何历史记录都不会让你的记录栏颜色变绿</strong></font><br>　　使用多个账号的时候，最好不要使用全局git账号，应该在每个项目下面设定好自己的名字和邮箱，否则在提交的代码是不会让提交的历史记录那一栏变绿的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在当前的repo根目录下输入下面两行</span></span><br><span class="line">git config user.name <span class="string">"tingyunsay"</span></span><br><span class="line"></span><br><span class="line">git config user.email <span class="string">"xxxxx@163.com"</span> |</span><br></pre></td></tr></table></figure></p>
+<p>　　这样，我们就能一键push，并且github上的历史提交栏正常变绿（无论你本地的repo是https的还是ssh的）</p>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>　　若在文章中发现任何问题还请指出，谢谢！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"># git</a>
+          
+            <a href="/tags/代码控制/" rel="tag"># 代码控制</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/22/细说python字符编码04/" rel="next" title="细说python字符编码(四)">
+                <i class="fa fa-chevron-left"></i> 细说python字符编码(四)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/13/内网穿透/" rel="prev" title="内网穿透">
+                内网穿透 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+          <p class="site-author-name" itemprop="name">tingyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tingyunsay" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/helloa-bao" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍在单台电脑上使用多个git账号"><span class="nav-number">1.</span> <span class="nav-text">本文介绍在单台电脑上使用多个git账号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正常操作过程"><span class="nav-number">1.2.</span> <span class="nav-text">正常操作过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成ssh-key公钥-秘钥"><span class="nav-number">1.2.1.</span> <span class="nav-text">生成ssh-key公钥/秘钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置多个账号自动识别"><span class="nav-number">1.2.2.</span> <span class="nav-text">配置多个账号自动识别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存在问题解决"><span class="nav-number">1.3.</span> <span class="nav-text">存在问题解决</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于ssh-keys"><span class="nav-number">1.3.1.</span> <span class="nav-text">关于ssh keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在新机器上配置"><span class="nav-number">1.3.2.</span> <span class="nav-text">在新机器上配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于github设定好了ssh-key依旧提示输入账号密码"><span class="nav-number">1.3.3.</span> <span class="nav-text">关于github设定好了ssh-key依旧提示输入账号密码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#github提交历史记录没有变绿问题"><span class="nav-number">1.3.4.</span> <span class="nav-text">github提交历史记录没有变绿问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.4.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tingyun</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<span id="busuanzi_container_site_pv" class="times">
+	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = '<%- config.leancloud_visitors.app_id %>';
+    var APP_KEY = '<%- config.leancloud_visitors.app_key %>';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count 
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+   // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://tingyun-site.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://tingyunsay.github.io/2018/08/10/多git账号配置问题解决/';
+          this.page.identifier = '2018/08/10/多git账号配置问题解决/';
+          this.page.title = '多git账号配置问题解决';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://tingyun-site.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("W6jC6pbDoOxG8g1AMLm4SPIi-gzGzoHsz", "JXpCmEdRB7KbMVjQl91Itbk8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>

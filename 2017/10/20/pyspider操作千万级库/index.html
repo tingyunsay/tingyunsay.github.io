@@ -6,17 +6,16 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript"
-color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -34,7 +33,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -68,21 +67,21 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="pyspider,mysql," />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="pyspider,mysql,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -96,7 +95,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:url" content="http://tingyunsay.github.io/2017/10/20/pyspider操作千万级库/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文叙述pyspider在对接量级较大库的策略">
-<meta property="og:updated_time" content="2017-11-12T14:33:53.670Z">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-03-19T13:54:50.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pyspider操作千万级库">
 <meta name="twitter:description" content="本文叙述pyspider在对接量级较大库的策略">
@@ -127,7 +127,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/10/20/pyspider操作千万级库/"/>
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/10/20/pyspider操作千万级库/">
 
 
 
@@ -137,7 +137,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 </head>
 
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -172,13 +172,13 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +208,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -218,7 +218,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -228,7 +228,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -238,7 +238,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -248,7 +248,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -258,7 +258,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
             
             Dream
           </a>
@@ -292,16 +292,16 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/10/20/pyspider操作千万级库/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -340,7 +340,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -351,7 +351,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/pyspider/" itemprop="url" rel="index">
                     <span itemprop="name">pyspider</span>
                   </a>
@@ -371,8 +371,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/10/20/pyspider操作千万级库/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/20/pyspider操作千万级库/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/20/pyspider操作千万级库/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -411,29 +410,29 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
       
         <h3 id="本文叙述pyspider在对接量级较大库的策略"><a href="#本文叙述pyspider在对接量级较大库的策略" class="headerlink" title="本文叙述pyspider在对接量级较大库的策略"></a>本文叙述pyspider在对接量级较大库的策略</h3><a id="more"></a>
 <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>　　最近这这几天依旧是在搞我的爬虫，看看图像识别这一块的东西，没啥需求的时候就在git上瞎逛，发现什么好看的项目就拿过来用用，比如之前遇到过的haproxy和最近这几天看到的netdata，其实都是在需要做相关的事情才会去注意这些比较优秀的开源项目<br>　　但是晴天霹雳，突然接了一单，而且据说量还不小…..三个平台，种子数据上千万，要抓取的内容大致估计上亿条数据，花费时间我就没来得及具体去算了<br>　　这几个月所有的抓取任务以及都移到pyspider上了，全部大约有100个站点左右，大部分都只是定时即可，一般按月例行。我开始也没太在意，就匆匆把抓取逻辑这些写完了，准备去接另外一帮人给的mysql时，感觉有点不太对劲……<br>　　<br>　　按照之前的任务来说，在on_start()中启动脚本，我读取的或一些小文件，或一些excel，或直接去扫描对方的站点即可。但是这次的需求是需要抓完其全部库里面的数据，按照每条给出的数据去检索，那我们必然需要读完一次全表，看了看量，他们先导了一部分进去，大概450w….当时我的手心里应该是有点汗的，并且面色紧张地问：一次性给这么多吗？<br>　　<br>　　如果是需要pyspider正常的流程去执行，那必然是会<font color="purple"><strong>在on_strat()时任务执行超时，可能只读取出几万条或十几万条数据就会被破终止</strong></font>，然后执行index_page()，由于这个超时时间限制，且self.crawl()之后程序不是异步的，会暂时阻塞在on_start()这一步，若是异步的，可能情况会好点，但也可能会因为mysql读库太快，导致中间沉积大量任务<br>　　所以我们需要其他的思路去解决这个问题</p>
-<h3 id="on-finished-self"><a href="#on-finished-self" class="headerlink" title="on_finished(self)"></a>on_finished(self)</h3><p>　　pyspider看了一部分代码，但大多只是scheduler以及mysql的代码，好多比较巧妙的功能其实都没有看到，比如，作者在文档中提到：可以直接重写on_result(self,response)这个函数重新定义数据落地。我又想想有一个on_start(self)，还有on_result()，我就感觉作者写的组件是不是都是分开的，能够被重载的，我就想试试看能不能在一个任务结束的时候做一些操作，即这个：on_finished()<br>　　<br>　　在pyspider项目中寻找字段on_finished，找打如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">on_finished</span><span class="params">(self, response, task)</span>:</span></div><div class="line">    <span class="string">"""</span></div><div class="line">    Triggered when all tasks in task queue finished.</div><div class="line">    http://docs.pyspider.org/en/latest/About-Projects/#on_finished-callback</div><div class="line">    """</div><div class="line">    <span class="keyword">pass</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">You can override `on_finished` method in the project, the method would be triggered when the task_queue goes  </div><div class="line"> to 0.</div><div class="line"></div><div class="line">Example 1: When you start a project to crawl a website with 100 pages, the `on_finished` callback will be  </div><div class="line"> fired when 100 pages are successfully crawled or failed after retries.</div><div class="line"></div><div class="line">Example 2: A project with `auto_recrawl` tasks will **NEVER** trigger the `on_finished` callback, because  </div><div class="line"> time queue will never become 0 when there are auto_recrawl tasks in it.</div><div class="line"></div><div class="line">Example 3: A project with `@every` decorated method will trigger the `on_finished` callback every time when  </div><div class="line"> the newly submitted tasks are finished.</div></pre></td></tr></table></figure>
-<p>　　以上这几句话翻译如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">您可以在项目中重写`on_finished`方法，当task_queue变为0时，该方法将被触发。</div><div class="line"></div><div class="line">示例1：当您启动一个项目来抓取100页的网站时，在重试后成功抓取100页或失败后，“on_finished”回调将被触发。</div><div class="line"></div><div class="line">示例2：具有`auto_recrawl`任务的项目将不会**触发`on_finished`回调，因为当其中有auto_recrawl任务时，时间队列永远不会变为0。</div><div class="line"></div><div class="line">示例3：每次新提交的任务完成时，带有@every装饰方法的项目将触发“on_finished”回调。</div></pre></td></tr></table></figure></p>
+<h3 id="on-finished-self"><a href="#on-finished-self" class="headerlink" title="on_finished(self)"></a>on_finished(self)</h3><p>　　pyspider看了一部分代码，但大多只是scheduler以及mysql的代码，好多比较巧妙的功能其实都没有看到，比如，作者在文档中提到：可以直接重写on_result(self,response)这个函数重新定义数据落地。我又想想有一个on_start(self)，还有on_result()，我就感觉作者写的组件是不是都是分开的，能够被重载的，我就想试试看能不能在一个任务结束的时候做一些操作，即这个：on_finished()<br>　　<br>　　在pyspider项目中寻找字段on_finished，找打如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">on_finished</span><span class="params">(self, response, task)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Triggered when all tasks in task queue finished.</span></span><br><span class="line"><span class="string">    http://docs.pyspider.org/en/latest/About-Projects/#on_finished-callback</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">You can override `on_finished` method in the project, the method would be triggered when the task_queue goes  </span><br><span class="line"> to 0.</span><br><span class="line"></span><br><span class="line">Example 1: When you start a project to crawl a website with 100 pages, the `on_finished` callback will be  </span><br><span class="line"> fired when 100 pages are successfully crawled or failed after retries.</span><br><span class="line"></span><br><span class="line">Example 2: A project with `auto_recrawl` tasks will **NEVER** trigger the `on_finished` callback, because  </span><br><span class="line"> time queue will never become 0 when there are auto_recrawl tasks in it.</span><br><span class="line"></span><br><span class="line">Example 3: A project with `@every` decorated method will trigger the `on_finished` callback every time when  </span><br><span class="line"> the newly submitted tasks are finished.</span><br></pre></td></tr></table></figure>
+<p>　　以上这几句话翻译如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">您可以在项目中重写`on_finished`方法，当task_queue变为0时，该方法将被触发。</span><br><span class="line"></span><br><span class="line">示例1：当您启动一个项目来抓取100页的网站时，在重试后成功抓取100页或失败后，“on_finished”回调将被触发。</span><br><span class="line"></span><br><span class="line">示例2：具有`auto_recrawl`任务的项目将不会**触发`on_finished`回调，因为当其中有auto_recrawl任务时，时间队列永远不会变为0。</span><br><span class="line"></span><br><span class="line">示例3：每次新提交的任务完成时，带有@every装饰方法的项目将触发“on_finished”回调。</span><br></pre></td></tr></table></figure></p>
 <p>　　于是我尝试着<font color="red"><strong>在on_finished(self,response)中去执行我们的操作，比如写文件，比如打log，比如回写数据库，发现我们可以在其中执行任何我们操作，接下来我们结合on_finished()去解决读库的问题</strong></font></p>
 <h3 id="定义刷库规则"><a href="#定义刷库规则" class="headerlink" title="定义刷库规则"></a>定义刷库规则</h3><p>　　首先，我们在种子库中有一定数据量，并且有一个唯一id值，那么我们在表中多加一个字段<font color="red"><strong>is_crawled，标识该id是否被抓取</strong></font>，为了保险，再加一个<font color="red"><strong>crawl_time记录其是什么时间被抓取入库的</strong></font></p>
-<p>　　那么有了这两者前提，可以在我们原始的抓取逻辑中修改代码了<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pyspider.libs.base_handler <span class="keyword">import</span> *</div><div class="line"><span class="keyword">import</span> pymysql</div><div class="line"><span class="keyword">import</span> datetime</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Handler</span><span class="params">(BaseHandler)</span>:</span></div><div class="line">    crawl_config = &#123;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">#要回写的一批id</span></div><div class="line">    batch_ids = []</div><div class="line"></div><div class="line">    <span class="comment">#@every(minutes=24 * 60)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_start</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="comment">#填充要读取的数据库信息</span></div><div class="line">        conn = pymysql.connect(host=<span class="string">"ip"</span>,</div><div class="line">                           port=<span class="number">3306</span>,</div><div class="line">                           user=<span class="string">"user"</span>,</div><div class="line">                           password=<span class="string">"pwd"</span>,</div><div class="line">                           db=<span class="string">"db_name"</span>,</div><div class="line">                           charset=<span class="string">'utf8'</span></div><div class="line">                           )</div><div class="line">        cursor = pymysql.cursors.SSCursor(conn)</div><div class="line">        <span class="comment">#取出没有被抓取过的结果，一次100条</span></div><div class="line">        sql = <span class="string">"select * from seed_table where is_crawled=0 limit 100"</span></div><div class="line">        cursor.execute(sql)</div><div class="line">        <span class="keyword">print</span> sql</div><div class="line">        <span class="keyword">while</span> cursor:</div><div class="line">            <span class="keyword">try</span>:</div><div class="line">                row = cursor.fetchone()</div><div class="line">                <span class="comment">#提取需要的字段，如检索关键词类似的</span></div><div class="line">                name = row[<span class="number">1</span>]</div><div class="line">                age = row[<span class="number">2</span>]</div><div class="line">                <span class="comment">#........</span></div><div class="line">                </div><div class="line">                <span class="comment">#记录丢入任务的id值，为seed_table表的主键</span></div><div class="line">                id = row[<span class="number">0</span>]</div><div class="line">                self.batch_ids.append(id)</div><div class="line">                </div><div class="line">            <span class="keyword">except</span> Exception,e:</div><div class="line">                <span class="keyword">break</span></div><div class="line">    </div><div class="line">            url =  <span class="string">"http://www.xxxx.com/search_spi/?name=%s&amp;age=%s....."</span>%(name,age)</div><div class="line">            self.crawl(<span class="string">''</span>, callback=self.index_page,update_force=<span class="keyword">True</span>)</div><div class="line"></div><div class="line"><span class="meta">    @config(age=10 * 24 * 60 * 60)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_page</span><span class="params">(self, response)</span>:</span></div><div class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'a[href^="http"]'</span>).items():</div><div class="line">            self.crawl(each.attr.href, callback=self.detail_page,update_force=<span class="keyword">True</span>)</div><div class="line"></div><div class="line"><span class="meta">    @config(priority=2)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detail_page</span><span class="params">(self, response)</span>:</span></div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            <span class="string">"url"</span>: response.url,</div><div class="line">            <span class="string">"title"</span>: response.doc(<span class="string">'title'</span>).text(),</div><div class="line">        &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_finished</span><span class="params">(self,response)</span>:</span></div><div class="line">        conn,cursor = db_connetionDict(<span class="string">"ip"</span>,<span class="string">"user"</span>,<span class="string">"pwd"</span>,<span class="string">"db"</span>)</div><div class="line">        <span class="keyword">for</span> id <span class="keyword">in</span> self.batch_ids:</div><div class="line">            crawl_time = datetime.datetime.now().strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>)</div><div class="line">            sql = <span class="string">"update seed_table set is_crawled=1 and crawl_time=%s where id=%s "</span>%(<span class="string">"'"</span>+crawl_time+<span class="string">"'"</span>,id)</div><div class="line">            cursor.execute(sql)</div><div class="line">        conn.commit()</div><div class="line">        conn.close()</div><div class="line">        <span class="comment">#回写完成，最后一步，重新调用self.on_start(),重新去取得库中前100条没有被抓取过的歌曲</span></div><div class="line">        self.on_start()</div><div class="line">        </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">db_connetionDict</span><span class="params">(ip,user,pwd,db)</span>:</span></div><div class="line">    conn = pymysql.connect(host=ip,</div><div class="line">                           port=<span class="number">3306</span>,</div><div class="line">                           user=user,</div><div class="line">                           password=pwd,</div><div class="line">                           db=db,</div><div class="line">                           charset=<span class="string">'utf8'</span></div><div class="line">                           )</div><div class="line">    cursor = pymysql.cursors.DictCursor(conn)</div><div class="line">    <span class="keyword">return</span> conn,cursor</div></pre></td></tr></table></figure></p>
+<p>　　那么有了这两者前提，可以在我们原始的抓取逻辑中修改代码了<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyspider.libs.base_handler <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Handler</span><span class="params">(BaseHandler)</span>:</span></span><br><span class="line">    crawl_config = &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#要回写的一批id</span></span><br><span class="line">    batch_ids = []</span><br><span class="line"></span><br><span class="line">    <span class="comment">#@every(minutes=24 * 60)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_start</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment">#填充要读取的数据库信息</span></span><br><span class="line">        conn = pymysql.connect(host=<span class="string">"ip"</span>,</span><br><span class="line">                           port=<span class="number">3306</span>,</span><br><span class="line">                           user=<span class="string">"user"</span>,</span><br><span class="line">                           password=<span class="string">"pwd"</span>,</span><br><span class="line">                           db=<span class="string">"db_name"</span>,</span><br><span class="line">                           charset=<span class="string">'utf8'</span></span><br><span class="line">                           )</span><br><span class="line">        cursor = pymysql.cursors.SSCursor(conn)</span><br><span class="line">        <span class="comment">#取出没有被抓取过的结果，一次100条</span></span><br><span class="line">        sql = <span class="string">"select * from seed_table where is_crawled=0 limit 100"</span></span><br><span class="line">        cursor.execute(sql)</span><br><span class="line">        <span class="keyword">print</span> sql</span><br><span class="line">        <span class="keyword">while</span> cursor:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                row = cursor.fetchone()</span><br><span class="line">                <span class="comment">#提取需要的字段，如检索关键词类似的</span></span><br><span class="line">                name = row[<span class="number">1</span>]</span><br><span class="line">                age = row[<span class="number">2</span>]</span><br><span class="line">                <span class="comment">#........</span></span><br><span class="line">                </span><br><span class="line">                <span class="comment">#记录丢入任务的id值，为seed_table表的主键</span></span><br><span class="line">                id = row[<span class="number">0</span>]</span><br><span class="line">                self.batch_ids.append(id)</span><br><span class="line">                </span><br><span class="line">            <span class="keyword">except</span> Exception,e:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    </span><br><span class="line">            url =  <span class="string">"http://www.xxxx.com/search_spi/?name=%s&amp;age=%s....."</span>%(name,age)</span><br><span class="line">            self.crawl(<span class="string">''</span>, callback=self.index_page,update_force=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @config(age=10 * 24 * 60 * 60)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> each <span class="keyword">in</span> response.doc(<span class="string">'a[href^="http"]'</span>).items():</span><br><span class="line">            self.crawl(each.attr.href, callback=self.detail_page,update_force=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @config(priority=2)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detail_page</span><span class="params">(self, response)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">"url"</span>: response.url,</span><br><span class="line">            <span class="string">"title"</span>: response.doc(<span class="string">'title'</span>).text(),</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_finished</span><span class="params">(self,response)</span>:</span></span><br><span class="line">        conn,cursor = db_connetionDict(<span class="string">"ip"</span>,<span class="string">"user"</span>,<span class="string">"pwd"</span>,<span class="string">"db"</span>)</span><br><span class="line">        <span class="keyword">for</span> id <span class="keyword">in</span> self.batch_ids:</span><br><span class="line">            crawl_time = datetime.datetime.now().strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>)</span><br><span class="line">            sql = <span class="string">"update seed_table set is_crawled=1 and crawl_time=%s where id=%s "</span>%(<span class="string">"'"</span>+crawl_time+<span class="string">"'"</span>,id)</span><br><span class="line">            cursor.execute(sql)</span><br><span class="line">        conn.commit()</span><br><span class="line">        conn.close()</span><br><span class="line">        <span class="comment">#回写完成，最后一步，重新调用self.on_start(),重新去取得库中前100条没有被抓取过的歌曲</span></span><br><span class="line">        self.on_start()</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">db_connetionDict</span><span class="params">(ip,user,pwd,db)</span>:</span></span><br><span class="line">    conn = pymysql.connect(host=ip,</span><br><span class="line">                           port=<span class="number">3306</span>,</span><br><span class="line">                           user=user,</span><br><span class="line">                           password=pwd,</span><br><span class="line">                           db=db,</span><br><span class="line">                           charset=<span class="string">'utf8'</span></span><br><span class="line">                           )</span><br><span class="line">    cursor = pymysql.cursors.DictCursor(conn)</span><br><span class="line">    <span class="keyword">return</span> conn,cursor</span><br></pre></td></tr></table></figure></p>
 <p>　　每次<font color="red"><strong>在on_finished()时调用on_start()，其实际是执行一个新的任务，所以self.batch_ids也会被重新赋值为[]，抓取新的id，然后回写，重复这个逻辑</strong></font></p>
 <p>　　按照如上的逻辑，即可以不断循环去获取seed_table中的没有被抓过的前100条，直到所有数据都被抓过一遍，这个程序就一直开着，不用管了，估计也得上月份才能慢慢完成</p>
 <p>　　到这里，我们针对大库的处理方法就结束了</p>
 <h3 id="新的问题，关于抓取状态的描述"><a href="#新的问题，关于抓取状态的描述" class="headerlink" title="新的问题，关于抓取状态的描述"></a>新的问题，关于抓取状态的描述</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>　　在上面的例子我们仅仅是抓取单纯一个站点，所以抓取完了，就可以将seed_table中的源数据的is_crawled置为1，但是如果不是一个平台呢？</p>
 <p>　　如果是三个平台同时在运行，他们都是取出seed_table中is_crawled为0的数据去抓取，但假设平台1抓过了某100条，将这些记录全部都置成了1，那么其余的两个平台就无法取出这些已经被平台1抓过的数据</p>
 <h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>　　由于需要抓取的平台是三个，并且我们只有一个字段标识这三个平台的抓取状态，我们很容易想到了位运算，1表示已抓，0表示初始状态</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1 --- 001 --- 平台1</div><div class="line"></div><div class="line">2 --- 010 --- 平台2</div><div class="line"></div><div class="line">4 --- 100 --- 平台3</div></pre></td></tr></table></figure>
-<p>　　每次，我们取数据的那一台语句应该对应地更改成<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#平台1</span></div><div class="line">sql = <span class="string">"select * from seed_table where is_crawled&amp;1!=1 limit 100"</span></div><div class="line"></div><div class="line"><span class="comment">#平台2</span></div><div class="line">sql = <span class="string">"select * from seed_table where is_crawled&amp;1!=2 limit 100"</span></div><div class="line"></div><div class="line"><span class="comment">#平台3</span></div><div class="line">sql = <span class="string">"select * from seed_table where is_crawled&amp;1!=4 limit 100"</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 --- 001 --- 平台1</span><br><span class="line"></span><br><span class="line">2 --- 010 --- 平台2</span><br><span class="line"></span><br><span class="line">4 --- 100 --- 平台3</span><br></pre></td></tr></table></figure>
+<p>　　每次，我们取数据的那一台语句应该对应地更改成<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#平台1</span></span><br><span class="line">sql = <span class="string">"select * from seed_table where is_crawled&amp;1!=1 limit 100"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#平台2</span></span><br><span class="line">sql = <span class="string">"select * from seed_table where is_crawled&amp;1!=2 limit 100"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#平台3</span></span><br><span class="line">sql = <span class="string">"select * from seed_table where is_crawled&amp;1!=4 limit 100"</span></span><br></pre></td></tr></table></figure></p>
 <p>　　按位与的话，若平台1：数a &amp; 1（001） != 1 表明a的第一位必然不是1，同理平台2和平台3也是一样</p>
 <p>　　之后平台扩充的话，只需要更改新平台，老平台的抓取代码也不需要改变</p>
-<p>　　最后的回写操作也要稍微更改下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#平台1</span></div><div class="line">sql = <span class="string">"update seed_table set is_crawled=is_crawled | 1 and crawl_time=%s where id=%s "</span>%(<span class="string">"'"</span>+crawl_time+<span class="string">"'"</span>,id)</div><div class="line"></div><div class="line"><span class="comment">#平台2</span></div><div class="line">sql = <span class="string">"update seed_table set is_crawled=is_crawled | 2 and crawl_time=%s where id=%s "</span>%(<span class="string">"'"</span>+crawl_time+<span class="string">"'"</span>,id)</div><div class="line"></div><div class="line"><span class="comment">#平台3</span></div><div class="line">sql = <span class="string">"update seed_table set is_crawled=is_crawled | 4 and crawl_time=%s where id=%s "</span>%(<span class="string">"'"</span>+crawl_time+<span class="string">"'"</span>,id)</div></pre></td></tr></table></figure></p>
+<p>　　最后的回写操作也要稍微更改下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#平台1</span></span><br><span class="line">sql = <span class="string">"update seed_table set is_crawled=is_crawled | 1 and crawl_time=%s where id=%s "</span>%(<span class="string">"'"</span>+crawl_time+<span class="string">"'"</span>,id)</span><br><span class="line"></span><br><span class="line"><span class="comment">#平台2</span></span><br><span class="line">sql = <span class="string">"update seed_table set is_crawled=is_crawled | 2 and crawl_time=%s where id=%s "</span>%(<span class="string">"'"</span>+crawl_time+<span class="string">"'"</span>,id)</span><br><span class="line"></span><br><span class="line"><span class="comment">#平台3</span></span><br><span class="line">sql = <span class="string">"update seed_table set is_crawled=is_crawled | 4 and crawl_time=%s where id=%s "</span>%(<span class="string">"'"</span>+crawl_time+<span class="string">"'"</span>,id)</span><br></pre></td></tr></table></figure></p>
 <p>　　分别在不同的位上或上一个1，也就相当于对那一位进行了将0转换成1的过程</p>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>最近一段时间都是和mysql打交道，单个库的存储量也早就达到了好几千万，即便是建了索引，也能明显感觉到有点慢了，后续再测试下其他一些数据库的性能，有可能的话换换看es<br>有什么错误还请提出，给我发邮件或评论，不尽感激~~</p>
 <h3 id="2017-11-12更新"><a href="#2017-11-12更新" class="headerlink" title="2017-11-12更新"></a>2017-11-12更新</h3><p>　　hello，过完光棍节回来调bug啦~~</p>
 <p>　　以上的尝试在经过博主的一段时间观察，发现其中有点不对劲的地方，接着上面提到的内容，我们不断循环去获取seed_table中的没有被抓过的前100条，并且在on_finished()中将这100条在数据库中更改状态，再调用on_start()</p>
 <p>　　这看起来像是一个设想很好的过程，但是在实际的抓取中，我设定的100个任务会大概率重复执行3~5遍，因为<font color="red"><strong>在on_finished()中我并没有收到那需要被回写的100条id，所以库状态还没有更改，一直重复去取上一次任务的100条</strong></font></p>
-<p>　　更具体请查看<a href="https://segmentfault.com/q/1010000011797351" target="_blank" rel="external"><font color="red"><strong>我在sf中提到的问题</strong></font></a></p>
+<p>　　更具体请查看<a href="https://segmentfault.com/q/1010000011797351" target="_blank" rel="noopener"><font color="red"><strong>我在sf中提到的问题</strong></font></a></p>
 <p>　　且作者也在其中回答了我这个疑问，即<font color="blue"><strong>pyspider脚本的设定是分布式的，所以不保证当前的Handler只有一个运行实例，使用其类间变量的结果是不确定的</strong></font></p>
 <p>　　也提到了，如果想要多个类（脚本）实例间共享一个变量，将其放到redis中或者采用其他策略<br>　　我能想到的具体方法是在redis中不断更新一个key，<font color="purple"><strong>每次在on_start()中填充进去，到了on_finished()中先回写这些id，完成之后再清空其value</strong></font>，不断重复这个过程，能达到上述的效果</p>
 <p>　　但显然我之前的那个想法是个坑，在此道个歉，(逃)</p>
@@ -481,8 +480,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/12/听云记02/" rel="next" title="听云记 贰">
-                <i class="fa fa-chevron-left"></i> 听云记 贰
+              <a href="/2017/10/15/细说python字符编码03/" rel="next" title="细说python字符编码(三)">
+                <i class="fa fa-chevron-left"></i> 细说python字符编码(三)
               </a>
             
           </div>
@@ -491,8 +490,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/15/细说python字符编码03/" rel="prev" title="细说python字符编码(三)">
-                细说python字符编码(三) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/11/12/听云记02/" rel="prev" title="听云记 贰">
+                听云记 贰 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -548,7 +547,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -558,13 +557,11 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/me.jpg"
-               alt="tingyun" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
           <p class="site-author-name" itemprop="name">tingyun</p>
            
-              <p class="site-description motion-element" itemprop="description">努力写作的程序员</p>
+              <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -572,7 +569,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -583,7 +580,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -594,7 +591,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">53</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -669,10 +666,10 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1006,5 +1003,5 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
 </html>

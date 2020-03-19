@@ -6,17 +6,16 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript"
-color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -34,7 +33,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -68,21 +67,21 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="编码,unicode,utf8,ascii," />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="编码,unicode,utf8,ascii,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -96,8 +95,9 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:url" content="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍python编码基础要点">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/1.png">
-<meta property="og:updated_time" content="2017-11-15T18:40:26.062Z">
+<meta property="og:updated_time" content="2020-03-19T13:54:50.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说python字符编码(二)">
 <meta name="twitter:description" content="本文介绍python编码基础要点">
@@ -129,7 +129,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/"/>
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/">
 
 
 
@@ -139,7 +139,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 </head>
 
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -174,13 +174,13 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +210,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -220,7 +220,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -230,7 +230,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -240,7 +240,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -250,7 +250,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -260,7 +260,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
             
             Dream
           </a>
@@ -294,16 +294,16 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -342,7 +342,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -353,7 +353,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/python/" itemprop="url" rel="index">
                     <span itemprop="name">python</span>
                   </a>
@@ -373,8 +373,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/10/15/细说python字符编码02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/15/细说python字符编码02/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/15/细说python字符编码02/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -421,15 +420,15 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <p>　　最常见的一个乱码就是电子邮件，就是因为发信人和收信人使用的编码方式不一样，比如你在中国给美国人发一份邮件，美国人用ascii，中文用gbk，我们的gbk根本无法用ascii编码，所以会出现乱码</p>
 <p>　　可以想象，<font color="red">如果有一种编码，将世界上所有的符号都纳入其中。每一个符号都给予一个独一无二的编码，那么乱码问题就会消失</font>。这就是unicode，就像它的名字都表示的，这是一种所有符号的编码</p>
 <p>　　但<font color="purple"><strong>一开始网络的不活跃导致了大家都在用局域网，互相之间通信很少，所以对”统一”这个需求也不是很强烈，一直到后面的互联网出现，这才迫切需要一个统一的编码，方便全世界的人民互相交流</strong></font>，这就是接下来我们要说的utf8</p>
-<h3 id="utf8的编码方式"><a href="#utf8的编码方式" class="headerlink" title="utf8的编码方式"></a>utf8的编码方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Unicode符号范围      | UTF-8编码方式</div><div class="line">(十六进制)  　        | （二进制）</div><div class="line">--------------------+---------------------------------------------</div><div class="line">0000 0000-0000 007F | 0xxxxxxx</div><div class="line">0000 0080-0000 07FF | 110xxxxx 10xxxxxx</div><div class="line">0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx</div><div class="line">0001 0000-001F FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</div></pre></td></tr></table></figure>
+<h3 id="utf8的编码方式"><a href="#utf8的编码方式" class="headerlink" title="utf8的编码方式"></a>utf8的编码方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Unicode符号范围      | UTF-8编码方式</span><br><span class="line">(十六进制)  　        | （二进制）</span><br><span class="line">--------------------+---------------------------------------------</span><br><span class="line">0000 0000-0000 007F | 0xxxxxxx</span><br><span class="line">0000 0080-0000 07FF | 110xxxxx 10xxxxxx</span><br><span class="line">0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx</span><br><span class="line">0001 0000-001F FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br></pre></td></tr></table></figure>
 <p>跟据上表，解读UTF-8编码非常简单<br>　　如果<font color="red"><strong>一个字节的第一位是0，则这个字节单独就是一个字符（显然就是ascii）</strong></font>；<br>　　如果第一位是1，则连续有多少个1，就表示当前字符占用多少个字节。</p>
-<p>　　再给出一张图，我们来说说上面这个，从表中易得出 严 字属于第三列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    Unicode符号范围                   |   UTF-8编码方式</div><div class="line">       (十六进制) (十进制)            |   （二进制）</div><div class="line">----------------------------------------------------------------------------------------------------</div><div class="line">  0000 0000-0000 007F (0-127)           |    0xxxxxxx</div><div class="line">  0000 0080-0000 07FF (128-2047)        |    110xxxxx 10xxxxxx</div><div class="line">  0000 0800-0000 FFFF (2048-65535)      |    1110xxxx 10xxxxxx 10xxxxxx</div><div class="line">  0001 0000-0010 FFFF (65536-1114111)   |    11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</div></pre></td></tr></table></figure></p>
+<p>　　再给出一张图，我们来说说上面这个，从表中易得出 严 字属于第三列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    Unicode符号范围                   |   UTF-8编码方式</span><br><span class="line">       (十六进制) (十进制)            |   （二进制）</span><br><span class="line">----------------------------------------------------------------------------------------------------</span><br><span class="line">  0000 0000-0000 007F (0-127)           |    0xxxxxxx</span><br><span class="line">  0000 0080-0000 07FF (128-2047)        |    110xxxxx 10xxxxxx</span><br><span class="line">  0000 0800-0000 FFFF (2048-65535)      |    1110xxxx 10xxxxxx 10xxxxxx</span><br><span class="line">  0001 0000-0010 FFFF (65536-1114111)   |    11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br></pre></td></tr></table></figure></p>
 <p>我们看上图左边的表：<br>　　第一行：0000 ～ 0000 007F ，换算成十进制则是：0～127<br>　　第二行：0080 ～ 0000 07FF，换算成十进制则是：128～2047</p>
 <p>其他的同理计算即可</p>
 <p>我们可以根据上面规则来得出字符所处的位置，接下来就该编码了</p>
 <h3 id="unicode编码成utf8"><a href="#unicode编码成utf8" class="headerlink" title="unicode编码成utf8"></a>unicode编码成utf8</h3><p>　　“严”字unicode为：4E25，换算成十进制大概是２万多，知道其在第三行，即应该按照1110 xxxx  10xx xxxx 10xx xxxx编码</p>
 <p>　　从”严”字的最后一个二进制位（也就是最右边的位）开始（其二进制位为：1001110 00100101）</p>
-<p>　　依次从后往前，将二进制的所有位按照次序：插入到unicode的x上，插入完了，余下的部分置0，即得到下面的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1110 xxxx 10xx xxxx 10xx xxxx</div><div class="line"></div><div class="line">1110 0100 1011 1000  1010 0101</div></pre></td></tr></table></figure></p>
+<p>　　依次从后往前，将二进制的所有位按照次序：插入到unicode的x上，插入完了，余下的部分置0，即得到下面的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1110 xxxx 10xx xxxx 10xx xxxx</span><br><span class="line"></span><br><span class="line">1110 0100 1011 1000  1010 0101</span><br></pre></td></tr></table></figure></p>
 <p>　　其中最右边的０是填充的，其他对应着ｘｘ的部分，你可以试着抽出来，就是”严”字的二进制表示</p>
 <p>最后，我们得到<br>　　“严”的UTF-8编码是”11100100 10111000 10100101”，转换成十六进制就是E4B8A5</p>
 <h3 id="ascii和unicode的矛盾"><a href="#ascii和unicode的矛盾" class="headerlink" title="ascii和unicode的矛盾"></a>ascii和unicode的矛盾</h3><p>　　既然你说要统一，那么我ascii是不是也要按照unicode的方式去表示，去存储呢？</p>
@@ -444,7 +443,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <p>　　五.要解决乱码，将所有编码统一以utf8的格式编码</p>
 <p>　　六.前128个基础字符要特别注意，ascii就是ascii，它在utf8中不会用unicode去编码，依旧保持其ascii只占一位的特点，所以你ascii的decode(“ascii”)和decode(“utf8”)得到的都是unicode，并且只能被编码成ascii<br>　　<br>　　你<font color="red">可以尝试在不加defaultcoding = “utf8”的情况下，对一个全部是英文的unicode字符串进行encode(“utf8”)，得到的还是ascii，也就是说—utf8包含了ascii编码，即上面提到的utf8编码的第一行</font></p>
 <p>还有一些具体到落地的字节存储规则我没讲，后续看看遇到了或者有时间再作整理，编码的问题希望以后不要再浪费时间了，best wishes</p>
-<p>参考博文：<br>　　<a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html</a><br>　　<a href="http://www.cnblogs.com/leesf456/p/5317574.html" target="_blank" rel="external">http://www.cnblogs.com/leesf456/p/5317574.html</a></p>
+<p>参考博文：<br>　　<a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html</a><br>　　<a href="http://www.cnblogs.com/leesf456/p/5317574.html" target="_blank" rel="noopener">http://www.cnblogs.com/leesf456/p/5317574.html</a></p>
 <hr>
 <p>如你在本文发现有什么错误，希望给我发邮件或者留言指出，tingyunsay@gamil.com，我将不尽感激~~</p>
 
@@ -495,8 +494,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/15/细说python字符编码03/" rel="next" title="细说python字符编码(三)">
-                <i class="fa fa-chevron-left"></i> 细说python字符编码(三)
+              <a href="/2017/10/15/细说python字符编码/" rel="next" title="细说python字符编码(一)">
+                <i class="fa fa-chevron-left"></i> 细说python字符编码(一)
               </a>
             
           </div>
@@ -505,8 +504,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/15/细说python字符编码/" rel="prev" title="细说python字符编码(一)">
-                细说python字符编码(一) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/15/细说python字符编码03/" rel="prev" title="细说python字符编码(三)">
+                细说python字符编码(三) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -562,7 +561,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -572,13 +571,11 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/me.jpg"
-               alt="tingyun" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
           <p class="site-author-name" itemprop="name">tingyun</p>
            
-              <p class="site-description motion-element" itemprop="description">努力写作的程序员</p>
+              <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -586,7 +583,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -597,7 +594,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -608,7 +605,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">53</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -683,10 +680,10 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1020,5 +1017,5 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
 </html>

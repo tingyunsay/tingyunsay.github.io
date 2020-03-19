@@ -1,0 +1,1013 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="推荐系统,架构,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="本文主要介绍在博主理解下的推荐系统基本架构">
+<meta name="keywords" content="推荐系统,架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="听云推荐系统">
+<meta property="og:url" content="http://tingyunsay.github.io/2019/01/31/听云推荐系统/index.html">
+<meta property="og:site_name" content="听云">
+<meta property="og:description" content="本文主要介绍在博主理解下的推荐系统基本架构">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://tingyunsay.github.io/2019/01/31/听云推荐系统/1.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2019/01/31/听云推荐系统/2.png">
+<meta property="og:updated_time" content="2020-03-19T17:20:10.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="听云推荐系统">
+<meta name="twitter:description" content="本文主要介绍在博主理解下的推荐系统基本架构">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2019/01/31/听云推荐系统/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tingyunsay.github.io/2019/01/31/听云推荐系统/">
+
+
+
+
+
+  <title> 听云推荐系统 | 听云 </title>
+</head>
+
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43aefd5fb3f7828b2058c874664c6486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">听云</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">听云的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-dream">
+          <a href="/article" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            Dream
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2019/01/31/听云推荐系统/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tingyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听云">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                听云推荐系统
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-31T17:57:47+08:00">
+                2019-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
+                    <span itemprop="name">推荐系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/31/听云推荐系统/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/31/听云推荐系统/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/31/听云推荐系统/" class="leancloud_visitors" data-flag-title="听云推荐系统">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="本文主要介绍在博主理解下的推荐系统基本架构"><a href="#本文主要介绍在博主理解下的推荐系统基本架构" class="headerlink" title="本文主要介绍在博主理解下的推荐系统基本架构"></a>本文主要介绍在博主理解下的推荐系统基本架构</h2><a id="more"></a>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>　　博主近半年的工作重心从爬虫移到了推荐方向上，但主要是在在线层的一些逻辑代码，所以本文不会具体涉及到离线层的算法 / 模型等，只是从大体的角度上总结整理下本人意识形态中的推荐系统.</p>
+<h3 id="什么是推荐？"><a href="#什么是推荐？" class="headerlink" title="什么是推荐？"></a>什么是推荐？</h3><p>　　推荐系统是针对用户个性化的一种猜测和建议，同时也是一个人针对某种大类类型（比如电商产品，比如听歌喜好）的事物的喜好反映，是在大量信息中，系统根据用户的历史行为，以及数据之间的相似度，自动筛选出用户可能喜欢的部分数据，去除掉大量杂质内容后的精品数据<br>　　推荐可以是各种类型的，但从根本上来说都是基于用户的行为，是人主动行为的实际表现，所以基于各个领域都有其特定类型的推荐策略和算法，比如说电商推荐的维度可以是包括以下部分维度<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">购买过/收藏/加入购物车的物品</span><br><span class="line"></span><br><span class="line">浏览过的物品</span><br><span class="line"></span><br><span class="line">浏览某件物品的时长</span><br></pre></td></tr></table></figure></p>
+<p>　　对于歌曲的推荐可能是<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">收藏的歌手/歌曲</span><br><span class="line"></span><br><span class="line">听歌历史</span><br><span class="line"></span><br><span class="line">听某首歌的时长</span><br></pre></td></tr></table></figure></p>
+<p>　　以上只是简单的举了一些例子，因为可用的维度很多很多，可以对某个维度进行更进一步的细化，拿听歌来说，可以有：听歌时间超过 60s 的和未超过 60s 的… 类推其他</p>
+<h3 id="推荐的组成部分"><a href="#推荐的组成部分" class="headerlink" title="推荐的组成部分"></a>推荐的组成部分</h3><p>　　推荐分成 <font color="red"><strong>在线</strong></font> 和 <font color="red"><strong>离线</strong></font> 两个部分，另外模块可以有 <font color="purple"><strong>实时反馈系统</strong></font>（也属于在线层）</p>
+<h4 id="离线层"><a href="#离线层" class="headerlink" title="离线层"></a>离线层</h4><p>　　顾名思义，就是在离线情况下的一些计算任务，主要是通过计算得到 <strong>在线层</strong> 需要使用到的基础数据，常用的有<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>协同过滤(ItemCF)得到的基础相似数据（基础模型）</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>基于其他高级算法模型得到的一些相似数据（其他模型）</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>用户画像/物品维度模型</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>人工分类标签下的数据</span><br><span class="line"></span><br><span class="line"><span class="number">5.</span>冷启动数据（热数据）</span><br></pre></td></tr></table></figure></p>
+<h5 id="主要模型与策略（1-amp-2）"><a href="#主要模型与策略（1-amp-2）" class="headerlink" title="主要模型与策略（1 &amp; 2）"></a>主要模型与策略（1 &amp; 2）</h5><p>　　在这里我们将一种算法称为一个<font color="red"><strong>模型 – model</strong></font>，将多个算法的基础数据混合的方法称为<font color="red"><strong>策略 – strategy</strong></font>.<br>　　<font color="red"><strong>一个策略包含一种或多种模型 (算法)</strong></font>，每个模型 (算法) 占用一定的权重，我们<font color="red"><strong>根据具体模型 (算法) 的权重对所有的相似数据进行重排序</strong></font></p>
+<p>　　我们对于这些常用的算法，可以走混合推荐<br>　　　　即对于每种模型 (算法) 赋予一个权重，使用这个权重去控制各个模型在一个策略（多个模型组合而成）中的重要性(权重)，并应用到重新计算权重重排序上</p>
+<p>　　　　也可以直接使用 ABTest 分流, 一个策略中只配置一个模型 (算法)，根据收集用户反馈的行为数据，来判断哪个模型的效果是最好的.</p>
+<h5 id="其他策略（2-amp-3-amp-4）"><a href="#其他策略（2-amp-3-amp-4）" class="headerlink" title="其他策略（2 &amp; 3 &amp; 4）"></a>其他策略（2 &amp; 3 &amp; 4）</h5><p>　　<font color="red"><strong>用户画像</strong></font>是根据用户的行为所得到的用户的基本喜好信息，可以理解成网站对某个用户的定义<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">用户听云</span><br><span class="line">	喜欢听华语歌 -- <span class="number">0.5</span> </span><br><span class="line">	喜欢听英文歌 -- <span class="number">0.8</span> </span><br><span class="line">	喜欢听粤语歌 -- <span class="number">0.2</span> </span><br><span class="line">	....</span><br></pre></td></tr></table></figure></p>
+<p>　　<font color="red"><strong>物品模型</strong></font>是物品在一些常见维度上的详细信息<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">一首歌曲的歌曲模型</span><br><span class="line">	语种</span><br><span class="line">	发行地区</span><br><span class="line">	....</span><br></pre></td></tr></table></figure></p>
+<p>　　至于<font color="red"><strong>人工分类</strong></font>是一种更准确的数据，可以针对用户选中目标的一些推荐，但是此种方法太耗费人力，需要不断更新，一般只用作参考，适当使用<font color="red"><strong>冷启动数据</strong></font>的话，是根据数据本身在网站中的表现（点击数，浏览数….. 等）所计算得到的热度较高的数据，一般体现了针对某个网站的大众用户的喜好，这些数据一般不算作推荐，用于补充推荐数据较少的情况</p>
+<p>　　<font color="purple"><strong>一般在常规的推荐逻辑中没有足够数据时候，我们直接使用冷启动数据或者标签数据又可能会存在很不靠谱的结果，所以一般使用用户画像对这些热数据进行重排序，推测出更准确的结果返回</strong></font></p>
+<h5 id="应用新的算法模型"><a href="#应用新的算法模型" class="headerlink" title="应用新的算法模型"></a>应用新的算法模型</h5><p>　　依照以上的构成部分及关系，我们可以知道应用一个新的算法模型只需要在离线任务计算好结果，定义好 redis 的 key 和 模型的权重 等等一些公共配置文件，最后再添加在线层使用 redis 数据的代码逻辑，就可以比较可控地应用我们新的算法模型，效果部分的话还需要在后续的数据反馈中收集日志（用户的反馈行为日志），之后再来决定是否提高（降低）某个模型的比重，这是一个推荐的基础循环模式.</p>
+<h4 id="在线层"><a href="#在线层" class="headerlink" title="在线层"></a>在线层</h4><p>　　在线层是用于处理用户请求的一套接口平台，可以理解成：封装离线数据然后吐出给用户的可执行文件，其不同的实现逻辑分摊到你提供的接口形式，举一个简单的歌曲关联歌单的推荐接口<br>　　<strong>在线层</strong></p>
+<p> <img src="/2019/01/31/听云推荐系统/1.png" alt="图片1"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">用户请求(输入):</span><br><span class="line">	uid = userid</span><br><span class="line">	songid = songid</span><br><span class="line">	target = songlist</span><br><span class="line">	count = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">在线层(输出):</span><br><span class="line">	&#123;</span><br><span class="line">	status:<span class="number">200</span>,</span><br><span class="line">	num:<span class="number">10</span>,</span><br><span class="line">	data:&#123;</span><br><span class="line">		songlistid1:weight,</span><br><span class="line">		songlistid2:weight,</span><br><span class="line">		...</span><br><span class="line">		songlistid10:weight,</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>　　以上可以理解为：请求接口需要的几个参数是 – 用户 id，歌曲 id，返回的数据类型，需要的数目</p>
+<p>　　在线层的作用就是：解析这些参数，并且根据传入的各种参数的组合，返回对应类型的数据结果。这里是歌曲关联歌单的推荐，比如用户<font color="red"><strong>“听云”</strong></font>昨天听过了<font color="red"><strong> “春风十里”</strong></font>这首歌，今天给<font color="red"><strong> “听云”</strong> </font>推送一组可能喜欢的<font color="red"><strong>歌单</strong></font>，总数为 10 个.</p>
+<p>　　在线层可以分成两个部分，前端接入层，后端处理引擎</p>
+<h5 id="前端接入层"><a href="#前端接入层" class="headerlink" title="前端接入层"></a>前端接入层</h5><p>　　这部分主要的一个目的是对用户请求接口的前置处理，比如：参数校验，封禁策略，理由配置，缓存处理，降级处理….<br>　　这里相当于置放在 nginx 中的一个前端项目，nginx 可以很友好的进行一些黑白名单的配置，路由配置，日志记录，以及负载均衡的配置。而如果说在后端处理引擎中去处理这些逻辑，那将会是一件特别麻烦的事情<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>语言实现上难度较高（底层语言），容易出错，维护代价大 </span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>修改一些配置文件或者前端展示位置，需要重新编译整个程序，上线效率低</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>由于是黑盒测试，测试的难度都会变得格外地大</span><br></pre></td></tr></table></figure></p>
+<p>　　但是把这部分工作放到前端接入层那就会变得特别简单，通常写这种功能的高级语言（php/python 等）都支持热加载 – 也就是修改即生效，对于前端逻辑调试和格式化结果操作等等，都是很高效的.</p>
+<h5 id="后端推荐引擎"><a href="#后端推荐引擎" class="headerlink" title="后端推荐引擎"></a>后端推荐引擎</h5><p>　　这部分是我们需要核心关注的部分，也是大部分开发工作所在，以下把整个逻辑梳理下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>首先，我们的请求（推荐api）到达前端接入层，经过解析/校验之后</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>丢入连接池，将必要的参数（如：userid，songid，<span class="keyword">return</span> data type，need count）封装在某一个连接中，设定超时时间（及重试次数） </span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>发送给推荐引擎</span><br></pre></td></tr></table></figure></p>
+<p>　　等待推荐引擎<font color="red"><strong>解析参数</strong></font>并<font color="red"><strong>读取配置的模型</strong></font>和<font color="red"><strong>我们编写的在线处理逻辑</strong></font>，将数据返回</p>
+<p>　　由于这部分逻辑涉及到具体的推荐逻辑的实现，需要针对具体的业务才能说明。但总的来说就是你自定义想要如何推出相关的数据，如：歌曲 推荐 歌单，</p>
+<p>　　<font color="red"><strong>根据哪些基础算法，还有如何与用户的喜好信息结合起来等等</strong></font>，完成一次推荐.</p>
+<h4 id="实时反馈系统"><a href="#实时反馈系统" class="headerlink" title="实时反馈系统"></a>实时反馈系统</h4><p>　　这部分内容比较简单，主要就是在开发阶段需要和<font color="red"><strong>在线层</strong></font>约定好的一些缓存 key 的使用（redis key 值），但是涉及到和前端开发人员的日志上报规则约定，简单的举例<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">前端实时上报到日志系统</span><br><span class="line"></span><br><span class="line">实施系统制定好相关的redis key值，采集上报的日志，解析日志，实时更新到缓存中，以供在线层使用</span><br><span class="line"></span><br><span class="line">根据用户的具体行为，在在线层中编写好对应的处理逻辑，如：</span><br><span class="line">根据用户的实时(歌单)点击(click_songlistid_userid)，过滤掉已经推荐过的歌单内容</span><br></pre></td></tr></table></figure></p>
+<p><strong>常规逻辑如下图</strong></p>
+<p> <img src="/2019/01/31/听云推荐系统/2.png" alt="图片2"></p>
+<p>　　注：实时系统是一个单独维护的系统，它关心的只有<font color="red"><strong>日志上报格式</strong></font> 以及 <font color="red"><strong>redis key 的写入</strong></font></p>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>　　以上整理难免会有纰漏，若您发现任何问题，希望您抽空邮件给我，我会尽快修改完善这些内容，谢谢!</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/推荐系统/" rel="tag"># 推荐系统</a>
+          
+            <a href="/tags/架构/" rel="tag"># 架构</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/14/安全搭建squid代理集群/" rel="next" title="安全搭建squid代理集群">
+                <i class="fa fa-chevron-left"></i> 安全搭建squid代理集群
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/20/听云推荐系统贰/" rel="prev" title="听云推荐系统贰">
+                听云推荐系统贰 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+          <p class="site-author-name" itemprop="name">tingyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">53</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tingyunsay" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/helloa-bao" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文主要介绍在博主理解下的推荐系统基本架构"><span class="nav-number">1.</span> <span class="nav-text">本文主要介绍在博主理解下的推荐系统基本架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是推荐？"><span class="nav-number">1.2.</span> <span class="nav-text">什么是推荐？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐的组成部分"><span class="nav-number">1.3.</span> <span class="nav-text">推荐的组成部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#离线层"><span class="nav-number">1.3.1.</span> <span class="nav-text">离线层</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主要模型与策略（1-amp-2）"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">主要模型与策略（1 &amp; 2）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他策略（2-amp-3-amp-4）"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">其他策略（2 &amp; 3 &amp; 4）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#应用新的算法模型"><span class="nav-number">1.3.1.3.</span> <span class="nav-text">应用新的算法模型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在线层"><span class="nav-number">1.3.2.</span> <span class="nav-text">在线层</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前端接入层"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">前端接入层</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#后端推荐引擎"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">后端推荐引擎</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实时反馈系统"><span class="nav-number">1.3.3.</span> <span class="nav-text">实时反馈系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.4.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tingyun</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<span id="busuanzi_container_site_pv" class="times">
+	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = '<%- config.leancloud_visitors.app_id %>';
+    var APP_KEY = '<%- config.leancloud_visitors.app_key %>';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count 
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+   // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://tingyun-site.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://tingyunsay.github.io/2019/01/31/听云推荐系统/';
+          this.page.identifier = '2019/01/31/听云推荐系统/';
+          this.page.title = '听云推荐系统';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://tingyun-site.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("W6jC6pbDoOxG8g1AMLm4SPIi-gzGzoHsz", "JXpCmEdRB7KbMVjQl91Itbk8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>

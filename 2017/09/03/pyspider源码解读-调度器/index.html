@@ -6,17 +6,16 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript"
-color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -34,7 +33,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -68,21 +67,21 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="pyspider,scheduler," />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="pyspider,scheduler,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
@@ -96,8 +95,9 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:url" content="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍pyspider的调度流程">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/1.png">
-<meta property="og:updated_time" content="2017-10-20T15:50:33.636Z">
+<meta property="og:updated_time" content="2020-03-19T13:54:50.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pyspider源码解读--调度器">
 <meta name="twitter:description" content="本文介绍pyspider的调度流程">
@@ -129,7 +129,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/"/>
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/">
 
 
 
@@ -139,7 +139,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 </head>
 
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -174,13 +174,13 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +210,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -220,7 +220,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -230,7 +230,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
             关于
           </a>
@@ -240,7 +240,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -250,7 +250,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -260,7 +260,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
             
             Dream
           </a>
@@ -294,16 +294,16 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -342,7 +342,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -353,7 +353,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                   <a href="/categories/pyspider/" itemprop="url" rel="index">
                     <span itemprop="name">pyspider</span>
                   </a>
@@ -373,8 +373,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/09/03/pyspider源码解读-调度器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/03/pyspider源码解读-调度器/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/03/pyspider源码解读-调度器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,7 +413,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <h2 id="本文介绍pyspider的调度流程"><a href="#本文介绍pyspider的调度流程" class="headerlink" title="本文介绍pyspider的调度流程"></a>本文介绍pyspider的调度流程</h2><a id="more"></a>
 <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>从此篇开始后续会逐步写一些关于pyspider的源码分析的代码，因为之前一段时间都在看其代码，最一开始是从webui中的py文件开始看起的，之后又看完了mysql中的一些封装，自己加上了两个原生的 mysql 库，用来做其他管理，但是其中最核心的部分，大抵是scheduler.py这一部分，所以我首先将这一部分描述清楚，作备忘录</p>
 <p>在阅读本文之前最好需要对pyspider的基本使用有简单了解，比如项目的几种状态切换…etc</p>
-<h3 id="scheduler-py"><a href="#scheduler-py" class="headerlink" title="scheduler.py"></a>scheduler.py</h3><p>首先，我们从pyspider的根目录下找到<font color="red">/pyspider/scheduler/scheduler.py</font><br>其中定义了四个类：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Project(object)</div><div class="line"></div><div class="line">class Scheduler(object)</div><div class="line"></div><div class="line">class OneScheduler(Scheduler)</div><div class="line"></div><div class="line">class ThreadBaseScheduler(Scheduler)</div></pre></td></tr></table></figure></p>
+<h3 id="scheduler-py"><a href="#scheduler-py" class="headerlink" title="scheduler.py"></a>scheduler.py</h3><p>首先，我们从pyspider的根目录下找到<font color="red">/pyspider/scheduler/scheduler.py</font><br>其中定义了四个类：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Project</span><span class="params">(object)</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Scheduler</span><span class="params">(object)</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">OneScheduler</span><span class="params">(Scheduler)</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">ThreadBaseScheduler</span><span class="params">(Scheduler)</span></span></span><br></pre></td></tr></table></figure></p>
 <p>这四个类的作用分别如下</p>
 <h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><p>单个项目的Paused状态切换即是由这个类实例化的对象来完成，其中的方法有—paused()，update(project_info)</p>
 <h4 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h4><p>整体的调度过程，包括从入库，读库，对task的操作（主要是各个队列之间的get和put，以及task执行包的封装），状态的切换</p>
@@ -422,7 +421,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <h4 id="ThreadBaseScheduler"><a href="#ThreadBaseScheduler" class="headerlink" title="ThreadBaseScheduler"></a>ThreadBaseScheduler</h4><p>这个类用到的地方很少，在pyspider/libs/bench.py中用到过，作压力测试</p>
 <p><strong><font color="red">这里我们主要看Scheduler类</font></strong></p>
 <h3 id="Scheduler-object"><a href="#Scheduler-object" class="headerlink" title="Scheduler(object)"></a>Scheduler(object)</h3><p>关于从哪儿开始看起，其实这个类中一大堆的方法以及很多的变量，我首先一步是跳过这些，先看所有函数的名字以及其中的注释看一边，首先看到的是run以及run_once<br>对了，关于变量，在具体看某一个函数的时候，可以再去查询这个变量第一次出现的位置，结合函数的作用就能大致明白这个变量的功用了</p>
-<p><font color="red"><strong>注：这里我不再赘述如何去看代码，只是将看懂的东西作一个整理</strong></font><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_once</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="string">'''comsume queues and feed tasks to fetcher, once'''</span></div><div class="line"></div><div class="line">        self._update_projects()</div><div class="line">	self._check_task_done()</div><div class="line">        self._check_request()</div><div class="line">        <span class="keyword">while</span> self._check_cronjob():</div><div class="line">            <span class="keyword">pass</span></div><div class="line">        self._check_select()</div><div class="line">        self._check_delete()</div><div class="line">        self._try_dump_cnt()</div></pre></td></tr></table></figure></p>
+<p><font color="red"><strong>注：这里我不再赘述如何去看代码，只是将看懂的东西作一个整理</strong></font><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_once</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''comsume queues and feed tasks to fetcher, once'''</span></span><br><span class="line"></span><br><span class="line">        self._update_projects()</span><br><span class="line">	self._check_task_done()</span><br><span class="line">        self._check_request()</span><br><span class="line">        <span class="keyword">while</span> self._check_cronjob():</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        self._check_select()</span><br><span class="line">        self._check_delete()</span><br><span class="line">        self._try_dump_cnt()</span><br></pre></td></tr></table></figure></p>
 <h4 id="self-update-projects"><a href="#self-update-projects" class="headerlink" title="self._update_projects()"></a>self._update_projects()</h4><p>更新project的状态，并且回显到webui上 （这个操作经由几步调用，其会去读所有项目的库，并且load到各自的task_queue中）</p>
 <h4 id="self-check-task-done"><a href="#self-check-task-done" class="headerlink" title="self._check_task_done()"></a>self._check_task_done()</h4><p>去不断取出scheduler的status_queue优先级最高的任务，并检测其状态</p>
 <h4 id="self-check-request"><a href="#self-check-request" class="headerlink" title="self._check_request()"></a>self._check_request()</h4><p>其会优先去取_postpone_request中的延迟task，因为这些极有可能是上次版本运行改变遗留下的一些认为有（比如某个任务正在跑，我们手动stop了它，然后修改了脚本，再重新启动它），将其发送给on_request</p>
@@ -483,8 +482,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/08/pyspider分布式部署/" rel="next" title="pyspider分布式部署">
-                <i class="fa fa-chevron-left"></i> pyspider分布式部署
+              <a href="/2017/09/03/灵谷/" rel="next" title="灵谷">
+                <i class="fa fa-chevron-left"></i> 灵谷
               </a>
             
           </div>
@@ -493,8 +492,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/03/灵谷/" rel="prev" title="灵谷">
-                灵谷 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/08/pyspider分布式部署/" rel="prev" title="pyspider分布式部署">
+                pyspider分布式部署 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -550,7 +549,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -560,13 +559,11 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/me.jpg"
-               alt="tingyun" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
           <p class="site-author-name" itemprop="name">tingyun</p>
            
-              <p class="site-description motion-element" itemprop="description">努力写作的程序员</p>
+              <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -574,7 +571,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -585,7 +582,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -596,7 +593,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">53</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -671,10 +668,10 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1008,5 +1005,5 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
 </html>
