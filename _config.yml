@@ -115,4 +115,4 @@ deploy:
 backup:
   type: git
   repository:
-    github: https://github.com/tingyunsay/tingyunsay.github.io.git,backup
+    github: git@github.com:tingyunsay/tingyunsay.github.io.git,backup
