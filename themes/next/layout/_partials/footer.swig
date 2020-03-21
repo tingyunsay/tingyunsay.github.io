@@ -8,7 +8,7 @@
   <span class="author" itemprop="copyrightHolder">{{ config.author }}</span>
 </div>
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 {% if theme.copyright %}
 <div class="powered-by">
