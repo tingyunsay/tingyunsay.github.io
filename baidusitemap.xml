@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://tingyunsay.github.io/2021/04/16/python-logging%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2021-04-30T08:37:01.399Z</lastmod>
+    <data>
+        <display>
+        <title>python-logging使用</title>
+        <pubTime>2021-04-16T09:56:10.000Z</pubTime>
+        
+        <tag>日志</tag>
+         
+        <tag>logging</tag>
+         
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://tingyunsay.github.io/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tingyunsay.github.io/2020/08/26/%E5%90%AC%E4%BA%91%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%8602/</loc>
     <lastmod>2020-09-08T06:32:18.011Z</lastmod>
     <data>
@@ -269,9 +293,9 @@
         <title>python2.6.6更换2.7</title>
         <pubTime>2017-09-09T07:18:09.000Z</pubTime>
         
-        <tag>系统</tag>
-         
         <tag>python</tag>
+         
+        <tag>系统</tag>
          
          
            
@@ -354,16 +378,16 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8/</loc>
+    <loc>http://tingyunsay.github.io/2017/10/20/pyspider%E6%93%8D%E4%BD%9C%E5%8D%83%E4%B8%87%E7%BA%A7%E5%BA%93/</loc>
     <lastmod>2020-03-19T13:54:50.771Z</lastmod>
     <data>
         <display>
-        <title>pyspider源码解读--调度器</title>
-        <pubTime>2017-09-03T10:22:33.000Z</pubTime>
+        <title>pyspider操作千万级库</title>
+        <pubTime>2017-10-20T15:47:30.000Z</pubTime>
         
-        <tag>pyspider</tag>
+        <tag>mysql</tag>
          
-        <tag>scheduler</tag>
+        <tag>pyspider</tag>
          
          
            
@@ -376,16 +400,16 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/10/20/pyspider%E6%93%8D%E4%BD%9C%E5%8D%83%E4%B8%87%E7%BA%A7%E5%BA%93/</loc>
+    <loc>http://tingyunsay.github.io/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8/</loc>
     <lastmod>2020-03-19T13:54:50.771Z</lastmod>
     <data>
         <display>
-        <title>pyspider操作千万级库</title>
-        <pubTime>2017-10-20T15:47:30.000Z</pubTime>
+        <title>pyspider源码解读--调度器</title>
+        <pubTime>2017-09-03T10:22:33.000Z</pubTime>
         
         <tag>pyspider</tag>
          
-        <tag>mysql</tag>
+        <tag>scheduler</tag>
          
          
            
@@ -464,28 +488,6 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/</loc>
-    <lastmod>2020-03-19T13:54:50.768Z</lastmod>
-    <data>
-        <display>
-        <title>qq_copyright crawler</title>
-        <pubTime>2017-04-15T01:53:45.000Z</pubTime>
-        
-        <tag>scrapy</tag>
-         
-        <tag>qq音乐</tag>
-         
-         
-           
-             
-              <breadCrumb title="scrapy" url="http://tingyunsay.github.io/categories/scrapy/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://tingyunsay.github.io/2018/01/22/%E5%90%AC%E4%BA%91%E8%AE%B003/</loc>
     <lastmod>2020-03-19T13:54:50.768Z</lastmod>
     <data>
@@ -508,21 +510,21 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2018/02/22/%E5%90%AC%E4%BA%91%E8%AE%B004/</loc>
-    <lastmod>2020-03-19T13:54:50.767Z</lastmod>
+    <loc>http://tingyunsay.github.io/2017/04/15/qq-copyright-crawler/</loc>
+    <lastmod>2020-03-19T13:54:50.768Z</lastmod>
     <data>
         <display>
-        <title>听云记 肆</title>
-        <pubTime>2018-02-22T09:13:03.000Z</pubTime>
+        <title>qq_copyright crawler</title>
+        <pubTime>2017-04-15T01:53:45.000Z</pubTime>
         
-        <tag>life</tag>
+        <tag>scrapy</tag>
          
-        <tag>imageine</tag>
+        <tag>qq音乐</tag>
          
          
            
              
-              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
+              <breadCrumb title="scrapy" url="http://tingyunsay.github.io/categories/scrapy/"/>
           
         </display>
     </data>
@@ -530,12 +532,12 @@
 
     
   <url>
-    <loc>http://tingyunsay.github.io/2017/09/24/%E5%90%AC%E4%BA%91%E8%AE%B0/</loc>
-    <lastmod>2020-03-19T13:54:50.766Z</lastmod>
+    <loc>http://tingyunsay.github.io/2018/02/22/%E5%90%AC%E4%BA%91%E8%AE%B004/</loc>
+    <lastmod>2020-03-19T13:54:50.767Z</lastmod>
     <data>
         <display>
-        <title>听云记</title>
-        <pubTime>2017-09-23T19:47:18.000Z</pubTime>
+        <title>听云记 肆</title>
+        <pubTime>2018-02-22T09:13:03.000Z</pubTime>
         
         <tag>life</tag>
          
@@ -589,6 +591,28 @@
            
              
               <breadCrumb title="dream" url="http://tingyunsay.github.io/categories/dream/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://tingyunsay.github.io/2017/09/24/%E5%90%AC%E4%BA%91%E8%AE%B0/</loc>
+    <lastmod>2020-03-19T13:54:50.766Z</lastmod>
+    <data>
+        <display>
+        <title>听云记</title>
+        <pubTime>2017-09-23T19:47:18.000Z</pubTime>
+        
+        <tag>life</tag>
+         
+        <tag>imageine</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://tingyunsay.github.io/categories/life/"/>
           
         </display>
     </data>
@@ -882,6 +906,28 @@
 
     
   <url>
+    <loc>http://tingyunsay.github.io/2017/07/08/Pyspider-%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%93%E5%8F%96%E5%B9%B3%E5%8F%B0/</loc>
+    <lastmod>2020-03-19T13:54:50.752Z</lastmod>
+    <data>
+        <display>
+        <title>Pyspider---一款强大的可视化抓取平台</title>
+        <pubTime>2017-07-08T11:30:31.000Z</pubTime>
+        
+        <tag>可视化爬虫</tag>
+         
+        <tag>pyspider</tag>
+         
+         
+           
+             
+              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8103/</loc>
     <lastmod>2020-03-19T13:54:50.752Z</lastmod>
     <data>
@@ -911,28 +957,6 @@
         <title>Pyspider所要知道的</title>
         <pubTime>2017-07-14T16:16:12.000Z</pubTime>
         
-        <tag>pyspider</tag>
-         
-         
-           
-             
-              <breadCrumb title="pyspider" url="http://tingyunsay.github.io/categories/pyspider/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://tingyunsay.github.io/2017/07/08/Pyspider-%E4%B8%80%E6%AC%BE%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%8A%93%E5%8F%96%E5%B9%B3%E5%8F%B0/</loc>
-    <lastmod>2020-03-19T13:54:50.752Z</lastmod>
-    <data>
-        <display>
-        <title>Pyspider---一款强大的可视化抓取平台</title>
-        <pubTime>2017-07-08T11:30:31.000Z</pubTime>
-        
-        <tag>可视化爬虫</tag>
-         
         <tag>pyspider</tag>
          
          
