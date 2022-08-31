@@ -96,7 +96,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍python编码基础要点">
 <meta property="og:locale">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102//1.png">
 <meta property="article:published_time" content="2017-10-15T04:12:54.000Z">
 <meta property="article:modified_time" content="2020-03-19T13:54:50.759Z">
 <meta property="article:author" content="tingyun">
@@ -105,7 +105,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="article:tag" content="utf8">
 <meta property="article:tag" content="ascii">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102//1.png">
 
 
 
@@ -420,7 +420,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <h3 id="编码规则-字符集"><a href="#编码规则-字符集" class="headerlink" title="编码规则(字符集)"></a>编码规则(字符集)</h3><h4 id="ascii"><a href="#ascii" class="headerlink" title="ascii"></a>ascii</h4><p>　　ascii值是早期的美国人制定的一个规则，规定了英文以及一些字符的二进制表示用于在电脑上编码，<font color="red">它用了一个bit位中的前7个高低位—2^7表示128中不同的状态</font>，这128中状态就对应了常用的符号，比如：a,b,c,d…..空白符….等等</p>
 <p>　　后面计算机到了其他国家，那些国家可能本国语言所用到的字符多于128种，比如法国，他们除了基础的128个字符外，还需要表示口语中的音节，于是他们自己制定了一种编码方式，能表示英文语境中所没有的音节等其他东西，用到了那一个bit位中的第八个高低位，总共能表示256种状态</p>
 <p>　　类似的，中国也是一样，用来表示中文汉字，制定了自己的编码方式gbk等等</p>
-<h4 id="unicode"><a href="#unicode" class="headerlink" title="unicode"></a>unicode</h4><p>　　unicode是一种字符集，像它的名字一样—宇宙，<font color="red">它规定了全宇宙上所有符号的二进制表示，任何一个符号，都有其对应的唯一的二进制表示</font><br>　　比如：大写的A用unicode表示是：U+0041<br>　　　　其中每一位是用十六进制显示的，十六进制的41 &#x3D;&#x3D; 十进制的65（16^1 × 4 + 16^0 × 1 &#x3D; 65）<br>　　<img src="/.io//1.png" alt="图一"></p>
+<h4 id="unicode"><a href="#unicode" class="headerlink" title="unicode"></a>unicode</h4><p>　　unicode是一种字符集，像它的名字一样—宇宙，<font color="red">它规定了全宇宙上所有符号的二进制表示，任何一个符号，都有其对应的唯一的二进制表示</font><br>　　比如：大写的A用unicode表示是：U+0041<br>　　　　其中每一位是用十六进制显示的，十六进制的41 &#x3D;&#x3D; 十进制的65（16^1 × 4 + 16^0 × 1 &#x3D; 65）<br>　　<img src="/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102//1.png" alt="图一"></p>
 <h4 id="为什么要搞这么一种统一的编码方式？"><a href="#为什么要搞这么一种统一的编码方式？" class="headerlink" title="为什么要搞这么一种统一的编码方式？"></a>为什么要搞这么一种统一的编码方式？</h4><p>　　上面提到的，世界上存在着多种编码方式，同一个二进制数字可以被解释成不同的符号。因此，要想打开一个文本文件，就必须知道它的编码方式，否则用错误的编码方式解读，就会出现乱码</p>
 <p>　　最常见的一个乱码就是电子邮件，就是因为发信人和收信人使用的编码方式不一样，比如你在中国给美国人发一份邮件，美国人用ascii，中文用gbk，我们的gbk根本无法用ascii编码，所以会出现乱码</p>
 <p>　　可以想象，<font color="red">如果有一种编码，将世界上所有的符号都纳入其中。每一个符号都给予一个独一无二的编码，那么乱码问题就会消失</font>。这就是unicode，就像它的名字都表示的，这是一种所有符号的编码</p>
@@ -452,7 +452,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <p>还有一些具体到落地的字节存储规则我没讲，后续看看遇到了或者有时间再作整理，编码的问题希望以后不要再浪费时间了，best wishes</p>
 <p>参考博文：<br>　　<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html</a><br>　　<a target="_blank" rel="noopener" href="http://www.cnblogs.com/leesf456/p/5317574.html">http://www.cnblogs.com/leesf456/p/5317574.html</a></p>
 <hr>
-<p>如你在本文发现有什么错误，希望给我发邮件或者留言指出，<a href="mailto:&#116;&#105;&#110;&#103;&#121;&#117;&#110;&#115;&#x61;&#121;&#64;&#103;&#97;&#x6d;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#116;&#105;&#110;&#103;&#121;&#117;&#110;&#115;&#x61;&#121;&#64;&#103;&#97;&#x6d;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a>，我将不尽感激~~</p>
+<p>如你在本文发现有什么错误，希望给我发邮件或者留言指出，<a href="mailto:&#x74;&#105;&#x6e;&#x67;&#121;&#x75;&#110;&#115;&#97;&#121;&#64;&#x67;&#x61;&#109;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x74;&#105;&#x6e;&#x67;&#121;&#x75;&#110;&#115;&#97;&#121;&#64;&#x67;&#x61;&#109;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a>，我将不尽感激~~</p>
 
       
     </div>

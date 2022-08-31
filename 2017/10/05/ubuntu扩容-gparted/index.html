@@ -96,16 +96,16 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍使用gparted工具为Ubuntu扩容">
 <meta property="og:locale">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//2.png">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//3.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/10/05/ubuntu%E6%89%A9%E5%AE%B9-gparted//1.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/10/05/ubuntu%E6%89%A9%E5%AE%B9-gparted//2.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/10/05/ubuntu%E6%89%A9%E5%AE%B9-gparted//3.png">
 <meta property="article:published_time" content="2017-10-05T14:04:38.000Z">
 <meta property="article:modified_time" content="2020-03-19T13:54:50.756Z">
 <meta property="article:author" content="tingyun">
 <meta property="article:tag" content="系统">
 <meta property="article:tag" content="ubuntu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2017/10/05/ubuntu%E6%89%A9%E5%AE%B9-gparted//1.png">
 
 
 
@@ -421,10 +421,10 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <h4 id="tuxboot"><a href="#tuxboot" class="headerlink" title="tuxboot"></a>tuxboot</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-add-repository ppa:thomas.tsai/ubuntu-tuxboot</span><br><span class="line">apt-get install tuxboot</span><br></pre></td></tr></table></figure>
 <p>tuxboot是一个跨平台的制作启动盘的软件，支持制作的启动盘类型有： Clonezilla live, DRBL live, Gparted live, Tux2live.<br>这里我们要制作的是Gparted启动盘</p>
 <h4 id="制作gparted启动盘"><a href="#制作gparted启动盘" class="headerlink" title="制作gparted启动盘"></a>制作gparted启动盘</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~#tuxboot</span><br></pre></td></tr></table></figure>
-<p>在终端输入如上命令，其会打开一个图形化页面，如下图<br><img src="/.io//1.png" alt="图一"><br>先插入u盘，好让tuxboot启动时读取到<br>第一行我们选择<font color="red">gparted-live-stable</font>，默认current<br>点击Save ISO file，其他的都是默认即可，可以看到Drive识别了我们的u盘 &#x2F;dev&#x2F;sdc4，如下图<br><img src="/.io//2.png" alt="图一"><br>最后点击OK，等待其将iso文件下载好，启动盘制作完，我们便可以重启机器了</p>
+<p>在终端输入如上命令，其会打开一个图形化页面，如下图<br><img src="/2017/10/05/ubuntu%E6%89%A9%E5%AE%B9-gparted//1.png" alt="图一"><br>先插入u盘，好让tuxboot启动时读取到<br>第一行我们选择<font color="red">gparted-live-stable</font>，默认current<br>点击Save ISO file，其他的都是默认即可，可以看到Drive识别了我们的u盘 &#x2F;dev&#x2F;sdc4，如下图<br><img src="/2017/10/05/ubuntu%E6%89%A9%E5%AE%B9-gparted//2.png" alt="图一"><br>最后点击OK，等待其将iso文件下载好，启动盘制作完，我们便可以重启机器了</p>
 <h4 id="u盘启动并调整分区"><a href="#u盘启动并调整分区" class="headerlink" title="u盘启动并调整分区"></a>u盘启动并调整分区</h4><p>和安装系统类似的操作，如果你设定了u盘优先启动，那么直接重启机器即可（否则需要在安全f8或者fxx下将启动mode切换成u盘启动），安装过系统的朋友应该都知道</p>
 <p>启动，按照默认选择点击Enter键一步步下去，最后我们到达图形化的Gparted页面，在这里我们可以操作所有处于unmount状态的磁盘，更具体的过程可以查看<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/430956/how-to-resize-the-root-partition-using-gparted"><font color="red"><strong>此网站</strong></font></a></p>
-<p>很简单的手工操作，先resize，将&#x2F;home&#x2F;目录调小，这样就可以腾出来一块空闲的区域<br>之后，将&#x2F;root&#x2F;目录resize，调节至最大，把空闲区域全部赋予它<br>这是我重新分区完的磁盘状态<br><img src="/.io//3.png" alt="图一"><br>可以看到，&#x2F;dev&#x2F;sda5这个原先只挂载根目录的空间还挂载了&#x2F;var&#x2F;lib&#x2F;docker&#x2F;aufs </p>
+<p>很简单的手工操作，先resize，将&#x2F;home&#x2F;目录调小，这样就可以腾出来一块空闲的区域<br>之后，将&#x2F;root&#x2F;目录resize，调节至最大，把空闲区域全部赋予它<br>这是我重新分区完的磁盘状态<br><img src="/2017/10/05/ubuntu%E6%89%A9%E5%AE%B9-gparted//3.png" alt="图一"><br>可以看到，&#x2F;dev&#x2F;sda5这个原先只挂载根目录的空间还挂载了&#x2F;var&#x2F;lib&#x2F;docker&#x2F;aufs </p>
 <h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>若你在分区的过程中遇到无法将空闲分区合并到其他分区，请查看<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=cDgUwWkvuIY"><font color="purple"><strong>此视频</strong></font></a>，貌似在磁盘分配上面有一些需要遵循的规则</p>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>最好的方法是换个全固态的笔记本，或者买个大点的固态安系统，那样就不用担心根目录不够用了(→_→)</p>
 

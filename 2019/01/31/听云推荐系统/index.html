@@ -96,15 +96,15 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文主要介绍在博主理解下的推荐系统基本架构">
 <meta property="og:locale">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//2.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2019/01/31/%E5%90%AC%E4%BA%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F//1.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2019/01/31/%E5%90%AC%E4%BA%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F//2.png">
 <meta property="article:published_time" content="2019-01-31T09:57:47.000Z">
 <meta property="article:modified_time" content="2020-03-19T17:20:10.809Z">
 <meta property="article:author" content="tingyun">
 <meta property="article:tag" content="推荐系统">
 <meta property="article:tag" content="架构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2019/01/31/%E5%90%AC%E4%BA%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F//1.png">
 
 
 
@@ -435,7 +435,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <p>　　<font color="purple"><strong>一般在常规的推荐逻辑中没有足够数据时候，我们直接使用冷启动数据或者标签数据又可能会存在很不靠谱的结果，所以一般使用用户画像对这些热数据进行重排序，推测出更准确的结果返回</strong></font></p>
 <h5 id="应用新的算法模型"><a href="#应用新的算法模型" class="headerlink" title="应用新的算法模型"></a>应用新的算法模型</h5><p>　　依照以上的构成部分及关系，我们可以知道应用一个新的算法模型只需要在离线任务计算好结果，定义好 redis 的 key 和 模型的权重 等等一些公共配置文件，最后再添加在线层使用 redis 数据的代码逻辑，就可以比较可控地应用我们新的算法模型，效果部分的话还需要在后续的数据反馈中收集日志（用户的反馈行为日志），之后再来决定是否提高（降低）某个模型的比重，这是一个推荐的基础循环模式.</p>
 <h4 id="在线层"><a href="#在线层" class="headerlink" title="在线层"></a>在线层</h4><p>　　在线层是用于处理用户请求的一套接口平台，可以理解成：封装离线数据然后吐出给用户的可执行文件，其不同的实现逻辑分摊到你提供的接口形式，举一个简单的歌曲关联歌单的推荐接口<br>　　<strong>在线层</strong></p>
-<p> <img src="/.io//1.png" alt="图片1"></p>
+<p> <img src="/2019/01/31/%E5%90%AC%E4%BA%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F//1.png" alt="图片1"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">用户请求(输入):</span><br><span class="line">	uid = userid</span><br><span class="line">	songid = songid</span><br><span class="line">	target = songlist</span><br><span class="line">	count = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">在线层(输出):</span><br><span class="line">	&#123;</span><br><span class="line">	status:<span class="number">200</span>,</span><br><span class="line">	num:<span class="number">10</span>,</span><br><span class="line">	data:&#123;</span><br><span class="line">		songlistid1:weight,</span><br><span class="line">		songlistid2:weight,</span><br><span class="line">		...</span><br><span class="line">		songlistid10:weight,</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>　　以上可以理解为：请求接口需要的几个参数是 – 用户 id，歌曲 id，返回的数据类型，需要的数目</p>
 <p>　　在线层的作用就是：解析这些参数，并且根据传入的各种参数的组合，返回对应类型的数据结果。这里是歌曲关联歌单的推荐，比如用户<font color="red"><strong>“听云”</strong></font>昨天听过了<font color="red">** “春风十里”**</font>这首歌，今天给<font color="red">** “听云”** </font>推送一组可能喜欢的<font color="red"><strong>歌单</strong></font>，总数为 10 个.</p>
@@ -451,7 +451,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <h4 id="实时反馈系统"><a href="#实时反馈系统" class="headerlink" title="实时反馈系统"></a>实时反馈系统</h4><p>　　这部分内容比较简单，主要就是在开发阶段需要和<font color="red"><strong>在线层</strong></font>约定好的一些缓存 key 的使用（redis key 值），但是涉及到和前端开发人员的日志上报规则约定，简单的举例</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">前端实时上报到日志系统</span><br><span class="line"></span><br><span class="line">实施系统制定好相关的redis key值，采集上报的日志，解析日志，实时更新到缓存中，以供在线层使用</span><br><span class="line"></span><br><span class="line">根据用户的具体行为，在在线层中编写好对应的处理逻辑，如：</span><br><span class="line">根据用户的实时(歌单)点击(click_songlistid_userid)，过滤掉已经推荐过的歌单内容</span><br></pre></td></tr></table></figure>
 <p><strong>常规逻辑如下图</strong></p>
-<p> <img src="/.io//2.png" alt="图片2"></p>
+<p> <img src="/2019/01/31/%E5%90%AC%E4%BA%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F//2.png" alt="图片2"></p>
 <p>　　注：实时系统是一个单独维护的系统，它关心的只有<font color="red"><strong>日志上报格式</strong></font> 以及 <font color="red"><strong>redis key 的写入</strong></font></p>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>　　以上整理难免会有纰漏，若您发现任何问题，希望您抽空邮件给我，我会尽快修改完善这些内容，谢谢!</p>
 

@@ -96,7 +96,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍如何安全地搭建需要验证的 squid 代理集群">
 <meta property="og:locale">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2019/01/14/%E5%AE%89%E5%85%A8%E6%90%AD%E5%BB%BAsquid%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4//1.png">
 <meta property="article:published_time" content="2019-01-14T11:58:17.000Z">
 <meta property="article:modified_time" content="2020-03-19T18:14:32.092Z">
 <meta property="article:author" content="tingyun">
@@ -104,7 +104,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="article:tag" content="代理集群">
 <meta property="article:tag" content="安全">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2019/01/14/%E5%AE%89%E5%85%A8%E6%90%AD%E5%BB%BAsquid%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4//1.png">
 
 
 
@@ -417,7 +417,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
         <h2 id="本文介绍如何安全地搭建需要验证的-squid-代理集群"><a href="#本文介绍如何安全地搭建需要验证的-squid-代理集群" class="headerlink" title="本文介绍如何安全地搭建需要验证的 squid 代理集群"></a>本文介绍如何安全地搭建需要验证的 squid 代理集群</h2><span id="more"></span>
 
 <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>　　之前由于长期有一些抓取相关的需求，博主购买了一些云平台的低配机器，在上面配置了 squid，开放了代理端口，然后自己在本地也维护了一个 squid 服务，专门用来连接云服务器的代理。但是就是最近发现连接的代理总是发现大量超时，登录上服务器查看，连 ls&#x2F;cd 等命令都会卡，nload 了一下，发现带宽全部被打满了，之后就查看了下 squid 的日志，发现已经好几个 G 了，才发现原来是这个东西在搞鬼。检查了 squid 的日志，里面的 ip 有各个地区的，目标也是各种各样，想应该是被哪个代理商扫描到了，直接被用来使用了，开始修改吧</p>
-<h3 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h3><h4 id="基本架构"><a href="#基本架构" class="headerlink" title="基本架构"></a>基本架构</h4><p><img src="/.io//1.png" alt="图一"></p>
+<h3 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h3><h4 id="基本架构"><a href="#基本架构" class="headerlink" title="基本架构"></a>基本架构</h4><p><img src="/2019/01/14/%E5%AE%89%E5%85%A8%E6%90%AD%E5%BB%BAsquid%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4//1.png" alt="图一"></p>
 <p>　　我们只需要维护的本地的 squid.conf 文件即可</p>
 <h4 id="代理-云服务器设定认证账号"><a href="#代理-云服务器设定认证账号" class="headerlink" title="(代理) 云服务器设定认证账号"></a>(代理) 云服务器设定认证账号</h4><p>　　由于所使用的云服务器都是 centos 的，所以这里只用到了 yum 相关包</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装squid</span></span><br><span class="line">yum install squid</span><br><span class="line"></span><br><span class="line"><span class="comment">#这是apache的一个验证工具</span></span><br><span class="line">yum install httpd-tools</span><br><span class="line"></span><br><span class="line"><span class="comment">#openssl</span></span><br><span class="line">yum install openssl</span><br><span class="line"></span><br><span class="line"><span class="comment">#输入登录账号密码</span></span><br><span class="line">htpasswd -c /etc/squid/passwd username</span><br></pre></td></tr></table></figure>

@@ -96,9 +96,9 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍约瑟夫环的问题详细推导和理解">
 <meta property="og:locale">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//1.jpg">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//2.jpg">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//3.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3//1.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3//2.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3//3.jpg">
 <meta property="article:published_time" content="2018-04-26T03:37:42.000Z">
 <meta property="article:modified_time" content="2020-03-30T09:50:21.567Z">
 <meta property="article:author" content="tingyun">
@@ -106,7 +106,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="article:tag" content="出队">
 <meta property="article:tag" content="约瑟夫环">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.jpg">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3//1.jpg">
 
 
 
@@ -425,7 +425,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <h4 id="约瑟夫环特例"><a href="#约瑟夫环特例" class="headerlink" title="约瑟夫环特例"></a>约瑟夫环特例</h4><p>　　为了更好地分析和理解约瑟夫环的问题，这里先聊一下这个问题的特例<br>　　以上概念部分提到两个变量：<font color="red"><strong>n</strong></font>和<font color="red"><strong>q</strong></font>，其中ｎ是总人数，ｑ是每次要杀的人是第几人<br>　　下面我们假设这两个值分别是不同取值的计算方法：</p>
 <h5 id="q-x3D-2-n-x3D-2-k"><a href="#q-x3D-2-n-x3D-2-k" class="headerlink" title="q&#x3D;2,n&#x3D;2^k"></a>q&#x3D;2,n&#x3D;2^k</h5><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#n = 2</span><br><span class="line">0   1   ==&gt;   ０</span><br><span class="line"></span><br><span class="line">#n = 4</span><br><span class="line">0   １   ２   ４   ==&gt; 0   2  ==&gt;   0</span><br><span class="line"></span><br><span class="line">#n = 8</span><br><span class="line">0   1   2   3   4   5   6   7   ==&gt; 0   2   4   6   ==&gt; 0   4   ==&gt; 0</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
 <p>　　由上面的规律是不是能发现一些问题，当ｑ＝２，ｎ＝２^k时，活下来的人总是这个０，PS(大家知道该站在哪个位置了吧~)<br>　　定义 <strong>J<font color="red">q&#x3D;</font>(<font color="red">n&#x3D;</font>)</strong> 为n个人，每次杀死第ｑ个人构成的约瑟夫环最后结果，则有<font color="red"><strong>jq&#x3D;2(n&#x3D;2^k) &#x3D; 0</strong></font></p>
-<h5 id="q-x3D-2-n-x3D-任意数"><a href="#q-x3D-2-n-x3D-任意数" class="headerlink" title="q&#x3D;2,n&#x3D;任意数"></a>q&#x3D;2,n&#x3D;任意数</h5><p>　　当ｎ可以为任意数字的时候，就不会有上面这么简单的站位了，你的走位需要飘逸一点才能活到最后<br>　　举个栗子：ｎ＝９<br>　　注：示例途中的下表从１开始，我们也可以看成是从０开始，就不去改图了<br><img src="/.io//1.jpg" alt="示例图1"><br>　　能看出来，我们干掉途中的第一个人也就是2，之后就只剩下8个人了，这时候ｎ＝８＝２^3，这样一来又回到Jq&#x3D;2(2^k)上了，<font color="red"><strong>这时候我们需要的是找到当前的1号元素</strong></font><br><img src="/.io//2.jpg" alt="示例图2"><br>　　这时候，我们从3号开始，就成了另外一个规模小1的约瑟夫问题（恰好为2^k的特例）。<br>　　此时，我们可以把3号看成新的约瑟夫问题中的1号位置：<br>　　Jq&#x3D;2(n&#x3D;8) &#x3D; Jq&#x3D;2(n&#x3D;2^3) &#x3D; 1，也就是说这里的1代表的就是上一个问题中的3号</p>
+<h5 id="q-x3D-2-n-x3D-任意数"><a href="#q-x3D-2-n-x3D-任意数" class="headerlink" title="q&#x3D;2,n&#x3D;任意数"></a>q&#x3D;2,n&#x3D;任意数</h5><p>　　当ｎ可以为任意数字的时候，就不会有上面这么简单的站位了，你的走位需要飘逸一点才能活到最后<br>　　举个栗子：ｎ＝９<br>　　注：示例途中的下表从１开始，我们也可以看成是从０开始，就不去改图了<br><img src="/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3//1.jpg" alt="示例图1"><br>　　能看出来，我们干掉途中的第一个人也就是2，之后就只剩下8个人了，这时候ｎ＝８＝２^3，这样一来又回到Jq&#x3D;2(2^k)上了，<font color="red"><strong>这时候我们需要的是找到当前的1号元素</strong></font><br><img src="/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3//2.jpg" alt="示例图2"><br>　　这时候，我们从3号开始，就成了另外一个规模小1的约瑟夫问题（恰好为2^k的特例）。<br>　　此时，我们可以把3号看成新的约瑟夫问题中的1号位置：<br>　　Jq&#x3D;2(n&#x3D;8) &#x3D; Jq&#x3D;2(n&#x3D;2^3) &#x3D; 1，也就是说这里的1代表的就是上一个问题中的3号</p>
 <p>　　So：Jq&#x3D;2(n&#x3D;9) &#x3D; 3<br>　　答案为3号<br>　　总结下规律：<br>　　　　在ｑ＝２的前提下，给出ｎ，我们首先找出，离ｎ最近的一个２^k数，如ｎ＝９，那么这个２的幂次方数就是８，同理可得。找到之后，我们需要转换成对应的这个2^k数的约瑟夫环问题，因为其第一个元素即是我们想要的答案<br>　　　　<font color="red"><strong>Jq&#x3D;2(n) &#x3D; Jq&#x3D;2(2^k + t) &#x3D; 2t+1</strong></font></p>
 <h4 id="q＝任意数，n＝任意数"><a href="#q＝任意数，n＝任意数" class="headerlink" title="ｑ＝任意数，ｎ＝任意数"></a>ｑ＝任意数，ｎ＝任意数</h4><p>　　说完了特例，应该对约瑟夫环的问题了解了，现在说说ｑ≠２的情况下，应该是什么样的规律<br>　　我们假定： </p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- n — n人构成的约瑟夫环 </span><br><span class="line">- q — 每次移除第q个人 </span><br></pre></td></tr></table></figure>
@@ -435,7 +435,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">0 　1　 2  ................................  　n-1       总共n人</span><br><span class="line">|   |  |                                       |</span><br><span class="line">q q+1 q+2 ...... n-2  n-1   0  1  2   ......  q-2     (这里是除去q-1这位兄台的剩余n-1人)</span><br><span class="line"></span><br><span class="line">设第q个人也就是下标为q-1的那位，杀死，剩下n-1个人，如上</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">这时，又来重复我们的老套路：将新的被杀的后一个人作为新的0号，于是新的如下：</span><br><span class="line">0  1  2   ......     ..........     ........  n-2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>　　即从q（第ｑ+1个人）开始，到之前最大数n-1，每个数都减去q，减到0之后，接着新的值每次往后+1，直到加到ｑ-２</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">J4(9) :</span><br><span class="line">0 1 2 3 4 5 6 7 8    消去3--&gt;    0  1  2  4  5  6  7  8 ( 0  1  2)</span><br><span class="line">                  对应的新值：             0  1  2  3  4   5  6  7</span><br><span class="line"></span><br><span class="line">其中：q=4，从3之后第一个数4开始：</span><br><span class="line"></span><br><span class="line">(4-q)%n=0，(5-q)%n=1，(6-q)%n=2，(7-q)%n=3，(8-q)%n=4，因为是个环，不能绕成负数吧，(0-q)%n=5，(1-q)%n=6 , (2-q)%n=7</span><br></pre></td></tr></table></figure>
-<p>　　觉得抽象的可以参考下图:<br>　　<img src="/.io//3.jpg" alt="示例图３"></p>
+<p>　　觉得抽象的可以参考下图:<br>　　<img src="/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3//3.jpg" alt="示例图３"></p>
 <p>　　现在大概知道我们的新的约瑟夫环的下标都是这样来的：在旧的下标基础上，减去一个ｑ，再用计算出的结果对长度取余<br>　　new &#x3D; (old-q) % n</p>
 <p>　　反推一下：<br>　　old &#x3D; (new+q) % n</p>
 <p>　　好了，到了这里知道了怎么推出之前的下标，那么也就可以一步步递推回去得到开始的队列或者从小推到大得到最后剩余的结果</p>

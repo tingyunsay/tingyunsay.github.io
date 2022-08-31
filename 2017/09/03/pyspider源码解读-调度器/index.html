@@ -96,14 +96,14 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍pyspider的调度流程">
 <meta property="og:locale">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8//1.png">
 <meta property="article:published_time" content="2017-09-03T10:22:33.000Z">
 <meta property="article:modified_time" content="2020-03-19T13:54:50.771Z">
 <meta property="article:author" content="tingyun">
 <meta property="article:tag" content="pyspider">
 <meta property="article:tag" content="scheduler">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8//1.png">
 
 
 
@@ -439,7 +439,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <p>最后的最后，再由send_task()方法传递到 out_queue队列中（如果out_queue满了，会放到缓冲deque中）</p>
 <h4 id="其余两个方法"><a href="#其余两个方法" class="headerlink" title="其余两个方法"></a>其余两个方法</h4><p>self._check_delete()<br>self._try_dump_cnt()<br>前者是检测是否有到达约定时间需要删除的项目，后者是定时回显webui页面上的任务数目状态(60s一次)</p>
 <h4 id="run-once"><a href="#run-once" class="headerlink" title="run_once"></a>run_once</h4><p><strong><font color="red">这个函数的功能就是将需要被调度的taskid，经过一系列中间转换，带上了一些优先级，最后全部丢入到调度器类本身的一个out_queue队列中，这个队列作为一个生产者，供给fetch消费</font></strong></p>
-<h3 id="详细流程-队列间传递消息"><a href="#详细流程-队列间传递消息" class="headerlink" title="详细流程,队列间传递消息"></a>详细流程,队列间传递消息</h3><p><strong><font color="blue">图1</font></strong><br><img src="/.io//1.png" alt="示例图1"></p>
+<h3 id="详细流程-队列间传递消息"><a href="#详细流程-队列间传递消息" class="headerlink" title="详细流程,队列间传递消息"></a>详细流程,队列间传递消息</h3><p><strong><font color="blue">图1</font></strong><br><img src="/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8//1.png" alt="示例图1"></p>
 <p>大致的调度情况如上，其中的queue指的是作者在其中自己封装实现的一些优先级队列（其实现在**<font color="red">&#x2F;pyspider&#x2F;scheduler&#x2F;task_queue.py</font>**），deque一般都是被用作缓冲队列</p>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>这一篇说是读源码，可实际上并没有多少源码，并不是作者不想贴出代码一行行解释，但是篇幅有点太多，这一篇首先把大致的脉络理清楚，具体的代码实现，我会放到后续的篇幅中分成多部分解释</p>
 <p>如果有存在错误的地方，还希望大家指出，可能有理解错误的地方，见谅</p>

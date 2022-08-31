@@ -1799,7 +1799,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #634b14;
+  background: #37ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2886,4 +2886,7 @@ hr {
     width: auto;
     text-align: center;
   }
+}
+.post-toc .nav .nav-level-2>.nav-child {
+  display: block;
 }

@@ -96,9 +96,9 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍内网穿透的几种实践方法">
 <meta property="og:locale">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//2.png">
-<meta property="og:image" content="http://tingyunsay.github.io/.io//3.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F//1.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F//2.png">
+<meta property="og:image" content="http://tingyunsay.github.io/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F//3.png">
 <meta property="article:published_time" content="2018-08-13T02:42:56.000Z">
 <meta property="article:modified_time" content="2020-03-19T16:25:15.348Z">
 <meta property="article:author" content="tingyun">
@@ -106,7 +106,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <meta property="article:tag" content="花生壳">
 <meta property="article:tag" content="内网穿透">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F//1.png">
 
 
 
@@ -435,8 +435,8 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <h5 id="在内网机器-frpc-客户端-上配置"><a href="#在内网机器-frpc-客户端-上配置" class="headerlink" title="在内网机器 (frpc 客户端) 上配置"></a>在内网机器 (frpc 客户端) 上配置</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">#公网ip/port 确保没有被占用</span><br><span class="line">server_addr = 45.32.28.112</span><br><span class="line">server_port = 7000</span><br><span class="line"></span><br><span class="line">#这是用于管理员可以使用客户端的一些命令如：./frpc status/reload/stop 的配置</span><br><span class="line">admin_addr = 0.0.0.0</span><br><span class="line">admin_port = 7400</span><br><span class="line"></span><br><span class="line">log_level = debug</span><br><span class="line"></span><br><span class="line">#ssh服务</span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 6000</span><br><span class="line"></span><br><span class="line">[web02]</span><br><span class="line">type = http</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">#这是内网机器对外提供服务的端口</span><br><span class="line">local_port = 5100</span><br><span class="line">#若没有域名则此项省略</span><br><span class="line">custom_domains = www.tingyun.ink</span><br></pre></td></tr></table></figure>
 <p>如果你配置了以上 admin_addr &#x2F; admin_port，可以使用以下查看客户端状态：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1./frpc status</span><br><span class="line">Proxy Status...</span><br><span class="line">TCP</span><br><span class="line">Name  Status   LocalAddr     Plugin  RemoteAddr         Error</span><br><span class="line">ssh   running  127.0.0.1:22          45.32.28.112:6000</span><br><span class="line"></span><br><span class="line">HTTP</span><br><span class="line">Name   Status   LocalAddr       Plugin  RemoteAddr            Error</span><br><span class="line">web02  running  127.0.0.1:5100          www.tingyun.ink:8080</span><br></pre></td></tr></table></figure>
-<h5 id="测试使用"><a href="#测试使用" class="headerlink" title="测试使用"></a>测试使用</h5><h6 id="登录-ssh"><a href="#登录-ssh" class="headerlink" title="登录 ssh"></a>登录 ssh</h6><p><img src="/.io//1.png" alt="示例图1"></p>
-<h6 id="提供-web-服务"><a href="#提供-web-服务" class="headerlink" title="提供 web 服务"></a>提供 web 服务</h6><p><img src="/.io//2.png" alt="示例图2"></p>
+<h5 id="测试使用"><a href="#测试使用" class="headerlink" title="测试使用"></a>测试使用</h5><h6 id="登录-ssh"><a href="#登录-ssh" class="headerlink" title="登录 ssh"></a>登录 ssh</h6><p><img src="/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F//1.png" alt="示例图1"></p>
+<h6 id="提供-web-服务"><a href="#提供-web-服务" class="headerlink" title="提供 web 服务"></a>提供 web 服务</h6><p><img src="/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F//2.png" alt="示例图2"></p>
 <p>到此，frp 服务已经正常使用</p>
 <h3 id="花生壳"><a href="#花生壳" class="headerlink" title="花生壳"></a>花生壳</h3><h4 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h4><p>由于花生壳是一个商业化的东西，其他东西不多作了解，单说说其中的：内网穿透 服务<br>登录花生壳官网，直接进入这个页面：<a target="_blank" rel="noopener" href="https://www.oray.com/activity/140902/?icn=oray_140902&ici=hsk_home-grid">https://www.oray.com/activity/140902/?icn=oray_140902&amp;ici&#x3D;hsk_home-grid</a><br>需要花 6 块钱购买体验版的内网穿透服务，之后你在可以在你的有公网 ip 的服务器上下载它的客户端</p>
 <p>在 <a target="_blank" rel="noopener" href="https://hsk.oray.com/download/">https://hsk.oray.com/download/</a> 中选择对应的版本下载</p>
@@ -447,7 +447,7 @@ color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/
 <p>提示启动 success 即可，查看当前状态</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phddns status</span><br></pre></td></tr></table></figure>
 <p>显示如下图即可</p>
-<p><img src="/.io//3.png" alt="示例图3"></p>
+<p><img src="/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F//3.png" alt="示例图3"></p>
 <h4 id="花生壳页面管理"><a href="#花生壳页面管理" class="headerlink" title="花生壳页面管理"></a>花生壳页面管理</h4><p>之后，我们拷贝上图中的 SN 码作为账号 ， 进如这个网页：<a target="_blank" rel="noopener" href="http://b.oray.com/">http://b.oray.com</a> ，使用默认密码：admin 登录</p>
 <p>点击左侧栏的内网穿透，然后再点击右边的 <strong>添加映射</strong><br>花生壳给你自动分配了一个免费的域名，你只需要选择：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">你客户端机器的公网ip（路由器ip）</span><br><span class="line"></span><br><span class="line">机器提供服务的端口</span><br></pre></td></tr></table></figure>
