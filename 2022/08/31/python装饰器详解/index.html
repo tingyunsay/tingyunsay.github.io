@@ -1,0 +1,1035 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="python,装饰器," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本文介绍python中装饰器使用及理解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python装饰器详解">
+<meta property="og:url" content="http://tingyunsay.github.io/2022/08/31/python%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/index.html">
+<meta property="og:site_name" content="听云">
+<meta property="og:description" content="本文介绍python中装饰器使用及理解">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-08-31T08:16:09.000Z">
+<meta property="article:modified_time" content="2022-08-31T11:40:54.031Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="装饰器">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+<script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+  <link rel="canonical" href="http://tingyunsay.github.io/2022/08/31/python装饰器详解/"/>
+
+
+
+
+
+  <title> python装饰器详解 | 听云 </title>
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?43aefd5fb3f7828b2058c874664c6486";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">听云</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">听云的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-dream">
+          <a href="/article" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            Dream
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2022/08/31/python%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tingyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="听云">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                python装饰器详解
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-31T16:16:09+08:00">
+                2022-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/08/31/python%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2022/08/31/python装饰器详解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2022/08/31/python%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/" class="leancloud_visitors" data-flag-title="python装饰器详解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="本文介绍python中装饰器使用及理解"><a href="#本文介绍python中装饰器使用及理解" class="headerlink" title="本文介绍python中装饰器使用及理解"></a>本文介绍python中装饰器使用及理解</h2><span id="more"></span>
+
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>python中装饰器的原理，几种常见的写法，以及相关的应用</p>
+<h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><p>由于装饰器的实现，涉及如下（1,2）两个基础概念，故我们先作了解</p>
+<h4 id="1-高阶函数"><a href="#1-高阶函数" class="headerlink" title="1.高阶函数"></a>1.高阶函数</h4><p>首先我们要记得一个概念，py中万物皆对象，不论是 <font color="red">变量&#x2F;函数&#x2F;class</font> 都是一个对象。基于这一点，函数的参数列表可以支持函数对象参数的传入（即：将一个函数作为参数传递给 另外一个函数）</p>
+<p>我们将有如下特点的函数，称作<font color="red">高阶函数</font>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可以接受函数作为参数</span><br><span class="line"></span><br><span class="line">可以将函数作为返回值返回</span><br></pre></td></tr></table></figure>
+
+<p>举例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">     <span class="built_in">print</span> <span class="string">&quot;hello tingyun&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#case: 接受函数作为参数 + 将函数值作为返回</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">func</span>):</span><br><span class="line">     <span class="keyword">return</span> func</span><br><span class="line"></span><br><span class="line">f = wrapper(hello)</span><br><span class="line">f() <span class="comment">#这里的f函数,即是一个高级函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#也可以使用如下写法</span></span><br><span class="line"><span class="meta">@wrapper</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">     <span class="built_in">print</span> <span class="string">&quot;hello tingyun&quot;</span></span><br><span class="line">f = hello</span><br></pre></td></tr></table></figure>
+<h4 id="2-闭包"><a href="#2-闭包" class="headerlink" title="2.闭包"></a>2.闭包</h4><p>这里涉及到闭包概念的理解：<font color="red"><strong>一个持有外部(作用域之外)环境变量的函数就是闭包</strong></font><br>闭包的作用：<font color="red"><strong>在不改变源代码、函数的调用方式的前提下给函数添加新的功能</strong></font></p>
+<p>实际上，闭包的作用就是装饰器的功能，我们的装饰器就是用于在不影响原始函数功能的基础之上，为函数添加一些新的功能</p>
+<p>举例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">lst</span>):</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">in_func</span>():</span><br><span class="line">          <span class="keyword">return</span> Len(lst)</span><br><span class="line">     <span class="keyword">return</span> in_func</span><br><span class="line"></span><br><span class="line">f = func([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(f())</span><br></pre></td></tr></table></figure>
+<p>这里我们通过在函数func内部定义一个新函数in_func，获取到了外层函数的参数lst ，并且返回了其长度</p>
+<h5 id="闭包的原理–作用域查找的优先级"><a href="#闭包的原理–作用域查找的优先级" class="headerlink" title="闭包的原理–作用域查找的优先级"></a>闭包的原理–作用域查找的优先级</h5><p>一般在函数中，我们查找某个变量的优先级是按照如下顺序</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">L：local 函数内部作用域</span><br><span class="line"></span><br><span class="line">E：enclosing 函数内部与内嵌函数之间（函数定义的变量可以被内嵌函数使用，py的装饰器主要是基于此处实现）</span><br><span class="line"></span><br><span class="line">G：<span class="keyword">global</span> 全局作用域</span><br><span class="line"></span><br><span class="line">B：build-<span class="keyword">in</span> 内置作用域（解析器自动导入的成员）</span><br></pre></td></tr></table></figure>
+<p>使用闭包会出现这样的效果：<font color="red">即你内部函数在调用完后（立刻）销毁，但是其使用到了外层的参数的变量引用</font></p>
+<p>也就是说，我们通过闭包，记住了某个函数的 现场环境（变量+函数）， 但是不会影响到原函数的正常功能（注：<font color="red">若想修改原函数中的可变变量，由于操作的是引用，是会影响原函数的参数</font>）</p>
+<h3 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h3><p>有了以上两个知识点作为前言，我们可以说说python中的装饰器的实现了</p>
+<p>简单总结：首先py接收 函数作为参数传递，这样一来，我们可以将 某个函数A传递给（装饰器）函数B，通过B的参数传递（B(A)），在B中我们可以再定义一个内置函数去获取到参数函数A的相关信息。<br>这样一来即完成了装饰器的封装，最后返回方法A，也在装饰器B中完成我们想要的操作</p>
+<h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>当我们定义了一个函数A，想在其运行的时候，动态添加功能。但又不想改动函数内部的实现代码，这个时候，可以使用 一个新的函数B，将现有函数A传递给这个新的函数B，最后定义完了需要的操作，再返回这个A。</p>
+<p>这样一来，<font color="red"><strong>我们既不需要改动A的代码，也能通过B函数，加上我们想对A函数 执行的一些操作</strong></font></p>
+<h3 id="装饰器的几种写法"><a href="#装饰器的几种写法" class="headerlink" title="装饰器的几种写法"></a>装饰器的几种写法</h3><p>知道了装饰器的实现原理 + 作用 之后，我们用几段代码实现一下</p>
+<h4 id="函数装饰器"><a href="#函数装饰器" class="headerlink" title="函数装饰器"></a>函数装饰器</h4><h5 id="不带参数"><a href="#不带参数" class="headerlink" title="不带参数"></a>不带参数</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">B</span>(<span class="params">func</span>):</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">in_func</span>(<span class="params">x</span>):</span><br><span class="line">          <span class="comment">#在这里能调用到外层func的函数和变量</span></span><br><span class="line">          <span class="built_in">print</span>(<span class="string">&#x27;call &#x27;</span> + func.__name__ + <span class="string">&#x27;()&#x27;</span> + <span class="string">&#x27; x: %d&#x27;</span>%x)</span><br><span class="line">          <span class="keyword">return</span> func(x)</span><br><span class="line">     <span class="keyword">return</span> in_func</span><br><span class="line"></span><br><span class="line"><span class="meta">@B</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">A</span>(<span class="params">x</span>):</span><br><span class="line">     <span class="keyword">return</span> x*<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(A(<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出</span></span><br><span class="line">&gt;&gt;&gt;call A() x: <span class="number">5</span></span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="带参数"><a href="#带参数" class="headerlink" title="带参数"></a>带参数</h5><p>这里的带参数，指的是 装饰器函数的参数，为了实现更多样化的功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">log</span>(<span class="params">level</span>):</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">log_inner</span>(<span class="params">func</span>):</span><br><span class="line">          <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kw</span>):</span><br><span class="line">               <span class="built_in">print</span>(<span class="string">&quot;[%s]:&quot;</span>%level + <span class="string">&quot;call &quot;</span> + func.__name__ + <span class="string">&quot;()&quot;</span>)</span><br><span class="line">               <span class="keyword">return</span> func(*args, **kw)</span><br><span class="line">          <span class="keyword">return</span> wrapper</span><br><span class="line">     <span class="keyword">return</span> log_inner</span><br><span class="line"></span><br><span class="line"><span class="meta">@log(<span class="params"><span class="string">&quot;INFO&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">A</span>(<span class="params">x</span>):</span><br><span class="line">     <span class="keyword">return</span> x*<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(A(<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出</span></span><br><span class="line">&gt;&gt;&gt;[INFO]:call A()</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="类class装饰器"><a href="#类class装饰器" class="headerlink" title="类class装饰器"></a>类class装饰器</h4><p>cls装饰器是一种写法，实际上实现的功能也是跟函数装饰器一样（<font color="red"><strong>使用了魔法函数__call__使得cls对象完成了函数的功能</strong></font>）</p>
+<p><font color="red">且这里我们就不区分是否有参数，因为类装饰器的参数是初始化变量，根据需要再添加即可</font></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#一个类装饰器</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">logger</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, level=<span class="string">&#x27;INFO&#x27;</span></span>):</span><br><span class="line">        <span class="comment">#此处的变量类似于函数的参数,不同的是使用构造函数赋值</span></span><br><span class="line">        self.level = level</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">#call()的本质是将一个类变成一个函数</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self, func</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;[&#123;level&#125;]: the function &#123;func&#125;() is running...&quot;</span>\</span><br><span class="line">                    .<span class="built_in">format</span>(level=self.level, func=func.__name__))</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> wrapper <span class="comment">#返回函数</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@logger(<span class="params">level=<span class="string">&#x27;INFO&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">A</span>(<span class="params">x</span>):</span><br><span class="line">     <span class="keyword">return</span> x*<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(A(<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出</span></span><br><span class="line">[INFO]: the function A() <span class="keyword">is</span> running...</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h5 id="call魔法方法"><a href="#call魔法方法" class="headerlink" title="call魔法方法"></a>call魔法方法</h5><p>此处作简单解释，想再详细了解的话可自行google</p>
+<p>在class中的call方法相当于将 构造函数 转换成了一个方法，有如下效果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Cls</span>(<span class="title class_ inherited__">objet</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="comment">#code</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">Cls(<span class="number">1</span>,<span class="number">2</span>)等同于调用Cls.__call__(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="面试中常遇到的一些问题"><a href="#面试中常遇到的一些问题" class="headerlink" title="面试中常遇到的一些问题"></a>面试中常遇到的一些问题</h3><h4 id="写一个监控函数的执行时间的装饰器"><a href="#写一个监控函数的执行时间的装饰器" class="headerlink" title="写一个监控函数的执行时间的装饰器"></a>写一个监控函数的执行时间的装饰器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment">#不带参数的函数装饰器</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">B</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">in_func</span>(<span class="params">x</span>):</span><br><span class="line">        t1 = <span class="built_in">int</span>(time.time()*<span class="number">1000</span>)</span><br><span class="line">        func(x)</span><br><span class="line">        t2 = <span class="built_in">int</span>(time.time()*<span class="number">1000</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;时间执行:%sms&quot;</span>% ( t2-t1))</span><br><span class="line">    <span class="keyword">return</span> in_func</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@B</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">A</span>(<span class="params">x</span>):</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> x*<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#A = B(A)</span></span><br><span class="line"><span class="built_in">print</span>(A(<span class="number">5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出</span></span><br><span class="line">时间执行:1003ms</span><br><span class="line"><span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="监控执行时间，并且能设定超时退出"><a href="#监控执行时间，并且能设定超时退出" class="headerlink" title="监控执行时间，并且能设定超时退出"></a>监控执行时间，并且能设定超时退出</h4><p>这里涉及到的知识点不只是装饰器了，而是包含了系统中的一些监控和中断的逻辑</p>
+<p>通常有两种实现</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> <span class="keyword">except</span> 加上以下两种监控方式</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span>信号量signal中断</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>Thread线程超时时间</span><br></pre></td></tr></table></figure>
+
+<h5 id="实现1"><a href="#实现1" class="headerlink" title="实现1"></a>实现1</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> signal</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="comment">#设定超时时间,以及超时之后的回调函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">set_timeout</span>(<span class="params">num, callback</span>):</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">wrap</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">handle</span>(<span class="params">signum, frame</span>): <span class="comment"># 收到信号 SIGALRM 后的回调函数，第一个参数是信号的数字，第二个参数是the interrupted stack frame.</span></span><br><span class="line">      <span class="keyword">raise</span> RuntimeError</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">to_do</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">      <span class="keyword">try</span>:</span><br><span class="line">        signal.signal(signal.SIGALRM, handle) <span class="comment"># 设置信号和回调函数</span></span><br><span class="line">        signal.alarm(num) <span class="comment"># 设置 num 秒的闹钟</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;start alarm signal.&#x27;</span>)</span><br><span class="line">        r = func(*args, **kwargs)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;close alarm signal.&#x27;</span>)</span><br><span class="line">        signal.alarm(<span class="number">0</span>) <span class="comment"># 关闭闹钟</span></span><br><span class="line">        <span class="keyword">return</span> r</span><br><span class="line">      <span class="keyword">except</span> RuntimeError <span class="keyword">as</span> e:</span><br><span class="line">        callback()</span><br><span class="line">    <span class="keyword">return</span> to_do</span><br><span class="line">  <span class="keyword">return</span> wrap</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">after_timeout</span>(): <span class="comment"># 超时后的处理函数</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Time out!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@set_timeout(<span class="params"><span class="number">2</span>, after_timeout</span>) </span><span class="comment"># 限时 2 秒超时</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">connect</span>(): <span class="comment"># 要执行的函数</span></span><br><span class="line">  time.sleep(<span class="number">3</span>) <span class="comment"># 函数执行时间，写大于2的值，可测试超时</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&#x27;Finished without timeout.&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">  connect()</span><br></pre></td></tr></table></figure>
+
+<h5 id="实现2"><a href="#实现2" class="headerlink" title="实现2"></a>实现2</h5><p>python中有一个模块叫 func_timeout<br>其实现就是基于Thread线程超时，感兴趣的可以安装这个包（<font color="red">pip install func_timeout</font>），然后看看其源码的实现</p>
+<p>也可以参考如下代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TimeoutException</span>(<span class="title class_ inherited__">Exception</span>):</span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line">ThreadStop = Thread._Thread__stop</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">timelimited</span>(<span class="params">timeout</span>):</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">function</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">decorator2</span>(<span class="params">*args,**kwargs</span>):</span><br><span class="line">      <span class="keyword">class</span> <span class="title class_">TimeLimited</span>(<span class="title class_ inherited__">Thread</span>):</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,_error= <span class="literal">None</span>,</span>):</span><br><span class="line">          Thread.__init__(self)</span><br><span class="line">          self._error = _error</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">          <span class="keyword">try</span>:</span><br><span class="line">            self.result = function(*args,**kwargs)</span><br><span class="line">          <span class="keyword">except</span> Exception,e:</span><br><span class="line">            self._error = <span class="built_in">str</span>(e)</span><br><span class="line">        <span class="keyword">def</span> <span class="title function_">_stop</span>(<span class="params">self</span>):</span><br><span class="line">          <span class="keyword">if</span> self.isAlive():</span><br><span class="line">            ThreadStop(self)</span><br><span class="line">      t = TimeLimited()</span><br><span class="line">      t.start()</span><br><span class="line">      t.join(timeout)</span><br><span class="line">      <span class="keyword">if</span> <span class="built_in">isinstance</span>(t._error,TimeoutException):</span><br><span class="line">        t._stop()</span><br><span class="line">        <span class="keyword">raise</span> TimeoutException(<span class="string">&#x27;timeout for %s&#x27;</span> % (<span class="built_in">repr</span>(function)))</span><br><span class="line">      <span class="keyword">if</span> t.isAlive():</span><br><span class="line">        t._stop()</span><br><span class="line">        <span class="keyword">raise</span> TimeoutException(<span class="string">&#x27;timeout for %s&#x27;</span> % (<span class="built_in">repr</span>(function)))</span><br><span class="line">      <span class="keyword">if</span> t._error <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> t.result</span><br><span class="line">    <span class="keyword">return</span> decorator2</span><br><span class="line">  <span class="keyword">return</span> decorator</span><br><span class="line"><span class="meta">@timelimited(<span class="params"><span class="number">2</span></span>) </span><span class="comment"># 设置运行超时时间2S</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fn_1</span>(<span class="params">secs</span>):</span><br><span class="line">  time.sleep(secs)</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;Finished without timeout&#x27;</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">do_something_after_timeout</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&#x27;Time out!&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(fn_1(<span class="number">3</span>)) <span class="comment"># 设置函数执行3S</span></span><br><span class="line">  <span class="keyword">except</span> TimeoutException <span class="keyword">as</span> e:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">str</span>(e))</span><br><span class="line">    do_something_after_timeout()</span><br></pre></td></tr></table></figure>
+
+<p>以上代码均验证过能执行，可以丢到本地跑一下再尝试理解</p>
+<h3 id="工作中常用到的地方"><a href="#工作中常用到的地方" class="headerlink" title="工作中常用到的地方"></a>工作中常用到的地方</h3><p>1.loggin用于监控函数执行情况，打日志</p>
+<p>2.在常见的web网站中，登录用户的权限检验，需要进入某个方法（网页,如:index）之前，加一个@login_required装饰器，检测cookie的信息，登录校验成功才会返回内容</p>
+<h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>1.<font color="red"><strong>在了解 py的对象特性+闭包概念 之后，通过这两者结合，得到py下的装饰器实现</strong></font>;<br>2.<font color="red"><strong>基于写法的方式不同分成了：1.函数装饰器 2.类装饰器 ，且为了扩展装饰器的功能，可以添加装饰器参数</strong></font>;<br>3.<font color="red"><strong>最后面试中常遇到的一些问题，监控时长装饰器+超时处理装饰器的实现</strong></font>; </p>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6913172123855323149">https://juejin.cn/post/6913172123855323149</a><br><a target="_blank" rel="noopener" href="http://www.qb5200.com/article/377713.html">http://www.qb5200.com/article/377713.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/%E8%A3%85%E9%A5%B0%E5%99%A8/" rel="tag"># 装饰器</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/04/16/python-logging%E4%BD%BF%E7%94%A8/" rel="next" title="python-logging使用">
+                <i class="fa fa-chevron-left"></i> python-logging使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
+          <p class="site-author-name" itemprop="name">tingyun</p>
+           
+              <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tingyunsay" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/helloa-bao" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8Dpython%E4%B8%AD%E8%A3%85%E9%A5%B0%E5%99%A8%E4%BD%BF%E7%94%A8%E5%8F%8A%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">本文介绍python中装饰器使用及理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.高阶函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E9%97%AD%E5%8C%85"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E5%8E%9F%E7%90%86%E2%80%93%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%9F%A5%E6%89%BE%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">闭包的原理–作用域查找的优先级</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-number">1.3.</span> <span class="nav-text">装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8"><span class="nav-number">1.3.1.</span> <span class="nav-text">作用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E5%99%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E5%86%99%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">装饰器的几种写法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-number">1.4.1.</span> <span class="nav-text">函数装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8D%E5%B8%A6%E5%8F%82%E6%95%B0"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">不带参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">带参数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BBclass%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-number">1.4.2.</span> <span class="nav-text">类class装饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#call%E9%AD%94%E6%B3%95%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">call魔法方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E4%B8%AD%E5%B8%B8%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="nav-number">1.5.</span> <span class="nav-text">面试中常遇到的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E4%B8%80%E4%B8%AA%E7%9B%91%E6%8E%A7%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E7%9A%84%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-number">1.5.1.</span> <span class="nav-text">写一个监控函数的执行时间的装饰器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%91%E6%8E%A7%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%EF%BC%8C%E5%B9%B6%E4%B8%94%E8%83%BD%E8%AE%BE%E5%AE%9A%E8%B6%85%E6%97%B6%E9%80%80%E5%87%BA"><span class="nav-number">1.5.2.</span> <span class="nav-text">监控执行时间，并且能设定超时退出</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B01"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">实现1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B02"><span class="nav-number">1.5.2.2.</span> <span class="nav-text">实现2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%B8%B8%E7%94%A8%E5%88%B0%E7%9A%84%E5%9C%B0%E6%96%B9"><span class="nav-number">1.6.</span> <span class="nav-text">工作中常用到的地方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#end"><span class="nav-number">1.7.</span> <span class="nav-text">end</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.1.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">1.7.2.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">tingyun</span>
+</div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="powered-by">
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<span  class="times">
+	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span  class="times2">
+	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+
+
+<script src="//cdn1.lncld.net/static/js/2.5.0/av-min.js"></script>
+<script>
+    var APP_ID = '<%- config.leancloud_visitors.app_id %>';
+    var APP_KEY = '<%- config.leancloud_visitors.app_key %>';
+    AV.init({
+        appId: APP_ID,
+        appKey: APP_KEY
+    });
+    // 显示次数
+    function showTime(Counter) {
+        var query = new AV.Query("Counter");
+        if($(".leancloud_visitors").length > 0){
+            var url = $(".leancloud_visitors").attr('id').trim();
+            // where field
+            query.equalTo("words", url);
+            // count 
+            query.count().then(function (number) {
+                // There are number instances of MyClass where words equals url.
+                $(document.getElementById(url)).text(number?  number : '--');
+            }, function (error) {
+                // error is an instance of AVError.
+            });
+        }
+    }
+   // 追加pv
+    function addCount(Counter) {
+        var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+        var Counter = AV.Object.extend("Counter");
+        var query = new Counter;
+        query.save({
+            words: url
+        }).then(function (object) {
+        })
+    }
+    $(function () {
+        var Counter = AV.Object.extend("Counter");
+        addCount(Counter);
+        showTime(Counter);
+    });
+</script>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://tingyun-site.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://tingyunsay.github.io/2022/08/31/python%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/';
+          this.page.identifier = '2022/08/31/python装饰器详解/';
+          this.page.title = 'python装饰器详解';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://tingyun-site.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("nwHK2RcQ4BEXvck2jPdUwWTg-gzGzoHsz", "t3LQ0WYHaaeNiqeIJNkAQxw1");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body>
+</html>

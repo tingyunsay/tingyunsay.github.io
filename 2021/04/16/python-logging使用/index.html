@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="python,日志,logging,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="日志,logging,python," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,24 +90,26 @@
 
 
 <meta name="description" content="本文介绍python中logging模块使用">
-<meta name="keywords" content="python,日志,logging">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python-logging使用">
-<meta property="og:url" content="http://tingyunsay.github.io/2021/04/16/python-logging使用/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2021/04/16/python-logging%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍python中logging模块使用">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-04-30T08:37:01.399Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-04-16T09:56:10.000Z">
+<meta property="article:modified_time" content="2021-04-30T08:37:01.399Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="日志">
+<meta property="article:tag" content="logging">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python-logging使用">
-<meta name="twitter:description" content="本文介绍python中logging模块使用">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -127,17 +130,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2021/04/16/python-logging使用/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2021/04/16/python-logging使用/"/>
 
 
 
 
 
   <title> python-logging使用 | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -172,13 +175,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +211,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -218,7 +221,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -228,7 +231,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -238,7 +241,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -248,7 +251,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -258,7 +261,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -292,16 +295,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2021/04/16/python-logging使用/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2021/04/16/python-logging%E4%BD%BF%E7%94%A8/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -340,7 +343,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -351,7 +354,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/python/" itemprop="url" rel="index">
                     <span itemprop="name">python</span>
                   </a>
@@ -370,8 +373,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2021/04/16/python-logging使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/16/python-logging使用/" itemprop="commentCount"></span>
+                <a href="/2021/04/16/python-logging%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2021/04/16/python-logging使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,7 +383,7 @@
 
           
           
-             <span id="/2021/04/16/python-logging使用/" class="leancloud_visitors" data-flag-title="python-logging使用">
+             <span id="/2021/04/16/python-logging%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="python-logging使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -408,19 +412,24 @@
       
 
       
-        <h2 id="本文介绍python中logging模块使用"><a href="#本文介绍python中logging模块使用" class="headerlink" title="本文介绍python中logging模块使用"></a>本文介绍python中logging模块使用</h2><a id="more"></a>
+        <h2 id="本文介绍python中logging模块使用"><a href="#本文介绍python中logging模块使用" class="headerlink" title="本文介绍python中logging模块使用"></a>本文介绍python中logging模块使用</h2><span id="more"></span>
 <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>python日志模块使用，为项目添加日志监控</p>
 <h3 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h3><h4 id="日志级别"><a href="#日志级别" class="headerlink" title="日志级别"></a>日志级别</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">DEBUG   -- 调试信息</span><br><span class="line"></span><br><span class="line">INFO    -- 记录关键流程信息,是否走通或终端</span><br><span class="line"></span><br><span class="line">WARNING -- 告警信息,比如超时,错误可能</span><br><span class="line"></span><br><span class="line">ERROR   -- 错误信息,程序会因为此错误导致某些功能不能正常运行</span><br><span class="line"></span><br><span class="line">CRITICAL-- 影响整个程序运行的错误信息</span><br><span class="line"></span><br><span class="line">FATAL   -- 记录影响整个程序运行的错误信息/程序退出的信息</span><br></pre></td></tr></table></figure>
-<p>日志分级是为了开发和测试以及定位错误的效率，比如正常的开发流程是 dev环境 -&gt; test环境 -&gt; online环境<br>通过日志分级，可以根据配置在不同的环境只打印出某些级别以上的日志代码，能在不影响线上运行效率的情况下，提高开发/测试/错误定位的效率<br>举个例子<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dev  - DEBUG及以上的消息全部打印,能清楚地看到一次请求中所有的日志链路(查看一些关键步骤的结果的值)</span><br><span class="line"></span><br><span class="line">test - INFO及以上的消息全部打印,本地测通之后,在测试环境只需要知道整个处理流程的步骤,到哪一段的日志中断,那么可以快速定位到,</span><br><span class="line">再回到dev环境定位</span><br><span class="line"></span><br><span class="line">online - 一般看情况选择后四种</span><br><span class="line">        若是依赖的上游服务过多,可以为这些服务添加超时报警类似的信息,WARNING</span><br><span class="line">        遇到接口挂掉的情况,但不影响程序运行,降级处理,ERROR</span><br><span class="line">        影响程序的正常运行,使某段代码给你中断，比如空指针异常等,CRITICAL</span><br><span class="line">        某段代码的功能影响了这个程序的运行,一般非逻辑错误,如：初始化失败|系统内存不足 等系统级别错误下使用,FATAL</span><br></pre></td></tr></table></figure></p>
+<p>日志分级是为了开发和测试以及定位错误的效率，比如正常的开发流程是 dev环境 -&gt; test环境 -&gt; online环境<br>通过日志分级，可以根据配置在不同的环境只打印出某些级别以上的日志代码，能在不影响线上运行效率的情况下，提高开发&#x2F;测试&#x2F;错误定位的效率<br>举个例子</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">dev  - DEBUG及以上的消息全部打印,能清楚地看到一次请求中所有的日志链路(查看一些关键步骤的结果的值)</span><br><span class="line"></span><br><span class="line">test - INFO及以上的消息全部打印,本地测通之后,在测试环境只需要知道整个处理流程的步骤,到哪一段的日志中断,那么可以快速定位到,</span><br><span class="line">再回到dev环境定位</span><br><span class="line"></span><br><span class="line">online - 一般看情况选择后四种</span><br><span class="line">        若是依赖的上游服务过多,可以为这些服务添加超时报警类似的信息,WARNING</span><br><span class="line">        遇到接口挂掉的情况,但不影响程序运行,降级处理,ERROR</span><br><span class="line">        影响程序的正常运行,使某段代码给你中断，比如空指针异常等,CRITICAL</span><br><span class="line">        某段代码的功能影响了这个程序的运行,一般非逻辑错误,如：初始化失败|系统内存不足 等系统级别错误下使用,FATAL</span><br></pre></td></tr></table></figure>
 <p>一般我们在线上系统很难实时去定位系统，在成千上万的请求中，几乎不可能找到你要的那个request，所以记录错误也是一个很重要的一环，方便在遇到错误之后（第一件事情肯定是先回滚减少损失）快速发现错误，并修复它重新测试上线。</p>
-<h4 id="日志分块-写入格式"><a href="#日志分块-写入格式" class="headerlink" title="日志分块/写入格式"></a>日志分块/写入格式</h4><p>日志分块：<br>　　一般看实际情况，首先，你要确定你的日志量大小，正常来说我们设定成小时级别是比较方便文件分块，一天24份日志文件，当你需要使用或备份时，拉取文件的大小和次数相对比较合理<br>　　若你单台服务及其的qps及其大，以至于每分钟都能生成很大的日志（几百MB，GB级甚至更多），那么推荐你的日志级别设定成分钟级别<br>　　若你的程序只是每天跑一次(定时脚本等)，也可以设定成天级别的</p>
+<h4 id="日志分块-x2F-写入格式"><a href="#日志分块-x2F-写入格式" class="headerlink" title="日志分块&#x2F;写入格式"></a>日志分块&#x2F;写入格式</h4><p>日志分块：<br>　　一般看实际情况，首先，你要确定你的日志量大小，正常来说我们设定成小时级别是比较方便文件分块，一天24份日志文件，当你需要使用或备份时，拉取文件的大小和次数相对比较合理<br>　　若你单台服务及其的qps及其大，以至于每分钟都能生成很大的日志（几百MB，GB级甚至更多），那么推荐你的日志级别设定成分钟级别<br>　　若你的程序只是每天跑一次(定时脚本等)，也可以设定成天级别的</p>
 <p>写入格式：<br>　　看个人习惯，除了打印出错误信息，以及一些别的关键信息（一般推荐: <font color="red">时间戳，错误文件名字，错误的行数 ，错误的func名</font>….等等）</p>
 <h3 id="logging模块的使用"><a href="#logging模块的使用" class="headerlink" title="logging模块的使用"></a>logging模块的使用</h3><p>在python中我们可以使用以下代码简单引入logging模块，在主文件中引入这个config.py。之后再在主文件中import任意的模块，在每个模块中的logging方法就能保证都用的是统一配置的自定义日志格式</p>
-<h4 id="主要配置文件"><a href="#主要配置文件" class="headerlink" title="主要配置文件"></a>主要配置文件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">file_name = (<span class="string">"./log"</span>)   <span class="comment">#自定义文件名字和路径</span></span><br><span class="line">logging.basicConfig(level=logging.INFO,</span><br><span class="line">        format=<span class="string">'%(asctime)s %(filename)s [line:%(lineno)d] [func:%(funcName)s] %(levelname)s : %(message)s'</span>,</span><br><span class="line">        datefmt=<span class="string">'%a, %d %b %Y %H:%M:%S'</span>,</span><br><span class="line">        filename=<span class="string">'%s_%s.log'</span>%(file_name ,datetime.datetime.now().strftime(<span class="string">"%Y-%m-%d"</span>) ),    <span class="comment">#时间戳后缀</span></span><br><span class="line">        filemode=<span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#save as config.py</span></span><br></pre></td></tr></table></figure>
+<h4 id="主要配置文件"><a href="#主要配置文件" class="headerlink" title="主要配置文件"></a>主要配置文件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">file_name = (<span class="string">&quot;./log&quot;</span>)   <span class="comment">#自定义文件名字和路径</span></span><br><span class="line">logging.basicConfig(level=logging.INFO,</span><br><span class="line">        <span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s %(filename)s [line:%(lineno)d] [func:%(funcName)s] %(levelname)s : %(message)s&#x27;</span>,</span><br><span class="line">        datefmt=<span class="string">&#x27;%a, %d %b %Y %H:%M:%S&#x27;</span>,</span><br><span class="line">        filename=<span class="string">&#x27;%s_%s.log&#x27;</span>%(file_name ,datetime.datetime.now().strftime(<span class="string">&quot;%Y-%m-%d&quot;</span>) ),    <span class="comment">#时间戳后缀</span></span><br><span class="line">        filemode=<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#save as config.py</span></span><br></pre></td></tr></table></figure>
+
 <p>以上这段代码可以写在任意py文件的开头处，但是在一个项目中的话，推荐将其写入到 config.py文件中，我们在 main.py中可以引入 config.py ，这样的话，能通过config的配置，控制全局的日志输出格式和级别.</p>
-<h4 id="具体代码使用"><a href="#具体代码使用" class="headerlink" title="具体代码使用"></a>具体代码使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">import logging</span><br><span class="line"></span><br><span class="line">def test(name):</span><br><span class="line">    logging.info(&quot;i am here with &quot; + name)</span><br><span class="line"></span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">#save as logB.py</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">from config import *</span><br><span class="line">import logB</span><br><span class="line"></span><br><span class="line">def test(name):</span><br><span class="line">    logging.info(&quot;i am here with &quot; + name)</span><br><span class="line"></span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    test(&quot;A&quot;)</span><br><span class="line">    logB.test(&quot;B&quot;)</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">#save as main.py</span><br></pre></td></tr></table></figure>
-<p>执行./main.py ，输出的格式如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Fri, 30 Apr 2021 16:06:35 main.py [line:10] [func:test] INFO : i am here withA</span><br><span class="line">Fri, 30 Apr 2021 16:06:35 logB.py [line:7] [func:test] INFO : i am here with B</span><br><span class="line"></span><br><span class="line">#filename : log_2021-04-30.log</span><br></pre></td></tr></table></figure></p>
+<h4 id="具体代码使用"><a href="#具体代码使用" class="headerlink" title="具体代码使用"></a>具体代码使用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">import logging</span><br><span class="line"></span><br><span class="line">def test(name):</span><br><span class="line">    logging.info(&quot;i am here with &quot; + name)</span><br><span class="line"></span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">#save as logB.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python3</span><br><span class="line"># -*- coding:utf-8 -*-</span><br><span class="line">from config import *</span><br><span class="line">import logB</span><br><span class="line"></span><br><span class="line">def test(name):</span><br><span class="line">    logging.info(&quot;i am here with &quot; + name)</span><br><span class="line"></span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    test(&quot;A&quot;)</span><br><span class="line">    logB.test(&quot;B&quot;)</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">#save as main.py</span><br></pre></td></tr></table></figure>
+<p>执行.&#x2F;main.py ，输出的格式如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Fri, 30 Apr 2021 16:06:35 main.py [line:10] [func:test] INFO : i am here withA</span><br><span class="line">Fri, 30 Apr 2021 16:06:35 logB.py [line:7] [func:test] INFO : i am here with B</span><br><span class="line"></span><br><span class="line">#filename : log_2021-04-30.log</span><br></pre></td></tr></table></figure>
+
 <h4 id="注"><a href="#注" class="headerlink" title="注"></a>注</h4><p>我们只需要在程序的主入口中引入所有需要用到的模块，这样在模块中具体的业务代码中用到的logging方法就会优先使用到logging.basicConfig的配置格式。</p>
 <h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3><p>本文简单介绍了个人常用代码中添加日志记录的一些常用写法,当然在大型(py或其他语言)的项目中，日志的格式更加规范化,分级也会更清晰,支持的扩展功能也会更多.</p>
 
@@ -452,11 +461,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag"># python</a>
-          
-            <a href="/tags/日志/" rel="tag"># 日志</a>
+            <a href="/tags/%E6%97%A5%E5%BF%97/" rel="tag"># 日志</a>
           
             <a href="/tags/logging/" rel="tag"># logging</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -469,7 +478,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/08/26/听云基础乐理知识02/" rel="next" title="听云基础乐理知识 貮">
+              <a href="/2020/08/26/%E5%90%AC%E4%BA%91%E5%9F%BA%E7%A1%80%E4%B9%90%E7%90%86%E7%9F%A5%E8%AF%8602/" rel="next" title="听云基础乐理知识 貮">
                 <i class="fa fa-chevron-left"></i> 听云基础乐理知识 貮
               </a>
             
@@ -478,6 +487,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/08/31/python%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AF%A6%E8%A7%A3/" rel="prev" title="python装饰器详解">
+                python装饰器详解 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -506,7 +519,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -532,7 +545,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -542,8 +555,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -554,7 +569,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -576,7 +591,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -631,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍python中logging模块使用"><span class="nav-number">1.</span> <span class="nav-text">本文介绍python中logging模块使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日志"><span class="nav-number">1.2.</span> <span class="nav-text">日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#日志级别"><span class="nav-number">1.2.1.</span> <span class="nav-text">日志级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#日志分块-写入格式"><span class="nav-number">1.2.2.</span> <span class="nav-text">日志分块/写入格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logging模块的使用"><span class="nav-number">1.3.</span> <span class="nav-text">logging模块的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主要配置文件"><span class="nav-number">1.3.1.</span> <span class="nav-text">主要配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体代码使用"><span class="nav-number">1.3.2.</span> <span class="nav-text">具体代码使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注"><span class="nav-number">1.3.3.</span> <span class="nav-text">注</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#end"><span class="nav-number">1.4.</span> <span class="nav-text">end</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8Dpython%E4%B8%ADlogging%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">本文介绍python中logging模块使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E5%BF%97"><span class="nav-number">1.2.</span> <span class="nav-text">日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A5%E5%BF%97%E7%BA%A7%E5%88%AB"><span class="nav-number">1.2.1.</span> <span class="nav-text">日志级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A5%E5%BF%97%E5%88%86%E5%9D%97-x2F-%E5%86%99%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.2.2.</span> <span class="nav-text">日志分块&#x2F;写入格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logging%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">logging模块的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.1.</span> <span class="nav-text">主要配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.2.</span> <span class="nav-text">具体代码使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8"><span class="nav-number">1.3.3.</span> <span class="nav-text">注</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#end"><span class="nav-number">1.4.</span> <span class="nav-text">end</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -651,10 +666,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -665,19 +680,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -825,7 +840,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2021/04/16/python-logging使用/';
+          this.page.url = 'http://tingyunsay.github.io/2021/04/16/python-logging%E4%BD%BF%E7%94%A8/';
           this.page.identifier = '2021/04/16/python-logging使用/';
           this.page.title = 'python-logging使用';
         };

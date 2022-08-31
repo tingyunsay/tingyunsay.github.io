@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="pyspider,scheduler,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="pyspider,scheduler," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,26 +90,27 @@
 
 
 <meta name="description" content="本文介绍pyspider的调度流程">
-<meta name="keywords" content="pyspider,scheduler">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pyspider源码解读--调度器">
-<meta property="og:url" content="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍pyspider的调度流程">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/1.png">
-<meta property="og:updated_time" content="2020-03-19T13:54:50.771Z">
+<meta property="og:locale">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta property="article:published_time" content="2017-09-03T10:22:33.000Z">
+<meta property="article:modified_time" content="2020-03-19T13:54:50.771Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="pyspider">
+<meta property="article:tag" content="scheduler">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pyspider源码解读--调度器">
-<meta name="twitter:description" content="本文介绍pyspider的调度流程">
-<meta name="twitter:image" content="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -129,17 +131,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/"/>
 
 
 
 
 
   <title> pyspider源码解读--调度器 | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -174,13 +176,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +212,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -220,7 +222,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -230,7 +232,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -240,7 +242,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -250,7 +252,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -260,7 +262,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -294,16 +296,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -342,7 +344,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -353,7 +355,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/pyspider/" itemprop="url" rel="index">
                     <span itemprop="name">pyspider</span>
                   </a>
@@ -372,8 +374,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/03/pyspider源码解读-调度器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/03/pyspider源码解读-调度器/" itemprop="commentCount"></span>
+                <a href="/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/03/pyspider源码解读-调度器/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -381,7 +384,7 @@
 
           
           
-             <span id="/2017/09/03/pyspider源码解读-调度器/" class="leancloud_visitors" data-flag-title="pyspider源码解读--调度器">
+             <span id="/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8/" class="leancloud_visitors" data-flag-title="pyspider源码解读--调度器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,32 +413,34 @@
       
 
       
-        <h2 id="本文介绍pyspider的调度流程"><a href="#本文介绍pyspider的调度流程" class="headerlink" title="本文介绍pyspider的调度流程"></a>本文介绍pyspider的调度流程</h2><a id="more"></a>
+        <h2 id="本文介绍pyspider的调度流程"><a href="#本文介绍pyspider的调度流程" class="headerlink" title="本文介绍pyspider的调度流程"></a>本文介绍pyspider的调度流程</h2><span id="more"></span>
+
 <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>从此篇开始后续会逐步写一些关于pyspider的源码分析的代码，因为之前一段时间都在看其代码，最一开始是从webui中的py文件开始看起的，之后又看完了mysql中的一些封装，自己加上了两个原生的 mysql 库，用来做其他管理，但是其中最核心的部分，大抵是scheduler.py这一部分，所以我首先将这一部分描述清楚，作备忘录</p>
 <p>在阅读本文之前最好需要对pyspider的基本使用有简单了解，比如项目的几种状态切换…etc</p>
-<h3 id="scheduler-py"><a href="#scheduler-py" class="headerlink" title="scheduler.py"></a>scheduler.py</h3><p>首先，我们从pyspider的根目录下找到<font color="red">/pyspider/scheduler/scheduler.py</font><br>其中定义了四个类：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Project</span><span class="params">(object)</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">Scheduler</span><span class="params">(object)</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">OneScheduler</span><span class="params">(Scheduler)</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">class</span> <span class="title">ThreadBaseScheduler</span><span class="params">(Scheduler)</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="scheduler-py"><a href="#scheduler-py" class="headerlink" title="scheduler.py"></a>scheduler.py</h3><p>首先，我们从pyspider的根目录下找到<font color="red">&#x2F;pyspider&#x2F;scheduler&#x2F;scheduler.py</font><br>其中定义了四个类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Project</span>(<span class="title class_ inherited__">object</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Scheduler</span>(<span class="title class_ inherited__">object</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">OneScheduler</span>(<span class="title class_ inherited__">Scheduler</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ThreadBaseScheduler</span>(<span class="title class_ inherited__">Scheduler</span>)</span><br></pre></td></tr></table></figure>
 <p>这四个类的作用分别如下</p>
 <h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><p>单个项目的Paused状态切换即是由这个类实例化的对象来完成，其中的方法有—paused()，update(project_info)</p>
 <h4 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h4><p>整体的调度过程，包括从入库，读库，对task的操作（主要是各个队列之间的get和put，以及task执行包的封装），状态的切换</p>
 <h4 id="OneScheduler"><a href="#OneScheduler" class="headerlink" title="OneScheduler"></a>OneScheduler</h4><p>debug中用到的类，其继承自Scheduler，不同的是，它不会将需要抓取的task丢入到一个消费者队列中，而是会直接调用一个process立刻去执行fetch（其实现在send_task这一函数）</p>
-<h4 id="ThreadBaseScheduler"><a href="#ThreadBaseScheduler" class="headerlink" title="ThreadBaseScheduler"></a>ThreadBaseScheduler</h4><p>这个类用到的地方很少，在pyspider/libs/bench.py中用到过，作压力测试</p>
+<h4 id="ThreadBaseScheduler"><a href="#ThreadBaseScheduler" class="headerlink" title="ThreadBaseScheduler"></a>ThreadBaseScheduler</h4><p>这个类用到的地方很少，在pyspider&#x2F;libs&#x2F;bench.py中用到过，作压力测试</p>
 <p><strong><font color="red">这里我们主要看Scheduler类</font></strong></p>
-<h3 id="Scheduler-object"><a href="#Scheduler-object" class="headerlink" title="Scheduler(object)"></a>Scheduler(object)</h3><p>关于从哪儿开始看起，其实这个类中一大堆的方法以及很多的变量，我首先一步是跳过这些，先看所有函数的名字以及其中的注释看一边，首先看到的是run以及run_once<br>对了，关于变量，在具体看某一个函数的时候，可以再去查询这个变量第一次出现的位置，结合函数的作用就能大致明白这个变量的功用了</p>
-<p><font color="red"><strong>注：这里我不再赘述如何去看代码，只是将看懂的东西作一个整理</strong></font><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_once</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''comsume queues and feed tasks to fetcher, once'''</span></span><br><span class="line"></span><br><span class="line">        self._update_projects()</span><br><span class="line">	self._check_task_done()</span><br><span class="line">        self._check_request()</span><br><span class="line">        <span class="keyword">while</span> self._check_cronjob():</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        self._check_select()</span><br><span class="line">        self._check_delete()</span><br><span class="line">        self._try_dump_cnt()</span><br></pre></td></tr></table></figure></p>
+<h3 id="Scheduler-object"><a href="#Scheduler-object" class="headerlink" title="Scheduler(object)"></a>Scheduler(object)</h3><p>关于从哪儿开始看起，其实这个类中一大堆的方法以及很多的变量，我首先一步是跳过这些，先看所有函数的名字以及其中的注释看一边，首先看到的是run以及run_once<br>对了，关于变量，在具体看某一个函数的时候，可以再去查询这个变量第一次出现的位置，结合函数的作用就能大致明白这个变量的功用了<br><font color="red"><strong>注：这里我不再赘述如何去看代码，只是将看懂的东西作一个整理</strong></font></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">run_once</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;comsume queues and feed tasks to fetcher, once&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">        self._update_projects()</span><br><span class="line">	self._check_task_done()</span><br><span class="line">        self._check_request()</span><br><span class="line">        <span class="keyword">while</span> self._check_cronjob():</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        self._check_select()</span><br><span class="line">        self._check_delete()</span><br><span class="line">        self._try_dump_cnt()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h4 id="self-update-projects"><a href="#self-update-projects" class="headerlink" title="self._update_projects()"></a>self._update_projects()</h4><p>更新project的状态，并且回显到webui上 （这个操作经由几步调用，其会去读所有项目的库，并且load到各自的task_queue中）</p>
 <h4 id="self-check-task-done"><a href="#self-check-task-done" class="headerlink" title="self._check_task_done()"></a>self._check_task_done()</h4><p>去不断取出scheduler的status_queue优先级最高的任务，并检测其状态</p>
 <h4 id="self-check-request"><a href="#self-check-request" class="headerlink" title="self._check_request()"></a>self._check_request()</h4><p>其会优先去取_postpone_request中的延迟task，因为这些极有可能是上次版本运行改变遗留下的一些认为有（比如某个任务正在跑，我们手动stop了它，然后修改了脚本，再重新启动它），将其发送给on_request</p>
 <p>然后去获取newtask_queue中的任务，并且不断将这些任务交给on_request, on_request会作一些判断，然后将其put到各自project的task_queue中</p>
-<h4 id="总结如上三个方法"><a href="#总结如上三个方法" class="headerlink" title="总结如上三个方法"></a>总结如上三个方法</h4><p><strong><font color="red">上面的操作无非都是向各个项目的 task_queue中填充内容，从数据库读取 / 从新产生 的任务中生成</font></strong></p>
-<h4 id="self-check-select"><a href="#self-check-select" class="headerlink" title="self._check_select()"></a>self._check_select()</h4><p>这个函数会优先从缓冲队列中读取任务（当任务太多的时候，会将多余任务放到缓冲队列中），然后正常遍历所有的project，并且将其中的task_queue取出（<strong><font color="red">在此之前，每个project首先会更新各自的task_queue的优先级队列：两个，一个time，一个process</font></strong>），并且使用自定义方法get()取得优先级最高的task（这个获取是从proicess优先级队列中取出的）</p>
+<h4 id="总结如上三个方法"><a href="#总结如上三个方法" class="headerlink" title="总结如上三个方法"></a>总结如上三个方法</h4><p><strong><font color="red">上面的操作无非都是向各个项目的 task_queue中填充内容，从数据库读取 &#x2F; 从新产生 的任务中生成</font></strong></p>
+<h4 id="self-check-select"><a href="#self-check-select" class="headerlink" title="self._check_select()"></a>self._check_select()</h4><p>这个函数会优先从缓冲队列中读取任务（当任务太多的时候，会将多余任务放到缓冲队列中），然后正常遍历所有的project，并且将其中的task_queue取出（**<font color="red">在此之前，每个project首先会更新各自的task_queue的优先级队列：两个，一个time，一个process</font>**），并且使用自定义方法get()取得优先级最高的task（这个获取是从proicess优先级队列中取出的）</p>
 <p>time优先级 和 process优先级 队列 的关系是：process是真正被取出去执行的任务，time是生成process的一个条件，也就是从time中取时间优先级最高的不断添加到process中</p>
 <p>更新完了之后，将获取到的taskid按顺序保存，传递给_load_put_task()函数，经由其从数据库中(根据taskid)读信息，再传递给on_select_task()方法</p>
 <p><strong><font color="red">on_select_task()这个函数是给每个taskid填充完整的信息，最后添加到所在project的active队列中，表明其正在被调度</font></strong></p>
 <p>最后的最后，再由send_task()方法传递到 out_queue队列中（如果out_queue满了，会放到缓冲deque中）</p>
 <h4 id="其余两个方法"><a href="#其余两个方法" class="headerlink" title="其余两个方法"></a>其余两个方法</h4><p>self._check_delete()<br>self._try_dump_cnt()<br>前者是检测是否有到达约定时间需要删除的项目，后者是定时回显webui页面上的任务数目状态(60s一次)</p>
 <h4 id="run-once"><a href="#run-once" class="headerlink" title="run_once"></a>run_once</h4><p><strong><font color="red">这个函数的功能就是将需要被调度的taskid，经过一系列中间转换，带上了一些优先级，最后全部丢入到调度器类本身的一个out_queue队列中，这个队列作为一个生产者，供给fetch消费</font></strong></p>
-<h3 id="详细流程-队列间传递消息"><a href="#详细流程-队列间传递消息" class="headerlink" title="详细流程,队列间传递消息"></a>详细流程,队列间传递消息</h3><p><strong><font color="blue">图1</font></strong><br><img src="/2017/09/03/pyspider源码解读-调度器/1.png" alt="示例图1"></p>
-<p>大致的调度情况如上，其中的queue指的是作者在其中自己封装实现的一些优先级队列（其实现在<strong><font color="red">/pyspider/scheduler/task_queue.py</font></strong>），deque一般都是被用作缓冲队列</p>
+<h3 id="详细流程-队列间传递消息"><a href="#详细流程-队列间传递消息" class="headerlink" title="详细流程,队列间传递消息"></a>详细流程,队列间传递消息</h3><p><strong><font color="blue">图1</font></strong><br><img src="/.io//1.png" alt="示例图1"></p>
+<p>大致的调度情况如上，其中的queue指的是作者在其中自己封装实现的一些优先级队列（其实现在**<font color="red">&#x2F;pyspider&#x2F;scheduler&#x2F;task_queue.py</font>**），deque一般都是被用作缓冲队列</p>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>这一篇说是读源码，可实际上并没有多少源码，并不是作者不想贴出代码一行行解释，但是篇幅有点太多，这一篇首先把大致的脉络理清楚，具体的代码实现，我会放到后续的篇幅中分成多部分解释</p>
 <p>如果有存在错误的地方，还希望大家指出，可能有理解错误的地方，见谅</p>
 
@@ -482,7 +487,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/03/灵谷/" rel="next" title="灵谷">
+              <a href="/2017/09/03/%E7%81%B5%E8%B0%B7/" rel="next" title="灵谷">
                 <i class="fa fa-chevron-left"></i> 灵谷
               </a>
             
@@ -492,7 +497,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/08/pyspider分布式部署/" rel="prev" title="pyspider分布式部署">
+              <a href="/2017/09/08/pyspider%E5%88%86%E5%B8%83%E5%BC%8F%E9%83%A8%E7%BD%B2/" rel="prev" title="pyspider分布式部署">
                 pyspider分布式部署 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -523,7 +528,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -549,7 +554,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -559,8 +564,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -571,7 +578,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -593,7 +600,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -648,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍pyspider的调度流程"><span class="nav-number">1.</span> <span class="nav-text">本文介绍pyspider的调度流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scheduler-py"><span class="nav-number">1.2.</span> <span class="nav-text">scheduler.py</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-number">1.2.1.</span> <span class="nav-text">Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scheduler"><span class="nav-number">1.2.2.</span> <span class="nav-text">Scheduler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OneScheduler"><span class="nav-number">1.2.3.</span> <span class="nav-text">OneScheduler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ThreadBaseScheduler"><span class="nav-number">1.2.4.</span> <span class="nav-text">ThreadBaseScheduler</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheduler-object"><span class="nav-number">1.3.</span> <span class="nav-text">Scheduler(object)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#self-update-projects"><span class="nav-number">1.3.1.</span> <span class="nav-text">self._update_projects()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#self-check-task-done"><span class="nav-number">1.3.2.</span> <span class="nav-text">self._check_task_done()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#self-check-request"><span class="nav-number">1.3.3.</span> <span class="nav-text">self._check_request()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结如上三个方法"><span class="nav-number">1.3.4.</span> <span class="nav-text">总结如上三个方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#self-check-select"><span class="nav-number">1.3.5.</span> <span class="nav-text">self._check_select()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其余两个方法"><span class="nav-number">1.3.6.</span> <span class="nav-text">其余两个方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#run-once"><span class="nav-number">1.3.7.</span> <span class="nav-text">run_once</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细流程-队列间传递消息"><span class="nav-number">1.4.</span> <span class="nav-text">详细流程,队列间传递消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.5.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8Dpyspider%E7%9A%84%E8%B0%83%E5%BA%A6%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">本文介绍pyspider的调度流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scheduler-py"><span class="nav-number">1.2.</span> <span class="nav-text">scheduler.py</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-number">1.2.1.</span> <span class="nav-text">Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Scheduler"><span class="nav-number">1.2.2.</span> <span class="nav-text">Scheduler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OneScheduler"><span class="nav-number">1.2.3.</span> <span class="nav-text">OneScheduler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ThreadBaseScheduler"><span class="nav-number">1.2.4.</span> <span class="nav-text">ThreadBaseScheduler</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheduler-object"><span class="nav-number">1.3.</span> <span class="nav-text">Scheduler(object)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#self-update-projects"><span class="nav-number">1.3.1.</span> <span class="nav-text">self._update_projects()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#self-check-task-done"><span class="nav-number">1.3.2.</span> <span class="nav-text">self._check_task_done()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#self-check-request"><span class="nav-number">1.3.3.</span> <span class="nav-text">self._check_request()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E5%A6%82%E4%B8%8A%E4%B8%89%E4%B8%AA%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.4.</span> <span class="nav-text">总结如上三个方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#self-check-select"><span class="nav-number">1.3.5.</span> <span class="nav-text">self._check_select()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BD%99%E4%B8%A4%E4%B8%AA%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.6.</span> <span class="nav-text">其余两个方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#run-once"><span class="nav-number">1.3.7.</span> <span class="nav-text">run_once</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%A6%E7%BB%86%E6%B5%81%E7%A8%8B-%E9%98%9F%E5%88%97%E9%97%B4%E4%BC%A0%E9%80%92%E6%B6%88%E6%81%AF"><span class="nav-number">1.4.</span> <span class="nav-text">详细流程,队列间传递消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.5.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -668,10 +675,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -682,19 +689,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -842,7 +849,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2017/09/03/pyspider源码解读-调度器/';
+          this.page.url = 'http://tingyunsay.github.io/2017/09/03/pyspider%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-%E8%B0%83%E5%BA%A6%E5%99%A8/';
           this.page.identifier = '2017/09/03/pyspider源码解读-调度器/';
           this.page.title = 'pyspider源码解读--调度器';
         };

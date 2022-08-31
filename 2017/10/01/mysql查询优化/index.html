@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="mysql,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="mysql," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,24 +90,24 @@
 
 
 <meta name="description" content="本文介绍mysql基础的一些优化措施">
-<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql查询优化">
-<meta property="og:url" content="http://tingyunsay.github.io/2017/10/01/mysql查询优化/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2017/10/01/mysql%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍mysql基础的一些优化措施">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-19T13:54:50.754Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-09-30T17:23:24.000Z">
+<meta property="article:modified_time" content="2020-03-19T13:54:50.754Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql查询优化">
-<meta name="twitter:description" content="本文介绍mysql基础的一些优化措施">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -127,17 +128,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/10/01/mysql查询优化/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/10/01/mysql查询优化/"/>
 
 
 
 
 
   <title> mysql查询优化 | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -172,13 +173,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +209,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -218,7 +219,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -228,7 +229,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -238,7 +239,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -248,7 +249,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -258,7 +259,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -292,16 +293,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/10/01/mysql查询优化/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/10/01/mysql%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -340,7 +341,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -351,7 +352,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/database/" itemprop="url" rel="index">
                     <span itemprop="name">database</span>
                   </a>
@@ -370,8 +371,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/01/mysql查询优化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/01/mysql查询优化/" itemprop="commentCount"></span>
+                <a href="/2017/10/01/mysql%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/01/mysql查询优化/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,7 +381,7 @@
 
           
           
-             <span id="/2017/10/01/mysql查询优化/" class="leancloud_visitors" data-flag-title="mysql查询优化">
+             <span id="/2017/10/01/mysql%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/" class="leancloud_visitors" data-flag-title="mysql查询优化">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -408,34 +410,47 @@
       
 
       
-        <h2 id="本文介绍mysql基础的一些优化措施"><a href="#本文介绍mysql基础的一些优化措施" class="headerlink" title="本文介绍mysql基础的一些优化措施"></a>本文介绍mysql基础的一些优化措施</h2><a id="more"></a>
+        <h2 id="本文介绍mysql基础的一些优化措施"><a href="#本文介绍mysql基础的一些优化措施" class="headerlink" title="本文介绍mysql基础的一些优化措施"></a>本文介绍mysql基础的一些优化措施</h2><span id="more"></span>
 <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>mysql  量约100w<br>本文是在mysql库量不断增加的情况下，某一次在前端页面查询发现慢的不能忍了（花了5分钟+，还总是导致网页504 ╥﹏╥…）,开始的解决方法为主键建立索引，在select count操作能在1s内完成</p>
 <p>但这种事情最好根治，不能说等某个库到达一个量级再去刷库，这不是正常的解决方法，应该在开始的时候就建立好相关的索引文件，以及需要的查询优化。所以后续在网上查阅了相关资料和博客，记录在此</p>
-<h3 id="建表时优化"><a href="#建表时优化" class="headerlink" title="建表时优化"></a>建表时优化</h3><h4 id="创建普通索引"><a href="#创建普通索引" class="headerlink" title="创建普通索引"></a>创建普通索引</h4><p>以下例子为 普通字段 id 创建了索引<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table tingyun(</span><br><span class="line">     id int,</span><br><span class="line">     name varchar(100),</span><br><span class="line">     index(id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h3 id="建表时优化"><a href="#建表时优化" class="headerlink" title="建表时优化"></a>建表时优化</h3><h4 id="创建普通索引"><a href="#创建普通索引" class="headerlink" title="创建普通索引"></a>创建普通索引</h4><p>以下例子为 普通字段 id 创建了索引</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table tingyun(</span><br><span class="line">     id int,</span><br><span class="line">     name varchar(100),</span><br><span class="line">     index(id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>在使用 show create table <code>table_name</code> 的时候，能看到KEY <code>id</code> (<code>id</code>)  表明这个字段已经有了索引</p>
-<p>并且在使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">explain select * from table_name where id = 1;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [resultdb2]&gt; explain select * from music_qq_copyright where id = 1;</span><br><span class="line">+------+-------------+--------------------+-------+---------------+------+---------+-------+------+-------+</span><br><span class="line">| id | select_type |   table   |  type  | possible_keys | key | key_len | ref | rows | Extra |</span><br><span class="line">+------+-------------+--------------------+-------+---------------+------+---------+-------+------+-------+</span><br><span class="line">| 1 | SIMPLE | music_qq_copyright | const |     id     |  id  |    4    | const | 1 | |</span><br><span class="line">+------+-------------+--------------------+-------+---------------+------+---------+-------+------+-------+</span><br></pre></td></tr></table></figure>
+<p>并且在使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">explain select * from table_name where id = 1;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MariaDB [resultdb2]&gt; explain select * from music_qq_copyright where id = 1;</span><br><span class="line">+------+-------------+--------------------+-------+---------------+------+---------+-------+------+-------+</span><br><span class="line">| id | select_type |   table   |  type  | possible_keys | key | key_len | ref | rows | Extra |</span><br><span class="line">+------+-------------+--------------------+-------+---------------+------+---------+-------+------+-------+</span><br><span class="line">| 1 | SIMPLE | music_qq_copyright | const |     id     |  id  |    4    | const | 1 | |</span><br><span class="line">+------+-------------+--------------------+-------+---------------+------+---------+-------+------+-------+</span><br></pre></td></tr></table></figure>
 <p>其中 possible_keys 和 key的值都为id（索引字段的名字），则id索引已经存在并且查询中已经使用了索引</p>
-<h4 id="创建唯一性索引"><a href="#创建唯一性索引" class="headerlink" title="创建唯一性索引"></a>创建唯一性索引</h4><p>你也可以为你创建的索引起一个其他的名字：index_name<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table tingyun(</span><br><span class="line">     id int,</span><br><span class="line">     name varchar(100),</span><br><span class="line">     unique index index_name(id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
-<h4 id="创建多列索引"><a href="#创建多列索引" class="headerlink" title="创建多列索引"></a>创建多列索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table tingyun(</span><br><span class="line">     id int,</span><br><span class="line">     name varchar(100),</span><br><span class="line">     sex char(10),</span><br><span class="line">     index index_name(id,name)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="创建唯一性索引"><a href="#创建唯一性索引" class="headerlink" title="创建唯一性索引"></a>创建唯一性索引</h4><p>你也可以为你创建的索引起一个其他的名字：index_name</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table tingyun(</span><br><span class="line">     id int,</span><br><span class="line">     name varchar(100),</span><br><span class="line">     unique index index_name(id)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="创建多列索引"><a href="#创建多列索引" class="headerlink" title="创建多列索引"></a>创建多列索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table tingyun(</span><br><span class="line">     id int,</span><br><span class="line">     name varchar(100),</span><br><span class="line">     sex char(10),</span><br><span class="line">     index index_name(id,name)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>和创建单列索引类似，在( )中添加多个字段名即可<br>注：<font color="red"><strong>以上中我略去了 全文索引 以及 空间索引 的创建，那又是另外的应用了，这里我不作说明</strong></font></p>
 <h3 id="为已经存在的表建立索引"><a href="#为已经存在的表建立索引" class="headerlink" title="为已经存在的表建立索引"></a>为已经存在的表建立索引</h3><p>这种情况是你在建表的时候并没有建立索引或者说你后期的查询需要建立组合索引来加速，这时候必须更改表结构，以及每条记录的结构，也就是每次更改得刷一遍库</p>
-<h4 id="添加主键索引"><a href="#添加主键索引" class="headerlink" title="添加主键索引"></a>添加主键索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `table_name` add primary key (`字段名`)</span><br></pre></td></tr></table></figure>
-<h4 id="添加唯一索引"><a href="#添加唯一索引" class="headerlink" title="添加唯一索引"></a>添加唯一索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `table_name` add unique (`字段名`)</span><br></pre></td></tr></table></figure>
-<h4 id="添加普通索引"><a href="#添加普通索引" class="headerlink" title="添加普通索引"></a>添加普通索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `table_name` add index index_name(`字段名`)</span><br></pre></td></tr></table></figure>
-<h4 id="添加全文索引"><a href="#添加全文索引" class="headerlink" title="添加全文索引"></a>添加全文索引</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `table_name` add fulltext index_name(`字段名`)</span><br></pre></td></tr></table></figure>
-<h4 id="添加多列索引-组合索引"><a href="#添加多列索引-组合索引" class="headerlink" title="添加多列索引(组合索引)"></a>添加多列索引(组合索引)</h4><p>在你需要多种查询条件的时候如where and / order by，可以通过建立这种索引的方式提高查询速度，将可能用到的字段添加到组合索引中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `table_name` add index index_name(`字段名1`,`字段名2`,`字段名3`)</span><br></pre></td></tr></table></figure></p>
+<h4 id="添加主键索引"><a href="#添加主键索引" class="headerlink" title="添加主键索引"></a>添加主键索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `table_name` add primary key (`字段名`)</span><br></pre></td></tr></table></figure>
+<h4 id="添加唯一索引"><a href="#添加唯一索引" class="headerlink" title="添加唯一索引"></a>添加唯一索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `table_name` add unique (`字段名`)</span><br></pre></td></tr></table></figure>
+<h4 id="添加普通索引"><a href="#添加普通索引" class="headerlink" title="添加普通索引"></a>添加普通索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `table_name` add index index_name(`字段名`)</span><br></pre></td></tr></table></figure>
+<h4 id="添加全文索引"><a href="#添加全文索引" class="headerlink" title="添加全文索引"></a>添加全文索引</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `table_name` add fulltext index_name(`字段名`)</span><br></pre></td></tr></table></figure>
+<h4 id="添加多列索引-组合索引"><a href="#添加多列索引-组合索引" class="headerlink" title="添加多列索引(组合索引)"></a>添加多列索引(组合索引)</h4><p>在你需要多种查询条件的时候如where and &#x2F; order by，可以通过建立这种索引的方式提高查询速度，将可能用到的字段添加到组合索引中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table `table_name` add index index_name(`字段名1`,`字段名2`,`字段名3`)</span><br></pre></td></tr></table></figure>
 <p>注：<font color="purple"><strong>以上3,4,5中的index_name 默认可以不写，可以自己取名索引为某个index_name</strong></font></p>
 <h3 id="速度对比"><a href="#速度对比" class="headerlink" title="速度对比"></a>速度对比</h3><p>本文记录的是pyspider的result页面的打开速度，由于一开始也是在pyspider的页面上遇到这个问题，所以这里我们会更改pyspider一点源代码来解决这个问题</p>
-<h4 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h4><p>一：xiami_mv  ,  8万条数据 ， 查询翻页的时候，order by updatetime的时间<br>给updatetime加上索引后的效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">未加之前:</span><br><span class="line">628ms / 459ms  /  1.43s / 389ms /  652ms  /  594ms  /  639ms  / 805ms /  1.01s</span><br><span class="line"></span><br><span class="line">加完后：</span><br><span class="line">573ms /  302ms /  270ms /  254ms /  244ms  / 283ms  /  278ms  /  620ms  /  362ms</span><br></pre></td></tr></table></figure></p>
+<h4 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h4><p>一：xiami_mv  ,  8万条数据 ， 查询翻页的时候，order by updatetime的时间<br>给updatetime加上索引后的效果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">未加之前:</span><br><span class="line">628ms / 459ms  /  1.43s / 389ms /  652ms  /  594ms  /  639ms  / 805ms /  1.01s</span><br><span class="line"></span><br><span class="line">加完后：</span><br><span class="line">573ms /  302ms /  270ms /  254ms /  244ms  / 283ms  /  278ms  /  620ms  /  362ms</span><br></pre></td></tr></table></figure>
 <p>查询完全一样的数据，能看到有明显的变化，速度快了一倍左右</p>
-<p>二：wangyiyun_music , 60万数据，进行同样查询翻页的操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#未加索引</span><br><span class="line">4.06s  /  4.11s / 4.11s  /  5.31s /  4.85s  / 5.37s  /  5.29s  /  4.39s /  4.99s</span><br><span class="line"></span><br><span class="line">#加完后</span><br><span class="line">486ms  /  875ms  /  597ms  /  1.23s  /  960ms  /  862ms  /  828ms  /  1.02s  /  725ms</span><br></pre></td></tr></table></figure></p>
+<p>二：wangyiyun_music , 60万数据，进行同样查询翻页的操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#未加索引</span><br><span class="line">4.06s  /  4.11s / 4.11s  /  5.31s /  4.85s  / 5.37s  /  5.29s  /  4.39s /  4.99s</span><br><span class="line"></span><br><span class="line">#加完后</span><br><span class="line">486ms  /  875ms  /  597ms  /  1.23s  /  960ms  /  862ms  /  828ms  /  1.02s  /  725ms</span><br></pre></td></tr></table></figure>
 <p>这个效果更加明显了</p>
-<h4 id="直接查库"><a href="#直接查库" class="headerlink" title="直接查库"></a>直接查库</h4><p>这里我开始并没有为主键建立索引，而是为整个表添加了一个唯一自增id值，mysql内置有个查询优化器，在select count(<em>)的时候会去找所有字段中长度最短的那个键，我之前的主键是一个16位的md5值，其他值都是更大的文本，其必然会找到这个新建立的id值进行查询<br><em>*查库消耗时间 qq_mv 87w</em></em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from qq_mv;</span><br><span class="line"></span><br><span class="line">     5 min 5.95 sec</span><br></pre></td></tr></table></figure></p>
-<p><strong>刷表消耗时间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table qq_mv add `id` bigint(20) not null auto_increment unique key;</span><br><span class="line"></span><br><span class="line">Query OK, 871861 rows affected (1 min 44.64 sec)</span><br><span class="line">Records: 871861 Duplicates: 0 Warnings: 0</span><br></pre></td></tr></table></figure></p>
-<p><strong>添加unique 自增键后</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from qq_mv;</span><br><span class="line"></span><br><span class="line">     1 row in set (0.71 sec)</span><br></pre></td></tr></table></figure></p>
-<h4 id="修改pyspider的建表语句"><a href="#修改pyspider的建表语句" class="headerlink" title="修改pyspider的建表语句"></a>修改pyspider的建表语句</h4><p>在 <font color="red"><strong>pyspider/database/mysql/resultdb.py</strong></font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def _create_project(self, project):</span><br><span class="line">    assert re.match(r&apos;^\w+$&apos;, project) is not None</span><br><span class="line">    tablename = self._tablename(project)</span><br><span class="line">    if tablename in [x[0] for x in self._execute(&apos;show tables&apos;)]:</span><br><span class="line">        return</span><br><span class="line">    self._execute(&apos;&apos;&apos;CREATE TABLE %s (</span><br><span class="line">        `taskid` varchar(64) PRIMARY KEY,</span><br><span class="line">        `url` varchar(1024),</span><br><span class="line">        `result` MEDIUMBLOB,</span><br><span class="line">        `updatetime` double(16, 4),</span><br><span class="line">        INDEX(taskid),</span><br><span class="line">        INDEX(updatetime) </span><br><span class="line">        ) ENGINE=InnoDB CHARSET=utf8&apos;&apos;&apos; % self.escape(tablename))</span><br></pre></td></tr></table></figure></p>
-<p>注意到：我为其中的taskid和updatetime字段均建立了索引，前者是在<font color="purple"><strong>count操作时加速</strong></font>，后者是在<font color="purple"><strong>分页查询时加速</strong></font><br>注：<br>针对其不同用处添加对应的索引，如果需要添加组合查询，如按url和result模糊查询<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select ... from ... where url like &quot;%xxx%&quot; and result like &quot;%xxx%&quot;</span><br></pre></td></tr></table></figure></p>
+<h4 id="直接查库"><a href="#直接查库" class="headerlink" title="直接查库"></a>直接查库</h4><p>这里我开始并没有为主键建立索引，而是为整个表添加了一个唯一自增id值，mysql内置有个查询优化器，在select count(*)的时候会去找所有字段中长度最短的那个键，我之前的主键是一个16位的md5值，其他值都是更大的文本，其必然会找到这个新建立的id值进行查询<br><strong>查库消耗时间 qq_mv 87w</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from qq_mv;</span><br><span class="line"></span><br><span class="line">     5 min 5.95 sec</span><br></pre></td></tr></table></figure>
+
+<p><strong>刷表消耗时间</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table qq_mv add `id` bigint(20) not null auto_increment unique key;</span><br><span class="line"></span><br><span class="line">Query OK, 871861 rows affected (1 min 44.64 sec)</span><br><span class="line">Records: 871861 Duplicates: 0 Warnings: 0</span><br></pre></td></tr></table></figure>
+
+<p><strong>添加unique 自增键后</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from qq_mv;</span><br><span class="line"></span><br><span class="line">     1 row in set (0.71 sec)</span><br></pre></td></tr></table></figure>
+<h4 id="修改pyspider的建表语句"><a href="#修改pyspider的建表语句" class="headerlink" title="修改pyspider的建表语句"></a>修改pyspider的建表语句</h4><p>在 <font color="red"><strong>pyspider&#x2F;database&#x2F;mysql&#x2F;resultdb.py</strong></font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def _create_project(self, project):</span><br><span class="line">    assert re.match(r&#x27;^\w+$&#x27;, project) is not None</span><br><span class="line">    tablename = self._tablename(project)</span><br><span class="line">    if tablename in [x[0] for x in self._execute(&#x27;show tables&#x27;)]:</span><br><span class="line">        return</span><br><span class="line">    self._execute(&#x27;&#x27;&#x27;CREATE TABLE %s (</span><br><span class="line">        `taskid` varchar(64) PRIMARY KEY,</span><br><span class="line">        `url` varchar(1024),</span><br><span class="line">        `result` MEDIUMBLOB,</span><br><span class="line">        `updatetime` double(16, 4),</span><br><span class="line">        INDEX(taskid),</span><br><span class="line">        INDEX(updatetime) </span><br><span class="line">        ) ENGINE=InnoDB CHARSET=utf8&#x27;&#x27;&#x27; % self.escape(tablename))</span><br></pre></td></tr></table></figure>
+<p>注意到：我为其中的taskid和updatetime字段均建立了索引，前者是在<font color="purple"><strong>count操作时加速</strong></font>，后者是在<font color="purple"><strong>分页查询时加速</strong></font><br>注：<br>针对其不同用处添加对应的索引，如果需要添加组合查询，如按url和result模糊查询</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select ... from ... where url like &quot;%xxx%&quot; and result like &quot;%xxx%&quot; </span><br></pre></td></tr></table></figure>
 <p>则建立 INDEX(url,result)</p>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>正准备去看《高性能mysql》这本书，会将做的笔记整理放上来</p>
 <hr>
@@ -481,7 +496,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/24/听云记/" rel="next" title="听云记">
+              <a href="/2017/09/24/%E5%90%AC%E4%BA%91%E8%AE%B0/" rel="next" title="听云记">
                 <i class="fa fa-chevron-left"></i> 听云记
               </a>
             
@@ -491,7 +506,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/02/梦/" rel="prev" title="梦">
+              <a href="/2017/10/02/%E6%A2%A6/" rel="prev" title="梦">
                 梦 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -522,7 +537,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -548,7 +563,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -558,8 +573,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -570,7 +587,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -592,7 +609,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -647,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍mysql基础的一些优化措施"><span class="nav-number">1.</span> <span class="nav-text">本文介绍mysql基础的一些优化措施</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建表时优化"><span class="nav-number">1.2.</span> <span class="nav-text">建表时优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建普通索引"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建普通索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建唯一性索引"><span class="nav-number">1.2.2.</span> <span class="nav-text">创建唯一性索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建多列索引"><span class="nav-number">1.2.3.</span> <span class="nav-text">创建多列索引</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为已经存在的表建立索引"><span class="nav-number">1.3.</span> <span class="nav-text">为已经存在的表建立索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加主键索引"><span class="nav-number">1.3.1.</span> <span class="nav-text">添加主键索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加唯一索引"><span class="nav-number">1.3.2.</span> <span class="nav-text">添加唯一索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加普通索引"><span class="nav-number">1.3.3.</span> <span class="nav-text">添加普通索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加全文索引"><span class="nav-number">1.3.4.</span> <span class="nav-text">添加全文索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加多列索引-组合索引"><span class="nav-number">1.3.5.</span> <span class="nav-text">添加多列索引(组合索引)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#速度对比"><span class="nav-number">1.4.</span> <span class="nav-text">速度对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分页查询"><span class="nav-number">1.4.1.</span> <span class="nav-text">分页查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#直接查库"><span class="nav-number">1.4.2.</span> <span class="nav-text">直接查库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改pyspider的建表语句"><span class="nav-number">1.4.3.</span> <span class="nav-text">修改pyspider的建表语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.5.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8Dmysql%E5%9F%BA%E7%A1%80%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BC%98%E5%8C%96%E6%8E%AA%E6%96%BD"><span class="nav-number">1.</span> <span class="nav-text">本文介绍mysql基础的一些优化措施</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E8%A1%A8%E6%97%B6%E4%BC%98%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">建表时优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%99%AE%E9%80%9A%E7%B4%A2%E5%BC%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建普通索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%94%AF%E4%B8%80%E6%80%A7%E7%B4%A2%E5%BC%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">创建唯一性索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%88%97%E7%B4%A2%E5%BC%95"><span class="nav-number">1.2.3.</span> <span class="nav-text">创建多列索引</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E5%B7%B2%E7%BB%8F%E5%AD%98%E5%9C%A8%E7%9A%84%E8%A1%A8%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95"><span class="nav-number">1.3.</span> <span class="nav-text">为已经存在的表建立索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%BB%E9%94%AE%E7%B4%A2%E5%BC%95"><span class="nav-number">1.3.1.</span> <span class="nav-text">添加主键索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%94%AF%E4%B8%80%E7%B4%A2%E5%BC%95"><span class="nav-number">1.3.2.</span> <span class="nav-text">添加唯一索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%99%AE%E9%80%9A%E7%B4%A2%E5%BC%95"><span class="nav-number">1.3.3.</span> <span class="nav-text">添加普通索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%A8%E6%96%87%E7%B4%A2%E5%BC%95"><span class="nav-number">1.3.4.</span> <span class="nav-text">添加全文索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%A4%9A%E5%88%97%E7%B4%A2%E5%BC%95-%E7%BB%84%E5%90%88%E7%B4%A2%E5%BC%95"><span class="nav-number">1.3.5.</span> <span class="nav-text">添加多列索引(组合索引)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9F%E5%BA%A6%E5%AF%B9%E6%AF%94"><span class="nav-number">1.4.</span> <span class="nav-text">速度对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.4.1.</span> <span class="nav-text">分页查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E6%9F%A5%E5%BA%93"><span class="nav-number">1.4.2.</span> <span class="nav-text">直接查库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9pyspider%E7%9A%84%E5%BB%BA%E8%A1%A8%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.4.3.</span> <span class="nav-text">修改pyspider的建表语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.5.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -667,10 +684,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -681,19 +698,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -841,7 +858,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2017/10/01/mysql查询优化/';
+          this.page.url = 'http://tingyunsay.github.io/2017/10/01/mysql%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/';
           this.page.identifier = '2017/10/01/mysql查询优化/';
           this.page.title = 'mysql查询优化';
         };

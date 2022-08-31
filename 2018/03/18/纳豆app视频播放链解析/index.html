@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="爱奇艺vf算法,spider,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="爱奇艺vf算法,spider," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,26 +90,27 @@
 
 
 <meta name="description" content="本文介绍如何获取纳豆app中视频的播放源链">
-<meta name="keywords" content="爱奇艺vf算法,spider">
 <meta property="og:type" content="article">
 <meta property="og:title" content="纳豆app视频播放链解析">
-<meta property="og:url" content="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2018/03/18/%E7%BA%B3%E8%B1%86app%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E9%93%BE%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍如何获取纳豆app中视频的播放源链">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/1.png">
-<meta property="og:updated_time" content="2020-03-19T13:54:50.765Z">
+<meta property="og:locale">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta property="article:published_time" content="2018-03-18T10:26:08.000Z">
+<meta property="article:modified_time" content="2020-03-19T13:54:50.765Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="爱奇艺vf算法">
+<meta property="article:tag" content="spider">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="纳豆app视频播放链解析">
-<meta name="twitter:description" content="本文介绍如何获取纳豆app中视频的播放源链">
-<meta name="twitter:image" content="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -129,17 +131,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/"/>
 
 
 
 
 
   <title> 纳豆app视频播放链解析 | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -174,13 +176,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +212,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -220,7 +222,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -230,7 +232,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -240,7 +242,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -250,7 +252,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -260,7 +262,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -294,16 +296,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/03/18/%E7%BA%B3%E8%B1%86app%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E9%93%BE%E8%A7%A3%E6%9E%90/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -342,7 +344,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -353,7 +355,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/spider/" itemprop="url" rel="index">
                     <span itemprop="name">spider</span>
                   </a>
@@ -372,8 +374,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/18/纳豆app视频播放链解析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/18/纳豆app视频播放链解析/" itemprop="commentCount"></span>
+                <a href="/2018/03/18/%E7%BA%B3%E8%B1%86app%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E9%93%BE%E8%A7%A3%E6%9E%90/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/18/纳豆app视频播放链解析/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -381,7 +384,7 @@
 
           
           
-             <span id="/2018/03/18/纳豆app视频播放链解析/" class="leancloud_visitors" data-flag-title="纳豆app视频播放链解析">
+             <span id="/2018/03/18/%E7%BA%B3%E8%B1%86app%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E9%93%BE%E8%A7%A3%E6%9E%90/" class="leancloud_visitors" data-flag-title="纳豆app视频播放链解析">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,38 +413,51 @@
       
 
       
-        <h2 id="本文介绍如何获取纳豆app中视频的播放源链"><a href="#本文介绍如何获取纳豆app中视频的播放源链" class="headerlink" title="本文介绍如何获取纳豆app中视频的播放源链"></a>本文介绍如何获取纳豆app中视频的播放源链</h2><a id="more"></a>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>相信看到这篇文章的很多同学都是在写爬虫的过程中遇到了问题，既然是爬虫，那么你的操作可能也会使得其他人或者自己的工作量变得大，这么说的原因有二：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.提供服务的那一方可能会因为一些不友好的爬虫，不断地修改策略</span><br><span class="line">2.服务端一旦修改反扒策略，所有涉及这个抓取源的开发者都需要更新</span><br></pre></td></tr></table></figure></p>
-<p>由于博主很长一段时间（一年半多）至今都是从事抓取相关的工作，也是由开始的”不友好的爬虫”慢慢意识到自己的很多的”爬虫工作”都更像是在攻击，而不是正正经经的”爬虫”。所以特别想在本文开始之前说一些关于爬虫应该稍微注意的点，不仅仅是为了个人的工作，更是觉得所有为大家贡献代码和思路的探路者都很不容易，总结一下就是：破解不易，且用且珍惜<br>以下几点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">访问频率/访问量，可以根据你对这个网站的数据量评估和自己的数据量需求，控制在一个合理的值，除非特殊情况，不要想着一天能百万千万</span><br><span class="line"></span><br><span class="line">能找到接口的网站尽量使用接口，这样能减少对服务器资源请求的压力</span><br><span class="line"></span><br><span class="line">好的代理确实不好找（除非花高价，x万/年），如果有可用的代理，使用像squid/nginx之类的代理服务，并且在使用之前动态校验，留下高可用的</span><br><span class="line"></span><br><span class="line">大部分设计接口的站点，其接口中应该含有绝大部分数据，能从一个接口里获取到的信息，尽量不要再增加多余的请求</span><br></pre></td></tr></table></figure></p>
+        <h2 id="本文介绍如何获取纳豆app中视频的播放源链"><a href="#本文介绍如何获取纳豆app中视频的播放源链" class="headerlink" title="本文介绍如何获取纳豆app中视频的播放源链"></a>本文介绍如何获取纳豆app中视频的播放源链</h2><span id="more"></span>
+
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>相信看到这篇文章的很多同学都是在写爬虫的过程中遇到了问题，既然是爬虫，那么你的操作可能也会使得其他人或者自己的工作量变得大，这么说的原因有二：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.提供服务的那一方可能会因为一些不友好的爬虫，不断地修改策略</span><br><span class="line">2.服务端一旦修改反扒策略，所有涉及这个抓取源的开发者都需要更新</span><br></pre></td></tr></table></figure>
+<p>由于博主很长一段时间（一年半多）至今都是从事抓取相关的工作，也是由开始的”不友好的爬虫”慢慢意识到自己的很多的”爬虫工作”都更像是在攻击，而不是正正经经的”爬虫”。所以特别想在本文开始之前说一些关于爬虫应该稍微注意的点，不仅仅是为了个人的工作，更是觉得所有为大家贡献代码和思路的探路者都很不容易，总结一下就是：破解不易，且用且珍惜<br>以下几点</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">访问频率/访问量，可以根据你对这个网站的数据量评估和自己的数据量需求，控制在一个合理的值，除非特殊情况，不要想着一天能百万千万</span><br><span class="line"></span><br><span class="line">能找到接口的网站尽量使用接口，这样能减少对服务器资源请求的压力</span><br><span class="line"></span><br><span class="line">好的代理确实不好找（除非花高价，x万/年），如果有可用的代理，使用像squid/nginx之类的代理服务，并且在使用之前动态校验，留下高可用的</span><br><span class="line"></span><br><span class="line">大部分设计接口的站点，其接口中应该含有绝大部分数据，能从一个接口里获取到的信息，尽量不要再增加多余的请求</span><br></pre></td></tr></table></figure>
 <p>注意到以上几点，最起码对方不会把你当成一个恶意程序，像一个正常访问的请求，不会对服务器造成什么不好的影响，何乐而不为</p>
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在收集一款app叫做”爱奇艺头条”（现已更名为：纳豆）上的短视频时，找寻其播放源链</p>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><h4 id="前期抓包"><a href="#前期抓包" class="headerlink" title="前期抓包"></a>前期抓包</h4><p><strong>请求网站：<a href="http://m.toutiao.iqiyi.com/top_126hd0mujy.html" target="_blank" rel="noopener">http://m.toutiao.iqiyi.com/top_126hd0mujy.html</a></strong></p>
-<p>在app端抓包，两次的不同的请求：<br><a href="http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521166692860&amp;src=02020031010000000000&amp;vf=0b53f9287e1b0a970ed1343392af05c2&amp;callback=tmtsCallback" target="_blank" rel="noopener">http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521166692860&amp;src=02020031010000000000&amp;vf=0b53f9287e1b0a970ed1343392af05c2&amp;callback=tmtsCallback</a></p>
-<p><a href="http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521105711069&amp;src=02020031010000000000&amp;vf=1461673fa3ce9cc1cdef6308c9691171&amp;callback=tmtsCallback" target="_blank" rel="noopener">http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521105711069&amp;src=02020031010000000000&amp;vf=1461673fa3ce9cc1cdef6308c9691171&amp;callback=tmtsCallback</a></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><h4 id="前期抓包"><a href="#前期抓包" class="headerlink" title="前期抓包"></a>前期抓包</h4><p><strong>请求网站：<a target="_blank" rel="noopener" href="http://m.toutiao.iqiyi.com/top_126hd0mujy.html">http://m.toutiao.iqiyi.com/top_126hd0mujy.html</a></strong></p>
+<p>在app端抓包，两次的不同的请求：<br><a target="_blank" rel="noopener" href="http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521166692860&amp;src=02020031010000000000&amp;vf=0b53f9287e1b0a970ed1343392af05c2&amp;callback=tmtsCallback">http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521166692860&amp;src=02020031010000000000&amp;vf=0b53f9287e1b0a970ed1343392af05c2&amp;callback=tmtsCallback</a></p>
+<p><a target="_blank" rel="noopener" href="http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521105711069&amp;src=02020031010000000000&amp;vf=1461673fa3ce9cc1cdef6308c9691171&amp;callback=tmtsCallback">http://cache.m.iqiyi.com/jp/tmts/961149300/961149300/?uid=&amp;cupid=&amp;platForm=h5&amp;qyid=&amp;agenttype=13&amp;type=mp4&amp;rate=1&amp;k_ft1=8&amp;qdv=1&amp;qdx=n&amp;qdy=x&amp;qds=0&amp;__jsT=sgve&amp;t=1521105711069&amp;src=02020031010000000000&amp;vf=1461673fa3ce9cc1cdef6308c9691171&amp;callback=tmtsCallback</a></p>
 <p>观察其中的参数，只有t和vf不同，这个t很明显能看出来是一个时间戳（13位的），而这个vf就得继续研究了</p>
-<h4 id="找寻加密方法"><a href="#找寻加密方法" class="headerlink" title="找寻加密方法"></a>找寻加密方法</h4><p><strong>猜想是不是由某个js文件加密生成的</strong><br>于是我按下f12，刷新了下页面，发现在这个播放链出来之前加载了如下几个js文件<br><img src="/2018/03/18/纳豆app视频播放链解析/1.png" alt="图一"><br>注：最下面的那个请求是获取详细播放链的url<br>在图中的js文件中，很轻易便能看到有一个特别显眼的js文件：<font color="red">app_detail_video.18f1b586.js</font><br><strong><a href="http://static.qiyi.com/assets/js/page/detail/app_detail_video.18f1b586.js" target="_blank" rel="noopener">http://static.qiyi.com/assets/js/page/detail/app_detail_video.18f1b586.js</a></strong><br>我们进入到以上的js文件中，检索 vf= 这个关键词，找到相关的代码如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function(e, t, a) &#123;</span><br><span class="line">    var i = window.cmd5xtmts ? window.cmd5xtmts() : &#123;&#125;;</span><br><span class="line">    $.extend(a || &#123;&#125;, i, &#123;</span><br><span class="line">        src: <span class="string">"02020031010000000000"</span></span><br><span class="line">    &#125;);</span><br><span class="line">    var n = <span class="string">"/jp/tmts/"</span> + e + <span class="string">"/"</span> + t + <span class="string">"/?"</span> + $.param(a) + <span class="string">"&amp;callback=tmtsCallback"</span>;</span><br><span class="line">    return a.vf = window.cmd5x ? window.cmd5x(n) : "", a</span><br><span class="line">&#125;(e, t, a));</span><br></pre></td></tr></table></figure></p>
-<p>这里的 <font color="red">a.vf = window.cmd5x ? window.cmd5x(n) : “”, a</font><br>意思是：<font color="red"><strong>若window这个对象有cmd5x这个方法（属性），就返回window.cmd5x(n)；否则返回””空字符串, 后面的a是第二个返回值</strong></font><br>到这里就出现两个问题：<br>1.cmd5x这个函数在哪儿?<br>2.这个n是怎么得到的？</p>
-<h4 id="找寻cmd5x这个加密函数"><a href="#找寻cmd5x这个加密函数" class="headerlink" title="找寻cmd5x这个加密函数"></a><strong>找寻cmd5x这个加密函数</strong></h4><p>在所有加载的js文件中都找了一遍，但是还没有明确地看到cmd5x这个function，但是在网上查到的一份有关爱奇艺的vf算法js文件看到如下一段代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">o.exports = &#123;</span><br><span class="line">    request: function(e, t, i) &#123;</span><br><span class="line">        var o = navigator.userAgent.match(/miuivideo\//i) || n.os.android &amp;&amp; parseInt(n.os.version) &gt; <span class="number">4</span> &amp;&amp; navigator.userAgent.match(/MiuiBrowser/i);</span><br><span class="line">        u.sendVrsRequestPingback(),</span><br><span class="line">        r.jsonp(&#123;</span><br><span class="line">            url: c.h5tmtsUrl + e.tvid + <span class="string">"/"</span> + e.vid + <span class="string">"/"</span>,</span><br><span class="line">            params: function() &#123;</span><br><span class="line">                var t = &#123;</span><br><span class="line">                    platForm: <span class="string">"h5"</span>,</span><br><span class="line">                    uid: d.getUid(),</span><br><span class="line">                    dfp: s.get(),</span><br><span class="line">                    cupid: e.cupid,</span><br><span class="line">                    src: p.getSrc(),</span><br><span class="line">                    codeflag: <span class="number">1</span>,</span><br><span class="line">                    type: n.os.mac &amp;&amp; n.browser.SAFARI || n.browser.iPad || n.browser.iPhone || n.os.android &amp;&amp; parseFloat(n.os.version) &gt; 4 || o ? "m3u8": "mp4"</span><br><span class="line">                &#125;;</span><br><span class="line">                f.isBoss() &amp;&amp; (t.nolimit = <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    l(t, p.cmd5xtmts())</span><br><span class="line">                &#125; catch(e) &#123;&#125;</span><br><span class="line">                <span class="keyword">return</span> t</span><br><span class="line">            &#125; (),</span><br><span class="line">            beforeSend: function(e) &#123;</span><br><span class="line">                var t = a.parse(e.url).host;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    p.cmd5x &amp;&amp; (e.url += <span class="string">"&amp;vf="</span> + p.cmd5x(e.url.replace(new RegExp(<span class="string">"^https?://"</span> + t, <span class="string">"ig"</span>), <span class="string">""</span>)))</span><br><span class="line">                &#125; catch(e) &#123;&#125;</span><br><span class="line">                <span class="keyword">return</span> e</span><br><span class="line">            &#125;,</span><br><span class="line">            success: function(e) &#123;</span><br><span class="line">                u.sendVrsReadyPingback(),</span><br><span class="line">                e &amp;&amp; e.hasOwnProperty("code") ? "A00000" === e.code ? t(e) : i(e) : i(&#123;</span><br><span class="line">                    code: <span class="string">"P00001"</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;,</span><br><span class="line">            failure: function() &#123;</span><br><span class="line">                i(&#123;</span><br><span class="line">                    code: <span class="string">"P00001"</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>能看出来以上是部分关于发送验证请求的代码，主要看beforeSend这一部分，大概能够知道<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">url: c.h5tmtsUrl + e.tvid + <span class="string">"/"</span> + e.vid + <span class="string">"/"</span>,</span><br><span class="line"></span><br><span class="line">var t = a.parse(e.url).host;</span><br><span class="line"></span><br><span class="line">e.url += <span class="string">"&amp;vf="</span> + p.cmd5x(e.url.replace(new RegExp(<span class="string">"^https?://"</span> + t, <span class="string">"ig"</span>), <span class="string">""</span>))</span><br></pre></td></tr></table></figure></p>
-<p>以上，我们还找到h5tmtsUrl这个未知的变量，又找到如下的代码<br>注：e.url.replace(new RegExp(“^https?://“ + t, “ig”), “”)<br>这是将”<a href="https://&quot;+e.url的域名" target="_blank" rel="noopener">https://&quot;+e.url的域名</a> , “ig”表示不区分大小写，统统替换成成空字符串，结合下面提到的来说，也就是将”<a href="https://cache.m.iqiyi.com/jp/tmts/" target="_blank" rel="noopener">https://cache.m.iqiyi.com/jp/tmts/</a>“ 这一段字符替换成空字符串<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function(e, t, i) &#123;</span><br><span class="line">    var o;</span><br><span class="line">    void <span class="number">0</span> !== (o = function(e, t, i) &#123;</span><br><span class="line">        var o = window.location.protocol;</span><br><span class="line">        i.exports = &#123;</span><br><span class="line">            vipauthUrl: <span class="string">"https://api.vip.iqiyi.com/services/cknsp.action"</span>,</span><br><span class="line">            h5tmtsUrl: o + <span class="string">"//cache.m.iqiyi.com/jp/tmts/"</span>,</span><br><span class="line">            vmsUrl: o + <span class="string">"//cache.video.iqiyi.com/jp/vms"</span>,</span><br><span class="line">            vmsIPUrl1: <span class="string">"http://115.182.125.142/jp/vms"</span>,</span><br><span class="line">            vmsIPUrl2: <span class="string">"http://124.250.53.164/jp/vms"</span>,</span><br><span class="line">            pingbackUrl: <span class="string">"http://msg.71.am/core"</span>,</span><br><span class="line">            isfanUrl: o + <span class="string">"//sns-api.iqiyi.com/apis/friend/follow.action"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.call(t, i, t, e)) &amp;&amp; (e.exports = o)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>可以知道<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var o = window.location.protocol;</span><br><span class="line"></span><br><span class="line">h5tmtsUrl: o + <span class="string">"//cache.m.iqiyi.com/jp/tmts/"</span></span><br></pre></td></tr></table></figure></p>
-<p>h5tmtsUrl其实就是一个通信协议+指定字符串：”https” + “//cache.m.iqiyi.com/jp/tmts/“<br>所以，到这里我们需要解决的是什么呢？cmd5x这个函数我们依然不知道，且我们只能大概知道作为其参数的e.url是一个被替换掉了”<a href="https://cache.m.iqiyi.com/jp/tmts/" target="_blank" rel="noopener">https://cache.m.iqiyi.com/jp/tmts/</a>“ 的正常url字符串，其可能的参数有如下<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">url = c.h5tmtsUrl + e.tvid + <span class="string">"/"</span> + e.vid + <span class="string">"/"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#以下这些拼接成字符串</span></span><br><span class="line">&#123;</span><br><span class="line">    platForm: <span class="string">"h5"</span>,</span><br><span class="line">    uid: d.getUid(),</span><br><span class="line">    dfp: s.get(),</span><br><span class="line">    cupid: e.cupid,</span><br><span class="line">    src: p.getSrc(),</span><br><span class="line">    codeflag: <span class="number">1</span>,</span><br><span class="line">    type: n.os.mac &amp;&amp; n.browser.SAFARI || n.browser.iPad || n.browser.iPhone || n.os.android &amp;&amp; parseFloat(n.os.version) &gt; 4 || o ? "m3u8": "mp4"</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h4 id="找寻加密方法"><a href="#找寻加密方法" class="headerlink" title="找寻加密方法"></a>找寻加密方法</h4><p><strong>猜想是不是由某个js文件加密生成的</strong><br>于是我按下f12，刷新了下页面，发现在这个播放链出来之前加载了如下几个js文件<br><img src="/.io//1.png" alt="图一"><br>注：最下面的那个请求是获取详细播放链的url<br>在图中的js文件中，很轻易便能看到有一个特别显眼的js文件：<font color="red">app_detail_video.18f1b586.js</font><br><strong><a target="_blank" rel="noopener" href="http://static.qiyi.com/assets/js/page/detail/app_detail_video.18f1b586.js">http://static.qiyi.com/assets/js/page/detail/app_detail_video.18f1b586.js</a></strong><br>我们进入到以上的js文件中，检索 vf&#x3D; 这个关键词，找到相关的代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function(e, t, a) &#123;</span><br><span class="line">    var i = window.cmd5xtmts ? window.cmd5xtmts() : &#123;&#125;;</span><br><span class="line">    $.extend(a || &#123;&#125;, i, &#123;</span><br><span class="line">        src: <span class="string">&quot;02020031010000000000&quot;</span></span><br><span class="line">    &#125;);</span><br><span class="line">    var n = <span class="string">&quot;/jp/tmts/&quot;</span> + e + <span class="string">&quot;/&quot;</span> + t + <span class="string">&quot;/?&quot;</span> + $.param(a) + <span class="string">&quot;&amp;callback=tmtsCallback&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> a.vf = window.cmd5x ? window.cmd5x(n) : <span class="string">&quot;&quot;</span>, a</span><br><span class="line">&#125;(e, t, a));</span><br></pre></td></tr></table></figure>
+<p>这里的 <font color="red">a.vf &#x3D; window.cmd5x ? window.cmd5x(n) : “”, a</font><br>意思是：<font color="red"><strong>若window这个对象有cmd5x这个方法（属性），就返回window.cmd5x(n)；否则返回””空字符串, 后面的a是第二个返回值</strong></font><br>到这里就出现两个问题：<br>1.cmd5x这个函数在哪儿?<br>2.这个n是怎么得到的？</p>
+<h4 id="找寻cmd5x这个加密函数"><a href="#找寻cmd5x这个加密函数" class="headerlink" title="找寻cmd5x这个加密函数"></a><strong>找寻cmd5x这个加密函数</strong></h4><p>在所有加载的js文件中都找了一遍，但是还没有明确地看到cmd5x这个function，但是在网上查到的一份有关爱奇艺的vf算法js文件看到如下一段代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">o.exports = &#123;</span><br><span class="line">    request: function(e, t, i) &#123;</span><br><span class="line">        var o = navigator.userAgent.<span class="keyword">match</span>(/miuivideo\//i) || n.os.android &amp;&amp; parseInt(n.os.version) &gt; <span class="number">4</span> &amp;&amp; navigator.userAgent.<span class="keyword">match</span>(/MiuiBrowser/i);</span><br><span class="line">        u.sendVrsRequestPingback(),</span><br><span class="line">        r.jsonp(&#123;</span><br><span class="line">            url: c.h5tmtsUrl + e.tvid + <span class="string">&quot;/&quot;</span> + e.vid + <span class="string">&quot;/&quot;</span>,</span><br><span class="line">            params: function() &#123;</span><br><span class="line">                var t = &#123;</span><br><span class="line">                    platForm: <span class="string">&quot;h5&quot;</span>,</span><br><span class="line">                    uid: d.getUid(),</span><br><span class="line">                    dfp: s.get(),</span><br><span class="line">                    cupid: e.cupid,</span><br><span class="line">                    src: p.getSrc(),</span><br><span class="line">                    codeflag: <span class="number">1</span>,</span><br><span class="line">                    <span class="built_in">type</span>: n.os.mac &amp;&amp; n.browser.SAFARI || n.browser.iPad || n.browser.iPhone || n.os.android &amp;&amp; parseFloat(n.os.version) &gt; <span class="number">4</span> || o ? <span class="string">&quot;m3u8&quot;</span>: <span class="string">&quot;mp4&quot;</span></span><br><span class="line">                &#125;;</span><br><span class="line">                f.isBoss() &amp;&amp; (t.nolimit = <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    l(t, p.cmd5xtmts())</span><br><span class="line">                &#125; catch(e) &#123;&#125;</span><br><span class="line">                <span class="keyword">return</span> t</span><br><span class="line">            &#125; (),</span><br><span class="line">            beforeSend: function(e) &#123;</span><br><span class="line">                var t = a.parse(e.url).host;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    p.cmd5x &amp;&amp; (e.url += <span class="string">&quot;&amp;vf=&quot;</span> + p.cmd5x(e.url.replace(new RegExp(<span class="string">&quot;^https?://&quot;</span> + t, <span class="string">&quot;ig&quot;</span>), <span class="string">&quot;&quot;</span>)))</span><br><span class="line">                &#125; catch(e) &#123;&#125;</span><br><span class="line">                <span class="keyword">return</span> e</span><br><span class="line">            &#125;,</span><br><span class="line">            success: function(e) &#123;</span><br><span class="line">                u.sendVrsReadyPingback(),</span><br><span class="line">                e &amp;&amp; e.hasOwnProperty(<span class="string">&quot;code&quot;</span>) ? <span class="string">&quot;A00000&quot;</span> === e.code ? t(e) : i(e) : i(&#123;</span><br><span class="line">                    code: <span class="string">&quot;P00001&quot;</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;,</span><br><span class="line">            failure: function() &#123;</span><br><span class="line">                i(&#123;</span><br><span class="line">                    code: <span class="string">&quot;P00001&quot;</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>能看出来以上是部分关于发送验证请求的代码，主要看beforeSend这一部分，大概能够知道</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">url: c.h5tmtsUrl + e.tvid + <span class="string">&quot;/&quot;</span> + e.vid + <span class="string">&quot;/&quot;</span>,</span><br><span class="line"></span><br><span class="line">var t = a.parse(e.url).host;</span><br><span class="line"></span><br><span class="line">e.url += <span class="string">&quot;&amp;vf=&quot;</span> + p.cmd5x(e.url.replace(new RegExp(<span class="string">&quot;^https?://&quot;</span> + t, <span class="string">&quot;ig&quot;</span>), <span class="string">&quot;&quot;</span>))</span><br></pre></td></tr></table></figure>
+<p>以上，我们还找到h5tmtsUrl这个未知的变量，又找到如下的代码<br>注：e.url.replace(new RegExp(“^https?:&#x2F;&#x2F;“ + t, “ig”), “”)<br>这是将”https:&#x2F;&#x2F;“+e.url的域名 , “ig”表示不区分大小写，统统替换成成空字符串，结合下面提到的来说，也就是将”<a target="_blank" rel="noopener" href="https://cache.m.iqiyi.com/jp/tmts/&quot;">https://cache.m.iqiyi.com/jp/tmts/&quot;</a> 这一段字符替换成空字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function(e, t, i) &#123;</span><br><span class="line">    var o;</span><br><span class="line">    void <span class="number">0</span> !== (o = function(e, t, i) &#123;</span><br><span class="line">        var o = window.location.protocol;</span><br><span class="line">        i.exports = &#123;</span><br><span class="line">            vipauthUrl: <span class="string">&quot;https://api.vip.iqiyi.com/services/cknsp.action&quot;</span>,</span><br><span class="line">            h5tmtsUrl: o + <span class="string">&quot;//cache.m.iqiyi.com/jp/tmts/&quot;</span>,</span><br><span class="line">            vmsUrl: o + <span class="string">&quot;//cache.video.iqiyi.com/jp/vms&quot;</span>,</span><br><span class="line">            vmsIPUrl1: <span class="string">&quot;http://115.182.125.142/jp/vms&quot;</span>,</span><br><span class="line">            vmsIPUrl2: <span class="string">&quot;http://124.250.53.164/jp/vms&quot;</span>,</span><br><span class="line">            pingbackUrl: <span class="string">&quot;http://msg.71.am/core&quot;</span>,</span><br><span class="line">            isfanUrl: o + <span class="string">&quot;//sns-api.iqiyi.com/apis/friend/follow.action&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;.call(t, i, t, e)) &amp;&amp; (e.exports = o)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以知道</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var o = window.location.protocol;</span><br><span class="line"></span><br><span class="line">h5tmtsUrl: o + <span class="string">&quot;//cache.m.iqiyi.com/jp/tmts/&quot;</span></span><br></pre></td></tr></table></figure>
+<p>h5tmtsUrl其实就是一个通信协议+指定字符串：”https” + “&#x2F;&#x2F;cache.m.iqiyi.com&#x2F;jp&#x2F;tmts&#x2F;“<br>所以，到这里我们需要解决的是什么呢？cmd5x这个函数我们依然不知道，且我们只能大概知道作为其参数的e.url是一个被替换掉了”<a target="_blank" rel="noopener" href="https://cache.m.iqiyi.com/jp/tmts/&quot;">https://cache.m.iqiyi.com/jp/tmts/&quot;</a> 的正常url字符串，其可能的参数有如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">url = c.h5tmtsUrl + e.tvid + <span class="string">&quot;/&quot;</span> + e.vid + <span class="string">&quot;/&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#以下这些拼接成字符串</span></span><br><span class="line">&#123;</span><br><span class="line">    platForm: <span class="string">&quot;h5&quot;</span>,</span><br><span class="line">    uid: d.getUid(),</span><br><span class="line">    dfp: s.get(),</span><br><span class="line">    cupid: e.cupid,</span><br><span class="line">    src: p.getSrc(),</span><br><span class="line">    codeflag: <span class="number">1</span>,</span><br><span class="line">    <span class="built_in">type</span>: n.os.mac &amp;&amp; n.browser.SAFARI || n.browser.iPad || n.browser.iPhone || n.os.android &amp;&amp; parseFloat(n.os.version) &gt; <span class="number">4</span> || o ? <span class="string">&quot;m3u8&quot;</span>: <span class="string">&quot;mp4&quot;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>由于其js文件实在太混乱，所有参数都不知道怎么来的，没法推算出我们应该给这个cmd5x传一个什么样的值，更重要的是js中的cmd5x在哪儿，我该怎么用py去调用都不知道。最后还是在万能的google上扎到了答案，感谢贡献代码的大佬，一路带我前行</p>
-<h4 id="来自大佬的微笑"><a href="#来自大佬的微笑" class="headerlink" title="来自大佬的微笑"></a>来自大佬的微笑</h4><p>参考了几篇博客，自己也尝试着构造请求，也成功了，大概有以下这些参数是必要的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">head = <span class="string">"/jp/tmts/tvid/vid/?"</span></span><br><span class="line">param = &#123;</span><br><span class="line">        <span class="string">"uid"</span>:<span class="string">""</span>,</span><br><span class="line">        <span class="string">"cupid"</span>:<span class="string">""</span>,</span><br><span class="line">        <span class="string">"platForm"</span>:<span class="string">"h5"</span>,</span><br><span class="line">        <span class="string">"qyid"</span>:<span class="string">""</span>,</span><br><span class="line">        <span class="string">"agenttype"</span>:<span class="string">"13"</span>,</span><br><span class="line">        <span class="string">"type"</span>:<span class="string">"mp4"</span>,</span><br><span class="line">        <span class="string">"nolimit"</span>:<span class="string">""</span>,</span><br><span class="line">        <span class="string">"k_ft1"</span>:<span class="string">"8"</span>,</span><br><span class="line">        <span class="string">"rate"</span>:<span class="string">"2"</span>,</span><br><span class="line">        <span class="string">"sgti"</span>:<span class="string">""</span>,</span><br><span class="line">        <span class="string">"qdv"</span>:<span class="string">"1"</span>,</span><br><span class="line">        <span class="string">"qdx"</span>:<span class="string">"n"</span>,</span><br><span class="line">        <span class="string">"qdy"</span>:<span class="string">"x"</span>,</span><br><span class="line">        <span class="string">"qds"</span>:<span class="string">"0"</span>,</span><br><span class="line">        <span class="string">"__jsT"</span>:<span class="string">"sgve"</span>,</span><br><span class="line">        <span class="string">"t"</span>:t,</span><br><span class="line">        <span class="string">"src"</span>:<span class="string">"02020031010000000000"</span>,</span><br><span class="line">        <span class="string">"callback"</span>:<span class="string">"tmtsCallback"</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>将param构造成一个字符串，再在头部拼接上head即是一个正常的cmd5x需要的参数，一个正常的出参数值为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/jp/tmts/12476488409/12476488409/?src=02020031010000000000&amp;callback=tmtsCallback&amp;uid=&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;agenttype=13&amp;cupid=&amp;t=1521388096000&amp;qdv=1&amp;platForm=h5&amp;rate=2&amp;__jsT=sgve&amp;k_ft1=8&amp;qds=0&amp;nolimit=&amp;qdy=x&amp;type=mp4&amp;qdx=n&amp;qyid=&amp;&amp;vf=39f7f4c1b39089dbfe887ad15f1ffb7a</span><br></pre></td></tr></table></figure></p>
-<p>加上对应的头部文件：<br>“<a href="http://cache.m.iqiyi.com" target="_blank" rel="noopener">http://cache.m.iqiyi.com</a>“</p>
-<p>最后即是我们请求视频链接的地址<br><a href="http://cache.m.iqiyi.com/jp/tmts/12476488409/12476488409/?src=02020031010000000000&amp;callback=tmtsCallback&amp;uid=&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;agenttype=13&amp;cupid=&amp;t=1521388096000&amp;qdv=1&amp;platForm=h5&amp;rate=2&amp;__jsT=sgve&amp;k_ft1=8&amp;qds=0&amp;nolimit=&amp;qdy=x&amp;type=mp4&amp;qdx=n&amp;qyid=&amp;&amp;vf=39f7f4c1b39089dbfe887ad15f1ffb7a" target="_blank" rel="noopener">http://cache.m.iqiyi.com/jp/tmts/12476488409/12476488409/?src=02020031010000000000&amp;callback=tmtsCallback&amp;uid=&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;agenttype=13&amp;cupid=&amp;t=1521388096000&amp;qdv=1&amp;platForm=h5&amp;rate=2&amp;__jsT=sgve&amp;k_ft1=8&amp;qds=0&amp;nolimit=&amp;qdy=x&amp;type=mp4&amp;qdx=n&amp;qyid=&amp;&amp;vf=39f7f4c1b39089dbfe887ad15f1ffb7a</a></p>
-<p>其返回的数据格式化后如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">　　<span class="string">"timestamp"</span>:<span class="string">"20180318234822"</span>,</span><br><span class="line">　　<span class="string">"ctl"</span>:&#123;</span><br><span class="line">　　　　<span class="string">"area"</span>:<span class="number">1</span></span><br><span class="line">　　&#125;,</span><br><span class="line">　　<span class="string">"code"</span>:<span class="string">"A00000"</span>,</span><br><span class="line">　　<span class="string">"data"</span>:&#123;</span><br><span class="line">　　　　<span class="string">"vipTypes"</span>:[</span><br><span class="line"></span><br><span class="line">　　　　],</span><br><span class="line">　　　　<span class="string">"screenSize"</span>:<span class="string">"854x480"</span>,</span><br><span class="line">　　　　<span class="string">"vidl"</span>:[</span><br><span class="line">　　　　　　&#123;</span><br><span class="line">　　　　　　　　<span class="string">"vd"</span>:<span class="number">1</span>,</span><br><span class="line">　　　　　　　　<span class="string">"screenSize"</span>:<span class="string">"854x480"</span>,</span><br><span class="line">　　　　　　　　<span class="string">"vid"</span>:<span class="string">"e7eb1b37eeb029f6529bde6dc66a4815"</span></span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　　　],</span><br><span class="line">　　　　<span class="string">"aid"</span>:<span class="string">""</span>,</span><br><span class="line">　　　　<span class="string">"pano"</span>:&#123;</span><br><span class="line">　　　　　　<span class="string">"rType"</span>:<span class="number">0</span>,</span><br><span class="line">　　　　　　<span class="string">"type"</span>:<span class="number">1</span></span><br><span class="line">　　　　&#125;,</span><br><span class="line">　　　　<span class="string">"adDuration"</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">"messageId"</span>:<span class="string">""</span>,</span><br><span class="line">　　　　<span class="string">"head"</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">"previewType"</span>:<span class="string">""</span>,</span><br><span class="line">　　　　<span class="string">"ugc"</span>:<span class="number">1</span>,</span><br><span class="line">　　　　<span class="string">"clientIp"</span>:<span class="string">"114.248.64.91"</span>,</span><br><span class="line">　　　　<span class="string">"prv"</span>:<span class="string">""</span>,</span><br><span class="line">　　　　<span class="string">"vd"</span>:<span class="number">1</span>,</span><br><span class="line">　　　　<span class="string">"vid"</span>:<span class="string">"12476488409"</span>,</span><br><span class="line">　　　　<span class="string">"rTime"</span>:<span class="string">""</span>,</span><br><span class="line">　　　　<span class="string">"ds"</span>:<span class="string">"A00012"</span>,</span><br><span class="line">　　　　<span class="string">"lgh"</span>:[</span><br><span class="line"></span><br><span class="line">　　　　],</span><br><span class="line">　　　　<span class="string">"duration"</span>:<span class="number">272</span>,</span><br><span class="line">　　　　<span class="string">"wmarkPos"</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">"bossStatus"</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">"cacheTime"</span>:<span class="number">1521388047491</span>,</span><br><span class="line">　　　　<span class="string">"tail"</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">"isProduced"</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">"cid"</span>:<span class="number">5</span>,</span><br><span class="line">　　　　<span class="string">"tipType"</span>:<span class="string">""</span>,</span><br><span class="line">　　　　<span class="string">"m3u"</span>:<span class="string">"http://222.134.2.36/videos/v1/20180210/59/d2/82ae8f5cf70d7093c1b4dbcfbe667e6b.mp4?key=09bf99dfe8d1239f4fd1deb1192c91f75&amp;dis_k=244569a7f99feb6f8fde7414223cfb756&amp;dis_t=1521388102&amp;dis_dz=CNC-BeiJing&amp;dis_st=40&amp;src=iqiyi.com&amp;uuid=a6e5338-5aae8a46-e&amp;m=v&amp;qd_k=39f7f4c1b39089dbfe887ad15f1ffb7a&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;qd_ip=72f8405b&amp;qd_p=72f8405b&amp;dfp=&amp;qd_src=02020031010000000000&amp;ssl=&amp;ip=114.248.64.91&amp;qd_vip=0&amp;dis_src=vrs&amp;qd_uid=0&amp;qdv=1&amp;qd_tm=1521388102146"</span>,</span><br><span class="line">　　　　<span class="string">"ad"</span>:<span class="number">1</span>,</span><br><span class="line">　　　　<span class="string">"exclusive"</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">"tvid"</span>:<span class="number">12476488409</span>,</span><br><span class="line">　　　　<span class="string">"previewTime"</span>:<span class="string">""</span>,</span><br><span class="line">　　　　<span class="string">"m3utx"</span>:<span class="string">"http://222.134.2.36/videos/v1/20180210/59/d2/82ae8f5cf70d7093c1b4dbcfbe667e6b.mp4?key=09bf99dfe8d1239f4fd1deb1192c91f75&amp;dis_k=244569a7f99feb6f8fde7414223cfb756&amp;dis_t=1521388102&amp;dis_dz=CNC-BeiJing&amp;dis_st=40&amp;src=iqiyi.com&amp;uuid=a6e5338-5aae8a46-e&amp;m=v&amp;qd_k=39f7f4c1b39089dbfe887ad15f1ffb7a&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;qd_ip=72f8405b&amp;qd_p=72f8405b&amp;dfp=&amp;qd_src=02020031010000000000&amp;ssl=&amp;ip=114.248.64.91&amp;qd_vip=0&amp;dis_src=vrs&amp;qd_uid=0&amp;qdv=1&amp;qd_tm=1521388102146"</span></span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="来自大佬的微笑"><a href="#来自大佬的微笑" class="headerlink" title="来自大佬的微笑"></a>来自大佬的微笑</h4><p>参考了几篇博客，自己也尝试着构造请求，也成功了，大概有以下这些参数是必要的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">head = <span class="string">&quot;/jp/tmts/tvid/vid/?&quot;</span></span><br><span class="line">param = &#123;</span><br><span class="line">        <span class="string">&quot;uid&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="string">&quot;cupid&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="string">&quot;platForm&quot;</span>:<span class="string">&quot;h5&quot;</span>,</span><br><span class="line">        <span class="string">&quot;qyid&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="string">&quot;agenttype&quot;</span>:<span class="string">&quot;13&quot;</span>,</span><br><span class="line">        <span class="string">&quot;type&quot;</span>:<span class="string">&quot;mp4&quot;</span>,</span><br><span class="line">        <span class="string">&quot;nolimit&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="string">&quot;k_ft1&quot;</span>:<span class="string">&quot;8&quot;</span>,</span><br><span class="line">        <span class="string">&quot;rate&quot;</span>:<span class="string">&quot;2&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sgti&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="string">&quot;qdv&quot;</span>:<span class="string">&quot;1&quot;</span>,</span><br><span class="line">        <span class="string">&quot;qdx&quot;</span>:<span class="string">&quot;n&quot;</span>,</span><br><span class="line">        <span class="string">&quot;qdy&quot;</span>:<span class="string">&quot;x&quot;</span>,</span><br><span class="line">        <span class="string">&quot;qds&quot;</span>:<span class="string">&quot;0&quot;</span>,</span><br><span class="line">        <span class="string">&quot;__jsT&quot;</span>:<span class="string">&quot;sgve&quot;</span>,</span><br><span class="line">        <span class="string">&quot;t&quot;</span>:t,</span><br><span class="line">        <span class="string">&quot;src&quot;</span>:<span class="string">&quot;02020031010000000000&quot;</span>,</span><br><span class="line">        <span class="string">&quot;callback&quot;</span>:<span class="string">&quot;tmtsCallback&quot;</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>将param构造成一个字符串，再在头部拼接上head即是一个正常的cmd5x需要的参数，一个正常的出参数值为：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/jp/tmts/12476488409/12476488409/?src=02020031010000000000&amp;callback=tmtsCallback&amp;uid=&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;agenttype=13&amp;cupid=&amp;t=1521388096000&amp;qdv=1&amp;platForm=h5&amp;rate=2&amp;__jsT=sgve&amp;k_ft1=8&amp;qds=0&amp;nolimit=&amp;qdy=x&amp;type=mp4&amp;qdx=n&amp;qyid=&amp;&amp;vf=39f7f4c1b39089dbfe887ad15f1ffb7a</span><br></pre></td></tr></table></figure>
+<p>加上对应的头部文件：<br>“<a target="_blank" rel="noopener" href="http://cache.m.iqiyi.com&quot;/">http://cache.m.iqiyi.com&quot;</a></p>
+<p>最后即是我们请求视频链接的地址<br><a target="_blank" rel="noopener" href="http://cache.m.iqiyi.com/jp/tmts/12476488409/12476488409/?src=02020031010000000000&amp;callback=tmtsCallback&amp;uid=&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;agenttype=13&amp;cupid=&amp;t=1521388096000&amp;qdv=1&amp;platForm=h5&amp;rate=2&amp;__jsT=sgve&amp;k_ft1=8&amp;qds=0&amp;nolimit=&amp;qdy=x&amp;type=mp4&amp;qdx=n&amp;qyid=&amp;&amp;vf=39f7f4c1b39089dbfe887ad15f1ffb7a">http://cache.m.iqiyi.com/jp/tmts/12476488409/12476488409/?src=02020031010000000000&amp;callback=tmtsCallback&amp;uid=&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;agenttype=13&amp;cupid=&amp;t=1521388096000&amp;qdv=1&amp;platForm=h5&amp;rate=2&amp;__jsT=sgve&amp;k_ft1=8&amp;qds=0&amp;nolimit=&amp;qdy=x&amp;type=mp4&amp;qdx=n&amp;qyid=&amp;&amp;vf=39f7f4c1b39089dbfe887ad15f1ffb7a</a></p>
+<p>其返回的数据格式化后如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">　　<span class="string">&quot;timestamp&quot;</span>:<span class="string">&quot;20180318234822&quot;</span>,</span><br><span class="line">　　<span class="string">&quot;ctl&quot;</span>:&#123;</span><br><span class="line">　　　　<span class="string">&quot;area&quot;</span>:<span class="number">1</span></span><br><span class="line">　　&#125;,</span><br><span class="line">　　<span class="string">&quot;code&quot;</span>:<span class="string">&quot;A00000&quot;</span>,</span><br><span class="line">　　<span class="string">&quot;data&quot;</span>:&#123;</span><br><span class="line">　　　　<span class="string">&quot;vipTypes&quot;</span>:[</span><br><span class="line"></span><br><span class="line">　　　　],</span><br><span class="line">　　　　<span class="string">&quot;screenSize&quot;</span>:<span class="string">&quot;854x480&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;vidl&quot;</span>:[</span><br><span class="line">　　　　　　&#123;</span><br><span class="line">　　　　　　　　<span class="string">&quot;vd&quot;</span>:<span class="number">1</span>,</span><br><span class="line">　　　　　　　　<span class="string">&quot;screenSize&quot;</span>:<span class="string">&quot;854x480&quot;</span>,</span><br><span class="line">　　　　　　　　<span class="string">&quot;vid&quot;</span>:<span class="string">&quot;e7eb1b37eeb029f6529bde6dc66a4815&quot;</span></span><br><span class="line">　　　　　　&#125;</span><br><span class="line">　　　　],</span><br><span class="line">　　　　<span class="string">&quot;aid&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;pano&quot;</span>:&#123;</span><br><span class="line">　　　　　　<span class="string">&quot;rType&quot;</span>:<span class="number">0</span>,</span><br><span class="line">　　　　　　<span class="string">&quot;type&quot;</span>:<span class="number">1</span></span><br><span class="line">　　　　&#125;,</span><br><span class="line">　　　　<span class="string">&quot;adDuration&quot;</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">&quot;messageId&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;head&quot;</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">&quot;previewType&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;ugc&quot;</span>:<span class="number">1</span>,</span><br><span class="line">　　　　<span class="string">&quot;clientIp&quot;</span>:<span class="string">&quot;114.248.64.91&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;prv&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;vd&quot;</span>:<span class="number">1</span>,</span><br><span class="line">　　　　<span class="string">&quot;vid&quot;</span>:<span class="string">&quot;12476488409&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;rTime&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;ds&quot;</span>:<span class="string">&quot;A00012&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;lgh&quot;</span>:[</span><br><span class="line"></span><br><span class="line">　　　　],</span><br><span class="line">　　　　<span class="string">&quot;duration&quot;</span>:<span class="number">272</span>,</span><br><span class="line">　　　　<span class="string">&quot;wmarkPos&quot;</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">&quot;bossStatus&quot;</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">&quot;cacheTime&quot;</span>:<span class="number">1521388047491</span>,</span><br><span class="line">　　　　<span class="string">&quot;tail&quot;</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">&quot;isProduced&quot;</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">&quot;cid&quot;</span>:<span class="number">5</span>,</span><br><span class="line">　　　　<span class="string">&quot;tipType&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;m3u&quot;</span>:<span class="string">&quot;http://222.134.2.36/videos/v1/20180210/59/d2/82ae8f5cf70d7093c1b4dbcfbe667e6b.mp4?key=09bf99dfe8d1239f4fd1deb1192c91f75&amp;dis_k=244569a7f99feb6f8fde7414223cfb756&amp;dis_t=1521388102&amp;dis_dz=CNC-BeiJing&amp;dis_st=40&amp;src=iqiyi.com&amp;uuid=a6e5338-5aae8a46-e&amp;m=v&amp;qd_k=39f7f4c1b39089dbfe887ad15f1ffb7a&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;qd_ip=72f8405b&amp;qd_p=72f8405b&amp;dfp=&amp;qd_src=02020031010000000000&amp;ssl=&amp;ip=114.248.64.91&amp;qd_vip=0&amp;dis_src=vrs&amp;qd_uid=0&amp;qdv=1&amp;qd_tm=1521388102146&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;ad&quot;</span>:<span class="number">1</span>,</span><br><span class="line">　　　　<span class="string">&quot;exclusive&quot;</span>:<span class="number">0</span>,</span><br><span class="line">　　　　<span class="string">&quot;tvid&quot;</span>:<span class="number">12476488409</span>,</span><br><span class="line">　　　　<span class="string">&quot;previewTime&quot;</span>:<span class="string">&quot;&quot;</span>,</span><br><span class="line">　　　　<span class="string">&quot;m3utx&quot;</span>:<span class="string">&quot;http://222.134.2.36/videos/v1/20180210/59/d2/82ae8f5cf70d7093c1b4dbcfbe667e6b.mp4?key=09bf99dfe8d1239f4fd1deb1192c91f75&amp;dis_k=244569a7f99feb6f8fde7414223cfb756&amp;dis_t=1521388102&amp;dis_dz=CNC-BeiJing&amp;dis_st=40&amp;src=iqiyi.com&amp;uuid=a6e5338-5aae8a46-e&amp;m=v&amp;qd_k=39f7f4c1b39089dbfe887ad15f1ffb7a&amp;sgti=13_12e9e055c713deba092399c62d8cb2b2_1489561211612&amp;qd_ip=72f8405b&amp;qd_p=72f8405b&amp;dfp=&amp;qd_src=02020031010000000000&amp;ssl=&amp;ip=114.248.64.91&amp;qd_vip=0&amp;dis_src=vrs&amp;qd_uid=0&amp;qdv=1&amp;qd_tm=1521388102146&quot;</span></span><br><span class="line">　　&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其中的m3u就是视频真正的播放地址了</p>
-<p>cmd5x也有破解好的对应几个版本，其实也叫做vf的算法，针对不同类型<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="comment">#app端的vf算法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cmd5x</span><span class="params">(str)</span>:</span></span><br><span class="line">    vf = hashlib.new(<span class="string">'md5'</span>, str + <span class="string">'3sj8xof48xof4tk9f4tk9ypgk9ypg5ul'</span>).hexdigest()</span><br><span class="line">    <span class="keyword">return</span> vf</span><br><span class="line"></span><br><span class="line"><span class="comment">#pc端的vf算法，针对爱奇艺的网页播放</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getPcVf</span><span class="params">(str)</span>:</span></span><br><span class="line">    vf = hashlib.new(<span class="string">'md5'</span>, str + <span class="string">'u6fnp3eok0dpftcq9qbr4n9svk8tqh7u'</span>).hexdigest()</span><br><span class="line">    <span class="keyword">return</span> vf</span><br><span class="line"></span><br><span class="line"><span class="comment">#针对vip用户的vf算法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getPcIbt</span><span class="params">(str)</span>:</span></span><br><span class="line">    vf = hashlib.new(<span class="string">'md5'</span>, str + <span class="string">'t6hrq6k0n6n6k6qdh6tje6wpb62v7654'</span>).hexdigest()</span><br><span class="line">    <span class="keyword">return</span> vf</span><br></pre></td></tr></table></figure></p>
+<p>cmd5x也有破解好的对应几个版本，其实也叫做vf的算法，针对不同类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="comment">#app端的vf算法</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">cmd5x</span>(<span class="params"><span class="built_in">str</span></span>):</span><br><span class="line">    vf = hashlib.new(<span class="string">&#x27;md5&#x27;</span>, <span class="built_in">str</span> + <span class="string">&#x27;3sj8xof48xof4tk9f4tk9ypgk9ypg5ul&#x27;</span>).hexdigest()</span><br><span class="line">    <span class="keyword">return</span> vf</span><br><span class="line"></span><br><span class="line"><span class="comment">#pc端的vf算法，针对爱奇艺的网页播放</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getPcVf</span>(<span class="params"><span class="built_in">str</span></span>):</span><br><span class="line">    vf = hashlib.new(<span class="string">&#x27;md5&#x27;</span>, <span class="built_in">str</span> + <span class="string">&#x27;u6fnp3eok0dpftcq9qbr4n9svk8tqh7u&#x27;</span>).hexdigest()</span><br><span class="line">    <span class="keyword">return</span> vf</span><br><span class="line"></span><br><span class="line"><span class="comment">#针对vip用户的vf算法</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getPcIbt</span>(<span class="params"><span class="built_in">str</span></span>):</span><br><span class="line">    vf = hashlib.new(<span class="string">&#x27;md5&#x27;</span>, <span class="built_in">str</span> + <span class="string">&#x27;t6hrq6k0n6n6k6qdh6tje6wpb62v7654&#x27;</span>).hexdigest()</span><br><span class="line">    <span class="keyword">return</span> vf</span><br></pre></td></tr></table></figure>
 <p>这里我们使用第一个即可</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>代码放在<a href="https://github.com/tingyunsay/nadou_vf" target="_blank" rel="noopener"><font color="purple"><strong>github</strong></font></a>了，有需要的可以看看</p>
-<h4 id="2018-07-12更新"><a href="#2018-07-12更新" class="headerlink" title="2018/07/12更新"></a>2018/07/12更新</h4><p>看了下日志，爱奇艺大概是从6月27号更新了策略。不知道是不是被抓的多了….<br>以上app端的加盐md5算法失效了，花了点时间找到了cmd5x更新后的方法，说下思路：<font color="red">其关键函数藏在一个js文件中，参数也更新了，并且还需要注意某一个参数的先后顺序.</font></p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>代码放在<a target="_blank" rel="noopener" href="https://github.com/tingyunsay/nadou_vf"><font color="purple"><strong>github</strong></font></a>了，有需要的可以看看</p>
+<h4 id="2018-x2F-07-x2F-12更新"><a href="#2018-x2F-07-x2F-12更新" class="headerlink" title="2018&#x2F;07&#x2F;12更新"></a>2018&#x2F;07&#x2F;12更新</h4><p>看了下日志，爱奇艺大概是从6月27号更新了策略。不知道是不是被抓的多了….<br>以上app端的加盐md5算法失效了，花了点时间找到了cmd5x更新后的方法，说下思路：<font color="red">其关键函数藏在一个js文件中，参数也更新了，并且还需要注意某一个参数的先后顺序.</font></p>
 <p>注：我没有使用新的cmd5x方法去加密原始的参数，所以不知道原始的参数是不是能使用。最好还是都替换成新的吧，因为app_detail_video.xxxx.js文件也换了新的</p>
 <p>由于怕被封，暂时先不把方法写到这里，还是那句话，接口且用且珍惜.</p>
 <hr>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>在找参数的过程中用到了一个动态调试js的方法，由于本篇篇幅太长，放在下一篇里面单独讲讲这种方法</p>
-<p>参考网址：<br><a href="http://zhuhaidong.win/TP/index.php/Home/Index/article/id/32.html" target="_blank" rel="noopener">http://zhuhaidong.win/TP/index.php/Home/Index/article/id/32.html</a><br><a href="https://blog.icehoney.me/posts/2016-12-19-Reverse-JavaScript" target="_blank" rel="noopener">https://blog.icehoney.me/posts/2016-12-19-Reverse-JavaScript</a><br><a href="https://github.com/zhangn1985/ykdl/issues/19" target="_blank" rel="noopener">https://github.com/zhangn1985/ykdl/issues/19</a></p>
+<p>参考网址：<br><a target="_blank" rel="noopener" href="http://zhuhaidong.win/TP/index.php/Home/Index/article/id/32.html">http://zhuhaidong.win/TP/index.php/Home/Index/article/id/32.html</a><br><a target="_blank" rel="noopener" href="https://blog.icehoney.me/posts/2016-12-19-Reverse-JavaScript">https://blog.icehoney.me/posts/2016-12-19-Reverse-JavaScript</a><br><a target="_blank" rel="noopener" href="https://github.com/zhangn1985/ykdl/issues/19">https://github.com/zhangn1985/ykdl/issues/19</a></p>
 
       
     </div>
@@ -471,7 +487,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/爱奇艺vf算法/" rel="tag"># 爱奇艺vf算法</a>
+            <a href="/tags/%E7%88%B1%E5%A5%87%E8%89%BAvf%E7%AE%97%E6%B3%95/" rel="tag"># 爱奇艺vf算法</a>
           
             <a href="/tags/spider/" rel="tag"># spider</a>
           
@@ -486,7 +502,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/04/python读取excel合并单元格/" rel="next" title="python读取excel合并单元格">
+              <a href="/2018/03/04/python%E8%AF%BB%E5%8F%96excel%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC/" rel="next" title="python读取excel合并单元格">
                 <i class="fa fa-chevron-left"></i> python读取excel合并单元格
               </a>
             
@@ -496,7 +512,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/19/动态调试本地js文件/" rel="prev" title="动态调试本地js文件">
+              <a href="/2018/03/19/%E5%8A%A8%E6%80%81%E8%B0%83%E8%AF%95%E6%9C%AC%E5%9C%B0js%E6%96%87%E4%BB%B6/" rel="prev" title="动态调试本地js文件">
                 动态调试本地js文件 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -527,7 +543,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -553,7 +569,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -563,8 +579,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -575,7 +593,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -597,7 +615,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -652,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍如何获取纳豆app中视频的播放源链"><span class="nav-number">1.</span> <span class="nav-text">本文介绍如何获取纳豆app中视频的播放源链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题"><span class="nav-number">1.2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">1.3.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前期抓包"><span class="nav-number">1.3.1.</span> <span class="nav-text">前期抓包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找寻加密方法"><span class="nav-number">1.3.2.</span> <span class="nav-text">找寻加密方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#找寻cmd5x这个加密函数"><span class="nav-number">1.3.3.</span> <span class="nav-text">找寻cmd5x这个加密函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来自大佬的微笑"><span class="nav-number">1.3.4.</span> <span class="nav-text">来自大佬的微笑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码"><span class="nav-number">1.3.5.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2018-07-12更新"><span class="nav-number">1.3.6.</span> <span class="nav-text">2018/07/12更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.4.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8D%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96%E7%BA%B3%E8%B1%86app%E4%B8%AD%E8%A7%86%E9%A2%91%E7%9A%84%E6%92%AD%E6%94%BE%E6%BA%90%E9%93%BE"><span class="nav-number">1.</span> <span class="nav-text">本文介绍如何获取纳豆app中视频的播放源链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E6%8A%93%E5%8C%85"><span class="nav-number">1.3.1.</span> <span class="nav-text">前期抓包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%BE%E5%AF%BB%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.2.</span> <span class="nav-text">找寻加密方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%BE%E5%AF%BBcmd5x%E8%BF%99%E4%B8%AA%E5%8A%A0%E5%AF%86%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.3.</span> <span class="nav-text">找寻cmd5x这个加密函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9D%A5%E8%87%AA%E5%A4%A7%E4%BD%AC%E7%9A%84%E5%BE%AE%E7%AC%91"><span class="nav-number">1.3.4.</span> <span class="nav-text">来自大佬的微笑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">1.3.5.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2018-x2F-07-x2F-12%E6%9B%B4%E6%96%B0"><span class="nav-number">1.3.6.</span> <span class="nav-text">2018&#x2F;07&#x2F;12更新</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.4.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -672,10 +690,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -686,19 +704,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -846,7 +864,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2018/03/18/纳豆app视频播放链解析/';
+          this.page.url = 'http://tingyunsay.github.io/2018/03/18/%E7%BA%B3%E8%B1%86app%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E9%93%BE%E8%A7%A3%E6%9E%90/';
           this.page.identifier = '2018/03/18/纳豆app视频播放链解析/';
           this.page.title = '纳豆app视频播放链解析';
         };

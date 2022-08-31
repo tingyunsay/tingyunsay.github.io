@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="算法,出队,约瑟夫环,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="算法,出队,约瑟夫环," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,28 +90,30 @@
 
 
 <meta name="description" content="本文介绍约瑟夫环的问题详细推导和理解">
-<meta name="keywords" content="算法,出队,约瑟夫环">
 <meta property="og:type" content="article">
 <meta property="og:title" content="约瑟夫环问题详解">
-<meta property="og:url" content="http://tingyunsay.github.io/2018/04/26/约瑟夫环问题详解/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍约瑟夫环的问题详细推导和理解">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://tingyunsay.github.io/2018/04/26/约瑟夫环问题详解/1.jpg">
-<meta property="og:image" content="http://tingyunsay.github.io/2018/04/26/约瑟夫环问题详解/2.jpg">
-<meta property="og:image" content="http://tingyunsay.github.io/2018/04/26/约瑟夫环问题详解/3.jpg">
-<meta property="og:updated_time" content="2020-03-30T09:50:21.567Z">
+<meta property="og:locale">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//1.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//2.jpg">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//3.jpg">
+<meta property="article:published_time" content="2018-04-26T03:37:42.000Z">
+<meta property="article:modified_time" content="2020-03-30T09:50:21.567Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="出队">
+<meta property="article:tag" content="约瑟夫环">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="约瑟夫环问题详解">
-<meta name="twitter:description" content="本文介绍约瑟夫环的问题详细推导和理解">
-<meta name="twitter:image" content="http://tingyunsay.github.io/2018/04/26/约瑟夫环问题详解/1.jpg">
+<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.jpg">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -131,17 +134,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2018/04/26/约瑟夫环问题详解/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2018/04/26/约瑟夫环问题详解/"/>
 
 
 
 
 
   <title> 约瑟夫环问题详解 | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -176,13 +179,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -212,7 +215,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -222,7 +225,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -232,7 +235,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -242,7 +245,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -252,7 +255,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -262,7 +265,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -296,16 +299,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/04/26/约瑟夫环问题详解/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -344,7 +347,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -355,7 +358,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/algorithm/" itemprop="url" rel="index">
                     <span itemprop="name">algorithm</span>
                   </a>
@@ -374,8 +377,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/26/约瑟夫环问题详解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/26/约瑟夫环问题详解/" itemprop="commentCount"></span>
+                <a href="/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/04/26/约瑟夫环问题详解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -383,7 +387,7 @@
 
           
           
-             <span id="/2018/04/26/约瑟夫环问题详解/" class="leancloud_visitors" data-flag-title="约瑟夫环问题详解">
+             <span id="/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/" class="leancloud_visitors" data-flag-title="约瑟夫环问题详解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,26 +416,31 @@
       
 
       
-        <h2 id="本文介绍约瑟夫环的问题详细推导和理解"><a href="#本文介绍约瑟夫环的问题详细推导和理解" class="headerlink" title="本文介绍约瑟夫环的问题详细推导和理解"></a>本文介绍约瑟夫环的问题详细推导和理解</h2><a id="more"></a>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　挺早之前在csdn上写过一篇关于约瑟夫环的博文，那是当时正处在找工作期间刷题，然后做的笔记。最近看见博文有人回复，并且有提醒我写错了的地方，于是又看了看这篇文章，发现确实有些地方写错了，且这些概念换做现在的自己来说，基本上都生疏了，特意重新整理了下，用作巩固</p>
-<h3 id="约瑟夫环问题"><a href="#约瑟夫环问题" class="headerlink" title="约瑟夫环问题"></a>约瑟夫环问题</h3><h4 id="什么是约瑟夫环问题"><a href="#什么是约瑟夫环问题" class="headerlink" title="什么是约瑟夫环问题"></a>什么是约瑟夫环问题</h4><p>　　约瑟夫是犹太军队的一个将军，在反抗罗马的起义中，他所率领的军队被击溃，只剩下残余的部队40余人，他们都是宁死不屈的人，所以不愿投降做叛徒。一群人表决说要死，所以用一种策略来先后杀死所有人。于是约瑟夫建议：每次由其他两人一起杀死一个人，而被杀的人的先后顺序是由抽签决定的，约瑟夫有预谋地抽到了最后一签，在杀了除了他和剩余那个人之外的最后一人，他劝服了另外一个没死的人投降了罗马<br>　　我们这个规则是这么定的：<br>　　在一间房间总共有<font color="red"><strong>n</strong></font>个人（下标0～n-1），只能有最后一个人活命<br>按照如下规则去杀人：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">所有人围成一圈</span><br><span class="line">顺时针报数，每次报到q的人将被杀掉</span><br><span class="line">被杀掉的人将从房间内被移走</span><br><span class="line">然后从被杀掉的下一个人重新报数，继续报q，再清除，直到剩余一人</span><br></pre></td></tr></table></figure></p>
-<font color="purple"><strong>你要做的是：当你在这一群人之间时，你必须选择一个位置以使得你变成那剩余的最后一人，也就是活下来</strong></font>
+        <h2 id="本文介绍约瑟夫环的问题详细推导和理解"><a href="#本文介绍约瑟夫环的问题详细推导和理解" class="headerlink" title="本文介绍约瑟夫环的问题详细推导和理解"></a>本文介绍约瑟夫环的问题详细推导和理解</h2><span id="more"></span>
 
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>　　挺早之前在csdn上写过一篇关于约瑟夫环的博文，那是当时正处在找工作期间刷题，然后做的笔记。最近看见博文有人回复，并且有提醒我写错了的地方，于是又看了看这篇文章，发现确实有些地方写错了，且这些概念换做现在的自己来说，基本上都生疏了，特意重新整理了下，用作巩固</p>
+<h3 id="约瑟夫环问题"><a href="#约瑟夫环问题" class="headerlink" title="约瑟夫环问题"></a>约瑟夫环问题</h3><h4 id="什么是约瑟夫环问题"><a href="#什么是约瑟夫环问题" class="headerlink" title="什么是约瑟夫环问题"></a>什么是约瑟夫环问题</h4><p>　　约瑟夫是犹太军队的一个将军，在反抗罗马的起义中，他所率领的军队被击溃，只剩下残余的部队40余人，他们都是宁死不屈的人，所以不愿投降做叛徒。一群人表决说要死，所以用一种策略来先后杀死所有人。于是约瑟夫建议：每次由其他两人一起杀死一个人，而被杀的人的先后顺序是由抽签决定的，约瑟夫有预谋地抽到了最后一签，在杀了除了他和剩余那个人之外的最后一人，他劝服了另外一个没死的人投降了罗马<br>　　我们这个规则是这么定的：<br>　　在一间房间总共有<font color="red"><strong>n</strong></font>个人（下标0～n-1），只能有最后一个人活命<br>按照如下规则去杀人：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">所有人围成一圈</span><br><span class="line">顺时针报数，每次报到q的人将被杀掉</span><br><span class="line">被杀掉的人将从房间内被移走</span><br><span class="line">然后从被杀掉的下一个人重新报数，继续报q，再清除，直到剩余一人</span><br></pre></td></tr></table></figure>
+<p><font color="purple"><strong>你要做的是：当你在这一群人之间时，你必须选择一个位置以使得你变成那剩余的最后一人，也就是活下来</strong></font></p>
 <h4 id="约瑟夫环特例"><a href="#约瑟夫环特例" class="headerlink" title="约瑟夫环特例"></a>约瑟夫环特例</h4><p>　　为了更好地分析和理解约瑟夫环的问题，这里先聊一下这个问题的特例<br>　　以上概念部分提到两个变量：<font color="red"><strong>n</strong></font>和<font color="red"><strong>q</strong></font>，其中ｎ是总人数，ｑ是每次要杀的人是第几人<br>　　下面我们假设这两个值分别是不同取值的计算方法：</p>
-<h5 id="q-2-n-2-k"><a href="#q-2-n-2-k" class="headerlink" title="q=2,n=2^k"></a>q=2,n=2^k</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#n = 2</span><br><span class="line">0   1   ==&gt;   ０</span><br><span class="line"></span><br><span class="line">#n = 4</span><br><span class="line">0   １   ２   ４   ==&gt; 0   2  ==&gt;   0</span><br><span class="line"></span><br><span class="line">#n = 8</span><br><span class="line">0   1   2   3   4   5   6   7   ==&gt; 0   2   4   6   ==&gt; 0   4   ==&gt; 0</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
-<p>　　由上面的规律是不是能发现一些问题，当ｑ＝２，ｎ＝２^k时，活下来的人总是这个０，PS(大家知道该站在哪个位置了吧~)<br>　　定义 <strong>J<font color="red">q=</font>(<font color="red">n=</font>)</strong> 为n个人，每次杀死第ｑ个人构成的约瑟夫环最后结果，则有<font color="red"><strong>jq=2(n=2^k) = 0</strong></font></p>
-<h5 id="q-2-n-任意数"><a href="#q-2-n-任意数" class="headerlink" title="q=2,n=任意数"></a>q=2,n=任意数</h5><p>　　当ｎ可以为任意数字的时候，就不会有上面这么简单的站位了，你的走位需要飘逸一点才能活到最后<br>　　举个栗子：ｎ＝９<br>　　注：示例途中的下表从１开始，我们也可以看成是从０开始，就不去改图了<br><img src="/2018/04/26/约瑟夫环问题详解/1.jpg" alt="示例图1"><br>　　能看出来，我们干掉途中的第一个人也就是2，之后就只剩下8个人了，这时候ｎ＝８＝２^3，这样一来又回到Jq=2(2^k)上了，<font color="red"><strong>这时候我们需要的是找到当前的1号元素</strong></font><br><img src="/2018/04/26/约瑟夫环问题详解/2.jpg" alt="示例图2"><br>　　这时候，我们从3号开始，就成了另外一个规模小1的约瑟夫问题（恰好为2^k的特例）。<br>　　此时，我们可以把3号看成新的约瑟夫问题中的1号位置：<br>　　Jq=2(n=8) = Jq=2(n=2^3) = 1，也就是说这里的1代表的就是上一个问题中的3号</p>
-<p>　　So：Jq=2(n=9) = 3<br>　　答案为3号<br>　　总结下规律：<br>　　　　在ｑ＝２的前提下，给出ｎ，我们首先找出，离ｎ最近的一个２^k数，如ｎ＝９，那么这个２的幂次方数就是８，同理可得。找到之后，我们需要转换成对应的这个2^k数的约瑟夫环问题，因为其第一个元素即是我们想要的答案<br>　　　　<font color="red"><strong>Jq=2(n) = Jq=2(2^k + t) = 2t+1</strong></font></p>
-<h4 id="q＝任意数，n＝任意数"><a href="#q＝任意数，n＝任意数" class="headerlink" title="ｑ＝任意数，ｎ＝任意数"></a>ｑ＝任意数，ｎ＝任意数</h4><p>　　说完了特例，应该对约瑟夫环的问题了解了，现在说说ｑ≠２的情况下，应该是什么样的规律<br>　　我们假定：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- n — n人构成的约瑟夫环 </span><br><span class="line">- q — 每次移除第q个人</span><br></pre></td></tr></table></figure></p>
-<p>　　约定：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- Jq(n)表示n人构成的约瑟夫环，每次移除第q个人的解 </span><br><span class="line">- n个人的编号从0开始至n-1</span><br></pre></td></tr></table></figure></p>
-<p>　　我们沿用之前特例的思想：能不能由Jq(n+1)的问题缩小成为J(n)的问题（这里的n是n+1规模的约瑟夫问题消除一个元素之后的答案），Jq(n)是在Jq(n+1)基础上移除一个人之后的解。也就是说，我们要想的是：<font color="red">由Jq(n)怎么得到Jq(n+1)?</font><br>　　更详细推导过程见<a href="https://blog.csdn.net/wusuopubupt/article/details/18214999" target="_blank" rel="noopener">这篇博文</a><br>　　大致过程我也来推导一遍：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">0 　1　 2  ................................  　n-1       总共n人</span><br><span class="line">|   |  |                                       |</span><br><span class="line">q q+1 q+2 ...... n-2  n-1   0  1  2   ......  q-2     (这里是除去q-1这位兄台的剩余n-1人)</span><br><span class="line"></span><br><span class="line">设第q个人也就是下标为q-1的那位，杀死，剩下n-1个人，如上</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">这时，又来重复我们的老套路：将新的被杀的后一个人作为新的0号，于是新的如下：</span><br><span class="line">0  1  2   ......     ..........     ........  n-2</span><br></pre></td></tr></table></figure></p>
-<p>　　即从q（第ｑ+1个人）开始，到之前最大数n-1，每个数都减去q，减到0之后，接着新的值每次往后+1，直到加到ｑ-２<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">J4(9) :</span><br><span class="line">0 1 2 3 4 5 6 7 8    消去3--&gt;    0  1  2  4  5  6  7  8 ( 0  1  2)</span><br><span class="line">                  对应的新值：             0  1  2  3  4   5  6  7</span><br><span class="line"></span><br><span class="line">其中：q=4，从3之后第一个数4开始：</span><br><span class="line"></span><br><span class="line">(4-q)%n=0，(5-q)%n=1，(6-q)%n=2，(7-q)%n=3，(8-q)%n=4，因为是个环，不能绕成负数吧，(0-q)%n=5，(1-q)%n=6 , (2-q)%n=7</span><br></pre></td></tr></table></figure></p>
-<p>　　觉得抽象的可以参考下图:<br>　　<img src="/2018/04/26/约瑟夫环问题详解/3.jpg" alt="示例图３"></p>
-<p>　　现在大概知道我们的新的约瑟夫环的下标都是这样来的：在旧的下标基础上，减去一个ｑ，再用计算出的结果对长度取余<br>　　new = (old-q) % n</p>
-<p>　　反推一下：<br>　　old = (new+q) % n</p>
+<h5 id="q-x3D-2-n-x3D-2-k"><a href="#q-x3D-2-n-x3D-2-k" class="headerlink" title="q&#x3D;2,n&#x3D;2^k"></a>q&#x3D;2,n&#x3D;2^k</h5><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#n = 2</span><br><span class="line">0   1   ==&gt;   ０</span><br><span class="line"></span><br><span class="line">#n = 4</span><br><span class="line">0   １   ２   ４   ==&gt; 0   2  ==&gt;   0</span><br><span class="line"></span><br><span class="line">#n = 8</span><br><span class="line">0   1   2   3   4   5   6   7   ==&gt; 0   2   4   6   ==&gt; 0   4   ==&gt; 0</span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>　　由上面的规律是不是能发现一些问题，当ｑ＝２，ｎ＝２^k时，活下来的人总是这个０，PS(大家知道该站在哪个位置了吧~)<br>　　定义 <strong>J<font color="red">q&#x3D;</font>(<font color="red">n&#x3D;</font>)</strong> 为n个人，每次杀死第ｑ个人构成的约瑟夫环最后结果，则有<font color="red"><strong>jq&#x3D;2(n&#x3D;2^k) &#x3D; 0</strong></font></p>
+<h5 id="q-x3D-2-n-x3D-任意数"><a href="#q-x3D-2-n-x3D-任意数" class="headerlink" title="q&#x3D;2,n&#x3D;任意数"></a>q&#x3D;2,n&#x3D;任意数</h5><p>　　当ｎ可以为任意数字的时候，就不会有上面这么简单的站位了，你的走位需要飘逸一点才能活到最后<br>　　举个栗子：ｎ＝９<br>　　注：示例途中的下表从１开始，我们也可以看成是从０开始，就不去改图了<br><img src="/.io//1.jpg" alt="示例图1"><br>　　能看出来，我们干掉途中的第一个人也就是2，之后就只剩下8个人了，这时候ｎ＝８＝２^3，这样一来又回到Jq&#x3D;2(2^k)上了，<font color="red"><strong>这时候我们需要的是找到当前的1号元素</strong></font><br><img src="/.io//2.jpg" alt="示例图2"><br>　　这时候，我们从3号开始，就成了另外一个规模小1的约瑟夫问题（恰好为2^k的特例）。<br>　　此时，我们可以把3号看成新的约瑟夫问题中的1号位置：<br>　　Jq&#x3D;2(n&#x3D;8) &#x3D; Jq&#x3D;2(n&#x3D;2^3) &#x3D; 1，也就是说这里的1代表的就是上一个问题中的3号</p>
+<p>　　So：Jq&#x3D;2(n&#x3D;9) &#x3D; 3<br>　　答案为3号<br>　　总结下规律：<br>　　　　在ｑ＝２的前提下，给出ｎ，我们首先找出，离ｎ最近的一个２^k数，如ｎ＝９，那么这个２的幂次方数就是８，同理可得。找到之后，我们需要转换成对应的这个2^k数的约瑟夫环问题，因为其第一个元素即是我们想要的答案<br>　　　　<font color="red"><strong>Jq&#x3D;2(n) &#x3D; Jq&#x3D;2(2^k + t) &#x3D; 2t+1</strong></font></p>
+<h4 id="q＝任意数，n＝任意数"><a href="#q＝任意数，n＝任意数" class="headerlink" title="ｑ＝任意数，ｎ＝任意数"></a>ｑ＝任意数，ｎ＝任意数</h4><p>　　说完了特例，应该对约瑟夫环的问题了解了，现在说说ｑ≠２的情况下，应该是什么样的规律<br>　　我们假定： </p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- n — n人构成的约瑟夫环 </span><br><span class="line">- q — 每次移除第q个人 </span><br></pre></td></tr></table></figure>
+<p>　　约定：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- Jq(n)表示n人构成的约瑟夫环，每次移除第q个人的解 </span><br><span class="line">- n个人的编号从0开始至n-1</span><br></pre></td></tr></table></figure>
+<p>　　我们沿用之前特例的思想：能不能由Jq(n+1)的问题缩小成为J(n)的问题（这里的n是n+1规模的约瑟夫问题消除一个元素之后的答案），Jq(n)是在Jq(n+1)基础上移除一个人之后的解。也就是说，我们要想的是：<font color="red">由Jq(n)怎么得到Jq(n+1)?</font><br>　　更详细推导过程见<a target="_blank" rel="noopener" href="https://blog.csdn.net/wusuopubupt/article/details/18214999">这篇博文</a><br>　　大致过程我也来推导一遍：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">0 　1　 2  ................................  　n-1       总共n人</span><br><span class="line">|   |  |                                       |</span><br><span class="line">q q+1 q+2 ...... n-2  n-1   0  1  2   ......  q-2     (这里是除去q-1这位兄台的剩余n-1人)</span><br><span class="line"></span><br><span class="line">设第q个人也就是下标为q-1的那位，杀死，剩下n-1个人，如上</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">这时，又来重复我们的老套路：将新的被杀的后一个人作为新的0号，于是新的如下：</span><br><span class="line">0  1  2   ......     ..........     ........  n-2</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>　　即从q（第ｑ+1个人）开始，到之前最大数n-1，每个数都减去q，减到0之后，接着新的值每次往后+1，直到加到ｑ-２</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">J4(9) :</span><br><span class="line">0 1 2 3 4 5 6 7 8    消去3--&gt;    0  1  2  4  5  6  7  8 ( 0  1  2)</span><br><span class="line">                  对应的新值：             0  1  2  3  4   5  6  7</span><br><span class="line"></span><br><span class="line">其中：q=4，从3之后第一个数4开始：</span><br><span class="line"></span><br><span class="line">(4-q)%n=0，(5-q)%n=1，(6-q)%n=2，(7-q)%n=3，(8-q)%n=4，因为是个环，不能绕成负数吧，(0-q)%n=5，(1-q)%n=6 , (2-q)%n=7</span><br></pre></td></tr></table></figure>
+<p>　　觉得抽象的可以参考下图:<br>　　<img src="/.io//3.jpg" alt="示例图３"></p>
+<p>　　现在大概知道我们的新的约瑟夫环的下标都是这样来的：在旧的下标基础上，减去一个ｑ，再用计算出的结果对长度取余<br>　　new &#x3D; (old-q) % n</p>
+<p>　　反推一下：<br>　　old &#x3D; (new+q) % n</p>
 <p>　　好了，到了这里知道了怎么推出之前的下标，那么也就可以一步步递推回去得到开始的队列或者从小推到大得到最后剩余的结果</p>
-<h4 id="实战一下"><a href="#实战一下" class="headerlink" title="实战一下"></a>实战一下</h4><p>　　J2(1) = 0<br>　　J2(2) = (J2(1) + 2) % 2 = 0<br>　　J2(3) = (J2(2) + 2) % 3 = 2<br>　　J2(4) = (J2(3) + 2) % 4 = 0<br>　　J2(5) = (J2(4) + 2) % 5 = 2<br>   ……</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int yuesefu(int n,int m)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>; //这里返回下标,从<span class="number">0</span>开始，只有一个元素就是剩余的元素<span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> (yuesefu(n<span class="number">-1</span>,m) + m) % n; //我们传入的n是总共多少个数</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">int main(void)&#123;</span><br><span class="line">        int a,b;</span><br><span class="line">        cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">        cout&lt;&lt;yuesefu(a,b)&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">        //或者，直接循环迭代，求出来的result如上</span><br><span class="line">        int result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(int i = <span class="number">2</span>;i &lt;= a;i++)&#123;</span><br><span class="line">                result = (result+b) %i;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;<span class="string">"result = "</span>&lt;&lt;result&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="实战一下"><a href="#实战一下" class="headerlink" title="实战一下"></a>实战一下</h4><p>　　J2(1) &#x3D; 0<br>　　J2(2) &#x3D; (J2(1) + 2) % 2 &#x3D; 0<br>　　J2(3) &#x3D; (J2(2) + 2) % 3 &#x3D; 2<br>　　J2(4) &#x3D; (J2(3) + 2) % 4 &#x3D; 0<br>　　J2(5) &#x3D; (J2(4) + 2) % 5 &#x3D; 2<br>   ……</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> yuesefu(<span class="built_in">int</span> n,<span class="built_in">int</span> m)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>; //这里返回下标,从<span class="number">0</span>开始，只有一个元素就是剩余的元素<span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> (yuesefu(n-<span class="number">1</span>,m) + m) % n; //我们传入的n是总共多少个数</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">int</span> main(void)&#123;</span><br><span class="line">        <span class="built_in">int</span> a,b;</span><br><span class="line">        cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">        cout&lt;&lt;yuesefu(a,b)&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">        //或者，直接循环迭代，求出来的result如上</span><br><span class="line">        <span class="built_in">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">2</span>;i &lt;= a;i++)&#123;</span><br><span class="line">                result = (result+b) %i;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;result = &quot;</span>&lt;&lt;result&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>好了终于写完了，假期开始咯~~</p>
 
       
@@ -462,11 +471,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
           
-            <a href="/tags/出队/" rel="tag"># 出队</a>
+            <a href="/tags/%E5%87%BA%E9%98%9F/" rel="tag"># 出队</a>
           
-            <a href="/tags/约瑟夫环/" rel="tag"># 约瑟夫环</a>
+            <a href="/tags/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF/" rel="tag"># 约瑟夫环</a>
           
         </div>
       
@@ -479,7 +488,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/20/360手机刷xposed教程/" rel="next" title="360手机刷xposed教程">
+              <a href="/2018/04/20/360%E6%89%8B%E6%9C%BA%E5%88%B7xposed%E6%95%99%E7%A8%8B/" rel="next" title="360手机刷xposed教程">
                 <i class="fa fa-chevron-left"></i> 360手机刷xposed教程
               </a>
             
@@ -489,7 +498,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/07/听云记07/" rel="prev" title="听云记 柒">
+              <a href="/2018/06/07/%E5%90%AC%E4%BA%91%E8%AE%B007/" rel="prev" title="听云记 柒">
                 听云记 柒 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -520,7 +529,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -546,7 +555,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -556,8 +565,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -568,7 +579,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -590,7 +601,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -645,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍约瑟夫环的问题详细推导和理解"><span class="nav-number">1.</span> <span class="nav-text">本文介绍约瑟夫环的问题详细推导和理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#约瑟夫环问题"><span class="nav-number">1.2.</span> <span class="nav-text">约瑟夫环问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是约瑟夫环问题"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是约瑟夫环问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#约瑟夫环特例"><span class="nav-number">1.2.2.</span> <span class="nav-text">约瑟夫环特例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#q-2-n-2-k"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">q=2,n=2^k</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#q-2-n-任意数"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">q=2,n=任意数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#q＝任意数，n＝任意数"><span class="nav-number">1.2.3.</span> <span class="nav-text">ｑ＝任意数，ｎ＝任意数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实战一下"><span class="nav-number">1.2.4.</span> <span class="nav-text">实战一下</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.3.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8D%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E7%9A%84%E9%97%AE%E9%A2%98%E8%AF%A6%E7%BB%86%E6%8E%A8%E5%AF%BC%E5%92%8C%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">本文介绍约瑟夫环的问题详细推导和理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">约瑟夫环问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是约瑟夫环问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E7%89%B9%E4%BE%8B"><span class="nav-number">1.2.2.</span> <span class="nav-text">约瑟夫环特例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#q-x3D-2-n-x3D-2-k"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">q&#x3D;2,n&#x3D;2^k</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#q-x3D-2-n-x3D-%E4%BB%BB%E6%84%8F%E6%95%B0"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">q&#x3D;2,n&#x3D;任意数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#q%EF%BC%9D%E4%BB%BB%E6%84%8F%E6%95%B0%EF%BC%8Cn%EF%BC%9D%E4%BB%BB%E6%84%8F%E6%95%B0"><span class="nav-number">1.2.3.</span> <span class="nav-text">ｑ＝任意数，ｎ＝任意数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E6%88%98%E4%B8%80%E4%B8%8B"><span class="nav-number">1.2.4.</span> <span class="nav-text">实战一下</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.3.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -665,10 +676,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -679,19 +690,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -839,7 +850,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2018/04/26/约瑟夫环问题详解/';
+          this.page.url = 'http://tingyunsay.github.io/2018/04/26/%E7%BA%A6%E7%91%9F%E5%A4%AB%E7%8E%AF%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/';
           this.page.identifier = '2018/04/26/约瑟夫环问题详解/';
           this.page.title = '约瑟夫环问题详解';
         };

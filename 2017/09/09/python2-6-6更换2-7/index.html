@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="系统,python,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="python,系统," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,24 +90,25 @@
 
 
 <meta name="description" content="本文介绍为centos6.5更换python版本">
-<meta name="keywords" content="系统,python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python2.6.6更换2.7">
-<meta property="og:url" content="http://tingyunsay.github.io/2017/09/09/python2-6-6更换2-7/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2017/09/09/python2-6-6%E6%9B%B4%E6%8D%A22-7/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍为centos6.5更换python版本">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-19T13:54:50.774Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-09-09T07:18:09.000Z">
+<meta property="article:modified_time" content="2020-03-19T13:54:50.774Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="系统">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python2.6.6更换2.7">
-<meta name="twitter:description" content="本文介绍为centos6.5更换python版本">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -127,17 +129,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/09/09/python2-6-6更换2-7/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/09/09/python2-6-6更换2-7/"/>
 
 
 
 
 
   <title> python2.6.6更换2.7 | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -172,13 +174,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +210,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -218,7 +220,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -228,7 +230,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -238,7 +240,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -248,7 +250,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -258,7 +260,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -292,16 +294,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/09/09/python2-6-6更换2-7/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/09/09/python2-6-6%E6%9B%B4%E6%8D%A22-7/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -340,7 +342,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -351,7 +353,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/pyspider/" itemprop="url" rel="index">
                     <span itemprop="name">pyspider</span>
                   </a>
@@ -370,8 +372,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/09/python2-6-6更换2-7/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/09/python2-6-6更换2-7/" itemprop="commentCount"></span>
+                <a href="/2017/09/09/python2-6-6%E6%9B%B4%E6%8D%A22-7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/09/python2-6-6更换2-7/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,7 +382,7 @@
 
           
           
-             <span id="/2017/09/09/python2-6-6更换2-7/" class="leancloud_visitors" data-flag-title="python2.6.6更换2.7">
+             <span id="/2017/09/09/python2-6-6%E6%9B%B4%E6%8D%A22-7/" class="leancloud_visitors" data-flag-title="python2.6.6更换2.7">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -408,18 +411,26 @@
       
 
       
-        <h2 id="本文介绍为centos6-5更换python版本"><a href="#本文介绍为centos6-5更换python版本" class="headerlink" title="本文介绍为centos6.5更换python版本"></a>本文介绍为centos6.5更换python版本</h2><a id="more"></a>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本文接前一篇博文中提到的python2.6.6更换2.7，主要是针对配置pypsider需要注意的一些点所写的，包含了mysql / pycurl / sqlite3 等模块的安装</p>
-<h3 id="安装python2-7"><a href="#安装python2-7" class="headerlink" title="安装python2.7"></a>安装python2.7</h3><p>可以去python的<a href="https://www.python.org/ftp/python/" title="python" target="_blank" rel="noopener"><strong><font color="purple">ftp站点</font></strong></a>下载，如果觉得慢的换，我在csdn上传了一个<a href="http://download.csdn.net/download/tingyun_say/9739573" title="csdn" target="_blank" rel="noopener"><strong><font color="purple">python2.7.11版本</font></strong></a>供下载</p>
-<p>解压<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -jxvf Python-2.7.xx.tar.bz2</span><br></pre></td></tr></table></figure></p>
-<p>注: 这个时候千万不要急着去编译安装，<strong><font color="purple">首先将一些pyspider所用到的一些库的依赖安装好</font></strong>，否则你安好的python2.7也会在启动pyspider过程中报错<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install sqlite-devel -y</span><br><span class="line"></span><br><span class="line">yum -y install libcurl libcurl-devel</span><br></pre></td></tr></table></figure></p>
-<p>编译安装<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /Python-2.7.xx/</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>configure默认是将软件安装到/usr/local/bin/ 中，也可以手动指定路径 --prefix </span><br><span class="line">./configure</span><br><span class="line"></span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure></p>
-<p>替换掉yum的依赖<br>由于我们的yum依赖的是2.6.6版本的python，所以我们需要保存留下python2.6.6，并且在yum的头文件中指定引用到旧版本的python，如下操作<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mv /usr/bin/python /usr/bin/python2.6.6</span><br><span class="line"></span><br><span class="line">vi /usr/bin/yum</span><br><span class="line"><span class="meta">#</span>将第一行换成</span><br><span class="line"><span class="meta">#</span>!/usr/bin/python2.6.6</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>最后将新的py软链接到环境中</span><br><span class="line">ln -s /usr/local/bin/python /usr/bin/python</span><br></pre></td></tr></table></figure></p>
+        <h2 id="本文介绍为centos6-5更换python版本"><a href="#本文介绍为centos6-5更换python版本" class="headerlink" title="本文介绍为centos6.5更换python版本"></a>本文介绍为centos6.5更换python版本</h2><span id="more"></span>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本文接前一篇博文中提到的python2.6.6更换2.7，主要是针对配置pypsider需要注意的一些点所写的，包含了mysql &#x2F; pycurl &#x2F; sqlite3 等模块的安装</p>
+<h3 id="安装python2-7"><a href="#安装python2-7" class="headerlink" title="安装python2.7"></a>安装python2.7</h3><p>可以去python的<a target="_blank" rel="noopener" href="https://www.python.org/ftp/python/" title="python"><strong><font color="purple">ftp站点</font></strong></a>下载，如果觉得慢的换，我在csdn上传了一个<a target="_blank" rel="noopener" href="http://download.csdn.net/download/tingyun_say/9739573" title="csdn"><strong><font color="purple">python2.7.11版本</font></strong></a>供下载</p>
+<p>解压</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -jxvf Python-2.7.xx.tar.bz2</span><br></pre></td></tr></table></figure>
+<p>注: 这个时候千万不要急着去编译安装，**<font color="purple">首先将一些pyspider所用到的一些库的依赖安装好</font>**，否则你安好的python2.7也会在启动pyspider过程中报错</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install sqlite-devel -y</span><br><span class="line"></span><br><span class="line">yum -y install libcurl libcurl-devel</span><br></pre></td></tr></table></figure>
+<p>编译安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /Python-2.7.xx/</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">configure默认是将软件安装到/usr/local/bin/ 中，也可以手动指定路径 --prefix</span> </span><br><span class="line">./configure</span><br><span class="line"></span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>替换掉yum的依赖<br>由于我们的yum依赖的是2.6.6版本的python，所以我们需要保存留下python2.6.6，并且在yum的头文件中指定引用到旧版本的python，如下操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mv /usr/bin/python /usr/bin/python2.6.6</span><br><span class="line"></span><br><span class="line">vi /usr/bin/yum</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">将第一行换成</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/usr/bin/python2.6.6</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">最后将新的py软链接到环境中</span></span><br><span class="line">ln -s /usr/local/bin/python /usr/bin/python</span><br></pre></td></tr></table></figure>
 <p>这样一来yum即不会受影响</p>
-<h3 id="安装pip及其他包"><a href="#安装pip及其他包" class="headerlink" title="安装pip及其他包"></a>安装pip及其他包</h3><p>先去官网下载get-pip.py<br><a href="https://bootstrap.pypa.io/get-pip.py" target="_blank" rel="noopener">https://bootstrap.pypa.io/get-pip.py</a></p>
-<p>设定国内源，安装后续的软件包<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.pip</span><br><span class="line"></span><br><span class="line">touch ~/.pip/pip.conf</span><br><span class="line"></span><br><span class="line">vi ~/.pip/pip.conf</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>添加如下内容</span><br><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>这时候再安装pip，使用清华的源，不需等待</span><br><span class="line">python get-pip.py</span><br><span class="line"></span><br><span class="line">pip install -U setuptools</span><br><span class="line"></span><br><span class="line">pip install pyspider</span><br></pre></td></tr></table></figure></p>
-<p>如果有相关mysql的报错如下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: option --single-version-externally-managed not recognized</span><br></pre></td></tr></table></figure></p>
-<p>解决<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --egg mysql-connector-python-rf</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装pip及其他包"><a href="#安装pip及其他包" class="headerlink" title="安装pip及其他包"></a>安装pip及其他包</h3><p>先去官网下载get-pip.py<br><a target="_blank" rel="noopener" href="https://bootstrap.pypa.io/get-pip.py">https://bootstrap.pypa.io/get-pip.py</a></p>
+<p>设定国内源，安装后续的软件包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.pip</span><br><span class="line"></span><br><span class="line">touch ~/.pip/pip.conf</span><br><span class="line"></span><br><span class="line">vi ~/.pip/pip.conf</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">添加如下内容</span></span><br><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">这时候再安装pip，使用清华的源，不需等待</span></span><br><span class="line">python get-pip.py</span><br><span class="line"></span><br><span class="line">pip install -U setuptools</span><br><span class="line"></span><br><span class="line">pip install pyspider</span><br></pre></td></tr></table></figure>
+
+<p>如果有相关mysql的报错如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: option --single-version-externally-managed not recognized</span><br></pre></td></tr></table></figure>
+<p>解决</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --egg mysql-connector-python-rf</span><br></pre></td></tr></table></figure>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>至此，关于对应py2.7的pyspider已经安装完毕，可以尽情地去使用pyspider的分布式或单机搭建了</p>
 
       
@@ -450,9 +461,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/系统/" rel="tag"># 系统</a>
-          
             <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag"># 系统</a>
           
         </div>
       
@@ -465,7 +476,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/08/pyspider分布式部署/" rel="next" title="pyspider分布式部署">
+              <a href="/2017/09/08/pyspider%E5%88%86%E5%B8%83%E5%BC%8F%E9%83%A8%E7%BD%B2/" rel="next" title="pyspider分布式部署">
                 <i class="fa fa-chevron-left"></i> pyspider分布式部署
               </a>
             
@@ -475,7 +486,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/24/听云记/" rel="prev" title="听云记">
+              <a href="/2017/09/24/%E5%90%AC%E4%BA%91%E8%AE%B0/" rel="prev" title="听云记">
                 听云记 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -506,7 +517,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -532,7 +543,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -542,8 +553,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -554,7 +567,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -576,7 +589,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -631,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍为centos6-5更换python版本"><span class="nav-number">1.</span> <span class="nav-text">本文介绍为centos6.5更换python版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装python2-7"><span class="nav-number">1.2.</span> <span class="nav-text">安装python2.7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装pip及其他包"><span class="nav-number">1.3.</span> <span class="nav-text">安装pip及其他包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.4.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8D%E4%B8%BAcentos6-5%E6%9B%B4%E6%8D%A2python%E7%89%88%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">本文介绍为centos6.5更换python版本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85python2-7"><span class="nav-number">1.2.</span> <span class="nav-text">安装python2.7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85pip%E5%8F%8A%E5%85%B6%E4%BB%96%E5%8C%85"><span class="nav-number">1.3.</span> <span class="nav-text">安装pip及其他包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.4.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -651,10 +664,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -665,19 +678,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -825,7 +838,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2017/09/09/python2-6-6更换2-7/';
+          this.page.url = 'http://tingyunsay.github.io/2017/09/09/python2-6-6%E6%9B%B4%E6%8D%A22-7/';
           this.page.identifier = '2017/09/09/python2-6-6更换2-7/';
           this.page.title = 'python2.6.6更换2.7';
         };

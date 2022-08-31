@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="frp,花生壳,内网穿透,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="frp,花生壳,内网穿透," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,28 +90,30 @@
 
 
 <meta name="description" content="本文介绍内网穿透的几种实践方法">
-<meta name="keywords" content="frp,花生壳,内网穿透">
 <meta property="og:type" content="article">
 <meta property="og:title" content="内网穿透">
-<meta property="og:url" content="http://tingyunsay.github.io/2018/08/13/内网穿透/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍内网穿透的几种实践方法">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://tingyunsay.github.io/2018/08/13/内网穿透/1.png">
-<meta property="og:image" content="http://tingyunsay.github.io/2018/08/13/内网穿透/2.png">
-<meta property="og:image" content="http://tingyunsay.github.io/2018/08/13/内网穿透/3.png">
-<meta property="og:updated_time" content="2020-03-19T16:25:15.348Z">
+<meta property="og:locale">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//2.png">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//3.png">
+<meta property="article:published_time" content="2018-08-13T02:42:56.000Z">
+<meta property="article:modified_time" content="2020-03-19T16:25:15.348Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="frp">
+<meta property="article:tag" content="花生壳">
+<meta property="article:tag" content="内网穿透">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="内网穿透">
-<meta name="twitter:description" content="本文介绍内网穿透的几种实践方法">
-<meta name="twitter:image" content="http://tingyunsay.github.io/2018/08/13/内网穿透/1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -131,17 +134,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2018/08/13/内网穿透/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2018/08/13/内网穿透/"/>
 
 
 
 
 
   <title> 内网穿透 | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -176,13 +179,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -212,7 +215,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -222,7 +225,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -232,7 +235,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -242,7 +245,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -252,7 +255,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -262,7 +265,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -296,16 +299,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/08/13/内网穿透/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -344,7 +347,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -355,8 +358,8 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/内网穿透/" itemprop="url" rel="index">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" itemprop="url" rel="index">
                     <span itemprop="name">内网穿透</span>
                   </a>
                 </span>
@@ -374,8 +377,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/13/内网穿透/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/13/内网穿透/" itemprop="commentCount"></span>
+                <a href="/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/08/13/内网穿透/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -383,7 +387,7 @@
 
           
           
-             <span id="/2018/08/13/内网穿透/" class="leancloud_visitors" data-flag-title="内网穿透">
+             <span id="/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="leancloud_visitors" data-flag-title="内网穿透">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -412,34 +416,43 @@
       
 
       
-        <h3 id="本文介绍内网穿透的几种实践方法"><a href="#本文介绍内网穿透的几种实践方法" class="headerlink" title="本文介绍内网穿透的几种实践方法"></a>本文介绍内网穿透的几种实践方法</h3><a id="more"></a>
+        <h3 id="本文介绍内网穿透的几种实践方法"><a href="#本文介绍内网穿透的几种实践方法" class="headerlink" title="本文介绍内网穿透的几种实践方法"></a>本文介绍内网穿透的几种实践方法</h3><span id="more"></span>
 <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>之前有一个需求是这样：一个网络，其不是能够使用 vpn 直连接的内网，也就是说那个网络只是一个路由器连着里面一堆的机器，即一个正常的办公用的网络。我需要操作这个路由器中的某一台电脑，在上面部署环境测试代码等等操作<br>开始的解决方法：teamviewer<br>不足：实在太慢，而且不定时断开连接，无法有效快速地进行操作</p>
 <p>于是在网上搜索了有什么更好的方案，定位到两个东西：frp &amp;&amp; 花生壳<br>若要再具体地说，两者在应用上有不同之处，比如：花生壳主要应用于个人小站能挂在自己的内网电脑上，对公网提供 web 访问服务；frp 则更强大一点，能支持内网的 web 服务访问，以及 ssh 访问，其他功能</p>
 <h3 id="frp"><a href="#frp" class="headerlink" title="frp"></a>frp</h3><h4 id="什么是-frp"><a href="#什么是-frp" class="headerlink" title="什么是 frp"></a>什么是 frp</h4><p>frp 是一个高性能的<strong>反向代理应用</strong>，可以帮助您轻松地进行<strong>内网穿透，对外网提供服务</strong>，支持 tcp, http, https 等协议类型，并且 web 服务支持根据域名进行路由转发。</p>
-<h4 id="准备原料"><a href="#准备原料" class="headerlink" title="准备原料"></a>准备原料</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">一个公网ip （可通过购买云服务器获得）</span><br><span class="line">一台内网机器</span><br><span class="line"></span><br><span class="line">#可有可无</span><br><span class="line">一个域名 （当你想直接使用域名对外提供服务，则需要这一项，万网上可购）</span><br></pre></td></tr></table></figure>
-<h4 id="部署-frp"><a href="#部署-frp" class="headerlink" title="部署 frp"></a>部署 frp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">项目地址：https://github.com/fatedier/frp</span><br><span class="line"></span><br><span class="line">#项目下载地址</span><br><span class="line">release地址：https://github.com/fatedier/frp/releases</span><br></pre></td></tr></table></figure>
-<p>frp 分成两个可执行文件：server 端 和 client 端，所以简单地来说：<strong>我们只需要分别在我们的机器上下载这两个东西，设定好相关配置，然后运行起来即可</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将 frps 及 frps.ini 放到具有公网 IP 的机器上</span><br><span class="line"></span><br><span class="line">将 frpc 及 frpc.ini 放到处于内网环境的机器上</span><br></pre></td></tr></table></figure></p>
+<h4 id="准备原料"><a href="#准备原料" class="headerlink" title="准备原料"></a>准备原料</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">一个公网ip （可通过购买云服务器获得）</span><br><span class="line">一台内网机器</span><br><span class="line"></span><br><span class="line">#可有可无</span><br><span class="line">一个域名 （当你想直接使用域名对外提供服务，则需要这一项，万网上可购）</span><br></pre></td></tr></table></figure>
+<h4 id="部署-frp"><a href="#部署-frp" class="headerlink" title="部署 frp"></a>部署 frp</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">项目地址：https://github.com/fatedier/frp</span><br><span class="line"></span><br><span class="line">#项目下载地址</span><br><span class="line">release地址：https://github.com/fatedier/frp/releases</span><br></pre></td></tr></table></figure>
+<p>frp 分成两个可执行文件：server 端 和 client 端，所以简单地来说：<strong>我们只需要分别在我们的机器上下载这两个东西，设定好相关配置，然后运行起来即可</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将 frps 及 frps.ini 放到具有公网 IP 的机器上</span><br><span class="line"></span><br><span class="line">将 frpc 及 frpc.ini 放到处于内网环境的机器上</span><br></pre></td></tr></table></figure>
 <p>注：mac 版本的包是带有 darwin_amd64 字样的，其他根据你的系统版本来选择，推荐选择 v0.20.0 版本</p>
-<h4 id="配置并启动-frp"><a href="#配置并启动-frp" class="headerlink" title="配置并启动 frp"></a>配置并启动 frp</h4><p>下载完 frp 包，解压完的文件如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frpc	frpc_full.ini	frpc.ini</span><br><span class="line">frps	frps_full.ini   frps.ini</span><br><span class="line">LICENSE</span><br></pre></td></tr></table></figure></p>
+<h4 id="配置并启动-frp"><a href="#配置并启动-frp" class="headerlink" title="配置并启动 frp"></a>配置并启动 frp</h4><p>下载完 frp 包，解压完的文件如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">frpc	frpc_full.ini	frpc.ini</span><br><span class="line">frps	frps_full.ini   frps.ini</span><br><span class="line">LICENSE</span><br></pre></td></tr></table></figure>
 <p>其中 frpc_full.ini 和 frps_full.ini 是全量的配置，你可以根据你需要的功能配置，本文只讨论 ssh 和 web 服务的相关配置</p>
-<h5 id="在公网机器-frps-服务端-的配置"><a href="#在公网机器-frps-服务端-的配置" class="headerlink" title="在公网机器 (frps 服务端) 的配置"></a>在公网机器 (frps 服务端) 的配置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">#提供服务的http端口</span><br><span class="line">vhost_http_port = 8080</span><br><span class="line"></span><br><span class="line">#web管理页面的port</span><br><span class="line">dashboard_addr = 0.0.0.0</span><br><span class="line">dashboard_port = 7500</span><br><span class="line">#web管理页面登录的账号密码</span><br><span class="line">dashboard_user = admin</span><br><span class="line">dashboard_pwd = admin</span><br><span class="line"></span><br><span class="line">#不认证时差，如果你在国外的机器，时间不同会导致连接失败，设定这项可以解决时差问题</span><br><span class="line">authentication_timeout = 0</span><br><span class="line"></span><br><span class="line">log_level = debug</span><br></pre></td></tr></table></figure>
-<p>执行如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &amp;</span><br></pre></td></tr></table></figure></p>
+<h5 id="在公网机器-frps-服务端-的配置"><a href="#在公网机器-frps-服务端-的配置" class="headerlink" title="在公网机器 (frps 服务端) 的配置"></a>在公网机器 (frps 服务端) 的配置</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">#提供服务的http端口</span><br><span class="line">vhost_http_port = 8080</span><br><span class="line"></span><br><span class="line">#web管理页面的port</span><br><span class="line">dashboard_addr = 0.0.0.0</span><br><span class="line">dashboard_port = 7500</span><br><span class="line">#web管理页面登录的账号密码</span><br><span class="line">dashboard_user = admin</span><br><span class="line">dashboard_pwd = admin</span><br><span class="line"></span><br><span class="line">#不认证时差，如果你在国外的机器，时间不同会导致连接失败，设定这项可以解决时差问题</span><br><span class="line">authentication_timeout = 0</span><br><span class="line"></span><br><span class="line">log_level = debug</span><br></pre></td></tr></table></figure>
+<p>执行如下命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./frps -c frps.ini &amp;</span><br></pre></td></tr></table></figure>
 <p>服务端设定好了并启动，那么客户端才是我们真正要部署业务的地方，随我们怎么折腾了</p>
-<h5 id="在内网机器-frpc-客户端-上配置"><a href="#在内网机器-frpc-客户端-上配置" class="headerlink" title="在内网机器 (frpc 客户端) 上配置"></a>在内网机器 (frpc 客户端) 上配置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">#公网ip/port 确保没有被占用</span><br><span class="line">server_addr = 45.32.28.112</span><br><span class="line">server_port = 7000</span><br><span class="line"></span><br><span class="line">#这是用于管理员可以使用客户端的一些命令如：./frpc status/reload/stop 的配置</span><br><span class="line">admin_addr = 0.0.0.0</span><br><span class="line">admin_port = 7400</span><br><span class="line"></span><br><span class="line">log_level = debug</span><br><span class="line"></span><br><span class="line">#ssh服务</span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 6000</span><br><span class="line"></span><br><span class="line">[web02]</span><br><span class="line">type = http</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">#这是内网机器对外提供服务的端口</span><br><span class="line">local_port = 5100</span><br><span class="line">#若没有域名则此项省略</span><br><span class="line">custom_domains = www.tingyun.ink</span><br></pre></td></tr></table></figure>
-<p>如果你配置了以上 admin_addr / admin_port，可以使用以下查看客户端状态：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1./frpc status</span><br><span class="line">Proxy Status...</span><br><span class="line">TCP</span><br><span class="line">Name  Status   LocalAddr     Plugin  RemoteAddr         Error</span><br><span class="line">ssh   running  127.0.0.1:22          45.32.28.112:6000</span><br><span class="line"></span><br><span class="line">HTTP</span><br><span class="line">Name   Status   LocalAddr       Plugin  RemoteAddr            Error</span><br><span class="line">web02  running  127.0.0.1:5100          www.tingyun.ink:8080</span><br></pre></td></tr></table></figure></p>
-<h5 id="测试使用"><a href="#测试使用" class="headerlink" title="测试使用"></a>测试使用</h5><h6 id="登录-ssh"><a href="#登录-ssh" class="headerlink" title="登录 ssh"></a>登录 ssh</h6><p><img src="/2018/08/13/内网穿透/1.png" alt="示例图1"></p>
-<h6 id="提供-web-服务"><a href="#提供-web-服务" class="headerlink" title="提供 web 服务"></a>提供 web 服务</h6><p><img src="/2018/08/13/内网穿透/2.png" alt="示例图2"></p>
+<h5 id="在内网机器-frpc-客户端-上配置"><a href="#在内网机器-frpc-客户端-上配置" class="headerlink" title="在内网机器 (frpc 客户端) 上配置"></a>在内网机器 (frpc 客户端) 上配置</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">#公网ip/port 确保没有被占用</span><br><span class="line">server_addr = 45.32.28.112</span><br><span class="line">server_port = 7000</span><br><span class="line"></span><br><span class="line">#这是用于管理员可以使用客户端的一些命令如：./frpc status/reload/stop 的配置</span><br><span class="line">admin_addr = 0.0.0.0</span><br><span class="line">admin_port = 7400</span><br><span class="line"></span><br><span class="line">log_level = debug</span><br><span class="line"></span><br><span class="line">#ssh服务</span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 6000</span><br><span class="line"></span><br><span class="line">[web02]</span><br><span class="line">type = http</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">#这是内网机器对外提供服务的端口</span><br><span class="line">local_port = 5100</span><br><span class="line">#若没有域名则此项省略</span><br><span class="line">custom_domains = www.tingyun.ink</span><br></pre></td></tr></table></figure>
+<p>如果你配置了以上 admin_addr &#x2F; admin_port，可以使用以下查看客户端状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1./frpc status</span><br><span class="line">Proxy Status...</span><br><span class="line">TCP</span><br><span class="line">Name  Status   LocalAddr     Plugin  RemoteAddr         Error</span><br><span class="line">ssh   running  127.0.0.1:22          45.32.28.112:6000</span><br><span class="line"></span><br><span class="line">HTTP</span><br><span class="line">Name   Status   LocalAddr       Plugin  RemoteAddr            Error</span><br><span class="line">web02  running  127.0.0.1:5100          www.tingyun.ink:8080</span><br></pre></td></tr></table></figure>
+<h5 id="测试使用"><a href="#测试使用" class="headerlink" title="测试使用"></a>测试使用</h5><h6 id="登录-ssh"><a href="#登录-ssh" class="headerlink" title="登录 ssh"></a>登录 ssh</h6><p><img src="/.io//1.png" alt="示例图1"></p>
+<h6 id="提供-web-服务"><a href="#提供-web-服务" class="headerlink" title="提供 web 服务"></a>提供 web 服务</h6><p><img src="/.io//2.png" alt="示例图2"></p>
 <p>到此，frp 服务已经正常使用</p>
-<h3 id="花生壳"><a href="#花生壳" class="headerlink" title="花生壳"></a>花生壳</h3><h4 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h4><p>由于花生壳是一个商业化的东西，其他东西不多作了解，单说说其中的：内网穿透 服务<br>登录花生壳官网，直接进入这个页面：<a href="https://www.oray.com/activity/140902/?icn=oray_140902&amp;ici=hsk_home-grid" target="_blank" rel="noopener">https://www.oray.com/activity/140902/?icn=oray_140902&amp;ici=hsk_home-grid</a><br>需要花 6 块钱购买体验版的内网穿透服务，之后你在可以在你的有公网 ip 的服务器上下载它的客户端</p>
-<p>在 <a href="https://hsk.oray.com/download/" target="_blank" rel="noopener">https://hsk.oray.com/download/</a> 中选择对应的版本下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#ubuntu</span><br><span class="line">dpkg -i phddns_3.0_x86_64.deb</span><br><span class="line"></span><br><span class="line">#centos</span><br><span class="line">rpm -ivh phddns-3.0.2.x86_64.rpm</span><br></pre></td></tr></table></figure></p>
-<p>安装完成后启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phddns start</span><br></pre></td></tr></table></figure></p>
-<p>提示启动 success 即可，查看当前状态<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phddns status</span><br></pre></td></tr></table></figure></p>
+<h3 id="花生壳"><a href="#花生壳" class="headerlink" title="花生壳"></a>花生壳</h3><h4 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h4><p>由于花生壳是一个商业化的东西，其他东西不多作了解，单说说其中的：内网穿透 服务<br>登录花生壳官网，直接进入这个页面：<a target="_blank" rel="noopener" href="https://www.oray.com/activity/140902/?icn=oray_140902&ici=hsk_home-grid">https://www.oray.com/activity/140902/?icn=oray_140902&amp;ici&#x3D;hsk_home-grid</a><br>需要花 6 块钱购买体验版的内网穿透服务，之后你在可以在你的有公网 ip 的服务器上下载它的客户端</p>
+<p>在 <a target="_blank" rel="noopener" href="https://hsk.oray.com/download/">https://hsk.oray.com/download/</a> 中选择对应的版本下载</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#ubuntu</span><br><span class="line">dpkg -i phddns_3.0_x86_64.deb</span><br><span class="line"></span><br><span class="line">#centos</span><br><span class="line">rpm -ivh phddns-3.0.2.x86_64.rpm</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phddns start</span><br></pre></td></tr></table></figure>
+<p>提示启动 success 即可，查看当前状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phddns status</span><br></pre></td></tr></table></figure>
 <p>显示如下图即可</p>
-<p><img src="/2018/08/13/内网穿透/3.png" alt="示例图3"></p>
-<h4 id="花生壳页面管理"><a href="#花生壳页面管理" class="headerlink" title="花生壳页面管理"></a>花生壳页面管理</h4><p>之后，我们拷贝上图中的 SN 码作为账号 ， 进如这个网页：<a href="http://b.oray.com/" target="_blank" rel="noopener">http://b.oray.com</a> ，使用默认密码：admin 登录</p>
-<p>点击左侧栏的内网穿透，然后再点击右边的 <strong>添加映射</strong><br>花生壳给你自动分配了一个免费的域名，你只需要选择：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">你客户端机器的公网ip（路由器ip）</span><br><span class="line"></span><br><span class="line">机器提供服务的端口</span><br></pre></td></tr></table></figure></p>
-<p>原理：<br>　　这貌似是公网版的内网穿透，其仅仅作了一层 dns，因为我使用的那台服务器有一个公网地址，还有一个内网地址，这里我是直接使用 <strong>公网 ip+port + 花生壳的域名</strong> 来访问到内部的服务</p>
-<p>在网上貌似查到了<a href="https://www.jianshu.com/p/a3cda7d1ca63" target="_blank" rel="noopener"><strong>内网版的使用教程</strong></a>，其原理大致如下：<br>　　在内网中启动花生壳的客户端，配置好域名（花生壳分配给你的），本机的内网 ip + port ， 然后在外部就能通过域名访问了<br>　　其实原理和 frp 类似，只不过花生壳自己作为了一个服务器端，我们的所有请求先通过花生壳的域名 –》 花生壳解析这个域名，找到客户端，且两者之间已经建立了一条通道 –》 对域名的请求会被转发到客户端上，客户端应答，返回消息给服务端，服务端最后再展现在这个域名上</p>
+<p><img src="/.io//3.png" alt="示例图3"></p>
+<h4 id="花生壳页面管理"><a href="#花生壳页面管理" class="headerlink" title="花生壳页面管理"></a>花生壳页面管理</h4><p>之后，我们拷贝上图中的 SN 码作为账号 ， 进如这个网页：<a target="_blank" rel="noopener" href="http://b.oray.com/">http://b.oray.com</a> ，使用默认密码：admin 登录</p>
+<p>点击左侧栏的内网穿透，然后再点击右边的 <strong>添加映射</strong><br>花生壳给你自动分配了一个免费的域名，你只需要选择：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">你客户端机器的公网ip（路由器ip）</span><br><span class="line"></span><br><span class="line">机器提供服务的端口</span><br></pre></td></tr></table></figure>
+<p>原理：<br>　　这貌似是公网版的内网穿透，其仅仅作了一层 dns，因为我使用的那台服务器有一个公网地址，还有一个内网地址，这里我是直接使用 <strong>公网 ip+port + 花生壳的域名</strong> 来访问到内部的服务</p>
+<p>在网上貌似查到了<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a3cda7d1ca63"><strong>内网版的使用教程</strong></a>，其原理大致如下：<br>　　在内网中启动花生壳的客户端，配置好域名（花生壳分配给你的），本机的内网 ip + port ， 然后在外部就能通过域名访问了<br>　　其实原理和 frp 类似，只不过花生壳自己作为了一个服务器端，我们的所有请求先通过花生壳的域名 –》 花生壳解析这个域名，找到客户端，且两者之间已经建立了一条通道 –》 对域名的请求会被转发到客户端上，客户端应答，返回消息给服务端，服务端最后再展现在这个域名上</p>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>在网上还看见很多其他的解决方案，如：ngrok ， 直接配置路由器端口转发 ， 等后续自己要建站的时候再去研究吧.<br>推荐使用 frp，最好你在国内的云服务商购买了服务器，不推荐花生壳.</p>
 
       
@@ -472,9 +485,9 @@
           
             <a href="/tags/frp/" rel="tag"># frp</a>
           
-            <a href="/tags/花生壳/" rel="tag"># 花生壳</a>
+            <a href="/tags/%E8%8A%B1%E7%94%9F%E5%A3%B3/" rel="tag"># 花生壳</a>
           
-            <a href="/tags/内网穿透/" rel="tag"># 内网穿透</a>
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" rel="tag"># 内网穿透</a>
           
         </div>
       
@@ -487,7 +500,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/10/多git账号配置问题解决/" rel="next" title="多git账号配置问题解决">
+              <a href="/2018/08/10/%E5%A4%9Agit%E8%B4%A6%E5%8F%B7%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" rel="next" title="多git账号配置问题解决">
                 <i class="fa fa-chevron-left"></i> 多git账号配置问题解决
               </a>
             
@@ -497,7 +510,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/14/安全搭建squid代理集群/" rel="prev" title="安全搭建squid代理集群">
+              <a href="/2019/01/14/%E5%AE%89%E5%85%A8%E6%90%AD%E5%BB%BAsquid%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4/" rel="prev" title="安全搭建squid代理集群">
                 安全搭建squid代理集群 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -528,7 +541,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -554,7 +567,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -564,8 +577,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -576,7 +591,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -598,7 +613,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -653,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文介绍内网穿透的几种实践方法"><span class="nav-number">1.</span> <span class="nav-text">本文介绍内网穿透的几种实践方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#frp"><span class="nav-number">3.</span> <span class="nav-text">frp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是-frp"><span class="nav-number">3.1.</span> <span class="nav-text">什么是 frp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#准备原料"><span class="nav-number">3.2.</span> <span class="nav-text">准备原料</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署-frp"><span class="nav-number">3.3.</span> <span class="nav-text">部署 frp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置并启动-frp"><span class="nav-number">3.4.</span> <span class="nav-text">配置并启动 frp</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在公网机器-frps-服务端-的配置"><span class="nav-number">3.4.1.</span> <span class="nav-text">在公网机器 (frps 服务端) 的配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在内网机器-frpc-客户端-上配置"><span class="nav-number">3.4.2.</span> <span class="nav-text">在内网机器 (frpc 客户端) 上配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#测试使用"><span class="nav-number">3.4.3.</span> <span class="nav-text">测试使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#登录-ssh"><span class="nav-number">3.4.3.1.</span> <span class="nav-text">登录 ssh</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#提供-web-服务"><span class="nav-number">3.4.3.2.</span> <span class="nav-text">提供 web 服务</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#花生壳"><span class="nav-number">4.</span> <span class="nav-text">花生壳</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#客户端配置"><span class="nav-number">4.1.</span> <span class="nav-text">客户端配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#花生壳页面管理"><span class="nav-number">4.2.</span> <span class="nav-text">花生壳页面管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">5.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8D%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E7%9A%84%E5%87%A0%E7%A7%8D%E5%AE%9E%E8%B7%B5%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">本文介绍内网穿透的几种实践方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#frp"><span class="nav-number">3.</span> <span class="nav-text">frp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-frp"><span class="nav-number">3.1.</span> <span class="nav-text">什么是 frp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%8E%9F%E6%96%99"><span class="nav-number">3.2.</span> <span class="nav-text">准备原料</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2-frp"><span class="nav-number">3.3.</span> <span class="nav-text">部署 frp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%90%AF%E5%8A%A8-frp"><span class="nav-number">3.4.</span> <span class="nav-text">配置并启动 frp</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9C%A8%E5%85%AC%E7%BD%91%E6%9C%BA%E5%99%A8-frps-%E6%9C%8D%E5%8A%A1%E7%AB%AF-%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">3.4.1.</span> <span class="nav-text">在公网机器 (frps 服务端) 的配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9C%A8%E5%86%85%E7%BD%91%E6%9C%BA%E5%99%A8-frpc-%E5%AE%A2%E6%88%B7%E7%AB%AF-%E4%B8%8A%E9%85%8D%E7%BD%AE"><span class="nav-number">3.4.2.</span> <span class="nav-text">在内网机器 (frpc 客户端) 上配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8"><span class="nav-number">3.4.3.</span> <span class="nav-text">测试使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%99%BB%E5%BD%95-ssh"><span class="nav-number">3.4.3.1.</span> <span class="nav-text">登录 ssh</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%8F%90%E4%BE%9B-web-%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.4.3.2.</span> <span class="nav-text">提供 web 服务</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%B1%E7%94%9F%E5%A3%B3"><span class="nav-number">4.</span> <span class="nav-text">花生壳</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-number">4.1.</span> <span class="nav-text">客户端配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8A%B1%E7%94%9F%E5%A3%B3%E9%A1%B5%E9%9D%A2%E7%AE%A1%E7%90%86"><span class="nav-number">4.2.</span> <span class="nav-text">花生壳页面管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">5.</span> <span class="nav-text">End</span></a></li></ol></div>
             
 
           </div>
@@ -673,10 +688,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -687,19 +702,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -847,7 +862,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2018/08/13/内网穿透/';
+          this.page.url = 'http://tingyunsay.github.io/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/';
           this.page.identifier = '2018/08/13/内网穿透/';
           this.page.title = '内网穿透';
         };

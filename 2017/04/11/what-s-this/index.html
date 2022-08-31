@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="sphinx,搜索引擎,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="sphinx,搜索引擎," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,24 +90,25 @@
 
 
 <meta name="description" content="本文主要介绍Sphinx，并进行安装和简单使用">
-<meta name="keywords" content="sphinx,搜索引擎">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sphinx初识">
 <meta property="og:url" content="http://tingyunsay.github.io/2017/04/11/what-s-this/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文主要介绍Sphinx，并进行安装和简单使用">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-19T13:54:50.762Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-04-11T12:17:23.000Z">
+<meta property="article:modified_time" content="2020-03-19T13:54:50.762Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="sphinx">
+<meta property="article:tag" content="搜索引擎">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sphinx初识">
-<meta name="twitter:description" content="本文主要介绍Sphinx，并进行安装和简单使用">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -127,17 +129,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/04/11/what-s-this/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/04/11/what-s-this/"/>
 
 
 
 
 
   <title> sphinx初识 | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -172,13 +174,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +210,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -218,7 +220,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -228,7 +230,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -238,7 +240,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -248,7 +250,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -258,7 +260,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -292,16 +294,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/04/11/what-s-this/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -340,7 +342,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -351,7 +353,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/sphinx/" itemprop="url" rel="index">
                     <span itemprop="name">sphinx</span>
                   </a>
@@ -371,7 +373,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/04/11/what-s-this/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/04/11/what-s-this/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/04/11/what-s-this/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -408,26 +411,40 @@
       
 
       
-        <h2 id="本文主要介绍Sphinx，并进行安装和简单使用"><a href="#本文主要介绍Sphinx，并进行安装和简单使用" class="headerlink" title="本文主要介绍Sphinx，并进行安装和简单使用"></a>本文主要介绍Sphinx，并进行安装和简单使用</h2><a id="more"></a>
+        <h2 id="本文主要介绍Sphinx，并进行安装和简单使用"><a href="#本文主要介绍Sphinx，并进行安装和简单使用" class="headerlink" title="本文主要介绍Sphinx，并进行安装和简单使用"></a>本文主要介绍Sphinx，并进行安装和简单使用</h2><span id="more"></span>
+
 <h3 id="全文检索"><a href="#全文检索" class="headerlink" title="全文检索"></a>全文检索</h3><p>是指以文档的<font color="red"><strong>全部文本信息</strong></font>作为检索对象的一种信息检索技术。检索的对象有可能是文章的标题，或者作者，或者摘要,内容等</p>
 <h3 id="Sphinx简介"><a href="#Sphinx简介" class="headerlink" title="Sphinx简介"></a>Sphinx简介</h3><p>Sphinx是一个基于SQL的全文检索引擎，可以结合MySQL，postgreSQL做全文搜索。能提供比数据库本身更专业的搜索功能，使得应用程序更容易实现专业化的全文检索。</p>
 <p>Sphinx特别为一些脚本语言设计搜索API接口，如PHP, <font color="black"><strong>Python</strong></font>, Perl, Ruby….同时也为MySQL设计了一个存储引擎插件</p>
-<h3 id="Sphinx特性"><a href="#Sphinx特性" class="headerlink" title="Sphinx特性"></a>Sphinx特性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">高速索引	10MB/s</span><br><span class="line">高速搜索	2~4G的文件中平均查询速度不到0.1s</span><br><span class="line">高可用性	单CPU上最大可支持100GB的文本，100M的文档</span><br><span class="line"></span><br><span class="line">提供良好的相关性排名</span><br><span class="line">支持分布式搜索</span><br><span class="line">提供文档摘要生成</span><br><span class="line">提供从MySQL内部的插件式存储引擎上搜索</span><br><span class="line">支持布尔，短语，和近义词查询</span><br><span class="line">支持每个文档多个全文搜索域（默认最大32个）</span><br><span class="line">支持每个文档多属性</span><br><span class="line">支持断词</span><br><span class="line">支持单字节编码与utf-8编码</span><br><span class="line"></span><br><span class="line">注:</span><br><span class="line">支持MySQL（MyISAM和InnoDB表都支持）</span><br><span class="line">支持PostgreSQL</span><br></pre></td></tr></table></figure>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>参考sphinx wiki,deb文件安装即可. <a href="http://sphinxsearch.com/downloads/" target="_blank" rel="noopener"><font color="red"><strong>点此下载</strong></font></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i sphinxsearch_2.2.11-release-1-xenial_amd64.deb</span><br></pre></td></tr></table></figure></p>
+<h3 id="Sphinx特性"><a href="#Sphinx特性" class="headerlink" title="Sphinx特性"></a>Sphinx特性</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">高速索引	10MB/s</span><br><span class="line">高速搜索	2~4G的文件中平均查询速度不到0.1s</span><br><span class="line">高可用性	单CPU上最大可支持100GB的文本，100M的文档</span><br><span class="line"></span><br><span class="line">提供良好的相关性排名</span><br><span class="line">支持分布式搜索</span><br><span class="line">提供文档摘要生成</span><br><span class="line">提供从MySQL内部的插件式存储引擎上搜索</span><br><span class="line">支持布尔，短语，和近义词查询</span><br><span class="line">支持每个文档多个全文搜索域（默认最大32个）</span><br><span class="line">支持每个文档多属性</span><br><span class="line">支持断词</span><br><span class="line">支持单字节编码与utf-8编码</span><br><span class="line"></span><br><span class="line">注:</span><br><span class="line">支持MySQL（MyISAM和InnoDB表都支持）</span><br><span class="line">支持PostgreSQL</span><br></pre></td></tr></table></figure>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>参考sphinx wiki,deb文件安装即可. <a target="_blank" rel="noopener" href="http://sphinxsearch.com/downloads/"><font color="red"><strong>点此下载</strong></font></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i sphinxsearch_2.2.11-release-1-xenial_amd64.deb</span><br></pre></td></tr></table></figure>
 <p>到这里sphinx安装完成，我们需要使用<font color="black"><strong>sphinx-quickstart</strong></font>来完成我们的初始化配置。<br>其中会要求你回答很多的问题，比如根目录的位置，采用什么文本格式….但大部分都选择默认即可，不需要的扩展功能先选择N即可.<br>这个我后来发现并不是我们需要的东西，这个sphinx-quickstart是基于sphinx的一个文档管理生成工具，之后再去了解。</p>
-<h3 id="配置Sphinx"><a href="#配置Sphinx" class="headerlink" title="配置Sphinx"></a>配置Sphinx</h3><p>找到<strong>/etc/sphinxsearch/sphinx.conf</strong>这个文件，直接对其进行编辑即可</p>
-<p>使用vi进入文件，总体配置大致能看到如下这个结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">source 源名称1&#123;</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br><span class="line">index 索引名称1&#123;</span><br><span class="line">	 source=源名称1</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">source 源名称2&#123;</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br><span class="line">index 索引名称2&#123;</span><br><span class="line">	 source = 源名称2</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">indexer&#123;</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br><span class="line">searchd&#123;</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="配置Sphinx"><a href="#配置Sphinx" class="headerlink" title="配置Sphinx"></a>配置Sphinx</h3><p>找到**&#x2F;etc&#x2F;sphinxsearch&#x2F;sphinx.conf**这个文件，直接对其进行编辑即可</p>
+<p>使用vi进入文件，总体配置大致能看到如下这个结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">source 源名称1&#123;</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br><span class="line">index 索引名称1&#123;</span><br><span class="line">	 source=源名称1</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">source 源名称2&#123;</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br><span class="line">index 索引名称2&#123;</span><br><span class="line">	 source = 源名称2</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">indexer&#123;</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br><span class="line">searchd&#123;</span><br><span class="line">	 …</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <p>从结构上我们可以看出来，sphinx支持多个索引与数据源，只需要你在配置文件中一一对应好即可。不同的索引与数据源可以应用到不同表或不同应用文件的全文搜索。</p>
-<p>我们根据这个格式来配置一份自己的索引和数据源,命名为tingyun<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">source tingyun&#123;</span><br><span class="line">		type 			= mysql</span><br><span class="line">		</span><br><span class="line">		sql_host 		= localhost</span><br><span class="line">		sql_user 		= root		#账号</span><br><span class="line">		sql_pass 		= xxxxxx	#密码</span><br><span class="line">		sql_db 			= test		#数据库</span><br><span class="line">		sql_port		= 3306 # optional, default is 3306</span><br><span class="line">		sql_query_pre		=  SET NAMES utf8</span><br><span class="line"></span><br><span class="line">		sql_query 		=  SELECT * FROM yourtablename	#sql语句</span><br><span class="line">		#sql_query 		= SELECT * FROM yourtablename </span><br><span class="line">		sql_attr_uint		= CATALOGID</span><br><span class="line">		sql_attr_uint		= EDITUSERID</span><br><span class="line">		sql_attr_uint 		= HITS</span><br><span class="line">		sql_attr_timestamp 	= ADDTIME</span><br><span class="line">		</span><br><span class="line">		sql_query_post  	=</span><br><span class="line">		sql_ranged_throttle	= 0</span><br><span class="line">		#sql_query_info 	= SELECT * FROM a.eht_news_articles WHERE ARTICLESID=$id</span><br><span class="line">		&#125;</span><br><span class="line">index tingyun_index&#123;</span><br><span class="line">		source 			= tingyun</span><br><span class="line">		path 			= /var/lib/sphinxsearch/data/tingyun_index</span><br><span class="line">		charset_type 		= utf-8</span><br><span class="line">		ngram_len 			= 1</span><br><span class="line">		ngram_chars 		= U+3000..U+2FA1F</span><br><span class="line">		&#125;</span><br><span class="line">indexer&#123;</span><br><span class="line">		mem_limit 		= 128M</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">searchd&#123;</span><br><span class="line">		listen    		= 9312</span><br><span class="line">		listen         		= 9306:mysql41</span><br><span class="line">		log			= /var/log/sphinxsearch/searchd.log</span><br><span class="line">		query_log		= /var/log/sphinxsearch/query.log</span><br><span class="line">		read_timeout		= 5</span><br><span class="line">		client_timeout		= 300</span><br><span class="line">		max_children  		= 30</span><br><span class="line">		seamless_rotate     	= 1</span><br><span class="line">		preopen_indexes     	= 1</span><br><span class="line">		unlink_old      	= 1</span><br><span class="line">		workers         	= threads</span><br><span class="line">		pid_file   		= /var/run/sphinxsearch/searchd.pid</span><br><span class="line">		max_matches   		= 1000</span><br><span class="line">		seamless_rotate 	= 1</span><br><span class="line">		binlog_path      	= /var/lib/sphinxsearch/data</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></p>
-<p>配置完了之后，建立索引，在此之前，我记下了一些用得到的路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/var/lib/sphinxsearch/data/</span><br><span class="line"></span><br><span class="line">/var/log/sphinxsearch/searchd.log</span><br><span class="line"></span><br><span class="line">/var/log/sphinxsearch/query.log</span><br><span class="line"></span><br><span class="line">/var/run/sphinxsearch/searchd.pid</span><br></pre></td></tr></table></figure></p>
-<h4 id="建立索引"><a href="#建立索引" class="headerlink" title="建立索引"></a>建立索引</h4><p>indexer 会默认去找/etc/sphinxsearch/sphinx.conf，在你没有使用-config “file-path”指定使用某个config文件的时候<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">hello#indexer tingyun_index</span><br><span class="line">Sphinx 2.2.11-id64-release (95ae9a6)</span><br><span class="line">Copyright (c) 2001-2016, Andrew Aksyonoff</span><br><span class="line">Copyright (c) 2008-2016, Sphinx Technologies Inc (http://sphinxsearch.com)</span><br><span class="line"></span><br><span class="line">using config file &apos;/etc/sphinxsearch/sphinx.conf&apos;...</span><br><span class="line">WARNING: key &apos;charset_type&apos; was permanently removed from Sphinx configuration. Refer to documentation for details.</span><br><span class="line">indexing index &apos;tingyun_index&apos;...</span><br><span class="line">WARNING: attribute &apos;catalogid&apos; not found - IGNORING</span><br><span class="line">WARNING: attribute &apos;edituserid&apos; not found - IGNORING</span><br><span class="line">WARNING: attribute &apos;hits&apos; not found - IGNORING</span><br><span class="line">WARNING: attribute &apos;addtime&apos; not found - IGNORING</span><br><span class="line">WARNING: Attribute count is 0: switching to none docinfo</span><br><span class="line">WARNING: source tingyun: skipped 11329 document(s) with zero/NULL ids</span><br><span class="line">collected 866 docs, 0.1 MB</span><br><span class="line">sorted 0.0 Mhits, 100.0% done</span><br><span class="line">total 866 docs, 64852 bytes</span><br><span class="line">total 0.012 sec, 5160499 bytes/sec, 68910.63 docs/sec</span><br><span class="line">total 3 reads, 0.000 sec, 10.7 kb/call avg, 0.0 msec/call avg</span><br><span class="line">total 9 writes, 0.000 sec, 5.7 kb/call avg, 0.0 msec/call avg</span><br></pre></td></tr></table></figure></p>
-<p>这时候我们能看见/var/lib/sphinxsearch/data/这个目录下出现了一下.sp*结尾的文件，这就是我们建立的索引文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls /var/lib/sphinxsearch/data/</span><br><span class="line">tingyun_index.spa  tingyun_index.spe  tingyun_index.spi  tingyun_index.spm  tingyun_index.sps</span><br><span class="line">tingyun_index.spd  tingyun_index.sph  tingyun_index.spk  tingyun_index.spp  tingyun_index.tmps</span><br></pre></td></tr></table></figure></p>
-<h4 id="启动索引服务"><a href="#启动索引服务" class="headerlink" title="启动索引服务"></a>启动索引服务</h4><p>同上，searchd也是先去找默认的sphinx.conf文件.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">hello#searchd </span><br><span class="line">Sphinx 2.2.11-id64-release (95ae9a6)</span><br><span class="line">Copyright (c) 2001-2016, Andrew Aksyonoff</span><br><span class="line">Copyright (c) 2008-2016, Sphinx Technologies Inc (http://sphinxsearch.com)</span><br><span class="line"></span><br><span class="line">using config file &apos;/etc/sphinxsearch/sphinx.conf&apos;...</span><br><span class="line">WARNING: key &apos;charset_type&apos; was permanently removed from Sphinx configuration. Refer to documentation for details.</span><br><span class="line">listening on all interfaces, port=9312</span><br><span class="line">listening on all interfaces, port=9306</span><br><span class="line">precaching index &apos;tingyun_index&apos;</span><br><span class="line">precaching index &apos;test1&apos;</span><br><span class="line">WARNING: index &apos;test1&apos;: preload: failed to open /var/lib/sphinxsearch/data/test1.sph: No such file or directory; NOT SERVING</span><br><span class="line">precaching index &apos;test1stemmed&apos;</span><br><span class="line">WARNING: index &apos;test1stemmed&apos;: preload: failed to open /var/lib/sphinxsearch/data/test1stemmed.sph: No such file or directory; NOT SERVING</span><br><span class="line">WARNING: multiple addresses found for &apos;localhost&apos;, using the first one (ip=127.0.0.1)</span><br><span class="line">precaching index &apos;rt&apos;</span><br><span class="line">precached 4 indexes in 0.005 sec</span><br></pre></td></tr></table></figure></p>
+<p>我们根据这个格式来配置一份自己的索引和数据源,命名为tingyun</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">source tingyun&#123;</span><br><span class="line">		type 			= mysql</span><br><span class="line">		</span><br><span class="line">		sql_host 		= localhost</span><br><span class="line">		sql_user 		= root		#账号</span><br><span class="line">		sql_pass 		= xxxxxx	#密码</span><br><span class="line">		sql_db 			= test		#数据库</span><br><span class="line">		sql_port		= 3306 # optional, default is 3306</span><br><span class="line">		sql_query_pre		=  SET NAMES utf8</span><br><span class="line"></span><br><span class="line">		sql_query 		=  SELECT * FROM yourtablename	#sql语句</span><br><span class="line">		#sql_query 		= SELECT * FROM yourtablename </span><br><span class="line">		sql_attr_uint		= CATALOGID</span><br><span class="line">		sql_attr_uint		= EDITUSERID</span><br><span class="line">		sql_attr_uint 		= HITS</span><br><span class="line">		sql_attr_timestamp 	= ADDTIME</span><br><span class="line">		</span><br><span class="line">		sql_query_post  	=</span><br><span class="line">		sql_ranged_throttle	= 0</span><br><span class="line">		#sql_query_info 	= SELECT * FROM a.eht_news_articles WHERE ARTICLESID=$id</span><br><span class="line">		&#125;</span><br><span class="line">index tingyun_index&#123;</span><br><span class="line">		source 			= tingyun</span><br><span class="line">		path 			= /var/lib/sphinxsearch/data/tingyun_index</span><br><span class="line">		charset_type 		= utf-8</span><br><span class="line">		ngram_len 			= 1</span><br><span class="line">		ngram_chars 		= U+3000..U+2FA1F</span><br><span class="line">		&#125;</span><br><span class="line">indexer&#123;</span><br><span class="line">		mem_limit 		= 128M</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">searchd&#123;</span><br><span class="line">		listen    		= 9312</span><br><span class="line">		listen         		= 9306:mysql41</span><br><span class="line">		log			= /var/log/sphinxsearch/searchd.log</span><br><span class="line">		query_log		= /var/log/sphinxsearch/query.log</span><br><span class="line">		read_timeout		= 5</span><br><span class="line">		client_timeout		= 300</span><br><span class="line">		max_children  		= 30</span><br><span class="line">		seamless_rotate     	= 1</span><br><span class="line">		preopen_indexes     	= 1</span><br><span class="line">		unlink_old      	= 1</span><br><span class="line">		workers         	= threads</span><br><span class="line">		pid_file   		= /var/run/sphinxsearch/searchd.pid</span><br><span class="line">		max_matches   		= 1000</span><br><span class="line">		seamless_rotate 	= 1</span><br><span class="line">		binlog_path      	= /var/lib/sphinxsearch/data</span><br><span class="line">		&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>配置完了之后，建立索引，在此之前，我记下了一些用得到的路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/var/lib/sphinxsearch/data/</span><br><span class="line"></span><br><span class="line">/var/log/sphinxsearch/searchd.log</span><br><span class="line"></span><br><span class="line">/var/log/sphinxsearch/query.log</span><br><span class="line"></span><br><span class="line">/var/run/sphinxsearch/searchd.pid</span><br></pre></td></tr></table></figure>
+
+<h4 id="建立索引"><a href="#建立索引" class="headerlink" title="建立索引"></a>建立索引</h4><p>indexer 会默认去找&#x2F;etc&#x2F;sphinxsearch&#x2F;sphinx.conf，在你没有使用-config “file-path”指定使用某个config文件的时候</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">hello#indexer tingyun_index</span><br><span class="line">Sphinx 2.2.11-id64-release (95ae9a6)</span><br><span class="line">Copyright (c) 2001-2016, Andrew Aksyonoff</span><br><span class="line">Copyright (c) 2008-2016, Sphinx Technologies Inc (http://sphinxsearch.com)</span><br><span class="line"></span><br><span class="line">using config file &#x27;/etc/sphinxsearch/sphinx.conf&#x27;...</span><br><span class="line">WARNING: key &#x27;charset_type&#x27; was permanently removed from Sphinx configuration. Refer to documentation for details.</span><br><span class="line">indexing index &#x27;tingyun_index&#x27;...</span><br><span class="line">WARNING: attribute &#x27;catalogid&#x27; not found - IGNORING</span><br><span class="line">WARNING: attribute &#x27;edituserid&#x27; not found - IGNORING</span><br><span class="line">WARNING: attribute &#x27;hits&#x27; not found - IGNORING</span><br><span class="line">WARNING: attribute &#x27;addtime&#x27; not found - IGNORING</span><br><span class="line">WARNING: Attribute count is 0: switching to none docinfo</span><br><span class="line">WARNING: source tingyun: skipped 11329 document(s) with zero/NULL ids</span><br><span class="line">collected 866 docs, 0.1 MB</span><br><span class="line">sorted 0.0 Mhits, 100.0% done</span><br><span class="line">total 866 docs, 64852 bytes</span><br><span class="line">total 0.012 sec, 5160499 bytes/sec, 68910.63 docs/sec</span><br><span class="line">total 3 reads, 0.000 sec, 10.7 kb/call avg, 0.0 msec/call avg</span><br><span class="line">total 9 writes, 0.000 sec, 5.7 kb/call avg, 0.0 msec/call avg</span><br></pre></td></tr></table></figure>
+<p>这时候我们能看见&#x2F;var&#x2F;lib&#x2F;sphinxsearch&#x2F;data&#x2F;这个目录下出现了一下.sp*结尾的文件，这就是我们建立的索引文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls /var/lib/sphinxsearch/data/</span><br><span class="line">tingyun_index.spa  tingyun_index.spe  tingyun_index.spi  tingyun_index.spm  tingyun_index.sps</span><br><span class="line">tingyun_index.spd  tingyun_index.sph  tingyun_index.spk  tingyun_index.spp  tingyun_index.tmps</span><br></pre></td></tr></table></figure>
+
+<h4 id="启动索引服务"><a href="#启动索引服务" class="headerlink" title="启动索引服务"></a>启动索引服务</h4><p>同上，searchd也是先去找默认的sphinx.conf文件.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">hello#searchd </span><br><span class="line">Sphinx 2.2.11-id64-release (95ae9a6)</span><br><span class="line">Copyright (c) 2001-2016, Andrew Aksyonoff</span><br><span class="line">Copyright (c) 2008-2016, Sphinx Technologies Inc (http://sphinxsearch.com)</span><br><span class="line"></span><br><span class="line">using config file &#x27;/etc/sphinxsearch/sphinx.conf&#x27;...</span><br><span class="line">WARNING: key &#x27;charset_type&#x27; was permanently removed from Sphinx configuration. Refer to documentation for details.</span><br><span class="line">listening on all interfaces, port=9312</span><br><span class="line">listening on all interfaces, port=9306</span><br><span class="line">precaching index &#x27;tingyun_index&#x27;</span><br><span class="line">precaching index &#x27;test1&#x27;</span><br><span class="line">WARNING: index &#x27;test1&#x27;: preload: failed to open /var/lib/sphinxsearch/data/test1.sph: No such file or directory; NOT SERVING</span><br><span class="line">precaching index &#x27;test1stemmed&#x27;</span><br><span class="line">WARNING: index &#x27;test1stemmed&#x27;: preload: failed to open /var/lib/sphinxsearch/data/test1stemmed.sph: No such file or directory; NOT SERVING</span><br><span class="line">WARNING: multiple addresses found for &#x27;localhost&#x27;, using the first one (ip=127.0.0.1)</span><br><span class="line">precaching index &#x27;rt&#x27;</span><br><span class="line">precached 4 indexes in 0.005 sec</span><br></pre></td></tr></table></figure>
+
 <h3 id="python调用索引检索mysql中数据"><a href="#python调用索引检索mysql中数据" class="headerlink" title="python调用索引检索mysql中数据"></a>python调用索引检索mysql中数据</h3><p>先提起一个坑:就是在建立索引的时候需要目标数据是带有唯一id值的,这里我设定了一个自增主键,用那个主键作为了一个唯一索引值.千万记得:<font color="red"><strong>如果没有主键,那么无法使用索引</strong></font></p>
-<p>这时候我们的索引创建已经完成,接下来我们使用python脚本试着去调用索引检索mysql中的数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查到sphinxapi.py的路径,并将路径下所有的.py文件拷贝出来,其中的调用api可以参考</span></span><br><span class="line">updatedb </span><br><span class="line">locate sphinxapi.py</span><br></pre></td></tr></table></figure></p>
-<p>这里找了一个简单的脚本match了一下关键词(<a href="https://www.u3v3.com/ar/1264" target="_blank" rel="noopener">源代码出处</a>)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!coding:utf8</span></span><br><span class="line"><span class="keyword">from</span> sphinxapi <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">con = pymysql.connect(host=<span class="string">'127.0.0.1'</span>, port=<span class="number">9306</span>, user=<span class="string">"yourname"</span>, passwd=<span class="string">"yourpassword"</span>, db=<span class="string">"yourdb"</span>)</span><br><span class="line"><span class="keyword">with</span> con.cursor(pymysql.cursors.DictCursor) <span class="keyword">as</span> cur:</span><br><span class="line">	cur.execute(<span class="string">"select * from tingyun_index where match('2006-04-14') limit 3"</span>)</span><br><span class="line">	print(cur.fetchall())</span><br></pre></td></tr></table></figure></p>
+<p>这时候我们的索引创建已经完成,接下来我们使用python脚本试着去调用索引检索mysql中的数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查到sphinxapi.py的路径,并将路径下所有的.py文件拷贝出来,其中的调用api可以参考</span></span><br><span class="line">updatedb </span><br><span class="line">locate sphinxapi.py</span><br></pre></td></tr></table></figure>
+<p>这里找了一个简单的脚本match了一下关键词(<a target="_blank" rel="noopener" href="https://www.u3v3.com/ar/1264">源代码出处</a>)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!coding:utf8</span></span><br><span class="line"><span class="keyword">from</span> sphinxapi <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"></span><br><span class="line">con = pymysql.connect(host=<span class="string">&#x27;127.0.0.1&#x27;</span>, port=<span class="number">9306</span>, user=<span class="string">&quot;yourname&quot;</span>, passwd=<span class="string">&quot;yourpassword&quot;</span>, db=<span class="string">&quot;yourdb&quot;</span>)</span><br><span class="line"><span class="keyword">with</span> con.cursor(pymysql.cursors.DictCursor) <span class="keyword">as</span> cur:</span><br><span class="line">	cur.execute(<span class="string">&quot;select * from tingyun_index where match(&#x27;2006-04-14&#x27;) limit 3&quot;</span>)</span><br><span class="line">	<span class="built_in">print</span>(cur.fetchall())</span><br></pre></td></tr></table></figure>
 <p>这句话的功能是查询指定db中,的2006-04-14关键词的所有记录,返回目标的索引id值,然后我们能根据这些id值去库中直接拿取对应数据</p>
-<p>到这里算是完成了sphinx的安装到简单使用,下一步考虑使用sphinx对mongodb的库建立索引,然后通过调用python脚本从mongo检索出对应的数据,最近两天在屯数据(但几个歌曲平台的数据都是千万级别的,就算我满负载去跑估计也得话费很长时间,试着用用公司服务器),还有感觉scrapy单机单进程抓取简直难以忍受的慢,20M的带宽只用到了200kb/s…..明天会想想怎么提高抓取效率</p>
+<p>到这里算是完成了sphinx的安装到简单使用,下一步考虑使用sphinx对mongodb的库建立索引,然后通过调用python脚本从mongo检索出对应的数据,最近两天在屯数据(但几个歌曲平台的数据都是千万级别的,就算我满负载去跑估计也得话费很长时间,试着用用公司服务器),还有感觉scrapy单机单进程抓取简直难以忍受的慢,20M的带宽只用到了200kb&#x2F;s…..明天会想想怎么提高抓取效率</p>
 
       
     </div>
@@ -459,7 +476,7 @@
           
             <a href="/tags/sphinx/" rel="tag"># sphinx</a>
           
-            <a href="/tags/搜索引擎/" rel="tag"># 搜索引擎</a>
+            <a href="/tags/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" rel="tag"># 搜索引擎</a>
           
         </div>
       
@@ -509,7 +526,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -535,7 +552,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -545,8 +562,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -557,7 +576,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -579,7 +598,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -634,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文主要介绍Sphinx，并进行安装和简单使用"><span class="nav-number">1.</span> <span class="nav-text">本文主要介绍Sphinx，并进行安装和简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全文检索"><span class="nav-number">1.1.</span> <span class="nav-text">全文检索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sphinx简介"><span class="nav-number">1.2.</span> <span class="nav-text">Sphinx简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sphinx特性"><span class="nav-number">1.3.</span> <span class="nav-text">Sphinx特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Sphinx"><span class="nav-number">1.5.</span> <span class="nav-text">配置Sphinx</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#建立索引"><span class="nav-number">1.5.1.</span> <span class="nav-text">建立索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动索引服务"><span class="nav-number">1.5.2.</span> <span class="nav-text">启动索引服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python调用索引检索mysql中数据"><span class="nav-number">1.6.</span> <span class="nav-text">python调用索引检索mysql中数据</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%B8%BB%E8%A6%81%E4%BB%8B%E7%BB%8DSphinx%EF%BC%8C%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85%E5%92%8C%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">本文主要介绍Sphinx，并进行安装和简单使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2"><span class="nav-number">1.1.</span> <span class="nav-text">全文检索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sphinx%E7%AE%80%E4%BB%8B"><span class="nav-number">1.2.</span> <span class="nav-text">Sphinx简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sphinx%E7%89%B9%E6%80%A7"><span class="nav-number">1.3.</span> <span class="nav-text">Sphinx特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.4.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AESphinx"><span class="nav-number">1.5.</span> <span class="nav-text">配置Sphinx</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E7%B4%A2%E5%BC%95"><span class="nav-number">1.5.1.</span> <span class="nav-text">建立索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E7%B4%A2%E5%BC%95%E6%9C%8D%E5%8A%A1"><span class="nav-number">1.5.2.</span> <span class="nav-text">启动索引服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python%E8%B0%83%E7%94%A8%E7%B4%A2%E5%BC%95%E6%A3%80%E7%B4%A2mysql%E4%B8%AD%E6%95%B0%E6%8D%AE"><span class="nav-number">1.6.</span> <span class="nav-text">python调用索引检索mysql中数据</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -654,10 +673,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -668,19 +687,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 

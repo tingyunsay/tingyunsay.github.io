@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="openpyxl,excel,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="openpyxl,excel," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,26 +90,27 @@
 
 
 <meta name="description" content="本文介绍如何使用python读取excel中的合并单元格">
-<meta name="keywords" content="openpyxl,excel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python读取excel合并单元格">
-<meta property="og:url" content="http://tingyunsay.github.io/2018/03/04/python读取excel合并单元格/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2018/03/04/python%E8%AF%BB%E5%8F%96excel%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍如何使用python读取excel中的合并单元格">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://tingyunsay.github.io/2018/03/04/python读取excel合并单元格/1.png">
-<meta property="og:updated_time" content="2020-03-19T13:54:50.772Z">
+<meta property="og:locale">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta property="article:published_time" content="2018-03-04T15:54:53.000Z">
+<meta property="article:modified_time" content="2020-03-19T13:54:50.772Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="openpyxl">
+<meta property="article:tag" content="excel">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python读取excel合并单元格">
-<meta name="twitter:description" content="本文介绍如何使用python读取excel中的合并单元格">
-<meta name="twitter:image" content="http://tingyunsay.github.io/2018/03/04/python读取excel合并单元格/1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -129,17 +131,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2018/03/04/python读取excel合并单元格/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2018/03/04/python读取excel合并单元格/"/>
 
 
 
 
 
   <title> python读取excel合并单元格 | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -174,13 +176,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +212,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -220,7 +222,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -230,7 +232,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -240,7 +242,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -250,7 +252,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -260,7 +262,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -294,16 +296,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/03/04/python读取excel合并单元格/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/03/04/python%E8%AF%BB%E5%8F%96excel%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -342,7 +344,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -353,7 +355,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/python/" itemprop="url" rel="index">
                     <span itemprop="name">python</span>
                   </a>
@@ -372,8 +374,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/04/python读取excel合并单元格/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/04/python读取excel合并单元格/" itemprop="commentCount"></span>
+                <a href="/2018/03/04/python%E8%AF%BB%E5%8F%96excel%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/04/python读取excel合并单元格/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -381,7 +384,7 @@
 
           
           
-             <span id="/2018/03/04/python读取excel合并单元格/" class="leancloud_visitors" data-flag-title="python读取excel合并单元格">
+             <span id="/2018/03/04/python%E8%AF%BB%E5%8F%96excel%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC/" class="leancloud_visitors" data-flag-title="python读取excel合并单元格">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,15 +413,18 @@
       
 
       
-        <h2 id="本文介绍如何使用python读取excel中的合并单元格"><a href="#本文介绍如何使用python读取excel中的合并单元格" class="headerlink" title="本文介绍如何使用python读取excel中的合并单元格"></a>本文介绍如何使用python读取excel中的合并单元格</h2><a id="more"></a>
-<h3 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h3><p>这几天接到一个产品同事发来的excel文件，需要提取出这份excel的一些组合关键词，之前大部分的需求都是直接对接其他的RD同事，一般都是读库写库之类的，excel的操作确实用的比较少。在读excel的过程中，就遇到了以下的问题<br><img src="/2018/03/04/python读取excel合并单元格/1.png" alt="图一"><br>正常的读取都是按照行和列的位置来的，我需要读取的数据是：每一行的演唱者和歌曲名称，即：<font color="purple"><strong>清醒+好极了 / 清醒+记录散落了，没有声音</strong></font> 等,但若是这样读取读出来很多为None的数据，解决它</p>
-<h3 id="使用openpyxl自带的函数"><a href="#使用openpyxl自带的函数" class="headerlink" title="使用openpyxl自带的函数"></a>使用openpyxl自带的函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl</span><br><span class="line"></span><br><span class="line">cf = openpyxl.load_workbook(filename=<span class="string">"path/to/file"</span>)<span class="comment">#,read_only=True)</span></span><br><span class="line">sheets = cf.get_sheet_names()</span><br><span class="line"><span class="keyword">for</span> sheet <span class="keyword">in</span> sheets:</span><br><span class="line">    current_wb = cf.get_sheet_by_name(sheet)</span><br><span class="line">    <span class="keyword">for</span> block <span class="keyword">in</span> current_wb.merged_cell_ranges:</span><br><span class="line">        <span class="comment">#operator.....</span></span><br></pre></td></tr></table></figure>
-<p>其中merged_cell_ranges是个属性，其为一个list，如下所示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&apos;A1:D1&apos;, &apos;E1:N1&apos;, &apos;B3:B12&apos;, &apos;C3:C12&apos;, &apos;C13:C21&apos;]</span><br></pre></td></tr></table></figure></p>
-<p>其中每个元素的意思是：从A1到D1是合并单元格，从E1到N1是合并单元格，依次类推。横坐标是A，B…..，纵坐标为1,2…..</p>
-<p><font color="purple"><strong>对我而言，我要取得是一行一行的数据，只需要选择其中的横坐标相等的那些元素，并且在读取excel遇到这些元素的那个区间范围，取得纵坐标靠较小的值</strong></font><br>比如：’B3:B12’，在这个3~12范围内的值都是取B3这个单元格的值（纵坐标为3），依照图上图一取得值为：清醒，一次类推<br><strong>注：如果加上read_only=True会报错如下</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AttributeError: &apos;ReadOnlyWorksheet&apos; object has no attribute &apos;merged_cell_ranges&apos;</span><br></pre></td></tr></table></figure></p>
-<h3 id="使用自己想的方法"><a href="#使用自己想的方法" class="headerlink" title="使用自己想的方法"></a>使用自己想的方法</h3><h4 id="方法一，用纵坐标值定位"><a href="#方法一，用纵坐标值定位" class="headerlink" title="方法一，用纵坐标值定位"></a>方法一，用纵坐标值定位</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl</span><br><span class="line"></span><br><span class="line">excel = openpyxl.load_workbook(<span class="string">"path/to/file"</span>)</span><br><span class="line">wb = excel.get_sheet_by_name(<span class="string">"sheet_name"</span>)</span><br><span class="line"></span><br><span class="line">loc = <span class="number">0</span></span><br><span class="line"><span class="comment">#这里我的excel的前两行都是无关的数据，所以纵坐标直接从3开始</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> range(<span class="number">3</span>,wb.max_row+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#这种方式读取贼他么慢，换换其他的方法</span></span><br><span class="line">        artist_name = wb.cell(row=item, column=<span class="number">2</span>).value</span><br><span class="line">        <span class="keyword">if</span> artist_name:</span><br><span class="line">            loc = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> artist_name:</span><br><span class="line">            loc += <span class="number">1</span></span><br><span class="line">        artist_name = wb.cell(row=item - loc, column=<span class="number">2</span>).value</span><br><span class="line">        song_name  = wb.cell(row=item, column=<span class="number">4</span>).value</span><br><span class="line">        <span class="comment">#由于歌名是必须要一行一个的，当没有歌名直接跳过</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> song_name:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">except</span> Exception,e:</span><br><span class="line">        <span class="keyword">print</span> e</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
-<h5 id="不足之处"><a href="#不足之处" class="headerlink" title="不足之处"></a>不足之处</h5><p>在使用wb.cell(row=item, column=2)查找元素时，可能是由于每次调用这个函数excel都在定位，所以导致操作起来特别慢，如果是操作比较大（如有几万行++）的excel文件，修改这个excel会变得格外地慢，不建议用这种方法</p>
-<h4 id="方法二，用合并单元格本身的第一行值定位"><a href="#方法二，用合并单元格本身的第一行值定位" class="headerlink" title="方法二，用合并单元格本身的第一行值定位"></a>方法二，用合并单元格本身的第一行值定位</h4><p>什么意思呢？即:B3~B12，由于B4～B12都是None值，<font color="red"><strong>我们在读取到下一个非None值之前，都使其等于之前记录的那个值</strong></font>（即合并单元格的第一行的值）<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl</span><br><span class="line"></span><br><span class="line">excel = openpyxl.load_workbook(<span class="string">"path/to/file"</span>)</span><br><span class="line">wb = excel.get_sheet_by_name(<span class="string">"sheet_name"</span>)</span><br><span class="line"></span><br><span class="line">real_data = list(wb.rows)[<span class="number">2</span>:]</span><br><span class="line"><span class="keyword">for</span> data <span class="keyword">in</span> real_data:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        artist_name = data[<span class="number">1</span>].value</span><br><span class="line">        <span class="keyword">if</span> artist_name:</span><br><span class="line">            first_row = artist_name</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> artist_name:</span><br><span class="line">            artist_name = first_row</span><br><span class="line">        artist_name = artist_name</span><br><span class="line">        song_name = data[<span class="number">3</span>].value</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> song_name:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">except</span> Exception, e:</span><br><span class="line">        <span class="keyword">print</span> e</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></table></figure></p>
+        <h2 id="本文介绍如何使用python读取excel中的合并单元格"><a href="#本文介绍如何使用python读取excel中的合并单元格" class="headerlink" title="本文介绍如何使用python读取excel中的合并单元格"></a>本文介绍如何使用python读取excel中的合并单元格</h2><span id="more"></span>
+<h3 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h3><p>这几天接到一个产品同事发来的excel文件，需要提取出这份excel的一些组合关键词，之前大部分的需求都是直接对接其他的RD同事，一般都是读库写库之类的，excel的操作确实用的比较少。在读excel的过程中，就遇到了以下的问题<br><img src="/.io//1.png" alt="图一"><br>正常的读取都是按照行和列的位置来的，我需要读取的数据是：每一行的演唱者和歌曲名称，即：<font color="purple"><strong>清醒+好极了 &#x2F; 清醒+记录散落了，没有声音</strong></font> 等,但若是这样读取读出来很多为None的数据，解决它</p>
+<h3 id="使用openpyxl自带的函数"><a href="#使用openpyxl自带的函数" class="headerlink" title="使用openpyxl自带的函数"></a>使用openpyxl自带的函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl</span><br><span class="line"></span><br><span class="line">cf = openpyxl.load_workbook(filename=<span class="string">&quot;path/to/file&quot;</span>)<span class="comment">#,read_only=True)</span></span><br><span class="line">sheets = cf.get_sheet_names()</span><br><span class="line"><span class="keyword">for</span> sheet <span class="keyword">in</span> sheets:</span><br><span class="line">    current_wb = cf.get_sheet_by_name(sheet)</span><br><span class="line">    <span class="keyword">for</span> block <span class="keyword">in</span> current_wb.merged_cell_ranges:</span><br><span class="line">        <span class="comment">#operator.....</span></span><br></pre></td></tr></table></figure>
+<p>其中merged_cell_ranges是个属性，其为一个list，如下所示</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;A1:D1&#x27;, &#x27;E1:N1&#x27;, &#x27;B3:B12&#x27;, &#x27;C3:C12&#x27;, &#x27;C13:C21&#x27;]</span><br></pre></td></tr></table></figure>
+<p>其中每个元素的意思是：从A1到D1是合并单元格，从E1到N1是合并单元格，依次类推。横坐标是A，B…..，纵坐标为1,2…..<br><font color="purple"><strong>对我而言，我要取得是一行一行的数据，只需要选择其中的横坐标相等的那些元素，并且在读取excel遇到这些元素的那个区间范围，取得纵坐标靠较小的值</strong></font><br>比如：’B3:B12’，在这个3~12范围内的值都是取B3这个单元格的值（纵坐标为3），依照图上图一取得值为：清醒，一次类推<br><strong>注：如果加上read_only&#x3D;True会报错如下</strong></p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AttributeError: &#x27;ReadOnlyWorksheet&#x27; object has no attribute &#x27;merged_cell_ranges&#x27;</span><br></pre></td></tr></table></figure>
+<h3 id="使用自己想的方法"><a href="#使用自己想的方法" class="headerlink" title="使用自己想的方法"></a>使用自己想的方法</h3><h4 id="方法一，用纵坐标值定位"><a href="#方法一，用纵坐标值定位" class="headerlink" title="方法一，用纵坐标值定位"></a>方法一，用纵坐标值定位</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl</span><br><span class="line"></span><br><span class="line">excel = openpyxl.load_workbook(<span class="string">&quot;path/to/file&quot;</span>)</span><br><span class="line">wb = excel.get_sheet_by_name(<span class="string">&quot;sheet_name&quot;</span>)</span><br><span class="line"></span><br><span class="line">loc = <span class="number">0</span></span><br><span class="line"><span class="comment">#这里我的excel的前两行都是无关的数据，所以纵坐标直接从3开始</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>,wb.max_row+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#这种方式读取贼他么慢，换换其他的方法</span></span><br><span class="line">        artist_name = wb.cell(row=item, column=<span class="number">2</span>).value</span><br><span class="line">        <span class="keyword">if</span> artist_name:</span><br><span class="line">            loc = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> artist_name:</span><br><span class="line">            loc += <span class="number">1</span></span><br><span class="line">        artist_name = wb.cell(row=item - loc, column=<span class="number">2</span>).value</span><br><span class="line">        song_name  = wb.cell(row=item, column=<span class="number">4</span>).value</span><br><span class="line">        <span class="comment">#由于歌名是必须要一行一个的，当没有歌名直接跳过</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> song_name:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">except</span> Exception,e:</span><br><span class="line">        <span class="built_in">print</span> e</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="不足之处"><a href="#不足之处" class="headerlink" title="不足之处"></a>不足之处</h5><p>在使用wb.cell(row&#x3D;item, column&#x3D;2)查找元素时，可能是由于每次调用这个函数excel都在定位，所以导致操作起来特别慢，如果是操作比较大（如有几万行++）的excel文件，修改这个excel会变得格外地慢，不建议用这种方法</p>
+<h4 id="方法二，用合并单元格本身的第一行值定位"><a href="#方法二，用合并单元格本身的第一行值定位" class="headerlink" title="方法二，用合并单元格本身的第一行值定位"></a>方法二，用合并单元格本身的第一行值定位</h4><p>什么意思呢？即:B3~B12，由于B4～B12都是None值，<font color="red"><strong>我们在读取到下一个非None值之前，都使其等于之前记录的那个值</strong></font>（即合并单元格的第一行的值）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openpyxl</span><br><span class="line"></span><br><span class="line">excel = openpyxl.load_workbook(<span class="string">&quot;path/to/file&quot;</span>)</span><br><span class="line">wb = excel.get_sheet_by_name(<span class="string">&quot;sheet_name&quot;</span>)</span><br><span class="line"></span><br><span class="line">real_data = <span class="built_in">list</span>(wb.rows)[<span class="number">2</span>:]</span><br><span class="line"><span class="keyword">for</span> data <span class="keyword">in</span> real_data:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        artist_name = data[<span class="number">1</span>].value</span><br><span class="line">        <span class="keyword">if</span> artist_name:</span><br><span class="line">            first_row = artist_name</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> artist_name:</span><br><span class="line">            artist_name = first_row</span><br><span class="line">        artist_name = artist_name</span><br><span class="line">        song_name = data[<span class="number">3</span>].value</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> song_name:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">except</span> Exception, e:</span><br><span class="line">        <span class="built_in">print</span> e</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
 <p>这种方式快的多，因为是直接将所有数据读到内存里，然后一行一行操作这整个excel的值，建议使用方法二</p>
 <hr>
 <h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3><p>大家可以根据自己的需要去调整修改代码，以上代码只是按照我想要的数据格式去读取的excel</p>
@@ -466,7 +472,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/22/听云记04/" rel="next" title="听云记 肆">
+              <a href="/2018/02/22/%E5%90%AC%E4%BA%91%E8%AE%B004/" rel="next" title="听云记 肆">
                 <i class="fa fa-chevron-left"></i> 听云记 肆
               </a>
             
@@ -476,7 +482,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/18/纳豆app视频播放链解析/" rel="prev" title="纳豆app视频播放链解析">
+              <a href="/2018/03/18/%E7%BA%B3%E8%B1%86app%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE%E9%93%BE%E8%A7%A3%E6%9E%90/" rel="prev" title="纳豆app视频播放链解析">
                 纳豆app视频播放链解析 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -507,7 +513,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -533,7 +539,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -543,8 +549,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -555,7 +563,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -577,7 +585,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -632,7 +640,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍如何使用python读取excel中的合并单元格"><span class="nav-number">1.</span> <span class="nav-text">本文介绍如何使用python读取excel中的合并单元格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题来源"><span class="nav-number">1.1.</span> <span class="nav-text">问题来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用openpyxl自带的函数"><span class="nav-number">1.2.</span> <span class="nav-text">使用openpyxl自带的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用自己想的方法"><span class="nav-number">1.3.</span> <span class="nav-text">使用自己想的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一，用纵坐标值定位"><span class="nav-number">1.3.1.</span> <span class="nav-text">方法一，用纵坐标值定位</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#不足之处"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">不足之处</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二，用合并单元格本身的第一行值定位"><span class="nav-number">1.3.2.</span> <span class="nav-text">方法二，用合并单元格本身的第一行值定位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#end"><span class="nav-number">1.4.</span> <span class="nav-text">end</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8D%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python%E8%AF%BB%E5%8F%96excel%E4%B8%AD%E7%9A%84%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC"><span class="nav-number">1.</span> <span class="nav-text">本文介绍如何使用python读取excel中的合并单元格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90"><span class="nav-number">1.1.</span> <span class="nav-text">问题来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8openpyxl%E8%87%AA%E5%B8%A6%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">使用openpyxl自带的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%B7%B1%E6%83%B3%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.</span> <span class="nav-text">使用自己想的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%8C%E7%94%A8%E7%BA%B5%E5%9D%90%E6%A0%87%E5%80%BC%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.3.1.</span> <span class="nav-text">方法一，用纵坐标值定位</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8D%E8%B6%B3%E4%B9%8B%E5%A4%84"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">不足之处</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%8C%E7%94%A8%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC%E6%9C%AC%E8%BA%AB%E7%9A%84%E7%AC%AC%E4%B8%80%E8%A1%8C%E5%80%BC%E5%AE%9A%E4%BD%8D"><span class="nav-number">1.3.2.</span> <span class="nav-text">方法二，用合并单元格本身的第一行值定位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#end"><span class="nav-number">1.4.</span> <span class="nav-text">end</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -652,10 +660,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -666,19 +674,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -826,7 +834,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2018/03/04/python读取excel合并单元格/';
+          this.page.url = 'http://tingyunsay.github.io/2018/03/04/python%E8%AF%BB%E5%8F%96excel%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC/';
           this.page.identifier = '2018/03/04/python读取excel合并单元格/';
           this.page.title = 'python读取excel合并单元格';
         };

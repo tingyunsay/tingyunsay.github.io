@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="squid代理,代理集群,安全,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="squid代理,代理集群,安全," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,26 +90,28 @@
 
 
 <meta name="description" content="本文介绍如何安全地搭建需要验证的 squid 代理集群">
-<meta name="keywords" content="squid代理,代理集群,安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安全搭建squid代理集群">
-<meta property="og:url" content="http://tingyunsay.github.io/2019/01/14/安全搭建squid代理集群/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2019/01/14/%E5%AE%89%E5%85%A8%E6%90%AD%E5%BB%BAsquid%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍如何安全地搭建需要验证的 squid 代理集群">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://tingyunsay.github.io/2019/01/14/安全搭建squid代理集群/1.png">
-<meta property="og:updated_time" content="2020-03-19T18:14:32.092Z">
+<meta property="og:locale">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta property="article:published_time" content="2019-01-14T11:58:17.000Z">
+<meta property="article:modified_time" content="2020-03-19T18:14:32.092Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="squid代理">
+<meta property="article:tag" content="代理集群">
+<meta property="article:tag" content="安全">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安全搭建squid代理集群">
-<meta name="twitter:description" content="本文介绍如何安全地搭建需要验证的 squid 代理集群">
-<meta name="twitter:image" content="http://tingyunsay.github.io/2019/01/14/安全搭建squid代理集群/1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -129,17 +132,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2019/01/14/安全搭建squid代理集群/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2019/01/14/安全搭建squid代理集群/"/>
 
 
 
 
 
   <title> 安全搭建squid代理集群 | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -174,13 +177,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +213,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -220,7 +223,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -230,7 +233,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -240,7 +243,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -250,7 +253,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -260,7 +263,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -294,16 +297,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2019/01/14/安全搭建squid代理集群/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2019/01/14/%E5%AE%89%E5%85%A8%E6%90%AD%E5%BB%BAsquid%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -342,7 +345,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -353,7 +356,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/spider/" itemprop="url" rel="index">
                     <span itemprop="name">spider</span>
                   </a>
@@ -372,8 +375,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/14/安全搭建squid代理集群/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/01/14/安全搭建squid代理集群/" itemprop="commentCount"></span>
+                <a href="/2019/01/14/%E5%AE%89%E5%85%A8%E6%90%AD%E5%BB%BAsquid%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/01/14/安全搭建squid代理集群/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -381,7 +385,7 @@
 
           
           
-             <span id="/2019/01/14/安全搭建squid代理集群/" class="leancloud_visitors" data-flag-title="安全搭建squid代理集群">
+             <span id="/2019/01/14/%E5%AE%89%E5%85%A8%E6%90%AD%E5%BB%BAsquid%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4/" class="leancloud_visitors" data-flag-title="安全搭建squid代理集群">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,25 +414,35 @@
       
 
       
-        <h2 id="本文介绍如何安全地搭建需要验证的-squid-代理集群"><a href="#本文介绍如何安全地搭建需要验证的-squid-代理集群" class="headerlink" title="本文介绍如何安全地搭建需要验证的 squid 代理集群"></a>本文介绍如何安全地搭建需要验证的 squid 代理集群</h2><a id="more"></a>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>　　之前由于长期有一些抓取相关的需求，博主购买了一些云平台的低配机器，在上面配置了 squid，开放了代理端口，然后自己在本地也维护了一个 squid 服务，专门用来连接云服务器的代理。但是就是最近发现连接的代理总是发现大量超时，登录上服务器查看，连 ls/cd 等命令都会卡，nload 了一下，发现带宽全部被打满了，之后就查看了下 squid 的日志，发现已经好几个 G 了，才发现原来是这个东西在搞鬼。检查了 squid 的日志，里面的 ip 有各个地区的，目标也是各种各样，想应该是被哪个代理商扫描到了，直接被用来使用了，开始修改吧</p>
-<h3 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h3><h4 id="基本架构"><a href="#基本架构" class="headerlink" title="基本架构"></a>基本架构</h4><p><img src="/2019/01/14/安全搭建squid代理集群/1.png" alt="图一"></p>
+        <h2 id="本文介绍如何安全地搭建需要验证的-squid-代理集群"><a href="#本文介绍如何安全地搭建需要验证的-squid-代理集群" class="headerlink" title="本文介绍如何安全地搭建需要验证的 squid 代理集群"></a>本文介绍如何安全地搭建需要验证的 squid 代理集群</h2><span id="more"></span>
+
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>　　之前由于长期有一些抓取相关的需求，博主购买了一些云平台的低配机器，在上面配置了 squid，开放了代理端口，然后自己在本地也维护了一个 squid 服务，专门用来连接云服务器的代理。但是就是最近发现连接的代理总是发现大量超时，登录上服务器查看，连 ls&#x2F;cd 等命令都会卡，nload 了一下，发现带宽全部被打满了，之后就查看了下 squid 的日志，发现已经好几个 G 了，才发现原来是这个东西在搞鬼。检查了 squid 的日志，里面的 ip 有各个地区的，目标也是各种各样，想应该是被哪个代理商扫描到了，直接被用来使用了，开始修改吧</p>
+<h3 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h3><h4 id="基本架构"><a href="#基本架构" class="headerlink" title="基本架构"></a>基本架构</h4><p><img src="/.io//1.png" alt="图一"></p>
 <p>　　我们只需要维护的本地的 squid.conf 文件即可</p>
-<h4 id="代理-云服务器设定认证账号"><a href="#代理-云服务器设定认证账号" class="headerlink" title="(代理) 云服务器设定认证账号"></a>(代理) 云服务器设定认证账号</h4><p>　　由于所使用的云服务器都是 centos 的，所以这里只用到了 yum 相关包<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装squid</span></span><br><span class="line">yum install squid</span><br><span class="line"></span><br><span class="line"><span class="comment">#这是apache的一个验证工具</span></span><br><span class="line">yum install httpd-tools</span><br><span class="line"></span><br><span class="line"><span class="comment">#openssl</span></span><br><span class="line">yum install openssl</span><br><span class="line"></span><br><span class="line"><span class="comment">#输入登录账号密码</span></span><br><span class="line">htpasswd -c /etc/squid/passwd username</span><br></pre></td></tr></table></figure></p>
-<h4 id="配置-squid"><a href="#配置-squid" class="headerlink" title="配置 squid"></a>配置 squid</h4><p>　　<font color="red"><strong>注意</strong></font> 和通常配置不一样的是，我们这回配置的是需要账号密码验证的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#首先要将如下两句都注释掉</span></span><br><span class="line"><span class="comment">#http_access deny all</span></span><br><span class="line"><span class="comment">#http_access allow all</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="代理-云服务器设定认证账号"><a href="#代理-云服务器设定认证账号" class="headerlink" title="(代理) 云服务器设定认证账号"></a>(代理) 云服务器设定认证账号</h4><p>　　由于所使用的云服务器都是 centos 的，所以这里只用到了 yum 相关包</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装squid</span></span><br><span class="line">yum install squid</span><br><span class="line"></span><br><span class="line"><span class="comment">#这是apache的一个验证工具</span></span><br><span class="line">yum install httpd-tools</span><br><span class="line"></span><br><span class="line"><span class="comment">#openssl</span></span><br><span class="line">yum install openssl</span><br><span class="line"></span><br><span class="line"><span class="comment">#输入登录账号密码</span></span><br><span class="line">htpasswd -c /etc/squid/passwd username</span><br></pre></td></tr></table></figure>
+<h4 id="配置-squid"><a href="#配置-squid" class="headerlink" title="配置 squid"></a>配置 squid</h4><p>　　<font color="red"><strong>注意</strong></font> 和通常配置不一样的是，我们这回配置的是需要账号密码验证的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#首先要将如下两句都注释掉</span></span><br><span class="line"><span class="comment">#http_access deny all</span></span><br><span class="line"><span class="comment">#http_access allow all</span></span><br></pre></td></tr></table></figure>
 <p>　　<font color="red"><strong>不注释掉这两行的话任何配置都无法生效</strong></font></p>
-<p>　　然后在末尾添加如下部分<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">auth_param basic program /usr/lib64/squid/basic_ncsa_auth /etc/squid/passwd     <span class="comment">#验证密码的程序,和使用的密码字典</span></span><br><span class="line">auth_param basic children <span class="number">5</span>           <span class="comment">#认证程序的进程数,根据机器配置和请求量设定</span></span><br><span class="line">acl auth_user proxy_auth REQUIRED     <span class="comment">#认证用户需要密码</span></span><br><span class="line">http_access allow auth_user           <span class="comment">#允许上面acl设定的用户进行访</span></span><br></pre></td></tr></table></figure></p>
-<p>　　配置完之后重启 squid<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">squid -k reconfig</span><br><span class="line"></span><br><span class="line"><span class="comment">#or</span></span><br><span class="line"></span><br><span class="line">squid restart</span><br></pre></td></tr></table></figure></p>
+<p>　　然后在末尾添加如下部分</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">auth_param basic program /usr/lib64/squid/basic_ncsa_auth /etc/squid/passwd     <span class="comment">#验证密码的程序,和使用的密码字典</span></span><br><span class="line">auth_param basic children <span class="number">5</span>           <span class="comment">#认证程序的进程数,根据机器配置和请求量设定</span></span><br><span class="line">acl auth_user proxy_auth REQUIRED     <span class="comment">#认证用户需要密码</span></span><br><span class="line">http_access allow auth_user           <span class="comment">#允许上面acl设定的用户进行访</span></span><br></pre></td></tr></table></figure>
+<p>　　配置完之后重启 squid</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">squid -k reconfig</span><br><span class="line"></span><br><span class="line"><span class="comment">#or</span></span><br><span class="line"></span><br><span class="line">squid restart</span><br></pre></td></tr></table></figure>
 <p>　　这时候如果一切顺利，你再次使用这台机器的 squid 代理就需要账号密码验证了</p>
-<h4 id="检测端口是否打开"><a href="#检测端口是否打开" class="headerlink" title="检测端口是否打开"></a>检测端口是否打开</h4><p>　　如果你发现没法使用配置好的 squid 代理，我们需要检测是不是机器的防火墙是否拦截住了这个端口<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet ip port</span><br></pre></td></tr></table></figure></p>
-<p>　　如果返回以下结果<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Trying ip...</span><br><span class="line">Connected to ip.</span><br><span class="line">Escape character <span class="keyword">is</span> <span class="string">'^]'</span>.</span><br></pre></td></tr></table></figure></p>
+<h4 id="检测端口是否打开"><a href="#检测端口是否打开" class="headerlink" title="检测端口是否打开"></a>检测端口是否打开</h4><p>　　如果你发现没法使用配置好的 squid 代理，我们需要检测是不是机器的防火墙是否拦截住了这个端口</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet ip port</span><br></pre></td></tr></table></figure>
+<p>　　如果返回以下结果</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Trying ip...</span><br><span class="line">Connected to ip.</span><br><span class="line">Escape character <span class="keyword">is</span> <span class="string">&#x27;^]&#x27;</span>.</span><br></pre></td></tr></table></figure>
 <p>　　那就说明端口是开放的<br>　　如果连接不上，那么我们关闭防火墙</p>
 <p>service firewalld stop</p>
-<h5 id="若端口还是没打开"><a href="#若端口还是没打开" class="headerlink" title="若端口还是没打开"></a>若端口还是没打开</h5><p>　　博主常用的是腾讯云和阿里云，到目前为止 (2019/05/13)，一般腾讯云的机器是没有屏蔽流量出入端口的，但是阿里云需要设定<font color="red"><strong>开放安全组</strong></font>，这里就不多作说明，百度搜索关键词<font color="red"><strong>阿里云设定开放安全组端口</strong></font>.</p>
-<h4 id="验证验证是否生效"><a href="#验证验证是否生效" class="headerlink" title="验证验证是否生效"></a>验证验证是否生效</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget</span><br><span class="line">wget -e <span class="string">"http_proxy=http://username:pass@ip:port/"</span> <span class="string">"http://www.baidu.com"</span></span><br><span class="line"></span><br><span class="line">curl</span><br><span class="line">curl -x<span class="string">"http://username:pass@ip:port/"</span> <span class="string">"http://www.baidu.com"</span></span><br><span class="line"></span><br><span class="line">requests</span><br><span class="line"><span class="keyword">print</span> requests.get(<span class="string">"http://www.baidu.com"</span>,proxies=&#123;<span class="string">'http'</span>: <span class="string">'http://username:pass@ip:port/'</span>&#125;).content</span><br></pre></td></tr></table></figure>
-<h4 id="本地搭建-squid，使用需要认证的-squid-代理"><a href="#本地搭建-squid，使用需要认证的-squid-代理" class="headerlink" title="本地搭建 squid，使用需要认证的 squid 代理"></a>本地搭建 squid，使用需要认证的 squid 代理</h4><p>　　直接安装配置即可，在配置 squid.conf 的时候需要注意修改如下部分<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#其中的ip port 即是按照如上配置的公网机器的ip和端口</span></span><br><span class="line">cache_peer ip parent port <span class="number">0</span> login=user:<span class="keyword">pass</span> no-query weighted-round-robin weight=<span class="number">1</span> connect-fail-limit=<span class="number">2</span> allow-miss max-conn=<span class="number">5</span> name=<span class="number">001</span></span><br></pre></td></tr></table></figure></p>
-<p>　　写入多个 ip port 即可<br>　　即是在常规的配置之上加上了以下一项，且这一项最好放在前面，不要放在末尾<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">login=user:<span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
-<p>　　之后我们重启本地的 squid，即可直接使用，不需要加上账号密码了<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">"http://www.baidu.com"</span> -x <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8888</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="若端口还是没打开"><a href="#若端口还是没打开" class="headerlink" title="若端口还是没打开"></a>若端口还是没打开</h5><p>　　博主常用的是腾讯云和阿里云，到目前为止 (2019&#x2F;05&#x2F;13)，一般腾讯云的机器是没有屏蔽流量出入端口的，但是阿里云需要设定<font color="red"><strong>开放安全组</strong></font>，这里就不多作说明，百度搜索关键词<font color="red"><strong>阿里云设定开放安全组端口</strong></font>.</p>
+<h4 id="验证验证是否生效"><a href="#验证验证是否生效" class="headerlink" title="验证验证是否生效"></a>验证验证是否生效</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget</span><br><span class="line">wget -e <span class="string">&quot;http_proxy=http://username:pass@ip:port/&quot;</span> <span class="string">&quot;http://www.baidu.com&quot;</span></span><br><span class="line"></span><br><span class="line">curl</span><br><span class="line">curl -x<span class="string">&quot;http://username:pass@ip:port/&quot;</span> <span class="string">&quot;http://www.baidu.com&quot;</span></span><br><span class="line"></span><br><span class="line">requests</span><br><span class="line"><span class="built_in">print</span> requests.get(<span class="string">&quot;http://www.baidu.com&quot;</span>,proxies=&#123;<span class="string">&#x27;http&#x27;</span>: <span class="string">&#x27;http://username:pass@ip:port/&#x27;</span>&#125;).content</span><br></pre></td></tr></table></figure>
+<h4 id="本地搭建-squid，使用需要认证的-squid-代理"><a href="#本地搭建-squid，使用需要认证的-squid-代理" class="headerlink" title="本地搭建 squid，使用需要认证的 squid 代理"></a>本地搭建 squid，使用需要认证的 squid 代理</h4><p>　　直接安装配置即可，在配置 squid.conf 的时候需要注意修改如下部分</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#其中的ip port 即是按照如上配置的公网机器的ip和端口</span></span><br><span class="line">cache_peer ip parent port <span class="number">0</span> login=user:<span class="keyword">pass</span> no-query weighted-<span class="built_in">round</span>-robin weight=<span class="number">1</span> connect-fail-limit=<span class="number">2</span> allow-miss <span class="built_in">max</span>-conn=<span class="number">5</span> name=001</span><br></pre></td></tr></table></figure>
+<p>　　写入多个 ip port 即可<br>　　即是在常规的配置之上加上了以下一项，且这一项最好放在前面，不要放在末尾</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">login=user:<span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>　　之后我们重启本地的 squid，即可直接使用，不需要加上账号密码了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">&quot;http://www.baidu.com&quot;</span> -x <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8888</span></span><br></pre></td></tr></table></figure>
 <h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><p>　　由于之前半年有些重要的事情停滞了写博客这件事，后续会慢慢补上的~~</p>
 
       
@@ -459,11 +473,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/squid代理/" rel="tag"># squid代理</a>
+            <a href="/tags/squid%E4%BB%A3%E7%90%86/" rel="tag"># squid代理</a>
           
-            <a href="/tags/代理集群/" rel="tag"># 代理集群</a>
+            <a href="/tags/%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4/" rel="tag"># 代理集群</a>
           
-            <a href="/tags/安全/" rel="tag"># 安全</a>
+            <a href="/tags/%E5%AE%89%E5%85%A8/" rel="tag"># 安全</a>
           
         </div>
       
@@ -476,7 +490,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/13/内网穿透/" rel="next" title="内网穿透">
+              <a href="/2018/08/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" rel="next" title="内网穿透">
                 <i class="fa fa-chevron-left"></i> 内网穿透
               </a>
             
@@ -486,7 +500,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/31/听云推荐系统/" rel="prev" title="听云推荐系统">
+              <a href="/2019/01/31/%E5%90%AC%E4%BA%91%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" rel="prev" title="听云推荐系统">
                 听云推荐系统 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -517,7 +531,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -543,7 +557,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -553,8 +567,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -565,7 +581,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -587,7 +603,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -642,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#本文介绍如何安全地搭建需要验证的-squid-代理集群"><span class="nav-number">1.</span> <span class="nav-text">本文介绍如何安全地搭建需要验证的 squid 代理集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体操作"><span class="nav-number">1.2.</span> <span class="nav-text">具体操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本架构"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代理-云服务器设定认证账号"><span class="nav-number">1.2.2.</span> <span class="nav-text">(代理) 云服务器设定认证账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置-squid"><span class="nav-number">1.2.3.</span> <span class="nav-text">配置 squid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#检测端口是否打开"><span class="nav-number">1.2.4.</span> <span class="nav-text">检测端口是否打开</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#若端口还是没打开"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">若端口还是没打开</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证验证是否生效"><span class="nav-number">1.2.5.</span> <span class="nav-text">验证验证是否生效</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本地搭建-squid，使用需要认证的-squid-代理"><span class="nav-number">1.2.6.</span> <span class="nav-text">本地搭建 squid，使用需要认证的 squid 代理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.3.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8D%E5%A6%82%E4%BD%95%E5%AE%89%E5%85%A8%E5%9C%B0%E6%90%AD%E5%BB%BA%E9%9C%80%E8%A6%81%E9%AA%8C%E8%AF%81%E7%9A%84-squid-%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4"><span class="nav-number">1.</span> <span class="nav-text">本文介绍如何安全地搭建需要验证的 squid 代理集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">具体操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9E%B6%E6%9E%84"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%90%86-%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E5%AE%9A%E8%AE%A4%E8%AF%81%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.2.2.</span> <span class="nav-text">(代理) 云服务器设定认证账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-squid"><span class="nav-number">1.2.3.</span> <span class="nav-text">配置 squid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E7%AB%AF%E5%8F%A3%E6%98%AF%E5%90%A6%E6%89%93%E5%BC%80"><span class="nav-number">1.2.4.</span> <span class="nav-text">检测端口是否打开</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%8B%A5%E7%AB%AF%E5%8F%A3%E8%BF%98%E6%98%AF%E6%B2%A1%E6%89%93%E5%BC%80"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">若端口还是没打开</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E7%94%9F%E6%95%88"><span class="nav-number">1.2.5.</span> <span class="nav-text">验证验证是否生效</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA-squid%EF%BC%8C%E4%BD%BF%E7%94%A8%E9%9C%80%E8%A6%81%E8%AE%A4%E8%AF%81%E7%9A%84-squid-%E4%BB%A3%E7%90%86"><span class="nav-number">1.2.6.</span> <span class="nav-text">本地搭建 squid，使用需要认证的 squid 代理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">1.3.</span> <span class="nav-text">End</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -662,10 +678,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -676,19 +692,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -836,7 +852,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2019/01/14/安全搭建squid代理集群/';
+          this.page.url = 'http://tingyunsay.github.io/2019/01/14/%E5%AE%89%E5%85%A8%E6%90%AD%E5%BB%BAsquid%E4%BB%A3%E7%90%86%E9%9B%86%E7%BE%A4/';
           this.page.identifier = '2019/01/14/安全搭建squid代理集群/';
           this.page.title = '安全搭建squid代理集群';
         };

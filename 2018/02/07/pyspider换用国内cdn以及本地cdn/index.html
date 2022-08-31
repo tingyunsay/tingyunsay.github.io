@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,46 +68,47 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="pyspider,cdn,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="pyspider,cdn," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
 
 
 
-<meta name="description" content="本文介绍使用pyspider切换国内cdn/本地cdn文件的操作">
-<meta name="keywords" content="pyspider,cdn">
+<meta name="description" content="本文介绍使用pyspider切换国内cdn&#x2F;本地cdn文件的操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pyspider换用国内cdn&#x2F;本地cdn">
-<meta property="og:url" content="http://tingyunsay.github.io/2018/02/07/pyspider换用国内cdn以及本地cdn/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2018/02/07/pyspider%E6%8D%A2%E7%94%A8%E5%9B%BD%E5%86%85cdn%E4%BB%A5%E5%8F%8A%E6%9C%AC%E5%9C%B0cdn/index.html">
 <meta property="og:site_name" content="听云">
-<meta property="og:description" content="本文介绍使用pyspider切换国内cdn/本地cdn文件的操作">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-19T13:54:50.769Z">
+<meta property="og:description" content="本文介绍使用pyspider切换国内cdn&#x2F;本地cdn文件的操作">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-02-06T16:51:54.000Z">
+<meta property="article:modified_time" content="2020-03-19T13:54:50.769Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="pyspider">
+<meta property="article:tag" content="cdn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pyspider换用国内cdn&#x2F;本地cdn">
-<meta name="twitter:description" content="本文介绍使用pyspider切换国内cdn/本地cdn文件的操作">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -127,17 +129,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2018/02/07/pyspider换用国内cdn以及本地cdn/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2018/02/07/pyspider换用国内cdn以及本地cdn/"/>
 
 
 
 
 
   <title> pyspider换用国内cdn/本地cdn | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -172,13 +174,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -208,7 +210,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -218,7 +220,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -228,7 +230,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -238,7 +240,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -248,7 +250,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -258,7 +260,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -292,16 +294,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/02/07/pyspider换用国内cdn以及本地cdn/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2018/02/07/pyspider%E6%8D%A2%E7%94%A8%E5%9B%BD%E5%86%85cdn%E4%BB%A5%E5%8F%8A%E6%9C%AC%E5%9C%B0cdn/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -340,7 +342,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -351,7 +353,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/pyspider/" itemprop="url" rel="index">
                     <span itemprop="name">pyspider</span>
                   </a>
@@ -370,8 +372,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/07/pyspider换用国内cdn以及本地cdn/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/07/pyspider换用国内cdn以及本地cdn/" itemprop="commentCount"></span>
+                <a href="/2018/02/07/pyspider%E6%8D%A2%E7%94%A8%E5%9B%BD%E5%86%85cdn%E4%BB%A5%E5%8F%8A%E6%9C%AC%E5%9C%B0cdn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/02/07/pyspider换用国内cdn以及本地cdn/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,7 +382,7 @@
 
           
           
-             <span id="/2018/02/07/pyspider换用国内cdn以及本地cdn/" class="leancloud_visitors" data-flag-title="pyspider换用国内cdn/本地cdn">
+             <span id="/2018/02/07/pyspider%E6%8D%A2%E7%94%A8%E5%9B%BD%E5%86%85cdn%E4%BB%A5%E5%8F%8A%E6%9C%AC%E5%9C%B0cdn/" class="leancloud_visitors" data-flag-title="pyspider换用国内cdn/本地cdn">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -408,22 +411,25 @@
       
 
       
-        <h3 id="本文介绍使用pyspider切换国内cdn-本地cdn文件的操作"><a href="#本文介绍使用pyspider切换国内cdn-本地cdn文件的操作" class="headerlink" title="本文介绍使用pyspider切换国内cdn/本地cdn文件的操作"></a>本文介绍使用pyspider切换国内cdn/本地cdn文件的操作</h3><a id="more"></a>
-<h3 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h3><p>由于现在大量的的抓取工作都放在pyspider这个平台上，所以每天何时何地都需要登录/并且查看修改相关任务这种是必须要的，而且是不能有任何延时的<br>但就是在这个要求下，pyspider却总是会进入不了主页面，什么原因呢？<br>其加载失败的相关信息是</p>
-<font color="purple"><strong>*.cloudflare.com加载失败</strong></font>
-
-<p>也就是说，pyspider的依赖这个网站中的一些js/css文件，但是由于这个站点经常挂（在国内，或者说电信网的问题），不得不考虑将这个依赖去掉，换成本地的文件，或者切换到国内比较靠谱的cdn</p>
-<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>查阅了一些cloudflare.com的相关问题，在V2EX上看见了挺多的回答的，其中有一些还是挺犀利的，摘抄如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1.CloudFlare is fast in the world except in China.</span><br><span class="line"></span><br><span class="line">2.加钱世界可达------中国奠信</span><br><span class="line"></span><br><span class="line">3.在下列哪些时候可以认为中国不属于地球？ </span><br><span class="line">  A 看好莱坞最新大片 </span><br><span class="line">  B 玩 XBOX ONE 游戏 </span><br><span class="line">  C 买联想笔记本 </span><br><span class="line">  D 用阿里云</span><br><span class="line"></span><br><span class="line">4.cloudflare:this guo me no bei</span><br><span class="line"></span><br><span class="line">5.世界网络分为中国以及 rest of the world </span><br><span class="line">通常来说， global 的具体范围是后者</span><br><span class="line">也可以说将 global 翻译为全球正越来越不准确</span><br></pre></td></tr></table></figure></p>
+        <h3 id="本文介绍使用pyspider切换国内cdn-x2F-本地cdn文件的操作"><a href="#本文介绍使用pyspider切换国内cdn-x2F-本地cdn文件的操作" class="headerlink" title="本文介绍使用pyspider切换国内cdn&#x2F;本地cdn文件的操作"></a>本文介绍使用pyspider切换国内cdn&#x2F;本地cdn文件的操作</h3><span id="more"></span>
+<h3 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h3><p>由于现在大量的的抓取工作都放在pyspider这个平台上，所以每天何时何地都需要登录&#x2F;并且查看修改相关任务这种是必须要的，而且是不能有任何延时的<br>但就是在这个要求下，pyspider却总是会进入不了主页面，什么原因呢？<br>其加载失败的相关信息是<br><font color="purple">***.cloudflare.com加载失败**</font></p>
+<p>也就是说，pyspider的依赖这个网站中的一些js&#x2F;css文件，但是由于这个站点经常挂（在国内，或者说电信网的问题），不得不考虑将这个依赖去掉，换成本地的文件，或者切换到国内比较靠谱的cdn</p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>查阅了一些cloudflare.com的相关问题，在V2EX上看见了挺多的回答的，其中有一些还是挺犀利的，摘抄如下</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1.CloudFlare is fast in the world except in China.</span><br><span class="line"></span><br><span class="line">2.加钱世界可达------中国奠信</span><br><span class="line"></span><br><span class="line">3.在下列哪些时候可以认为中国不属于地球？ </span><br><span class="line">  A 看好莱坞最新大片 </span><br><span class="line">  B 玩 XBOX ONE 游戏 </span><br><span class="line">  C 买联想笔记本 </span><br><span class="line">  D 用阿里云</span><br><span class="line"></span><br><span class="line">4.cloudflare:this guo me no bei</span><br><span class="line"></span><br><span class="line">5.世界网络分为中国以及 rest of the world </span><br><span class="line">通常来说， global 的具体范围是后者</span><br><span class="line">也可以说将 global 翻译为全球正越来越不准确</span><br></pre></td></tr></table></figure>
 <p>cloudflare在国外的加速效果可以说是很恐怖的，<font color="red">在全球范围其他绝大部分地方都能达到1ms以下，相比国内几十几百ms，效果不多说了</font>，并且其还是免费版本（已经足够用了），只有具有防ddos的服务的话需要加钱</p>
-<p>大家可以使用这个网址去查看www.cloudflare.com的各个地方的线路是否出了问题：<a href="http://ping.chinaz.com/www.cloudflare.com" target="_blank" rel="noopener"><font color="red"><strong>cloudflare测速</strong></font></a></p>
+<p>大家可以使用这个网址去查看<a href="http://www.cloudflare.com的各个地方的线路是否出了问题：[">www.cloudflare.com的各个地方的线路是否出了问题：[</a><font color="red">**cloudflare测速**</font>](<a target="_blank" rel="noopener" href="http://ping.chinaz.com/www.cloudflare.com">http://ping.chinaz.com/www.cloudflare.com</a>)</p>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>总之就是说cloudflare.com想要在国内稳定使用还是有点不现实的，所以我接下来开始解决这个问题</p>
-<h3 id="找到依赖的js-css文件"><a href="#找到依赖的js-css文件" class="headerlink" title="找到依赖的js/css文件"></a>找到依赖的js/css文件</h3><p>这个方法很简答了，开启pyspider，打开浏览器登录主页，打开F12，查看network选项（正常抓包即可），刷新页面，其中会加载45个请求，去重地将这些请求都记录下来，然后去对应的网站上下载对应的文件到本地，后续再换用本地路径即可</p>
-<h4 id="这里我找到的js-css文件如下"><a href="#这里我找到的js-css文件如下" class="headerlink" title="这里我找到的js/css文件如下"></a>这里我找到的js/css文件如下</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.css</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/dialog/dialog.min.css</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/lint/lint.min.css</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/jsonlint/1.6.0/jsonlint.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/xml/xml.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/css/css.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/javascript/javascript.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/htmlmixed/htmlmixed.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/python/python.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/search/search.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/search/searchcursor.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/dialog/dialog.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/selection/active-line.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/runmode/runmode.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/lint/lint.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/lint/json-lint.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js</span><br></pre></td></tr></table></figure>
-<h3 id="换成国内的cdn-bootcss-com-cdn"><a href="#换成国内的cdn-bootcss-com-cdn" class="headerlink" title="换成国内的cdn.bootcss.com cdn"></a>换成国内的cdn.bootcss.com cdn</h3><p>在pyspider的根目录下，vi pyspider/run.py ,其中第323行附近<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#@click.option('--cdn', default='//cdnjs.cloudflare.com/ajax/libs/',</span></span><br><span class="line"><span class="meta">@click.option('--cdn', default='//cdn.bootcss.com/',</span></span><br><span class="line">              help=<span class="string">'js/css cdn server'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>在经过比对之后，我确认这和国内比较快的 //cdn.bootcss.com/ 上的文件目录都是一样的，并且测试也是都ok的</p>
-<p>最后，将cloudflare.com这一行注释，将其换成//cdn.bootcss.com/，重新启动打开F12即可以看到现在都是向bootcss.com发送的请求了，并且相当稳定不会经常出现问题</p>
-<h3 id="换成本地cdn文件"><a href="#换成本地cdn文件" class="headerlink" title="换成本地cdn文件"></a>换成本地cdn文件</h3><p>可以写个脚本将这些文件下载到本地（最好使用国外的网络，国内不定时抽风）<br>后续我继续写如何将这些文件放到对应的路径以及调换本地路径，因为还没测试成功，明天继续补完这一段~&gt;_~&gt;（暂时还是没时间弄）</p>
-<h3 id="2018-07-20更新"><a href="#2018-07-20更新" class="headerlink" title="2018/07/20更新"></a>2018/07/20更新</h3><p>由于cdn.bootcss.js这个网站暂时不提供免费的cdn服务了，但还是需要流畅使用pyspider的话，在v2ex上看到了其他的提供一样免费服务的cdn，可以替换成：//cdnjs.loli.net/ajax/libs/<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@click.option('--cdn', default='//cdnjs.loli.net/ajax/libs/',</span></span><br><span class="line">               help=<span class="string">'js/css cdn server'</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="找到依赖的js-x2F-css文件"><a href="#找到依赖的js-x2F-css文件" class="headerlink" title="找到依赖的js&#x2F;css文件"></a>找到依赖的js&#x2F;css文件</h3><p>这个方法很简答了，开启pyspider，打开浏览器登录主页，打开F12，查看network选项（正常抓包即可），刷新页面，其中会加载45个请求，去重地将这些请求都记录下来，然后去对应的网站上下载对应的文件到本地，后续再换用本地路径即可</p>
+<h4 id="这里我找到的js-x2F-css文件如下"><a href="#这里我找到的js-x2F-css文件如下" class="headerlink" title="这里我找到的js&#x2F;css文件如下"></a>这里我找到的js&#x2F;css文件如下</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.css</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/dialog/dialog.min.css</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/lint/lint.min.css</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/jsonlint/1.6.0/jsonlint.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/xml/xml.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/css/css.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/javascript/javascript.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/htmlmixed/htmlmixed.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/python/python.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/search/search.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/search/searchcursor.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/dialog/dialog.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/selection/active-line.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/runmode/runmode.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/lint/lint.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/lint/json-lint.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.min.js</span><br><span class="line"></span><br><span class="line">https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js</span><br></pre></td></tr></table></figure>
+<h3 id="换成国内的cdn-bootcss-com-cdn"><a href="#换成国内的cdn-bootcss-com-cdn" class="headerlink" title="换成国内的cdn.bootcss.com cdn"></a>换成国内的cdn.bootcss.com cdn</h3><p>在pyspider的根目录下，vi pyspider&#x2F;run.py ,其中第323行附近</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#@click.option(&#x27;--cdn&#x27;, default=&#x27;//cdnjs.cloudflare.com/ajax/libs/&#x27;,</span></span><br><span class="line"><span class="meta">@click.option(<span class="params"><span class="string">&#x27;--cdn&#x27;</span>, default=<span class="string">&#x27;//cdn.bootcss.com/&#x27;</span>,</span></span></span><br><span class="line"><span class="params"><span class="meta">              <span class="built_in">help</span>=<span class="string">&#x27;js/css cdn server&#x27;</span></span>)</span></span><br></pre></td></tr></table></figure>
+<p>在经过比对之后，我确认这和国内比较快的 &#x2F;&#x2F;cdn.bootcss.com&#x2F; 上的文件目录都是一样的，并且测试也是都ok的</p>
+<p>最后，将cloudflare.com这一行注释，将其换成&#x2F;&#x2F;cdn.bootcss.com&#x2F;，重新启动打开F12即可以看到现在都是向bootcss.com发送的请求了，并且相当稳定不会经常出现问题</p>
+<h3 id="换成本地cdn文件"><a href="#换成本地cdn文件" class="headerlink" title="换成本地cdn文件"></a>换成本地cdn文件</h3><p>可以写个脚本将这些文件下载到本地（最好使用国外的网络，国内不定时抽风）<br>后续我继续写如何将这些文件放到对应的路径以及调换本地路径，因为还没测试成功，明天继续补完这一段<del>&gt;_</del>&gt;（暂时还是没时间弄）</p>
+<h3 id="2018-x2F-07-x2F-20更新"><a href="#2018-x2F-07-x2F-20更新" class="headerlink" title="2018&#x2F;07&#x2F;20更新"></a>2018&#x2F;07&#x2F;20更新</h3><p>由于cdn.bootcss.js这个网站暂时不提供免费的cdn服务了，但还是需要流畅使用pyspider的话，在v2ex上看到了其他的提供一样免费服务的cdn，可以替换成：&#x2F;&#x2F;cdnjs.loli.net&#x2F;ajax&#x2F;libs&#x2F;</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@click.option(<span class="params"><span class="string">&#x27;--cdn&#x27;</span>, default=<span class="string">&#x27;//cdnjs.loli.net/ajax/libs/&#x27;</span>,</span></span></span><br><span class="line"><span class="params"><span class="meta">               <span class="built_in">help</span>=<span class="string">&#x27;js/css cdn server&#x27;</span></span>)</span></span><br></pre></td></tr></table></figure>
+
+
 
       
     </div>
@@ -468,7 +474,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/22/听云记03/" rel="next" title="听云记 叁">
+              <a href="/2018/01/22/%E5%90%AC%E4%BA%91%E8%AE%B003/" rel="next" title="听云记 叁">
                 <i class="fa fa-chevron-left"></i> 听云记 叁
               </a>
             
@@ -478,7 +484,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/22/听云记04/" rel="prev" title="听云记 肆">
+              <a href="/2018/02/22/%E5%90%AC%E4%BA%91%E8%AE%B004/" rel="prev" title="听云记 肆">
                 听云记 肆 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -509,7 +515,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -535,7 +541,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -545,8 +551,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -557,7 +565,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -579,7 +587,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -634,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文介绍使用pyspider切换国内cdn-本地cdn文件的操作"><span class="nav-number">1.</span> <span class="nav-text">本文介绍使用pyspider切换国内cdn/本地cdn文件的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题来源"><span class="nav-number">2.</span> <span class="nav-text">问题来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原因"><span class="nav-number">3.</span> <span class="nav-text">原因</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">3.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找到依赖的js-css文件"><span class="nav-number">4.</span> <span class="nav-text">找到依赖的js/css文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#这里我找到的js-css文件如下"><span class="nav-number">4.1.</span> <span class="nav-text">这里我找到的js/css文件如下</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换成国内的cdn-bootcss-com-cdn"><span class="nav-number">5.</span> <span class="nav-text">换成国内的cdn.bootcss.com cdn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换成本地cdn文件"><span class="nav-number">6.</span> <span class="nav-text">换成本地cdn文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-07-20更新"><span class="nav-number">7.</span> <span class="nav-text">2018/07/20更新</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8D%E4%BD%BF%E7%94%A8pyspider%E5%88%87%E6%8D%A2%E5%9B%BD%E5%86%85cdn-x2F-%E6%9C%AC%E5%9C%B0cdn%E6%96%87%E4%BB%B6%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">本文介绍使用pyspider切换国内cdn&#x2F;本地cdn文件的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%9D%A5%E6%BA%90"><span class="nav-number">2.</span> <span class="nav-text">问题来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9B%A0"><span class="nav-number">3.</span> <span class="nav-text">原因</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%BE%E5%88%B0%E4%BE%9D%E8%B5%96%E7%9A%84js-x2F-css%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">找到依赖的js&#x2F;css文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%99%E9%87%8C%E6%88%91%E6%89%BE%E5%88%B0%E7%9A%84js-x2F-css%E6%96%87%E4%BB%B6%E5%A6%82%E4%B8%8B"><span class="nav-number">4.1.</span> <span class="nav-text">这里我找到的js&#x2F;css文件如下</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E6%88%90%E5%9B%BD%E5%86%85%E7%9A%84cdn-bootcss-com-cdn"><span class="nav-number">5.</span> <span class="nav-text">换成国内的cdn.bootcss.com cdn</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2%E6%88%90%E6%9C%AC%E5%9C%B0cdn%E6%96%87%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">换成本地cdn文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-x2F-07-x2F-20%E6%9B%B4%E6%96%B0"><span class="nav-number">7.</span> <span class="nav-text">2018&#x2F;07&#x2F;20更新</span></a></li></ol></div>
             
 
           </div>
@@ -654,10 +662,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -668,19 +676,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -828,7 +836,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2018/02/07/pyspider换用国内cdn以及本地cdn/';
+          this.page.url = 'http://tingyunsay.github.io/2018/02/07/pyspider%E6%8D%A2%E7%94%A8%E5%9B%BD%E5%86%85cdn%E4%BB%A5%E5%8F%8A%E6%9C%AC%E5%9C%B0cdn/';
           this.page.identifier = '2018/02/07/pyspider换用国内cdn以及本地cdn/';
           this.page.title = 'pyspider换用国内cdn/本地cdn';
         };

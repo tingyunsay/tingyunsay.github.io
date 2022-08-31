@@ -6,16 +6,17 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<script type="text/javascript" color="249,205,173" opacity="0.7" zindex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript"
+color="249,205,173" opacity='0.7' zIndex="-2" count="66" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -33,7 +34,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,21 +68,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="编码,unicode,utf8,ascii,">
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="编码,unicode,utf8,ascii," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -89,26 +90,29 @@
 
 
 <meta name="description" content="本文介绍python编码基础要点">
-<meta name="keywords" content="编码,unicode,utf8,ascii">
 <meta property="og:type" content="article">
 <meta property="og:title" content="细说python字符编码(二)">
-<meta property="og:url" content="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/index.html">
+<meta property="og:url" content="http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102/index.html">
 <meta property="og:site_name" content="听云">
 <meta property="og:description" content="本文介绍python编码基础要点">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/1.png">
-<meta property="og:updated_time" content="2020-03-19T13:54:50.759Z">
+<meta property="og:locale">
+<meta property="og:image" content="http://tingyunsay.github.io/.io//1.png">
+<meta property="article:published_time" content="2017-10-15T04:12:54.000Z">
+<meta property="article:modified_time" content="2020-03-19T13:54:50.759Z">
+<meta property="article:author" content="tingyun">
+<meta property="article:tag" content="编码">
+<meta property="article:tag" content="unicode">
+<meta property="article:tag" content="utf8">
+<meta property="article:tag" content="ascii">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="细说python字符编码(二)">
-<meta name="twitter:description" content="本文介绍python编码基础要点">
-<meta name="twitter:image" content="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/1.png">
+<meta name="twitter:image" content="http://tingyunsay.github.io/.io//1.png">
 
 
 
 <script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/',
+    root: '',
     scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
@@ -129,17 +133,17 @@
 <script data-ad-client="ca-pub-7536347382786408" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
-  <link rel="canonical" href="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/">
+  <link rel="canonical" href="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/"/>
 
 
 
 
 
   <title> 细说python字符编码(二) | 听云 </title>
-</head>
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -174,13 +178,13 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">听云</span>
         <span class="logo-line-after"><i></i></span>
@@ -210,7 +214,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -220,7 +224,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -230,7 +234,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -240,7 +244,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -250,7 +254,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -260,7 +264,7 @@
         <li class="menu-item menu-item-dream">
           <a href="/article" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
             Dream
           </a>
@@ -294,16 +298,16 @@
   
   
 
-  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/10/15/细说python字符编码02/">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tingyun">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/uploads/me.jpg">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="听云">
     </span>
 
@@ -342,7 +346,7 @@
           </span>
 
           
-            <span class="post-category">
+            <span class="post-category" >
             
               <span class="post-meta-divider">|</span>
             
@@ -353,7 +357,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/python/" itemprop="url" rel="index">
                     <span itemprop="name">python</span>
                   </a>
@@ -372,8 +376,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/15/细说python字符编码02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/15/细说python字符编码02/" itemprop="commentCount"></span>
+                <a href="/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/15/细说python字符编码02/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -381,7 +386,7 @@
 
           
           
-             <span id="/2017/10/15/细说python字符编码02/" class="leancloud_visitors" data-flag-title="细说python字符编码(二)">
+             <span id="/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102/" class="leancloud_visitors" data-flag-title="细说python字符编码(二)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,25 +415,27 @@
       
 
       
-        <h3 id="本文介绍python编码基础要点"><a href="#本文介绍python编码基础要点" class="headerlink" title="本文介绍python编码基础要点"></a>本文介绍python编码基础要点</h3><a id="more"></a>
+        <h3 id="本文介绍python编码基础要点"><a href="#本文介绍python编码基础要点" class="headerlink" title="本文介绍python编码基础要点"></a>本文介绍python编码基础要点</h3><span id="more"></span>
 <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>本文继续上一篇中提到的问题–python程序在编码的时候会涉及到一些中间过程的操作，其中有关ascii,unicode,utf8等等编码相关的知识，这里我们对以上提到的概念作一个详细整理，以及自己的理解</p>
 <h3 id="编码规则-字符集"><a href="#编码规则-字符集" class="headerlink" title="编码规则(字符集)"></a>编码规则(字符集)</h3><h4 id="ascii"><a href="#ascii" class="headerlink" title="ascii"></a>ascii</h4><p>　　ascii值是早期的美国人制定的一个规则，规定了英文以及一些字符的二进制表示用于在电脑上编码，<font color="red">它用了一个bit位中的前7个高低位—2^7表示128中不同的状态</font>，这128中状态就对应了常用的符号，比如：a,b,c,d…..空白符….等等</p>
 <p>　　后面计算机到了其他国家，那些国家可能本国语言所用到的字符多于128种，比如法国，他们除了基础的128个字符外，还需要表示口语中的音节，于是他们自己制定了一种编码方式，能表示英文语境中所没有的音节等其他东西，用到了那一个bit位中的第八个高低位，总共能表示256种状态</p>
 <p>　　类似的，中国也是一样，用来表示中文汉字，制定了自己的编码方式gbk等等</p>
-<h4 id="unicode"><a href="#unicode" class="headerlink" title="unicode"></a>unicode</h4><p>　　unicode是一种字符集，像它的名字一样—宇宙，<font color="red">它规定了全宇宙上所有符号的二进制表示，任何一个符号，都有其对应的唯一的二进制表示</font><br>　　比如：大写的A用unicode表示是：U+0041<br>　　　　其中每一位是用十六进制显示的，十六进制的41 == 十进制的65（16^1 × 4 + 16^0 × 1 = 65）<br>　　<img src="/2017/10/15/细说python字符编码02/1.png" alt="图一"></p>
+<h4 id="unicode"><a href="#unicode" class="headerlink" title="unicode"></a>unicode</h4><p>　　unicode是一种字符集，像它的名字一样—宇宙，<font color="red">它规定了全宇宙上所有符号的二进制表示，任何一个符号，都有其对应的唯一的二进制表示</font><br>　　比如：大写的A用unicode表示是：U+0041<br>　　　　其中每一位是用十六进制显示的，十六进制的41 &#x3D;&#x3D; 十进制的65（16^1 × 4 + 16^0 × 1 &#x3D; 65）<br>　　<img src="/.io//1.png" alt="图一"></p>
 <h4 id="为什么要搞这么一种统一的编码方式？"><a href="#为什么要搞这么一种统一的编码方式？" class="headerlink" title="为什么要搞这么一种统一的编码方式？"></a>为什么要搞这么一种统一的编码方式？</h4><p>　　上面提到的，世界上存在着多种编码方式，同一个二进制数字可以被解释成不同的符号。因此，要想打开一个文本文件，就必须知道它的编码方式，否则用错误的编码方式解读，就会出现乱码</p>
 <p>　　最常见的一个乱码就是电子邮件，就是因为发信人和收信人使用的编码方式不一样，比如你在中国给美国人发一份邮件，美国人用ascii，中文用gbk，我们的gbk根本无法用ascii编码，所以会出现乱码</p>
 <p>　　可以想象，<font color="red">如果有一种编码，将世界上所有的符号都纳入其中。每一个符号都给予一个独一无二的编码，那么乱码问题就会消失</font>。这就是unicode，就像它的名字都表示的，这是一种所有符号的编码</p>
 <p>　　但<font color="purple"><strong>一开始网络的不活跃导致了大家都在用局域网，互相之间通信很少，所以对”统一”这个需求也不是很强烈，一直到后面的互联网出现，这才迫切需要一个统一的编码，方便全世界的人民互相交流</strong></font>，这就是接下来我们要说的utf8</p>
-<h3 id="utf8的编码方式"><a href="#utf8的编码方式" class="headerlink" title="utf8的编码方式"></a>utf8的编码方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Unicode符号范围      | UTF-8编码方式</span><br><span class="line">(十六进制)  　        | （二进制）</span><br><span class="line">--------------------+---------------------------------------------</span><br><span class="line">0000 0000-0000 007F | 0xxxxxxx</span><br><span class="line">0000 0080-0000 07FF | 110xxxxx 10xxxxxx</span><br><span class="line">0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx</span><br><span class="line">0001 0000-001F FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br></pre></td></tr></table></figure>
+<h3 id="utf8的编码方式"><a href="#utf8的编码方式" class="headerlink" title="utf8的编码方式"></a>utf8的编码方式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Unicode符号范围      | UTF-8编码方式</span><br><span class="line">(十六进制)  　        | （二进制）</span><br><span class="line">--------------------+---------------------------------------------</span><br><span class="line">0000 0000-0000 007F | 0xxxxxxx</span><br><span class="line">0000 0080-0000 07FF | 110xxxxx 10xxxxxx</span><br><span class="line">0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx</span><br><span class="line">0001 0000-001F FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br></pre></td></tr></table></figure>
 <p>跟据上表，解读UTF-8编码非常简单<br>　　如果<font color="red"><strong>一个字节的第一位是0，则这个字节单独就是一个字符（显然就是ascii）</strong></font>；<br>　　如果第一位是1，则连续有多少个1，就表示当前字符占用多少个字节。</p>
-<p>　　再给出一张图，我们来说说上面这个，从表中易得出 严 字属于第三列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    Unicode符号范围                   |   UTF-8编码方式</span><br><span class="line">       (十六进制) (十进制)            |   （二进制）</span><br><span class="line">----------------------------------------------------------------------------------------------------</span><br><span class="line">  0000 0000-0000 007F (0-127)           |    0xxxxxxx</span><br><span class="line">  0000 0080-0000 07FF (128-2047)        |    110xxxxx 10xxxxxx</span><br><span class="line">  0000 0800-0000 FFFF (2048-65535)      |    1110xxxx 10xxxxxx 10xxxxxx</span><br><span class="line">  0001 0000-0010 FFFF (65536-1114111)   |    11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br></pre></td></tr></table></figure></p>
+<p>　　再给出一张图，我们来说说上面这个，从表中易得出 严 字属于第三列</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    Unicode符号范围                   |   UTF-8编码方式</span><br><span class="line">       (十六进制) (十进制)            |   （二进制）</span><br><span class="line">----------------------------------------------------------------------------------------------------</span><br><span class="line">  0000 0000-0000 007F (0-127)           |    0xxxxxxx</span><br><span class="line">  0000 0080-0000 07FF (128-2047)        |    110xxxxx 10xxxxxx</span><br><span class="line">  0000 0800-0000 FFFF (2048-65535)      |    1110xxxx 10xxxxxx 10xxxxxx</span><br><span class="line">  0001 0000-0010 FFFF (65536-1114111)   |    11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span><br></pre></td></tr></table></figure>
 <p>我们看上图左边的表：<br>　　第一行：0000 ～ 0000 007F ，换算成十进制则是：0～127<br>　　第二行：0080 ～ 0000 07FF，换算成十进制则是：128～2047</p>
 <p>其他的同理计算即可</p>
 <p>我们可以根据上面规则来得出字符所处的位置，接下来就该编码了</p>
 <h3 id="unicode编码成utf8"><a href="#unicode编码成utf8" class="headerlink" title="unicode编码成utf8"></a>unicode编码成utf8</h3><p>　　“严”字unicode为：4E25，换算成十进制大概是２万多，知道其在第三行，即应该按照1110 xxxx  10xx xxxx 10xx xxxx编码</p>
 <p>　　从”严”字的最后一个二进制位（也就是最右边的位）开始（其二进制位为：1001110 00100101）</p>
-<p>　　依次从后往前，将二进制的所有位按照次序：插入到unicode的x上，插入完了，余下的部分置0，即得到下面的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1110 xxxx 10xx xxxx 10xx xxxx</span><br><span class="line"></span><br><span class="line">1110 0100 1011 1000  1010 0101</span><br></pre></td></tr></table></figure></p>
+<p>　　依次从后往前，将二进制的所有位按照次序：插入到unicode的x上，插入完了，余下的部分置0，即得到下面的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1110 xxxx 10xx xxxx 10xx xxxx</span><br><span class="line"></span><br><span class="line">1110 0100 1011 1000  1010 0101</span><br></pre></td></tr></table></figure>
 <p>　　其中最右边的０是填充的，其他对应着ｘｘ的部分，你可以试着抽出来，就是”严”字的二进制表示</p>
 <p>最后，我们得到<br>　　“严”的UTF-8编码是”11100100 10111000 10100101”，转换成十六进制就是E4B8A5</p>
 <h3 id="ascii和unicode的矛盾"><a href="#ascii和unicode的矛盾" class="headerlink" title="ascii和unicode的矛盾"></a>ascii和unicode的矛盾</h3><p>　　既然你说要统一，那么我ascii是不是也要按照unicode的方式去表示，去存储呢？</p>
@@ -441,11 +448,11 @@
 <p>　　三.ascii的编码的字符可以转换成unicode，但unicode对于ascii来说毫无意义，只是加了３个bit位的０占位符</p>
 <p>　　四.unicode编码的字符无法转换成ascii，ascii只能表示前128位的字符，这是世界通用的128个基础字符</p>
 <p>　　五.要解决乱码，将所有编码统一以utf8的格式编码</p>
-<p>　　六.前128个基础字符要特别注意，ascii就是ascii，它在utf8中不会用unicode去编码，依旧保持其ascii只占一位的特点，所以你ascii的decode(“ascii”)和decode(“utf8”)得到的都是unicode，并且只能被编码成ascii<br>　　<br>　　你<font color="red">可以尝试在不加defaultcoding = “utf8”的情况下，对一个全部是英文的unicode字符串进行encode(“utf8”)，得到的还是ascii，也就是说—utf8包含了ascii编码，即上面提到的utf8编码的第一行</font></p>
+<p>　　六.前128个基础字符要特别注意，ascii就是ascii，它在utf8中不会用unicode去编码，依旧保持其ascii只占一位的特点，所以你ascii的decode(“ascii”)和decode(“utf8”)得到的都是unicode，并且只能被编码成ascii<br>　　<br>　　你<font color="red">可以尝试在不加defaultcoding &#x3D; “utf8”的情况下，对一个全部是英文的unicode字符串进行encode(“utf8”)，得到的还是ascii，也就是说—utf8包含了ascii编码，即上面提到的utf8编码的第一行</font></p>
 <p>还有一些具体到落地的字节存储规则我没讲，后续看看遇到了或者有时间再作整理，编码的问题希望以后不要再浪费时间了，best wishes</p>
-<p>参考博文：<br>　　<a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html</a><br>　　<a href="http://www.cnblogs.com/leesf456/p/5317574.html" target="_blank" rel="noopener">http://www.cnblogs.com/leesf456/p/5317574.html</a></p>
+<p>参考博文：<br>　　<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html</a><br>　　<a target="_blank" rel="noopener" href="http://www.cnblogs.com/leesf456/p/5317574.html">http://www.cnblogs.com/leesf456/p/5317574.html</a></p>
 <hr>
-<p>如你在本文发现有什么错误，希望给我发邮件或者留言指出，tingyunsay@gamil.com，我将不尽感激~~</p>
+<p>如你在本文发现有什么错误，希望给我发邮件或者留言指出，<a href="mailto:&#116;&#105;&#110;&#103;&#121;&#117;&#110;&#115;&#x61;&#121;&#64;&#103;&#97;&#x6d;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#116;&#105;&#110;&#103;&#121;&#117;&#110;&#115;&#x61;&#121;&#64;&#103;&#97;&#x6d;&#105;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a>，我将不尽感激~~</p>
 
       
     </div>
@@ -475,7 +482,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/编码/" rel="tag"># 编码</a>
+            <a href="/tags/%E7%BC%96%E7%A0%81/" rel="tag"># 编码</a>
           
             <a href="/tags/unicode/" rel="tag"># unicode</a>
           
@@ -494,8 +501,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/15/细说python字符编码/" rel="next" title="细说python字符编码(一)">
-                <i class="fa fa-chevron-left"></i> 细说python字符编码(一)
+              <a href="/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8103/" rel="next" title="细说python字符编码(三)">
+                <i class="fa fa-chevron-left"></i> 细说python字符编码(三)
               </a>
             
           </div>
@@ -504,8 +511,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/15/细说python字符编码03/" rel="prev" title="细说python字符编码(三)">
-                细说python字符编码(三) <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/20/pyspider%E6%93%8D%E4%BD%9C%E5%8D%83%E4%B8%87%E7%BA%A7%E5%BA%93/" rel="prev" title="pyspider操作千万级库">
+                pyspider操作千万级库 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -535,7 +542,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
         </noscript>
       </div>
     
@@ -561,7 +568,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -571,8 +578,10 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="/uploads/me.jpg" alt="tingyun">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/me.jpg"
+               alt="tingyun" />
           <p class="site-author-name" itemprop="name">tingyun</p>
            
               <p class="site-description motion-element" itemprop="description">热爱写作的业余吉他手兼程序员</p>
@@ -583,7 +592,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -605,7 +614,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">59</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -660,7 +669,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文介绍python编码基础要点"><span class="nav-number">1.</span> <span class="nav-text">本文介绍python编码基础要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码规则-字符集"><span class="nav-number">3.</span> <span class="nav-text">编码规则(字符集)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ascii"><span class="nav-number">3.1.</span> <span class="nav-text">ascii</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unicode"><span class="nav-number">3.2.</span> <span class="nav-text">unicode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要搞这么一种统一的编码方式？"><span class="nav-number">3.3.</span> <span class="nav-text">为什么要搞这么一种统一的编码方式？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#utf8的编码方式"><span class="nav-number">4.</span> <span class="nav-text">utf8的编码方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unicode编码成utf8"><span class="nav-number">5.</span> <span class="nav-text">unicode编码成utf8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ascii和unicode的矛盾"><span class="nav-number">6.</span> <span class="nav-text">ascii和unicode的矛盾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">7.</span> <span class="nav-text">End</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E4%BB%8B%E7%BB%8Dpython%E7%BC%96%E7%A0%81%E5%9F%BA%E7%A1%80%E8%A6%81%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">本文介绍python编码基础要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E8%A7%84%E5%88%99-%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">3.</span> <span class="nav-text">编码规则(字符集)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ascii"><span class="nav-number">3.1.</span> <span class="nav-text">ascii</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unicode"><span class="nav-number">3.2.</span> <span class="nav-text">unicode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%90%9E%E8%BF%99%E4%B9%88%E4%B8%80%E7%A7%8D%E7%BB%9F%E4%B8%80%E7%9A%84%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="nav-number">3.3.</span> <span class="nav-text">为什么要搞这么一种统一的编码方式？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#utf8%E7%9A%84%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">utf8的编码方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unicode%E7%BC%96%E7%A0%81%E6%88%90utf8"><span class="nav-number">5.</span> <span class="nav-text">unicode编码成utf8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ascii%E5%92%8Cunicode%E7%9A%84%E7%9F%9B%E7%9B%BE"><span class="nav-number">6.</span> <span class="nav-text">ascii和unicode的矛盾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End"><span class="nav-number">7.</span> <span class="nav-text">End</span></a></li></ol></div>
             
 
           </div>
@@ -680,10 +689,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -694,19 +703,19 @@
 </script>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>
 </div>
-<span class="times">
+<span  class="times">
 	&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
-<span class="times2">
+<span  class="times2">
 	|&nbsp;&nbsp;&nbsp;本站总访客数<span id="busuanzi_value_site_uv"></span>人
 </span>
 
@@ -854,7 +863,7 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://tingyunsay.github.io/2017/10/15/细说python字符编码02/';
+          this.page.url = 'http://tingyunsay.github.io/2017/10/15/%E7%BB%86%E8%AF%B4python%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%8102/';
           this.page.identifier = '2017/10/15/细说python字符编码02/';
           this.page.title = '细说python字符编码(二)';
         };
